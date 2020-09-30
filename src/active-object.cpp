@@ -2,17 +2,27 @@
 
 namespace godspeed
 {
+      /**
+      * The actual function handed to the thread to run
+      *
+      * This function loops through the overrided update() method as 
+      * long as isRunning() returns true. The parameter it takes is 
+      * a reference to the ActiveObject. This is defined outside the 
+      * class because you cannot run a class method on the thread object.
+      */
       void ActiveObject_upd(void *args)
       {
-        static_cast<ActiveObject*>(args)->update();
+        while (static_cast<ActiveObject*>(args)->isRunning())
+          static_cast<ActiveObject*>(args)->update();
       }
-
-      ActiveObject::ActiveObject() { }
 
       void ActiveObject::start()
       {
-        isRunning_ = true;
-        thread_ = vex::thread(ActiveObject_upd, this);
+        if (!isRunning_)
+        {
+          isRunning_ = true;
+          thread_ = vex::thread(ActiveObject_upd, this);
+        }
       }
 
       void ActiveObject::stop()
