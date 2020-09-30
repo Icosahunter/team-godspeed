@@ -1,7 +1,7 @@
 #include "active-object.h"
 #include "input.h"
 #include <map>
-#include <string>
+#include <list>
 
 namespace godspeed
 {
@@ -10,10 +10,9 @@ namespace godspeed
     public:
       InputController operator+=(Input input);
       InputController operator-=(Input input);
-      Input operator[](std::string inputName);
 
     protected:
       void update() override;
-      std::map<std::string, Input> inputs_ = std::map<std::string, Input>();
+      std::list<Input> inputs_ = std::list<Input>();
   };
 }

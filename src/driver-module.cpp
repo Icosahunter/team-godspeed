@@ -7,18 +7,13 @@ namespace godspeed
     static_cast<DriverModule*>(args)->update();
   }
 
-  DriverModule::DriverModule(InputController inputController)
+  void DriverModule::addInputDependency(Input input)
   {
-    inputController_ = inputController;
+    input.valueChanged.addHandler(DriverModule_upd, this);
   }
 
-  void DriverModule::addInputDependency(std::string inputName)
+  void DriverModule::removeInputDependency(Input input)
   {
-    inputController_[inputName].valueChanged.addHandler(DriverModule_upd, this);
-  }
-
-  void DriverModule::removeInputDependency(std::string inputName)
-  {
-    inputController_[inputName].valueChanged.removeHandler(DriverModule_upd);
+    input.valueChanged.removeHandler(DriverModule_upd);
   }
 }

@@ -6,11 +6,7 @@ namespace godspeed
   {
     public:
       virtual void update();
-      DriverModule(InputController inputController);
-      void addInputDependency(std::string input_name);
-      void removeInputDependency(std::string input_name);
-    
-    private:
-      InputController inputController_;
+      void addInputDependency(Input input);
+      void removeInputDependency(Input input);
   };
 }

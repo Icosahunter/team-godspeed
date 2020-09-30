@@ -6,24 +6,19 @@ namespace godspeed
   {
     for (auto &input: InputController::inputs_)
     {
-      input.second.update();
+      input.update();
     }
   }
 
   InputController InputController::operator+=(Input input)
   {
-    inputs_.emplace(input.name(), input);
+    inputs_.push_back(input);
     return *this;
   }
 
   InputController InputController::operator-=(Input input)
   {
-    inputs_.erase(input.name());
+    inputs_.remove(input);
     return *this;
-  }
-
-  Input InputController::operator[](std::string inputName)
-  {
-    return inputs_[inputName];
   }
 }
