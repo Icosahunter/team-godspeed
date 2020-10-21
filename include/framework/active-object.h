@@ -1,3 +1,4 @@
+#pragma once
 #include "vex.h"
 
 namespace godspeed
@@ -21,7 +22,7 @@ namespace godspeed
         * Creates a new thread that loops through the update function,
         * and starts it if the object is not already running.
         */
-        void start();
+        virtual void start();
 
         /**
         * Stops the active object
@@ -52,8 +53,6 @@ namespace godspeed
         * stop is called.
         */
         virtual void update();
-
-      private:
 
         ///The thread that the object runs on
         vex::thread thread_;

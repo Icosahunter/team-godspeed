@@ -15,6 +15,7 @@ signature Vision1__BACKBOARD = signature (3, -4887, -4045, -4466, -5461, -4157, 
 signature Vision1__SIG_4 = signature (4, 0, 0, 0, 0, 0, 0, 3, 0);
 vision Vision1 = vision (PORT1, 90, Vision1__BLUE_BALL, Vision1__RED_BALL, Vision1__BACKBOARD, Vision1__SIG_4);
 /*vex-vision-config:end*/
+bumper BumperA = bumper(Brain.ThreeWirePort.A);
 
 // VEXcode generated functions
 

@@ -9,14 +9,22 @@ namespace godspeed
       static_cast<DriverModule*>(args)->update();
     }
 
-    void DriverModule::addInputDependency(Input input)
+    void DriverModule::addDependency(InputVariable &var, InputVariable::InputVariableEvent evt)
     {
-      input.valueChanged.addHandler(DriverModule_upd, this);
+      switch(evt)
+      {
+          case InputVariable::valueChanged: var.valueChangedEvent.addHandler(DriverModule_upd, this); break;
+          case InputVariable::valueDeviated: var.valueDeviatedEvent.addHandler(DriverModule_upd, this); break;
+      }
     }
 
-    void DriverModule::removeInputDependency(Input input)
+    void DriverModule::removeDependency(InputVariable &var, InputVariable::InputVariableEvent evt)
     {
-      input.valueChanged.removeHandler(DriverModule_upd);
+      switch(evt)
+      {
+          case InputVariable::valueChanged: var.valueChangedEvent.removeHandler(DriverModule_upd); break;
+          case InputVariable::valueDeviated: var.valueDeviatedEvent.removeHandler(DriverModule_upd); break;
+      }
     }
   }
 }

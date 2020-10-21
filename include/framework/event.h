@@ -1,3 +1,4 @@
+#pragma once
 #include "vex.h"
 #include <map>
 
@@ -10,7 +11,7 @@ namespace godspeed
       public:
         Event();
         void raise();
-        Event addHandler(void (*handler)(void*), void* args);
+        Event addHandler(void (*handler)(void*), void* args = nullptr);
         Event removeHandler(void (*handler)(void*));
       
       private:

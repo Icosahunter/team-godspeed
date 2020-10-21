@@ -15,7 +15,9 @@ namespace godspeed
     void ActiveObject_upd(void *args)
     {
       while (static_cast<ActiveObject*>(args)->isRunning())
+      {
         static_cast<ActiveObject*>(args)->update();
+      }
     }
 
     void ActiveObject::start()
@@ -50,6 +52,11 @@ namespace godspeed
     int32_t ActiveObject::priority()
     {
       return thread_.priority();
+    }
+
+    void ActiveObject::update()
+    {
+
     }
   }
 }

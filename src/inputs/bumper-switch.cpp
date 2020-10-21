@@ -4,18 +4,9 @@ namespace godspeed
 {
   namespace inputs
   {
-    BumperSwitch::BumperSwitch(bumper* device)
+    BumperSwitch::BumperSwitch(bumper &device)
     {
-      device_ = device;
-      vtype_.type = framework::ValueType::bool_val;
-      vtype_.min = &min_;
-      vtype_.typical = &typ_;
-      vtype_.max = &max_;
-    }
-
-    void* BumperSwitch::value()
-    {
-      return &pressing_;
+      device_ = &device;
     }
 
     void BumperSwitch::update()
@@ -24,17 +15,30 @@ namespace godspeed
       int32_t v1 = device_->pressing();
       if (v0 != v1)
       {
-        std::time_t t1 = std::time_t(nullptr);
+        std::time_t t1 = std::time(nullptr);
         if (static_cast<long int>(t1 - t0_) >= timeout_)
         {
           pressing_ = v1;
-          if (v0 == typ_)
+          if (v0 == var_.typicalValue())
           {
-            valueDeviated.raise();
+            var_.valueDeviatedEvent.raise();
           }
-          valueChanged.raise();
+          var_.valueChangedEvent.raise();
           t0_ = t1;
         }
+      }
+    }
+
+    framework::InputVariable* BumperSwitch::variables(int varId)
+    {
+      if (varId == switchState)
+      {
+        return &var_;
+      }
+      else
+      {
+        Brain.Screen.print("Error: Attempted to access invalid input slot.");
+        return &var_;
       }
     }
 
@@ -46,11 +50,6 @@ namespace godspeed
     int BumperSwitch::timeout()
     {
       return timeout_;
-    }
-
-    framework::ValueInfo BumperSwitch::valueType()
-    {
-      return vtype_;
     }
   }
 }

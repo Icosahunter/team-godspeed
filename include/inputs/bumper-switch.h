@@ -1,29 +1,28 @@
-#include "framework/input.h"
+#pragma once
+#include "framework/input-device.h"
 #include "vex.h"
 
 namespace godspeed 
 {
   namespace inputs
   {
-    class BumperSwitch : framework::Input
+    enum BumperSwitchVars {switchState};
+
+    class BumperSwitch : public framework::InputDevice
     {
       public: 
-        BumperSwitch(bumper* _device);
-        void* value();
+        BumperSwitch(bumper &_device);
         void update();
-        framework::ValueInfo valueType();
         void setTimeout(int t);
         int timeout();
+        framework::InputVariable* variables(int varId);
 
       private:
         bumper* device_;
-        int pressing_;
+        int pressing_ = 0;
         int timeout_ = 1;
-        std::time_t t0_;
-        framework::ValueInfo vtype_ = framework::ValueInfo();
-        bool typ_ = 0;
-        bool min_ = 0;
-        bool max_ = 0;
+        std::time_t t0_ = 0;
+        framework::InputVariable var_ = framework::InputVariable(0, 0, 1);
     };
   }
 }

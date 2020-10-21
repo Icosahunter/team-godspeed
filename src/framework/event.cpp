@@ -4,11 +4,26 @@ namespace godspeed
 {
   namespace framework
   {
+
+    Event::Event()
+    {
+      
+    }
+
     void Event::raise()
     {
-      for(auto i : Event::handlers_)
+      int c = 0;
+      for(auto& x : handlers_)
       {
-        (*i.first)(i.second);
+        if (c < handlers_.size())
+        {
+          (x.first)(x.second);
+        }
+        else
+        {
+          break;
+        }
+        c++;
       }
     }
 
