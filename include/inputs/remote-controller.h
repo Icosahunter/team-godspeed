@@ -1,31 +1,28 @@
 #pragma once
-#include "framework/input-device.h"
-#include "vex.h"
+#include "framework/data-source.h"
 
-namespace godspeed 
+namespace godspeed
 {
-  namespace inputs
+  namespace RemoteController
   {
-    enum RemoteControllerVars {upButton, downButton, leftButton, rightButton,
-                               xButton, yButton, aButton, bButton,
-                               xLeftStick, yLeftStick,
-                               xRightStick, yRightStick,
-                               rightTrigger, rightBumper,
-                               leftTrigger, leftBumper};
+    extern DataSource upButton;
+    extern DataSource downButton;
+    extern DataSource rightButton;
+    extern DataSource leftButton;
 
-    class RemoteController : public framework::InputDevice
-    {
-      public: 
-        RemoteController(controller &_device);
-        void update();
-        void setTimeout(int t);
-        int timeout();
-        framework::InputVariable* variables(int varId);
+    extern DataSource xButton;
+    extern DataSource yButton;
+    extern DataSource aButton;
+    extern DataSource bButton;
 
-      private:
-        controller* device_;
-        float varLastVals_[16];
-        framework::InputVariable vars_[16];
-    };
+    extern DataSource rightTrigger;
+    extern DataSource rightBumper;
+    extern DataSource leftTrigger;
+    extern DataSource leftBumper;
+
+    extern DataSource xLeftStick;
+    extern DataSource yLeftStick;
+    extern DataSource xRightStick;
+    extern DataSource yRightStick;
   }
 }

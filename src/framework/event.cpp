@@ -2,41 +2,37 @@
 
 namespace godspeed
 {
-  namespace framework
+  Event::Event()
   {
+    
+  }
 
-    Event::Event()
+  void Event::raise()
+  {
+    int c = 0;
+    for(auto& x : handlers_)
     {
-      
-    }
-
-    void Event::raise()
-    {
-      int c = 0;
-      for(auto& x : handlers_)
+      if (c < handlers_.size())
       {
-        if (c < handlers_.size())
-        {
-          (x.first)(x.second);
-        }
-        else
-        {
-          break;
-        }
-        c++;
+        (x.first)();
       }
+      else
+      {
+        break;
+      }
+      c++;
     }
+  }
 
-    Event Event::addHandler(void (*handler)(void*), void* args)
-    {
-      handlers_.emplace(handler, args);
-      return *this;
-    }
+  Event Event::addHandler(void (*handler)(void))
+  {
+    //handlers_.emplace(handler);
+    return *this;
+  }
 
-    Event Event::removeHandler(void (*handler)(void*))
-    {
-      handlers_.erase(handler);
-      return *this;
-    }
+  Event Event::removeHandler(void (*handler)(void))
+  {
+    //handlers_.erase(handler);
+    return *this;
   }
 }

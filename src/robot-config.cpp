@@ -16,10 +16,14 @@ signature Vision1__SIG_4 = signature (4, 0, 0, 0, 0, 0, 0, 3, 0);
 vision Vision1 = vision (PORT1, 90, Vision1__BLUE_BALL, Vision1__RED_BALL, Vision1__BACKBOARD, Vision1__SIG_4);
 /*vex-vision-config:end*/
 bumper BumperA = bumper(Brain.ThreeWirePort.A);
+controller Controller1 = controller(primary);
+motor Motor1 = motor(PORT4, ratio18_1, false);
+motor Motor2 = motor(PORT7, ratio18_1, false);
+motor Motor3 = motor(PORT10, ratio18_1, false);
 
 // VEXcode generated functions
-
-
+// define variable for remote controller enable/disable
+bool RemoteControlCodeEnabled = true;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

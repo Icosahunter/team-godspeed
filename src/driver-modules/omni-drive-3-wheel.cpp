@@ -1,34 +1,35 @@
 #include "driver-modules/omni-drive-3-wheel.h"
-#include "framework/driver-module.h"
-#include "vex.h"
-#include <cmath>
 
 namespace godspeed 
 {
-  namespace driverModules
+  namespace OmniDrive3Wheel
   {
-    OmniDrive3Wheel::OmniDrive3Wheel(motor &m1, motor &m2, motor &m3)
-    {
-      motor1_ = &m1;
-      motor2_ = &m2;
-      motor3_ = &m3;
-    }
 
-    void OmniDrive3Wheel::update()
+    DataSinkD xDirection = DataSinkD(-1, 1, update);
+    DataSinkD yDirection = DataSinkD(-1, 1, update);
+
+    void update()
     {
-      double x = framework::InputVariable::rescale(-1, 1, *ySpeed_);
-      double y = framework::InputVariable::rescale(-1, 1, *xSpeed_);
+      double x = xDirection.value();
+      double y = yDirection.value();
       double ang = atan2(y, x);
       double mag = sqrt(pow(y, 2) + pow(x, 2));
       double m1spd = mag*(2.0/3)*cos(ang + M_PI/3);
       double m2spd = mag*(2.0/3)*cos(ang + 5*M_PI/3);
       double m3spd = mag*(2.0/3)*cos(ang + M_PI);
-      setMotorSpeed(m1spd, *motor1_);
-      setMotorSpeed(m2spd, *motor2_);
-      setMotorSpeed(m3spd, *motor3_);
+      Brain.Screen.setCursor(1, 1);
+      Brain.Screen.print(x);
+      Brain.Screen.newLine();
+      Brain.Screen.print(y);
+      Brain.Screen.newLine();
+      task::sleep(100);
+      Brain.Screen.clearScreen();
+      setMotorSpeed(m1spd, Motor1);
+      setMotorSpeed(m2spd, Motor2);
+      setMotorSpeed(m3spd, Motor3);
     }
 
-    void OmniDrive3Wheel::setMotorSpeed(double motorSpeed, motor &m)
+    void setMotorSpeed(double motorSpeed, motor &m)
     {
       if (motorSpeed < 0)
       {
@@ -59,34 +60,5 @@ namespace godspeed
         m.setVelocity(0, percentUnits::pct);
       }
     }
-
-    void OmniDrive3Wheel::connect(int slot, framework::InputVariable &var, framework::InputVariable::InputVariableEvent evt)
-    {
-      if (slot == xDirection)
-      {
-        if (xSpeed_ != nullptr)
-        {
-          Brain.Screen.print("Error: Slot already filled!");
-        }
-        else
-        {
-          addDependency(var, evt);
-          xSpeed_ = &var;
-        }
-      }
-      else if (slot == yDirection)
-      {
-        if (ySpeed_ != nullptr)
-        {
-          Brain.Screen.print("Error: Slot already filled!");
-        }
-        {
-          addDependency(var, evt);
-          ySpeed_ = &var;
-        }
-      }
-    }
-
-
   }
 }
