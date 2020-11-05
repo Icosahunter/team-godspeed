@@ -18,6 +18,10 @@
 // Motor3               motor         10              
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
+/** \namespace godspeed
+* The primary namespace for the project
+*/
+
 #include "vex.h"
 #include "inputs/remote-controller.h"
 #include "driver-modules/omni-drive-3-wheel.h"

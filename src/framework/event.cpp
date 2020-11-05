@@ -14,7 +14,7 @@ namespace godspeed
     {
       if (c < handlers_.size())
       {
-        (x.first)();
+        x();
       }
       else
       {

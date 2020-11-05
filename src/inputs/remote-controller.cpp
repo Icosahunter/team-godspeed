@@ -4,6 +4,7 @@ namespace godspeed
 {
   namespace RemoteController
   {
+    /// Contains the functions that return the values of the various controller inputs
     namespace RcValFuncs
     {
       double upBtnVal() { return (double)Controller1.ButtonUp.pressing(); }
@@ -24,6 +25,7 @@ namespace godspeed
       double yrsVal() { return (double)Controller1.Axis2.position(); }
     }
 
+    /// Contains the functions that subscribe a function to value changes of the various controller inputs
     namespace RcSubscribeFuncs
     {
       void upBtnSubscribe(void (*callback)(void)) { Controller1.ButtonUp.pressed(callback); Controller1.ButtonUp.released(callback); }
