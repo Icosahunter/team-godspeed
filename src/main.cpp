@@ -19,15 +19,29 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 /** \namespace godspeed
-* The primary namespace for the project
+* \brief The primary namespace for the project
+*/
+
+/** \namespace outputs
+* \brief Contains all classes for output devices
+*/
+
+/** \namespace inputs
+* \brief Contains all classes for input devices
+*/
+
+/** \namespace framework
+* \brief Contains core classes used as building blocks for the rest of the project
 */
 
 #include "vex.h"
 #include "inputs/remote-controller.h"
-#include "driver-modules/omni-drive-3-wheel.h"
+#include "outputs/omni-drive-3-wheel.h"
 
 using namespace vex;
 using namespace godspeed;
+using namespace inputs;
+using namespace outputs;
 
 void yay()
 {

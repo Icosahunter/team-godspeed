@@ -2,6 +2,8 @@
 
 namespace godspeed
 {
+  namespace framework
+  {
     DataSinkB::DataSinkB() : DataSink()
     {
 
@@ -16,5 +18,5 @@ namespace godspeed
     {
       return DataSource::toBool(*source_);
     }
-
+  }
 }
