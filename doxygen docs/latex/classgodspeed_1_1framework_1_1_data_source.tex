@@ -1,0 +1,140 @@
+\hypertarget{classgodspeed_1_1framework_1_1_data_source}{}\doxysection{godspeed\+::framework\+::Data\+Source Class Reference}
+\label{classgodspeed_1_1framework_1_1_data_source}\index{godspeed::framework::DataSource@{godspeed::framework::DataSource}}
+
+
+An class representing a data source of an input device or internal object.  
+
+
+
+
+{\ttfamily \#include $<$data-\/source.\+h$>$}
+
+
+
+Collaboration diagram for godspeed\+::framework\+::Data\+Source\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classgodspeed_1_1framework_1_1_data_source__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1framework_1_1_data_source_a534b46eec7006c231c9127ab10d52652}\label{classgodspeed_1_1framework_1_1_data_source_a534b46eec7006c231c9127ab10d52652}} 
+\mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source_a534b46eec7006c231c9127ab10d52652}{Data\+Source}} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source_a3bf8ff7c1dd0d9edd5e92483a2cef9e4}{Data\+Source}} (double min, double max, double($\ast$val\+Func)(void), void($\ast$subscribe\+Func)(void($\ast$callback)(void)))
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1framework_1_1_data_source_a77f29db12d268563ec05a18a2d8e5805}\label{classgodspeed_1_1framework_1_1_data_source_a77f29db12d268563ec05a18a2d8e5805}} 
+double \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source_a77f29db12d268563ec05a18a2d8e5805}{max\+Value}} ()
+\begin{DoxyCompactList}\small\item\em The maximum value the data source will have. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgodspeed_1_1framework_1_1_data_source_ad12af5d2ad18c8afafe1494b6aea139f}\label{classgodspeed_1_1framework_1_1_data_source_ad12af5d2ad18c8afafe1494b6aea139f}} 
+double \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source_ad12af5d2ad18c8afafe1494b6aea139f}{min\+Value}} ()
+\begin{DoxyCompactList}\small\item\em The minimum value the data source will have. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source_a479cd0aff6172d1707bf840dfd7b07c8}{rescale}} (double desired\+Min, double desired\+Max, \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source}{Data\+Source}} \&var)
+\item 
+static bool \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source_a541442dc25773e368a5f96292e4a0dcb}{to\+Bool}} (\mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source}{Data\+Source}} \&var)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double($\ast$ \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source_a7ee1f041523081af26a3eb47cf95cadb}{value}} )(void)
+\item 
+void($\ast$ \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source_afcbc19dec2c379541b14d4c304d880bb}{subscribe}} )(void($\ast$callback)(void))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An class representing a data source of an input device or internal object. 
+
+A particular input device may produce more than one piece of data, each piece of data will be a data source. The data will need to be represented as a double, even if it is more accurately an integer or boolean.
+
+This class acts as an interface to objects that contain the \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_sink}{Data\+Sink}} object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgodspeed_1_1framework_1_1_data_source_a3bf8ff7c1dd0d9edd5e92483a2cef9e4}\label{classgodspeed_1_1framework_1_1_data_source_a3bf8ff7c1dd0d9edd5e92483a2cef9e4}} 
+\index{godspeed::framework::DataSource@{godspeed::framework::DataSource}!DataSource@{DataSource}}
+\index{DataSource@{DataSource}!godspeed::framework::DataSource@{godspeed::framework::DataSource}}
+\doxysubsubsection{\texorpdfstring{DataSource()}{DataSource()}}
+{\footnotesize\ttfamily godspeed\+::framework\+::\+Data\+Source\+::\+Data\+Source (\begin{DoxyParamCaption}\item[{double}]{min,  }\item[{double}]{max,  }\item[{double($\ast$)(void)}]{val\+Func,  }\item[{void($\ast$)(void($\ast$callback)(void))}]{subscribe\+Func }\end{DoxyParamCaption})}
+
+The primary constructor, initializes all necessary values
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum value the data source will ever output \\
+\hline
+{\em max} & The maximum value the data source will ever output \\
+\hline
+{\em val\+Func} & Address of a function that will return the current value of the data source \\
+\hline
+{\em subscribe\+Func} & Address of a function that will subscribe a given handler to value changes of the data source \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgodspeed_1_1framework_1_1_data_source_a479cd0aff6172d1707bf840dfd7b07c8}\label{classgodspeed_1_1framework_1_1_data_source_a479cd0aff6172d1707bf840dfd7b07c8}} 
+\index{godspeed::framework::DataSource@{godspeed::framework::DataSource}!rescale@{rescale}}
+\index{rescale@{rescale}!godspeed::framework::DataSource@{godspeed::framework::DataSource}}
+\doxysubsubsection{\texorpdfstring{rescale()}{rescale()}}
+{\footnotesize\ttfamily double godspeed\+::framework\+::\+Data\+Source\+::rescale (\begin{DoxyParamCaption}\item[{double}]{desired\+Min,  }\item[{double}]{desired\+Max,  }\item[{\mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source}{Data\+Source}} \&}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Rescales a data source value to be within a new min and max
+
+This is used convert the data of a data source object into a form that a data sink can receive. Specifically this is used by the \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_sink_d}{Data\+SinkD}} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired\+Min} & The desired minimum value for the data \\
+\hline
+{\em desired\+Max} & The desired maximum value for the data \\
+\hline
+{\em var} & The data source object to rescale the value of \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgodspeed_1_1framework_1_1_data_source_a541442dc25773e368a5f96292e4a0dcb}\label{classgodspeed_1_1framework_1_1_data_source_a541442dc25773e368a5f96292e4a0dcb}} 
+\index{godspeed::framework::DataSource@{godspeed::framework::DataSource}!toBool@{toBool}}
+\index{toBool@{toBool}!godspeed::framework::DataSource@{godspeed::framework::DataSource}}
+\doxysubsubsection{\texorpdfstring{toBool()}{toBool()}}
+{\footnotesize\ttfamily bool godspeed\+::framework\+::\+Data\+Source\+::to\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_source}{Data\+Source}} \&}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts the data from a data source to a boolean
+
+This is used convert the data of a data source object into a form that a data sink can receive. Specifically this is used by the \mbox{\hyperlink{classgodspeed_1_1framework_1_1_data_sink_b}{Data\+SinkB}} class.
+
+Returns true if the value of the data source is greater than half way between it\textquotesingle{}s min and max. Otherwise returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & The data source to convert the value of \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classgodspeed_1_1framework_1_1_data_source_afcbc19dec2c379541b14d4c304d880bb}\label{classgodspeed_1_1framework_1_1_data_source_afcbc19dec2c379541b14d4c304d880bb}} 
+\index{godspeed::framework::DataSource@{godspeed::framework::DataSource}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!godspeed::framework::DataSource@{godspeed::framework::DataSource}}
+\doxysubsubsection{\texorpdfstring{subscribe}{subscribe}}
+{\footnotesize\ttfamily void($\ast$ godspeed\+::framework\+::\+Data\+Source\+::subscribe) (void($\ast$callback)(void))}
+
+Function to subscribe to value changes of the source
+
+The subscribe attribute should contain a reference to a function that can receive an event handler and subscribe said handlers to value changes of the data source. This means that it can be used with any event framework that allows for handlers with no arguments or returns. \mbox{\Hypertarget{classgodspeed_1_1framework_1_1_data_source_a7ee1f041523081af26a3eb47cf95cadb}\label{classgodspeed_1_1framework_1_1_data_source_a7ee1f041523081af26a3eb47cf95cadb}} 
+\index{godspeed::framework::DataSource@{godspeed::framework::DataSource}!value@{value}}
+\index{value@{value}!godspeed::framework::DataSource@{godspeed::framework::DataSource}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily double($\ast$ godspeed\+::framework\+::\+Data\+Source\+::value) (void)}
+
+The value getter for the data source 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/anzel/source/repos/team-\/godspeed/include/framework/data-\/source.\+h\item 
+C\+:/\+Users/anzel/source/repos/team-\/godspeed/src/framework/data-\/source.\+cpp\end{DoxyCompactItemize}

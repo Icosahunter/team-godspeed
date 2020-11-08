@@ -2,27 +2,24 @@
 
 namespace godspeed
 {
-  namespace PathController
+  namespace inputs
   {
 
-    namespace PcValFuncs
+    double PathScript::xDirVal()
     {
-      double xDirVal()
-      {
-        return std::get<0>(*pathIndex);
-      }
-
-      double yDirVal()
-      {
-        return std::get<1>(*pathIndex);
-      }
+      return std::get<0>(*pathIndex);
     }
 
-    DataSource xDirection;
-    DataSource yDirection;
-    std::list<std::tuple<double, double, double>> path;
-    bool loop;
-    std::list<std::tuple<double, double, double>>::iterator pathIndex = path.begin();
+    double PathScript::yDirVal()
+    {
+      return std::get<1>(*pathIndex);
+    }
+
+    DataSource PathScript::xDirection;
+    DataSource PathScript::yDirection;
+    std::list<std::tuple<double, double, double>> PathScript::path;
+    bool PathScript::loop;
+    std::list<std::tuple<double, double, double>>::iterator PathScript::pathIndex = path.begin();
     
   }
 }

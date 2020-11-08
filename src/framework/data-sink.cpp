@@ -2,6 +2,8 @@
 
 namespace godspeed
 {
+  namespace framework
+  {
     DataSink::DataSink()
     {
       
@@ -17,5 +19,5 @@ namespace godspeed
       source_ = &dat;
       dat.subscribe(parentUpdate);
     }
-
+  }
 }

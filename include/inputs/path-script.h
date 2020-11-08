@@ -5,13 +5,22 @@
 
 namespace godspeed
 {
-  namespace PathController
+  namespace inputs
   {
-    extern DataSource xDirection;
-    extern DataSource yDirection;
-    extern std::list<std::tuple<double, double, double>> path; //list of commands of form xdir, ydir, duration
-    extern bool loop;
-    extern std::list<std::tuple<double, double, double>>::iterator pathIndex;
-    
+    using namespace framework;
+
+    class PathScript
+    {
+      private:
+        static double xDirVal();
+        static double yDirVal();
+
+      public:
+        static DataSource xDirection;
+        static DataSource yDirection;
+        static std::list<std::tuple<double, double, double>> path; //list of commands of form xdir, ydir, duration
+        static bool loop;
+        static std::list<std::tuple<double, double, double>>::iterator pathIndex;
+    };
   }
 }

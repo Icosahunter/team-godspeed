@@ -2,7 +2,8 @@
 
 namespace godspeed
 {
-
+  namespace framework
+  {
     DataSinkD::DataSinkD() : DataSink()
     {
       
@@ -18,5 +19,5 @@ namespace godspeed
     {
       return DataSource::rescale(desiredMin, desiredMax, *source_);
     }
-
+  }
 }
