@@ -9,17 +9,21 @@ brain  Brain;
 
 // VEXcode device constructors
 /*vex-vision-config:begin*/
-signature Vision1__BLUE_BALL = signature (1, -3189, -2341, -2765, 7617, 14309, 10963, 2.5, 0);
-signature Vision1__RED_BALL = signature (2, 5065, 8971, 7018, -891, 1, -445, 2.5, 0);
-signature Vision1__BACKBOARD = signature (3, -4887, -4045, -4466, -5461, -4157, -4809, 2.4, 0);
-signature Vision1__SIG_4 = signature (4, 0, 0, 0, 0, 0, 0, 3, 0);
-vision Vision1 = vision (PORT1, 90, Vision1__BLUE_BALL, Vision1__RED_BALL, Vision1__BACKBOARD, Vision1__SIG_4);
+signature Vision20__BLUE_BALL = signature (1, -3189, -2341, -2765, 7617, 14309, 10963, 2.5, 0);
+signature Vision20__RED_BALL = signature (2, 5065, 8971, 7018, -891, 1, -445, 2.5, 0);
+signature Vision20__BACKBOARD = signature (3, -4887, -4045, -4466, -5461, -4157, -4809, 2.4, 0);
+signature Vision20__SIG_4 = signature (4, 0, 0, 0, 0, 0, 0, 3, 0);
+vision Vision20 = vision (PORT20, 90, Vision20__BLUE_BALL, Vision20__RED_BALL, Vision20__BACKBOARD, Vision20__SIG_4);
 /*vex-vision-config:end*/
 bumper BumperA = bumper(Brain.ThreeWirePort.A);
 controller Controller1 = controller(primary);
-motor Motor1 = motor(PORT4, ratio18_1, false);
-motor Motor2 = motor(PORT7, ratio18_1, false);
-motor Motor3 = motor(PORT10, ratio18_1, false);
+motor FrontRightMotor = motor(PORT1, ratio18_1, false);
+motor FrontLeftMotor = motor(PORT2, ratio18_1, false);
+motor BackMotor = motor(PORT3, ratio18_1, false);
+motor LeftCollectorMotor = motor(PORT4, ratio6_1, false);
+motor RightCollectorMotor = motor(PORT5, ratio6_1, true);
+motor ScorerMotor = motor(PORT7, ratio18_1, false);
+motor ballGuideMotor = motor(PORT8, ratio18_1, false);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

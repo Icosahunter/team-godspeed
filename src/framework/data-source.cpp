@@ -30,7 +30,7 @@ namespace godspeed
     double DataSource::rescale(double desiredMin, double desiredMax, DataSource& dat)
     {
       double scaleFactor = (desiredMax - desiredMin) / (dat.maxValue() - dat.minValue());
-      double shift = desiredMin - dat.minValue();
+      double shift = desiredMin - scaleFactor*dat.minValue();
       return scaleFactor*dat.value() + shift;
     }
 

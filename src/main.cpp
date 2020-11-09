@@ -1,3 +1,230 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ballGuideMotor       motor         8               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ballGuideMotor       motor         8               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ballGuideMotor       motor         8               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ballGuideMotor       motor         8               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ballGuideMotor       motor         8               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ballGuideMotor       motor         8               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ballGuideMotor       motor         8               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ballGuideMotor       motor         8               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         6               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         6               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// scorerMotor          motor         6               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// Motor3               motor         10              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// Motor2               motor         7               
+// Motor3               motor         10              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// Controller1          controller                    
+// Motor1               motor         4               
+// Motor2               motor         7               
+// Motor3               motor         10              
+// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -37,6 +264,8 @@
 #include "vex.h"
 #include "inputs/remote-controller.h"
 #include "outputs/omni-drive-3-wheel.h"
+#include "outputs/ball-collector.h"
+#include "outputs/ball-scorer.h"
 
 using namespace vex;
 using namespace godspeed;
@@ -54,6 +283,14 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   Brain.Screen.setCursor(1, 1);
-  OmniDrive3Wheel::xDirection.connect(RemoteController::xLeftStick);
-  OmniDrive3Wheel::yDirection.connect(RemoteController::yLeftStick);
+  Brain.Screen.print("Hey!");
+  OmniDrive3Wheel::xVelocity.connect(RemoteController::xLeftStick);
+  OmniDrive3Wheel::yVelocity.connect(RemoteController::yLeftStick);
+  OmniDrive3Wheel::angularVelocity.connect(RemoteController::xRightStick);
+  BallCollector::collectorVelocity.connect(RemoteController::leftTrigger);
+  BallScorer::scorerVelocity.connect(RemoteController::rightTrigger);
+  BallScorer::ballGuideExpander.connect(RemoteController::rightTrigger);
+  ballGuideMotor.resetPosition();
+  ballGuideMotor.spinToPosition(-270, degrees);
+
 }

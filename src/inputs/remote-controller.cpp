@@ -4,7 +4,7 @@ namespace godspeed
 {
   namespace inputs
   {
-    DataSource RemoteController::RemoteController::upButton = DataSource(0,1, upBtnVal, upBtnSubscribe);;
+    DataSource RemoteController::upButton = DataSource(0,1, upBtnVal, upBtnSubscribe);;
     DataSource RemoteController::downButton = DataSource(0,1, downBtnVal, downBtnSubscribe);
     DataSource RemoteController::rightButton = DataSource(0,1, rightBtnVal, rightBtnSubscribe);
     DataSource RemoteController::leftButton = DataSource(0,1, leftBtnVal, leftBtnSubscribe);

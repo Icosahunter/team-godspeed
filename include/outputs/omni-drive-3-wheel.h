@@ -1,5 +1,6 @@
 #pragma once
 #include "framework/data-sink-d.h"
+#include "outputs/output-utilities.h"
 #include "vex.h"
 #include <cmath>
 
@@ -8,6 +9,7 @@ namespace godspeed
   namespace outputs
   {
     using namespace framework;
+    using namespace outputUtilities;
     /**
     * \brief A class containing data sink objects corresponding to the drivetrain
     *
@@ -19,25 +21,30 @@ namespace godspeed
     {
       public:
         /**
+        * The data sink for the angular velocity of the drivetrain
+        *
+        * Positive values indicate Clockwise rotation of the robot
+        */
+        static DataSinkD angularVelocity;
+
+        /**
         * The data sink for the x velocity of the drivetrain
         *
         * Positive x faces to the right of the robot.
         */
-        static DataSinkD xDirection;
+        static DataSinkD xVelocity;
 
         /**
         * The data sink for the y velocity of the drivetrain
         *
         * Positive y faces toward the front of the robot.
         */
-        static DataSinkD yDirection;
+        static DataSinkD yVelocity;
 
       private:
         /// The function to be called when a connected data source changes value
         static void update();
 
-        /// Sets the speed of a motor
-        static void setMotorSpeed(double motorSpeed, motor &m);
-    };
-  }
-}
+    };// end OmniDrive3Wheel
+  }// end namespace outputs
+}// end namespace godspeed
