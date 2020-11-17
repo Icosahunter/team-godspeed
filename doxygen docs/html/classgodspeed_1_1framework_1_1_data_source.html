@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacegodspeed.html">godspeed</a></li><li class="navelem"><b>framework</b></li><li class="navelem"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html">DataSource</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacegodspeed.html">godspeed</a></li><li class="navelem"><a class="el" href="namespacegodspeed_1_1framework.html">framework</a></li><li class="navelem"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html">DataSource</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -97,6 +97,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a534b46eec7006c231c9127ab10d52652"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor. <br /></td></tr>
 <tr class="separator:a534b46eec7006c231c9127ab10d52652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bf8ff7c1dd0d9edd5e92483a2cef9e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html#a3bf8ff7c1dd0d9edd5e92483a2cef9e4">DataSource</a> (double min, double max, double(*valFunc)(void), void(*subscribeFunc)(void(*callback)(void)))</td></tr>
+<tr class="memdesc:a3bf8ff7c1dd0d9edd5e92483a2cef9e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary constructor, initializes all necessary values.  <a href="classgodspeed_1_1framework_1_1_data_source.html#a3bf8ff7c1dd0d9edd5e92483a2cef9e4">More...</a><br /></td></tr>
 <tr class="separator:a3bf8ff7c1dd0d9edd5e92483a2cef9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77f29db12d268563ec05a18a2d8e5805"><td class="memItemLeft" align="right" valign="top"><a id="a77f29db12d268563ec05a18a2d8e5805"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html#a77f29db12d268563ec05a18a2d8e5805">maxValue</a> ()</td></tr>
@@ -110,15 +111,20 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a479cd0aff6172d1707bf840dfd7b07c8"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html#a479cd0aff6172d1707bf840dfd7b07c8">rescale</a> (double desiredMin, double desiredMax, <a class="el" href="classgodspeed_1_1framework_1_1_data_source.html">DataSource</a> &amp;var)</td></tr>
+<tr class="memdesc:a479cd0aff6172d1707bf840dfd7b07c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescales a data source value to be within a new min and max.  <a href="classgodspeed_1_1framework_1_1_data_source.html#a479cd0aff6172d1707bf840dfd7b07c8">More...</a><br /></td></tr>
 <tr class="separator:a479cd0aff6172d1707bf840dfd7b07c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a541442dc25773e368a5f96292e4a0dcb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html#a541442dc25773e368a5f96292e4a0dcb">toBool</a> (<a class="el" href="classgodspeed_1_1framework_1_1_data_source.html">DataSource</a> &amp;var)</td></tr>
+<tr class="memdesc:a541442dc25773e368a5f96292e4a0dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the data from a data source to a boolean.  <a href="classgodspeed_1_1framework_1_1_data_source.html#a541442dc25773e368a5f96292e4a0dcb">More...</a><br /></td></tr>
 <tr class="separator:a541442dc25773e368a5f96292e4a0dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7ee1f041523081af26a3eb47cf95cadb"><td class="memItemLeft" align="right" valign="top">double(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html#a7ee1f041523081af26a3eb47cf95cadb">value</a> )(void)</td></tr>
+<tr class="memitem:a7ee1f041523081af26a3eb47cf95cadb"><td class="memItemLeft" align="right" valign="top"><a id="a7ee1f041523081af26a3eb47cf95cadb"></a>
+double(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html#a7ee1f041523081af26a3eb47cf95cadb">value</a> )(void)</td></tr>
+<tr class="memdesc:a7ee1f041523081af26a3eb47cf95cadb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value getter for the data source. <br /></td></tr>
 <tr class="separator:a7ee1f041523081af26a3eb47cf95cadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcbc19dec2c379541b14d4c304d880bb"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_data_source.html#afcbc19dec2c379541b14d4c304d880bb">subscribe</a> )(void(*callback)(void))</td></tr>
+<tr class="memdesc:afcbc19dec2c379541b14d4c304d880bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to subscribe to value changes of the source.  <a href="classgodspeed_1_1framework_1_1_data_source.html#afcbc19dec2c379541b14d4c304d880bb">More...</a><br /></td></tr>
 <tr class="separator:afcbc19dec2c379541b14d4c304d880bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -163,7 +169,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The primary constructor, initializes all necessary values</p>
+
+<p>The primary constructor, initializes all necessary values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">min</td><td>The minimum value the data source will ever output </td></tr>
@@ -216,7 +223,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Rescales a data source value to be within a new min and max</p>
+
+<p>Rescales a data source value to be within a new min and max. </p>
 <p>This is used convert the data of a data source object into a form that a data sink can receive. Specifically this is used by the <a class="el" href="classgodspeed_1_1framework_1_1_data_sink_d.html" title="An class representing a data sink of an output device or internal object.">DataSinkD</a> class.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -252,7 +260,8 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Converts the data from a data source to a boolean</p>
+
+<p>Converts the data from a data source to a boolean. </p>
 <p>This is used convert the data of a data source object into a form that a data sink can receive. Specifically this is used by the <a class="el" href="classgodspeed_1_1framework_1_1_data_sink_b.html" title="An class representing a data sink of an output device or internal object.">DataSinkB</a> class.</p>
 <p>Returns true if the value of the data source is greater than half way between it's min and max. Otherwise returns false.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -276,23 +285,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function to subscribe to value changes of the source</p>
+
+<p>Function to subscribe to value changes of the source. </p>
 <p>The subscribe attribute should contain a reference to a function that can receive an event handler and subscribe said handlers to value changes of the data source. This means that it can be used with any event framework that allows for handlers with no arguments or returns. </p>
-
-</div>
-</div>
-<a id="a7ee1f041523081af26a3eb47cf95cadb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ee1f041523081af26a3eb47cf95cadb">&#9670;&nbsp;</a></span>value</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double(* godspeed::framework::DataSource::value) (void)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The value getter for the data source </p>
 
 </div>
 </div>

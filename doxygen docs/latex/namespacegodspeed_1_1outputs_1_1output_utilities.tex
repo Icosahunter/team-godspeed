@@ -1,0 +1,29 @@
+\hypertarget{namespacegodspeed_1_1outputs_1_1output_utilities}{}\doxysection{godspeed\+::outputs\+::output\+Utilities Namespace Reference}
+\label{namespacegodspeed_1_1outputs_1_1output_utilities}\index{godspeed::outputs::outputUtilities@{godspeed::outputs::outputUtilities}}
+
+
+A namespace for utility functions used by output classes.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacegodspeed_1_1outputs_1_1output_utilities_a55b7a130bc02a82b8250d2ad72ac56ff}{set\+Motor\+Speed}} (double motor\+Speed, motor \&m)
+\begin{DoxyCompactList}\small\item\em Sets the speed of a motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A namespace for utility functions used by output classes. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacegodspeed_1_1outputs_1_1output_utilities_a55b7a130bc02a82b8250d2ad72ac56ff}\label{namespacegodspeed_1_1outputs_1_1output_utilities_a55b7a130bc02a82b8250d2ad72ac56ff}} 
+\index{godspeed::outputs::outputUtilities@{godspeed::outputs::outputUtilities}!setMotorSpeed@{setMotorSpeed}}
+\index{setMotorSpeed@{setMotorSpeed}!godspeed::outputs::outputUtilities@{godspeed::outputs::outputUtilities}}
+\doxysubsubsection{\texorpdfstring{setMotorSpeed()}{setMotorSpeed()}}
+{\footnotesize\ttfamily void godspeed\+::outputs\+::output\+Utilities\+::set\+Motor\+Speed (\begin{DoxyParamCaption}\item[{double}]{motor\+Speed,  }\item[{motor \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Sets the speed of a motor. 
+
+Takes a value -\/1 to 1 and sets the velocity appropriately. Has a \char`\"{}dead zone\char`\"{} of -\/0.\+1 to 0.\+1 which it treats as equal to zero (no movement) 

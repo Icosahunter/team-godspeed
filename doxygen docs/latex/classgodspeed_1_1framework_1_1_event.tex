@@ -26,11 +26,11 @@ Collaboration diagram for godspeed\+::framework\+::Event\+:
 \mbox{\hyperlink{classgodspeed_1_1framework_1_1_event_a49353812831fe766ea5fade74a9b7ecf}{Event}} ()
 \begin{DoxyCompactList}\small\item\em The constructor for the event class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classgodspeed_1_1framework_1_1_event_ad0b87541208726d90feebbbd38268849}{raise}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Calling this method signifies that the event happened. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classgodspeed_1_1framework_1_1_event}{Event}} \mbox{\hyperlink{classgodspeed_1_1framework_1_1_event_ac85a72e520ce693b39693a061946df07}{add\+Handler}} (void($\ast$handler)(void))
-\item 
+\begin{DoxyCompactList}\small\item\em Add an event handler to the event. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classgodspeed_1_1framework_1_1_event}{Event}} \mbox{\hyperlink{classgodspeed_1_1framework_1_1_event_ad45b72598c45c52aac9db0117899d31d}{remove\+Handler}} (void($\ast$handler)(void))
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Remove a handler from the event. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -47,7 +47,9 @@ It is the job of the object creating the event to raise the event when appropria
 \doxysubsubsection{\texorpdfstring{addHandler()}{addHandler()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classgodspeed_1_1framework_1_1_event}{Event}} godspeed\+::framework\+::\+Event\+::add\+Handler (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{handler }\end{DoxyParamCaption})}
 
-Add an event handler to the event
+
+
+Add an event handler to the event. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -60,7 +62,9 @@ Add an event handler to the event
 \doxysubsubsection{\texorpdfstring{raise()}{raise()}}
 {\footnotesize\ttfamily void godspeed\+::framework\+::\+Event\+::raise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Calling this method signifies that the event happened
+
+
+Calling this method signifies that the event happened. 
 
 When called this method will call every event handler that has been added to the event. \mbox{\Hypertarget{classgodspeed_1_1framework_1_1_event_ad45b72598c45c52aac9db0117899d31d}\label{classgodspeed_1_1framework_1_1_event_ad45b72598c45c52aac9db0117899d31d}} 
 \index{godspeed::framework::Event@{godspeed::framework::Event}!removeHandler@{removeHandler}}
@@ -68,7 +72,9 @@ When called this method will call every event handler that has been added to the
 \doxysubsubsection{\texorpdfstring{removeHandler()}{removeHandler()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classgodspeed_1_1framework_1_1_event}{Event}} godspeed\+::framework\+::\+Event\+::remove\+Handler (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{handler }\end{DoxyParamCaption})}
 
-Remove a handler from the event
+
+
+Remove a handler from the event. 
 
 To remove a handler you must have a reference to the original handler. Consequently this is usually only done by whatever object originally added the handler.
 

@@ -10,7 +10,6 @@ namespace godspeed
 
     void OmniDrive3Wheel::update()
     {
-//      double mag
       // Describes the direction and magnitude the robot needs to turn
       double angVel = 0.333 * angularVelocity.value();
       // Describes the velocity of the robot in the x direction (+x is to the right)

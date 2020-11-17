@@ -25,11 +25,11 @@ namespace godspeed
     class Event
     {
       public:
-        /// The constructor for the event class
+        /// \brief The constructor for the event class
         Event();
 
         /**
-        * Calling this method signifies that the event happened
+        * \brief Calling this method signifies that the event happened
         *
         * When called this method will call every event handler
         * that has been added to the event.
@@ -37,14 +37,14 @@ namespace godspeed
         void raise();
 
         /**
-        * Add an event handler to the event
+        * \brief Add an event handler to the event
         *
         * @param handler A function with no arguments or returns that will be called when the event happens
         */
         Event addHandler(void (*handler)(void));
 
         /**
-        * Remove a handler from the event
+        * \brief Remove a handler from the event
         *
         * To remove a handler you must have a reference to the original 
         * handler. Consequently this is usually only done by whatever 
@@ -55,7 +55,7 @@ namespace godspeed
         Event removeHandler(void (*handler)(void));
       
       private:
-        /// The list of event handlers that have been added to the event
+        /// \brief The list of event handlers that have been added to the event
         std::list <void (*)(void)> handlers_;
     };
   }

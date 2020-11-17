@@ -17,41 +17,41 @@ namespace godspeed
     class RemoteController
     {
       public:
-        /// A data source corresponding to the state of the up button
+        /// \brief A data source corresponding to the state of the up button
         static DataSource upButton;
-        /// A data source corresponding to the state of the down button
+        /// \brief A data source corresponding to the state of the down button
         static DataSource downButton;
-        /// A data source corresponding to the state of the right button
+        /// \brief A data source corresponding to the state of the right button
         static DataSource rightButton;
-        /// A data source corresponding to the state of the left button
+        /// \brief A data source corresponding to the state of the left button
         static DataSource leftButton;
 
 
-        /// A data source corresponding to the state of the X button
+        /// \brief A data source corresponding to the state of the X button
         static DataSource xButton;
-        /// A data source corresponding to the state of the Y button
+        /// \brief A data source corresponding to the state of the Y button
         static DataSource yButton;
-        /// A data source corresponding to the state of the A button
+        /// \brief A data source corresponding to the state of the A button
         static DataSource aButton;
-        /// A data source corresponding to the state of the B button
+        /// \brief A data source corresponding to the state of the B button
         static DataSource bButton;
 
-        /// A data source corresponding to the state of the right trigger (R1)
+        /// \brief A data source corresponding to the state of the right trigger (R1)
         static DataSource rightTrigger;
-        /// A data source corresponding to the state of the right bumper (R2)
+        /// \brief A data source corresponding to the state of the right bumper (R2)
         static DataSource rightBumper;
-        /// A data source corresponding to the state of the left trigger (L1)
+        /// \brief A data source corresponding to the state of the left trigger (L1)
         static DataSource leftTrigger;
-        /// A data source corresponding to the state of the left bumper (L2)
+        /// \brief A data source corresponding to the state of the left bumper (L2)
         static DataSource leftBumper;
 
-        /// A data source corresponding to the state of the left joy stick's X axis
+        /// \brief A data source corresponding to the state of the left joy stick's X axis
         static DataSource xLeftStick;
-        /// A data source corresponding to the state of the left joy stick's Y axis
+        /// \brief A data source corresponding to the state of the left joy stick's Y axis
         static DataSource yLeftStick;
-        /// A data source corresponding to the state of the right joy stick's X axis
+        /// \brief A data source corresponding to the state of the right joy stick's X axis
         static DataSource xRightStick;
-        /// A data source corresponding to the state of the right joy stick's Y axis
+        /// \brief A data source corresponding to the state of the right joy stick's Y axis
         static DataSource yRightStick;
 
       private:

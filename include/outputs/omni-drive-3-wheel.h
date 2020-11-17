@@ -21,21 +21,21 @@ namespace godspeed
     {
       public:
         /**
-        * The data sink for the angular velocity of the drivetrain
+        * \brief The data sink for the angular velocity of the drivetrain
         *
         * Positive values indicate Clockwise rotation of the robot
         */
         static DataSinkD angularVelocity;
 
         /**
-        * The data sink for the x velocity of the drivetrain
+        * \brief The data sink for the x velocity of the drivetrain
         *
         * Positive x faces to the right of the robot.
         */
         static DataSinkD xVelocity;
 
         /**
-        * The data sink for the y velocity of the drivetrain
+        * \brief The data sink for the y velocity of the drivetrain
         *
         * Positive y faces toward the front of the robot.
         */

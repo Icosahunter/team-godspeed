@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['inputs_15',['inputs',['../namespaceinputs.html',1,'']]],
-  ['isrunning_16',['isRunning',['../classgodspeed_1_1framework_1_1_active_object.html#a405b91c6891c75325fba60c59e9f11ea',1,'godspeed::framework::ActiveObject']]],
-  ['isrunning_5f_17',['isRunning_',['../classgodspeed_1_1framework_1_1_active_object.html#a7f2f3bbade64c6cd35118ece756bfbc6',1,'godspeed::framework::ActiveObject']]]
+  ['leftbumper_26',['leftBumper',['../classgodspeed_1_1inputs_1_1_remote_controller.html#ab6464022cf983f6ac057ec7f94c053bc',1,'godspeed::inputs::RemoteController']]],
+  ['leftbutton_27',['leftButton',['../classgodspeed_1_1inputs_1_1_remote_controller.html#a35f0afaba1cf94726b3895d580ad1d83',1,'godspeed::inputs::RemoteController']]],
+  ['lefttrigger_28',['leftTrigger',['../classgodspeed_1_1inputs_1_1_remote_controller.html#a513f801f15656531c3af320f49d961b2',1,'godspeed::inputs::RemoteController']]]
 ];

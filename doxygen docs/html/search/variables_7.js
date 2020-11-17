@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['source_5f_101',['source_',['../classgodspeed_1_1framework_1_1_data_sink.html#aeff5f62b62dabfb5e50f91c8385680d2',1,'godspeed::framework::DataSink']]],
-  ['subscribe_102',['subscribe',['../classgodspeed_1_1framework_1_1_data_source.html#afcbc19dec2c379541b14d4c304d880bb',1,'godspeed::framework::DataSource']]]
+  ['rightbumper_115',['rightBumper',['../classgodspeed_1_1inputs_1_1_remote_controller.html#a3deedc8bcf47ccacbeeb03e21c50be83',1,'godspeed::inputs::RemoteController']]],
+  ['rightbutton_116',['rightButton',['../classgodspeed_1_1inputs_1_1_remote_controller.html#aa0387f31a6b27d5d35414adf5134d78a',1,'godspeed::inputs::RemoteController']]],
+  ['righttrigger_117',['rightTrigger',['../classgodspeed_1_1inputs_1_1_remote_controller.html#a3b87d816a71045d5fef347425b318ca6',1,'godspeed::inputs::RemoteController']]]
 ];

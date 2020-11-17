@@ -16,17 +16,17 @@ namespace godspeed
     {
       public:
 
-        /// The default constructor
+        /// \brief The default constructor
         DataSinkB();
 
         /**
-        * The primary constructor
+        * \brief The primary constructor
         *
         * @param parentUpd A function to call whenever the value of the connected data source changes
         */
         DataSinkB(void (*parentUpd)(void));
 
-        /// The value of the attached data source converted to a boolean
+        /// \brief The value of the attached data source converted to a boolean
         bool value();
     };
   }

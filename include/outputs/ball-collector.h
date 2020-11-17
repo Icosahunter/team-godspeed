@@ -9,10 +9,20 @@ namespace godspeed
   {
     using namespace framework;
     using namespace outputUtilities;
-
+    /**
+    * \brief A class containing data sink objects corresponding to the ball collector
+    *
+    * This class contains a single data sink object that corresponds to
+    * both collector arm treads. Currently does not allow for reverse direction.
+    */
     class BallCollector
     {
       public:
+        /**
+        * The data sink for the velocity of the collector arm treads
+        *
+        * Does not allow for reverse direction
+        */
         static DataSinkD collectorVelocity;
 
       private:

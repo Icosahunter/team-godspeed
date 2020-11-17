@@ -23,9 +23,9 @@ Collaboration diagram for godspeed\+::framework\+::Active\+Object\+:
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a7c7e25c0f157804db91fdd2666a71534}{start}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Starts the active object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a83d2896211d4b40ca05e379773e81105}{stop}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Stops the active object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classgodspeed_1_1framework_1_1_active_object_a70ae16250832016f003274dcc30cbeab}\label{classgodspeed_1_1framework_1_1_active_object_a70ae16250832016f003274dcc30cbeab}} 
 int32\+\_\+t \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a70ae16250832016f003274dcc30cbeab}{thread\+ID}} ()
 \begin{DoxyCompactList}\small\item\em Gets the ID of the current thread. \end{DoxyCompactList}\item 
@@ -33,12 +33,12 @@ int32\+\_\+t \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a70ae
 bool \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a405b91c6891c75325fba60c59e9f11ea}{is\+Running}} ()
 \begin{DoxyCompactList}\small\item\em Returns true if the object is currently running. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a375e3374be886e2a84e64c5db0c41cca}{set\+Priority}} (int32\+\_\+t \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a1534ede3a22962227d0952a443ed603d}{priority}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the priority of the thread the object is running on. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classgodspeed_1_1framework_1_1_active_object_a1534ede3a22962227d0952a443ed603d}\label{classgodspeed_1_1framework_1_1_active_object_a1534ede3a22962227d0952a443ed603d}} 
 int32\+\_\+t \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a1534ede3a22962227d0952a443ed603d}{priority}} ()
 \begin{DoxyCompactList}\small\item\em Gets the priority of the thread the object is running on. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a7f8c8f2851c8429183d64b4edad2fc25}{update}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The update function that is looped while the object is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,7 +46,7 @@ virtual void \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a7f8c
 vex\+::thread \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a993fe73d7ba0d618df58d2384a610693}{thread\+\_\+}}
 \begin{DoxyCompactList}\small\item\em The thread that the object runs on. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a7f2f3bbade64c6cd35118ece756bfbc6}{is\+Running\+\_\+}} = false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The boolean used to control the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -61,7 +61,11 @@ Provides a framework for creating very simple active objects. Has a single threa
 \doxysubsubsection{\texorpdfstring{setPriority()}{setPriority()}}
 {\footnotesize\ttfamily void godspeed\+::framework\+::\+Active\+Object\+::set\+Priority (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{priority }\end{DoxyParamCaption})}
 
-Sets the priority of the thread the object is running on 
+
+
+Sets the priority of the thread the object is running on. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em priority} & The priority to set objects thread to \\
 \hline
@@ -72,7 +76,9 @@ Sets the priority of the thread the object is running on
 \doxysubsubsection{\texorpdfstring{start()}{start()}}
 {\footnotesize\ttfamily void godspeed\+::framework\+::\+Active\+Object\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Starts the active object
+
+
+Starts the active object. 
 
 Creates a new thread that loops through the update function, and starts it if the object is not already running. \mbox{\Hypertarget{classgodspeed_1_1framework_1_1_active_object_a83d2896211d4b40ca05e379773e81105}\label{classgodspeed_1_1framework_1_1_active_object_a83d2896211d4b40ca05e379773e81105}} 
 \index{godspeed::framework::ActiveObject@{godspeed::framework::ActiveObject}!stop@{stop}}
@@ -80,7 +86,9 @@ Creates a new thread that loops through the update function, and starts it if th
 \doxysubsubsection{\texorpdfstring{stop()}{stop()}}
 {\footnotesize\ttfamily void godspeed\+::framework\+::\+Active\+Object\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Stops the active object
+
+
+Stops the active object. 
 
 Kills the current thread the object is running on after it finishes the current loop through. \mbox{\Hypertarget{classgodspeed_1_1framework_1_1_active_object_a7f8c8f2851c8429183d64b4edad2fc25}\label{classgodspeed_1_1framework_1_1_active_object_a7f8c8f2851c8429183d64b4edad2fc25}} 
 \index{godspeed::framework::ActiveObject@{godspeed::framework::ActiveObject}!update@{update}}
@@ -88,7 +96,9 @@ Kills the current thread the object is running on after it finishes the current 
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void godspeed\+::framework\+::\+Active\+Object\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-The update function that is looped while the object is running
+
+
+The update function that is looped while the object is running. 
 
 Must be overrided in a derivitive class. Note that to stop the thread the update function or an external object must call the \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a83d2896211d4b40ca05e379773e81105}{stop()}} method. The update function will loop indefinitely if no stop is called. 
 
@@ -99,7 +109,9 @@ Must be overrided in a derivitive class. Note that to stop the thread the update
 \doxysubsubsection{\texorpdfstring{isRunning\_}{isRunning\_}}
 {\footnotesize\ttfamily bool godspeed\+::framework\+::\+Active\+Object\+::is\+Running\+\_\+ = false}
 
-The boolean used to control the thread
+
+
+The boolean used to control the thread. 
 
 This value is set to true when a thread starts and is set to false by the \mbox{\hyperlink{classgodspeed_1_1framework_1_1_active_object_a83d2896211d4b40ca05e379773e81105}{stop()}} method. This signals the object to stop executing when it reaches the end of it\textquotesingle{}s update function. 
 

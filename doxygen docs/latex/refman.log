@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.6)  6 NOV 2020 23:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.6)  16 NOV 2020 21:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,27 +897,48 @@ LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 
 ]
 Chapter 4.
-(./namespaceframework.tex
+(./namespacegodspeed.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 10.
-) (./namespacegodspeed.tex) (./namespaceinputs.tex)
-(./namespaceoutputs.tex) [7] [8
-
-]
-Chapter 5.
-(./classgodspeed_1_1framework_1_1_active_object.tex
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 10
+(Font)              scaled to size 10.79993pt on input line 8.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+) (./namespacegodspeed_1_1framework.tex
+LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+ [7]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 38.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 38
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) <./classgodspeed_1_1framework_1_1_active_object__coll__graph.pdf
+)
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 38.
+)
+(./namespacegodspeed_1_1inputs.tex) (./namespacegodspeed_1_1outputs.tex)
+(./namespacegodspeed_1_1outputs_1_1output_utilities.tex [8]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 23.
+) [9] [10
+
+]
+Chapter 5.
+(./classgodspeed_1_1framework_1_1_active_object.tex <./classgodspeed_1_1framewo
+rk_1_1_active_object__coll__graph.pdf
 
 pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1framework_1_1_active_obje
 ct__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in 
 a single page
 >
-<classgodspeed_1_1framework_1_1_active_object__coll__graph.pdf, id=424, 189.708
+<classgodspeed_1_1framework_1_1_active_object__coll__graph.pdf, id=552, 189.708
 76pt x 226.8475pt>
 File: classgodspeed_1_1framework_1_1_active_object__coll__graph.pdf Graphic fil
 e (type pdf)
@@ -925,25 +946,35 @@ e (type pdf)
 Package pdftex.def Info: classgodspeed_1_1framework_1_1_active_object__coll__gr
 aph.pdf  used on input line 19.
 (pdftex.def)             Requested size: 189.0pt x 226.00581pt.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 31.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 31.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 31.
- [9]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 62.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 62.
- [10]) (./classgodspeed_1_1framework_1_1_data_sink.tex <./classgodspeed_1_1fram
-ework_1_1_data_sink__inherit__graph.pdf
+ [11] [12]) (./classgodspeed_1_1outputs_1_1_ball_collector.tex <./classgodspeed
+_1_1outputs_1_1_ball_collector__coll__graph.pdf
 
-pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1framework_1_1_data_sink__
-inherit__graph.pdf): PDF inclusion: multiple pdfs with page group included in a
+pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1outputs_1_1_ball_collecto
+r__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a
  single page
 >
-<classgodspeed_1_1framework_1_1_data_sink__inherit__graph.pdf, id=472, 317.185p
+<classgodspeed_1_1outputs_1_1_ball_collector__coll__graph.pdf, id=596, 217.8137
+5pt x 610.28pt>
+File: classgodspeed_1_1outputs_1_1_ball_collector__coll__graph.pdf Graphic file
+ (type pdf)
+<use classgodspeed_1_1outputs_1_1_ball_collector__coll__graph.pdf>
+Package pdftex.def Info: classgodspeed_1_1outputs_1_1_ball_collector__coll__gra
+ph.pdf  used on input line 19.
+(pdftex.def)             Requested size: 196.3064pt x 550.0pt.
+ [13] [14]) (./classgodspeed_1_1outputs_1_1_ball_scorer.tex <./classgodspeed_1_
+1outputs_1_1_ball_scorer__coll__graph.pdf>
+<classgodspeed_1_1outputs_1_1_ball_scorer__coll__graph.pdf, id=621, 226.8475pt 
+x 621.32124pt>
+File: classgodspeed_1_1outputs_1_1_ball_scorer__coll__graph.pdf Graphic file (t
+ype pdf)
+<use classgodspeed_1_1outputs_1_1_ball_scorer__coll__graph.pdf>
+Package pdftex.def Info: classgodspeed_1_1outputs_1_1_ball_scorer__coll__graph.
+pdf  used on input line 19.
+(pdftex.def)             Requested size: 200.80675pt x 550.0pt.
+ [15] [16])
+(./classgodspeed_1_1framework_1_1_data_sink.tex <./classgodspeed_1_1framework_1
+_1_data_sink__inherit__graph.pdf>
+<classgodspeed_1_1framework_1_1_data_sink__inherit__graph.pdf, id=653, 317.185p
 t x 321.2pt>
 File: classgodspeed_1_1framework_1_1_data_sink__inherit__graph.pdf Graphic file
  (type pdf)
@@ -951,13 +982,13 @@ File: classgodspeed_1_1framework_1_1_data_sink__inherit__graph.pdf Graphic file
 Package pdftex.def Info: classgodspeed_1_1framework_1_1_data_sink__inherit__gra
 ph.pdf  used on input line 19.
 (pdftex.def)             Requested size: 316.0pt x 320.02785pt.
- [11] <./classgodspeed_1_1framework_1_1_data_sink__coll__graph.pdf
+ [17] <./classgodspeed_1_1framework_1_1_data_sink__coll__graph.pdf
 
 pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1framework_1_1_data_sink__
 coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a si
 ngle page
 >
-<classgodspeed_1_1framework_1_1_data_sink__coll__graph.pdf, id=484, 189.70876pt
+<classgodspeed_1_1framework_1_1_data_sink__coll__graph.pdf, id=665, 189.70876pt
  x 354.32375pt>
 File: classgodspeed_1_1framework_1_1_data_sink__coll__graph.pdf Graphic file (t
 ype pdf)
@@ -968,18 +999,15 @@ pdf  used on input line 29.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
-[13]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 68.
-) (./classgodspeed_1_1framework_1_1_data_sink_b.tex [14] <./classgodspeed_1_1fr
-amework_1_1_data_sink_b__inherit__graph.pdf
+ [18]
+[19]) (./classgodspeed_1_1framework_1_1_data_sink_b.tex [20] <./classgodspeed_1
+_1framework_1_1_data_sink_b__inherit__graph.pdf
 
 pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1framework_1_1_data_sink_b
 __inherit__graph.pdf): PDF inclusion: multiple pdfs with page group included in
  a single page
 >
-<classgodspeed_1_1framework_1_1_data_sink_b__inherit__graph.pdf, id=529, 189.70
+<classgodspeed_1_1framework_1_1_data_sink_b__inherit__graph.pdf, id=709, 189.70
 876pt x 310.15875pt>
 File: classgodspeed_1_1framework_1_1_data_sink_b__inherit__graph.pdf Graphic fi
 le (type pdf)
@@ -993,7 +1021,7 @@ pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1framework_1_1_data_sink_b
 __coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a 
 single page
 >
-<classgodspeed_1_1framework_1_1_data_sink_b__coll__graph.pdf, id=537, 189.70876
+<classgodspeed_1_1framework_1_1_data_sink_b__coll__graph.pdf, id=717, 189.70876
 pt x 482.80376pt>
 File: classgodspeed_1_1framework_1_1_data_sink_b__coll__graph.pdf Graphic file 
 (type pdf)
@@ -1004,10 +1032,10 @@ h.pdf  used on input line 29.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-[16]) (./classgodspeed_1_1framework_1_1_data_sink_d.tex <./classgodspeed_1_1fra
+ [21]
+[22]) (./classgodspeed_1_1framework_1_1_data_sink_d.tex <./classgodspeed_1_1fra
 mework_1_1_data_sink_d__inherit__graph.pdf>
-<classgodspeed_1_1framework_1_1_data_sink_d__inherit__graph.pdf, id=567, 189.70
+<classgodspeed_1_1framework_1_1_data_sink_d__inherit__graph.pdf, id=745, 189.70
 876pt x 321.2pt>
 File: classgodspeed_1_1framework_1_1_data_sink_d__inherit__graph.pdf Graphic fi
 le (type pdf)
@@ -1016,15 +1044,15 @@ Package pdftex.def Info: classgodspeed_1_1framework_1_1_data_sink_d__inherit__g
 raph.pdf  used on input line 19.
 (pdftex.def)             Requested size: 189.0pt x 320.00824pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2951) has occurred while \output is active []
 
- [17] <./classgodspeed_1_1framework_1_1_data_sink_d__coll__graph.pdf
+ [23] <./classgodspeed_1_1framework_1_1_data_sink_d__coll__graph.pdf
 
 pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1framework_1_1_data_sink_d
 __coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a 
 single page
 >
-<classgodspeed_1_1framework_1_1_data_sink_d__coll__graph.pdf, id=580, 189.70876
+<classgodspeed_1_1framework_1_1_data_sink_d__coll__graph.pdf, id=759, 189.70876
 pt x 493.845pt>
 File: classgodspeed_1_1framework_1_1_data_sink_d__coll__graph.pdf Graphic file 
 (type pdf)
@@ -1035,10 +1063,10 @@ h.pdf  used on input line 29.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
-[19]) (./classgodspeed_1_1framework_1_1_data_source.tex <./classgodspeed_1_1fra
+ [24]
+[25]) (./classgodspeed_1_1framework_1_1_data_source.tex <./classgodspeed_1_1fra
 mework_1_1_data_source__coll__graph.pdf>
-<classgodspeed_1_1framework_1_1_data_source__coll__graph.pdf, id=619, 189.70876
+<classgodspeed_1_1framework_1_1_data_source__coll__graph.pdf, id=796, 189.70876
 pt x 215.80624pt>
 File: classgodspeed_1_1framework_1_1_data_source__coll__graph.pdf Graphic file 
 (type pdf)
@@ -1046,7 +1074,7 @@ File: classgodspeed_1_1framework_1_1_data_source__coll__graph.pdf Graphic file
 Package pdftex.def Info: classgodspeed_1_1framework_1_1_data_source__coll__grap
 h.pdf  used on input line 19.
 (pdftex.def)             Requested size: 189.0pt x 215.00552pt.
- [20] [21] [22])
+ [26] [27] [28])
 (./classgodspeed_1_1framework_1_1_event.tex <./classgodspeed_1_1framework_1_1_e
 vent__coll__graph.pdf
 
@@ -1054,7 +1082,7 @@ pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1framework_1_1_event__coll
 __graph.pdf): PDF inclusion: multiple pdfs with page group included in a single
  page
 >
-<classgodspeed_1_1framework_1_1_event__coll__graph.pdf, id=674, 189.70876pt x 1
+<classgodspeed_1_1framework_1_1_event__coll__graph.pdf, id=853, 189.70876pt x 1
 82.6825pt>
 File: classgodspeed_1_1framework_1_1_event__coll__graph.pdf Graphic file (type 
 pdf)
@@ -1062,20 +1090,28 @@ pdf)
 Package pdftex.def Info: classgodspeed_1_1framework_1_1_event__coll__graph.pdf 
  used on input line 19.
 (pdftex.def)             Requested size: 189.0pt x 182.00467pt.
- [23] [24]) (./classgodspeed_1_1outputs_1_1_omni_drive3_wheel.tex <./classgodsp
-eed_1_1outputs_1_1_omni_drive3_wheel__coll__graph.pdf>
-<classgodspeed_1_1outputs_1_1_omni_drive3_wheel__coll__graph.pdf, id=706, 189.7
-0876pt x 621.32124pt>
+ [29] [30]) (./classgodspeed_1_1outputs_1_1_omni_drive3_wheel.tex <./classgodsp
+eed_1_1outputs_1_1_omni_drive3_wheel__coll__graph.pdf
+
+pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1outputs_1_1_omni_drive3_w
+heel__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included i
+n a single page
+>
+<classgodspeed_1_1outputs_1_1_omni_drive3_wheel__coll__graph.pdf, id=886, 211.7
+9124pt x 632.3625pt>
 File: classgodspeed_1_1outputs_1_1_omni_drive3_wheel__coll__graph.pdf Graphic f
 ile (type pdf)
 <use classgodspeed_1_1outputs_1_1_omni_drive3_wheel__coll__graph.pdf>
 Package pdftex.def Info: classgodspeed_1_1outputs_1_1_omni_drive3_wheel__coll__
 graph.pdf  used on input line 19.
-(pdftex.def)             Requested size: 167.9313pt x 550.0pt.
- [25] [26])
-(./classgodspeed_1_1inputs_1_1_path_script.tex <./classgodspeed_1_1inputs_1_1_p
-ath_script__coll__graph.pdf>
-<classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf, id=739, 223.83624pt 
+(pdftex.def)             Requested size: 184.21811pt x 550.0pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+[32]) (./classgodspeed_1_1inputs_1_1_path_script.tex <./classgodspeed_1_1inputs
+_1_1_path_script__coll__graph.pdf>
+<classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf, id=925, 223.83624pt 
 x 354.32375pt>
 File: classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf Graphic file (ty
 pe pdf)
@@ -1083,7 +1119,7 @@ pe pdf)
 Package pdftex.def Info: classgodspeed_1_1inputs_1_1_path_script__coll__graph.p
 df  used on input line 10.
 (pdftex.def)             Requested size: 223.0pt x 353.00908pt.
- [27])
+ [33])
 (./classgodspeed_1_1inputs_1_1_remote_controller.tex <./classgodspeed_1_1inputs
 _1_1_remote_controller__coll__graph.pdf
 
@@ -1091,7 +1127,7 @@ pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1inputs_1_1_remote_control
 ler__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in
  a single page
 >
-<classgodspeed_1_1inputs_1_1_remote_controller__coll__graph.pdf, id=754, 211.79
+<classgodspeed_1_1inputs_1_1_remote_controller__coll__graph.pdf, id=940, 211.79
 124pt x 497.86pt>
 File: classgodspeed_1_1inputs_1_1_remote_controller__coll__graph.pdf Graphic fi
 le (type pdf)
@@ -1099,27 +1135,22 @@ le (type pdf)
 Package pdftex.def Info: classgodspeed_1_1inputs_1_1_remote_controller__coll__g
 raph.pdf  used on input line 19.
 (pdftex.def)             Requested size: 211.0pt x 496.02037pt.
- [28] [29]
-LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
-(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 63.
-LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 63.
-) [30] (./refman.ind [31
+ [34] [35]) [36] (./refman.ind [37
 
 
 
 ]) (./refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 2C354396124B4299BC574BEED3C7A502;13375.
+(rerunfilecheck)             Checksum: F8C37BFBF2B469E3E92AE1C8F32C07DA;17028.
  ) 
 Here is how much of TeX's memory you used:
- 17073 strings out of 479485
- 261928 string characters out of 5875916
- 586878 words of memory out of 5000000
- 33530 multiletter control sequences out of 15000+600000
+ 17159 strings out of 479485
+ 265224 string characters out of 5875916
+ 591428 words of memory out of 5000000
+ 33569 multiletter control sequences out of 15000+600000
  592752 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,15n,115p,558b,639s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 107i,15n,115p,558b,594s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
@@ -1129,10 +1160,10 @@ c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><c:/texlive/2020/texmf-dist/fo
 nts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/h
 elvetic/uhvro8a.pfb>
-Output written on refman.pdf (35 pages, 368941 bytes).
+Output written on refman.pdf (41 pages, 426323 bytes).
 PDF statistics:
- 981 PDF objects out of 1000 (max. 8388607)
- 878 compressed objects within 9 object streams
- 206 named destinations out of 1000 (max. 500000)
- 573 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1193 PDF objects out of 1200 (max. 8388607)
+ 1075 compressed objects within 11 object streams
+ 247 named destinations out of 1000 (max. 500000)
+ 703 words of extra memory for PDF output out of 10000 (max. 10000000)
 

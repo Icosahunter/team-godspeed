@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ybutton_110',['yButton',['../classgodspeed_1_1inputs_1_1_remote_controller.html#a05856c6fe265375a3272fc472594a9dc',1,'godspeed::inputs::RemoteController']]],
-  ['ydirection_111',['yDirection',['../classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7366c5c5961a8321005651e255f7a935',1,'godspeed::outputs::OmniDrive3Wheel']]],
-  ['yleftstick_112',['yLeftStick',['../classgodspeed_1_1inputs_1_1_remote_controller.html#aebaab26c5d8c617fae05b324a2e08ca2',1,'godspeed::inputs::RemoteController']]],
-  ['yrightstick_113',['yRightStick',['../classgodspeed_1_1inputs_1_1_remote_controller.html#a2364bc7f4632a63d8cd3da9fa8937228',1,'godspeed::inputs::RemoteController']]]
+  ['xbutton_124',['xButton',['../classgodspeed_1_1inputs_1_1_remote_controller.html#a1e684e679692e87ae3ff2f20435fb316',1,'godspeed::inputs::RemoteController']]],
+  ['xleftstick_125',['xLeftStick',['../classgodspeed_1_1inputs_1_1_remote_controller.html#a82cea9358af40312ddaa895736dc1391',1,'godspeed::inputs::RemoteController']]],
+  ['xrightstick_126',['xRightStick',['../classgodspeed_1_1inputs_1_1_remote_controller.html#acc2c81eaabac7e22d5fb606c24119263',1,'godspeed::inputs::RemoteController']]],
+  ['xvelocity_127',['xVelocity',['../classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a9d96bb4b2e1aaa8847e34d3772ffdbbf',1,'godspeed::outputs::OmniDrive3Wheel']]]
 ];

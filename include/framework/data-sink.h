@@ -20,28 +20,28 @@ namespace godspeed
     class DataSink
     {
       public:
-        /// The default constructor
+        /// \brief The default constructor
         DataSink();
 
         /**
-        * The primary constructor
+        * \brief The primary constructor
         *
         * @param parentUpd A function to call whenever the value of the connected data source changes
         */
         DataSink(void (*parentUpd)(void));
 
         /**
-        * Connects this data sink to a data source object
+        * \brief Connects this data sink to a data source object
         *
         * @param dat the data source to connect to
         */
         void connect(DataSource &dat);
 
-        /// A reference to a function to call whenever the value of the connected data source changes
+        /// \brief A reference to a function to call whenever the value of the connected data source changes
         void (*parentUpdate)(void);
 
       protected:
-        /// A reference to the connected data source object
+        /// \brief A reference to the connected data source object
         DataSource* source_;
         
     };

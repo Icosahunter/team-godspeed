@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['maxvalue_21',['maxValue',['../classgodspeed_1_1framework_1_1_data_source.html#a77f29db12d268563ec05a18a2d8e5805',1,'godspeed::framework::DataSource']]],
-  ['minvalue_22',['minValue',['../classgodspeed_1_1framework_1_1_data_source.html#ad12af5d2ad18c8afafe1494b6aea139f',1,'godspeed::framework::DataSource']]]
+  ['omnidrive3wheel_31',['OmniDrive3Wheel',['../classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html',1,'godspeed::outputs']]]
 ];

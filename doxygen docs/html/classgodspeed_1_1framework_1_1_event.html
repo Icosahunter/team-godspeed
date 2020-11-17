@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacegodspeed.html">godspeed</a></li><li class="navelem"><b>framework</b></li><li class="navelem"><a class="el" href="classgodspeed_1_1framework_1_1_event.html">Event</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacegodspeed.html">godspeed</a></li><li class="navelem"><a class="el" href="namespacegodspeed_1_1framework.html">framework</a></li><li class="navelem"><a class="el" href="classgodspeed_1_1framework_1_1_event.html">Event</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -95,10 +95,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a49353812831fe766ea5fade74a9b7ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor for the event class. <br /></td></tr>
 <tr class="separator:a49353812831fe766ea5fade74a9b7ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0b87541208726d90feebbbd38268849"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_event.html#ad0b87541208726d90feebbbd38268849">raise</a> ()</td></tr>
+<tr class="memdesc:ad0b87541208726d90feebbbd38268849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling this method signifies that the event happened.  <a href="classgodspeed_1_1framework_1_1_event.html#ad0b87541208726d90feebbbd38268849">More...</a><br /></td></tr>
 <tr class="separator:ad0b87541208726d90feebbbd38268849"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac85a72e520ce693b39693a061946df07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgodspeed_1_1framework_1_1_event.html">Event</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_event.html#ac85a72e520ce693b39693a061946df07">addHandler</a> (void(*handler)(void))</td></tr>
+<tr class="memdesc:ac85a72e520ce693b39693a061946df07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an event handler to the event.  <a href="classgodspeed_1_1framework_1_1_event.html#ac85a72e520ce693b39693a061946df07">More...</a><br /></td></tr>
 <tr class="separator:ac85a72e520ce693b39693a061946df07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad45b72598c45c52aac9db0117899d31d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgodspeed_1_1framework_1_1_event.html">Event</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgodspeed_1_1framework_1_1_event.html#ad45b72598c45c52aac9db0117899d31d">removeHandler</a> (void(*handler)(void))</td></tr>
+<tr class="memdesc:ad45b72598c45c52aac9db0117899d31d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a handler from the event.  <a href="classgodspeed_1_1framework_1_1_event.html#ad45b72598c45c52aac9db0117899d31d">More...</a><br /></td></tr>
 <tr class="separator:ad45b72598c45c52aac9db0117899d31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -121,7 +124,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add an event handler to the event</p>
+
+<p>Add an event handler to the event. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handler</td><td>A function with no arguments or returns that will be called when the event happens </td></tr>
@@ -145,7 +149,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calling this method signifies that the event happened</p>
+
+<p>Calling this method signifies that the event happened. </p>
 <p>When called this method will call every event handler that has been added to the event. </p>
 
 </div>
@@ -165,7 +170,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Remove a handler from the event</p>
+
+<p>Remove a handler from the event. </p>
 <p>To remove a handler you must have a reference to the original handler. Consequently this is usually only done by whatever object originally added the handler.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

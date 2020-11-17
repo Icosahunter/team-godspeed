@@ -15,11 +15,11 @@ namespace godspeed
     class DataSinkD : public DataSink
     {
       public:
-        /// The default constructor
+        /// \brief The default constructor
         DataSinkD();
 
         /**
-        * The primary constructor
+        * \brief The primary constructor
         *
         * @param desMin The desired minimum for the value() function to return
         * @param desMax The desired maximum for the value() function to return
@@ -27,13 +27,13 @@ namespace godspeed
         */
         DataSinkD(double desMin, double desMax, void (*parentUpd)(void));
 
-        /// The scaled value of the attached data source
+        /// \brief The scaled value of the attached data source
         double value();
 
-        /// The desired minimum for the value() function to return
+        /// \brief The desired minimum for the value() function to return
         double desiredMin;
 
-        /// The desired maximum for the value() function to return
+        /// \brief The desired maximum for the value() function to return
         double desiredMax;
     };
   }

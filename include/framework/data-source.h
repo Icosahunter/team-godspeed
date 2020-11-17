@@ -20,11 +20,11 @@ namespace godspeed
     {
       public:
 
-        /// The default constructor
+        /// \brief The default constructor
         DataSource();
 
         /**
-        * The primary constructor, initializes all necessary values
+        * \brief The primary constructor, initializes all necessary values
         *
         * @param min The minimum value the data source will ever output
         * @param max The maximum value the data source will ever output
@@ -34,12 +34,12 @@ namespace godspeed
         DataSource(double min, double max, double (*valFunc)(void), void (*subscribeFunc)(void (*callback)(void)));
 
         /**
-        * The value getter for the data source
+        * \brief The value getter for the data source
         */
         double (*value)(void);
 
         /**
-        * Function to subscribe to value changes of the source
+        * \brief Function to subscribe to value changes of the source
         *
         * The subscribe attribute should contain a reference to a function 
         * that can receive an event handler and subscribe said handlers to 
@@ -49,14 +49,14 @@ namespace godspeed
         */
         void (*subscribe)(void (*callback)(void));
 
-        /// The maximum value the data source will have
+        /// \brief The maximum value the data source will have
         double maxValue();
 
-        /// The minimum value the data source will have
+        /// \brief The minimum value the data source will have
         double minValue();
 
         /**
-        * Rescales a data source value to be within a new min and max
+        * \brief Rescales a data source value to be within a new min and max
         * 
         * This is used convert the data of a data source object into
         * a form that a data sink can receive. Specifically this is
@@ -69,7 +69,7 @@ namespace godspeed
         static double rescale(double desiredMin, double desiredMax, DataSource &var);
 
         /**
-        * Converts the data from a data source to a boolean
+        * \brief Converts the data from a data source to a boolean
         *
         * This is used convert the data of a data source object into
         * a form that a data sink can receive. Specifically this is
@@ -85,10 +85,10 @@ namespace godspeed
 
       private:
 
-        /// The maximum value the data source will have
+        /// \brief The maximum value the data source will have
         double max_ = 0;
 
-        /// The minimum value the data source will have
+        /// \brief The minimum value the data source will have
         double min_ = 0;
     };
   }

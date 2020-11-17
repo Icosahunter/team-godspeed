@@ -73,36 +73,38 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;framework/data-sink-d.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;vex.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">namespace </span><a class="code" href="namespaceoutputs.html">outputs</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespaceframework.html">framework</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html">OmniDrive3Wheel</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#ad327885f425902a6d78c52095a38d8bf">   26</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classgodspeed_1_1framework_1_1_data_sink_d.html">DataSinkD</a> <a class="code" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#ad327885f425902a6d78c52095a38d8bf">xDirection</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7366c5c5961a8321005651e255f7a935">   33</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classgodspeed_1_1framework_1_1_data_sink_d.html">DataSinkD</a> <a class="code" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7366c5c5961a8321005651e255f7a935">yDirection</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> update();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> setMotorSpeed(<span class="keywordtype">double</span> motorSpeed, motor &amp;m);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    };</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;outputs/output-utilities.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;vex.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">namespace </span>outputs</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">using namespace </span>framework;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">using namespace </span>outputUtilities;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html">OmniDrive3Wheel</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#af59a7fcf1bce7aefa05da83e6301e63e">   28</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classgodspeed_1_1framework_1_1_data_sink_d.html">DataSinkD</a> <a class="code" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#af59a7fcf1bce7aefa05da83e6301e63e">angularVelocity</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a9d96bb4b2e1aaa8847e34d3772ffdbbf">   35</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classgodspeed_1_1framework_1_1_data_sink_d.html">DataSinkD</a> <a class="code" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a9d96bb4b2e1aaa8847e34d3772ffdbbf">xVelocity</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#adf4c466601b6f29acae22da2150c4ff7">   42</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classgodspeed_1_1framework_1_1_data_sink_d.html">DataSinkD</a> <a class="code" href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#adf4c466601b6f29acae22da2150c4ff7">yVelocity</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };<span class="comment">// end OmniDrive3Wheel</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }<span class="comment">// end namespace outputs</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}<span class="comment">// end namespace godspeed</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassgodspeed_1_1outputs_1_1_omni_drive3_wheel_html_adf4c466601b6f29acae22da2150c4ff7"><div class="ttname"><a href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#adf4c466601b6f29acae22da2150c4ff7">godspeed::outputs::OmniDrive3Wheel::yVelocity</a></div><div class="ttdeci">static DataSinkD yVelocity</div><div class="ttdoc">The data sink for the y velocity of the drivetrain.</div><div class="ttdef"><b>Definition:</b> omni-drive-3-wheel.h:42</div></div>
 <div class="ttc" id="aclassgodspeed_1_1framework_1_1_data_sink_d_html"><div class="ttname"><a href="classgodspeed_1_1framework_1_1_data_sink_d.html">godspeed::framework::DataSinkD</a></div><div class="ttdoc">An class representing a data sink of an output device or internal object.</div><div class="ttdef"><b>Definition:</b> data-sink-d.h:16</div></div>
 <div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> active-object.h:5</div></div>
-<div class="ttc" id="anamespaceframework_html"><div class="ttname"><a href="namespaceframework.html">framework</a></div><div class="ttdoc">Contains core classes used as building blocks for the rest of the project.</div></div>
-<div class="ttc" id="aclassgodspeed_1_1outputs_1_1_omni_drive3_wheel_html_ad327885f425902a6d78c52095a38d8bf"><div class="ttname"><a href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#ad327885f425902a6d78c52095a38d8bf">godspeed::outputs::OmniDrive3Wheel::xDirection</a></div><div class="ttdeci">static DataSinkD xDirection</div><div class="ttdef"><b>Definition:</b> omni-drive-3-wheel.h:26</div></div>
-<div class="ttc" id="anamespaceoutputs_html"><div class="ttname"><a href="namespaceoutputs.html">outputs</a></div><div class="ttdoc">Contains all classes for output devices.</div></div>
-<div class="ttc" id="aclassgodspeed_1_1outputs_1_1_omni_drive3_wheel_html"><div class="ttname"><a href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html">godspeed::outputs::OmniDrive3Wheel</a></div><div class="ttdoc">A class containing data sink objects corresponding to the drivetrain.</div><div class="ttdef"><b>Definition:</b> omni-drive-3-wheel.h:19</div></div>
-<div class="ttc" id="aclassgodspeed_1_1outputs_1_1_omni_drive3_wheel_html_a7366c5c5961a8321005651e255f7a935"><div class="ttname"><a href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7366c5c5961a8321005651e255f7a935">godspeed::outputs::OmniDrive3Wheel::yDirection</a></div><div class="ttdeci">static DataSinkD yDirection</div><div class="ttdef"><b>Definition:</b> omni-drive-3-wheel.h:33</div></div>
+<div class="ttc" id="aclassgodspeed_1_1outputs_1_1_omni_drive3_wheel_html_a9d96bb4b2e1aaa8847e34d3772ffdbbf"><div class="ttname"><a href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a9d96bb4b2e1aaa8847e34d3772ffdbbf">godspeed::outputs::OmniDrive3Wheel::xVelocity</a></div><div class="ttdeci">static DataSinkD xVelocity</div><div class="ttdoc">The data sink for the x velocity of the drivetrain.</div><div class="ttdef"><b>Definition:</b> omni-drive-3-wheel.h:35</div></div>
+<div class="ttc" id="aclassgodspeed_1_1outputs_1_1_omni_drive3_wheel_html"><div class="ttname"><a href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html">godspeed::outputs::OmniDrive3Wheel</a></div><div class="ttdoc">A class containing data sink objects corresponding to the drivetrain.</div><div class="ttdef"><b>Definition:</b> omni-drive-3-wheel.h:21</div></div>
+<div class="ttc" id="aclassgodspeed_1_1outputs_1_1_omni_drive3_wheel_html_af59a7fcf1bce7aefa05da83e6301e63e"><div class="ttname"><a href="classgodspeed_1_1outputs_1_1_omni_drive3_wheel.html#af59a7fcf1bce7aefa05da83e6301e63e">godspeed::outputs::OmniDrive3Wheel::angularVelocity</a></div><div class="ttdeci">static DataSinkD angularVelocity</div><div class="ttdoc">The data sink for the angular velocity of the drivetrain.</div><div class="ttdef"><b>Definition:</b> omni-drive-3-wheel.h:28</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
