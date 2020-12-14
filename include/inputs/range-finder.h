@@ -18,8 +18,6 @@ namespace godspeed
 
       private:
         static double distVal();
-
-        static void distSubscribe(void (*callback)(void));
     };
   }
 }
