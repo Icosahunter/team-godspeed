@@ -24,6 +24,7 @@ motor LeftCollectorMotor = motor(PORT4, ratio6_1, false);
 motor RightCollectorMotor = motor(PORT5, ratio6_1, true);
 motor ScorerMotor = motor(PORT7, ratio18_1, false);
 motor ballGuideMotor = motor(PORT8, ratio18_1, false);
+sonar RangeFinder1 = sonar(Brain.ThreeWirePort.B);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
