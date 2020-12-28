@@ -19,8 +19,8 @@ namespace godspeed
       private:
         static double ballStorageVal();
         static void ballStorageSubscribe(void (*callback)(void));
-        int bumpACount;
-        int bumpBCount;
+        int bumpACount = 0;
+        int bumpBCount = 0;
     };
   }
 }
