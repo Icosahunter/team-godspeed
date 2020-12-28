@@ -14,6 +14,7 @@ extern signature Vision20__SIG_6;
 extern signature Vision20__SIG_7;
 extern vision Vision20;
 extern bumper BumperA;
+extern bumper BumperB;
 extern controller Controller1;
 extern motor FrontRightMotor;
 extern motor FrontLeftMotor;
