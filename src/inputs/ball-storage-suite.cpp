@@ -4,22 +4,22 @@ namespace godspeed
 {
   namespace inputs
   {
-    DataSource BallStorage::ballStorage = DataSource(0, 4, ballStorageVal, ballStorageSubscribe);
+    DataSource BallStorage::ballsStored = DataSource(0,4, ballNumVal, ballNumSubscribe);
 
-
-    double BallStorage::ballStorageVal() {
-        if (BumperA.pressing())
-          bumpACount++;
-        if (BumperB.pressing())
-          bumpBCount++;
-
-        return (double)(bumpBCount-bumpACount); 
-        }
-     void BallStorage::ballStorageSubscribe(void (*callback)(void)) {
-        BumperA.pressed(void (*callback)(void));
-        BumperA.released(void (*callback)(void));
-        BumperB.pressed(void (*callback)(void));
-        BumperB.released(void (*callback)(void));
-        }
+    double BallStorage::ballNumVal(){
+        return ballCount;
+    }
+    void BallStorage::ballNumSubscribe(void (*callback)(void)){
+        BumperA.pressed(callback);
+        BumperB.pressed(callback);
+     }
+     void BallStorageUpdate::bumperBUpdate(void (*callback)(void)){
+      BumperB.released(callback);
+      BallStorage::ballCount--;
+     }
+     void BallStorageUpdate::bumperAUpdate(void (*callback)(void)){
+      BumperA.released(callback);
+      BallStorage::ballCount--;
+     }
   }
 }
