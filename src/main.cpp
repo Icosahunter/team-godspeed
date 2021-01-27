@@ -39,6 +39,7 @@
 #include "outputs/omni-drive-3-wheel.h"
 #include "outputs/ball-collector.h"
 #include "outputs/ball-scorer.h"
+#include "inputs/path-script.h"
 
 using namespace vex;
 using namespace godspeed;
@@ -55,15 +56,12 @@ void yay()
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  Brain.Screen.setCursor(1, 1);
-  Brain.Screen.print("Hey!");
-  OmniDrive3Wheel::xVelocity.connect(RemoteController::xLeftStick);
-  OmniDrive3Wheel::yVelocity.connect(RemoteController::yLeftStick);
-  OmniDrive3Wheel::angularVelocity.connect(RemoteController::xRightStick);
-  BallCollector::collectorVelocity.connect(RemoteController::leftTrigger);
-  BallScorer::scorerVelocity.connect(RemoteController::rightTrigger);
-  BallScorer::ballGuideExpander.connect(RemoteController::rightTrigger);
-  ballGuideMotor.resetPosition();
-  ballGuideMotor.spinToPosition(-270, degrees);
-
+  PathScript::addCommand(0, 0.5, 1000); //move forward at half speed for 1 second
+  PathScript::addCommand(-0.5, 0, 1000); //move left at half speed for 1 second
+  PathScript::addCommand(0, -0.5, 1000); //move backward at half speed for 1 second
+  PathScript::addCommand(0.5, 0, 1000); //move right at half speed for 1 second
+  OmniDrive3Wheel::xVelocity.connect(PathScript::xDirection);
+  OmniDrive3Wheel::yVelocity.connect(PathScript::yDirection);
+  PathScript::startTrigger.connect(RemoteController::aButton);
+  PathScript::abortTrigger.connect(RemoteController::bButton);
 }

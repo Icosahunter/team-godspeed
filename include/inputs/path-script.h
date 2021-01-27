@@ -30,6 +30,7 @@ namespace godspeed
         static DataSource yDirection;
         static DataSinkB startTrigger;
         static DataSinkB abortTrigger;
+        static void addCommand(double x, double y, double duration);
         static std::list<std::tuple<double, double, double>> path; //list of commands of form xdir, ydir, duration
         static bool loop;
         static std::list<std::tuple<double, double, double>>::iterator pathIndex;
