@@ -22,7 +22,7 @@ namespace godspeed
 
         static void bumperASubscribe(void (*callback)(void));
         static void bumperBSubscribe(void (*callback)(void));
-
+        
         static void ballNumSubscribe(void (*callback)(void));
     };
     /**
