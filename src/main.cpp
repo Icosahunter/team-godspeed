@@ -46,22 +46,20 @@ using namespace godspeed;
 using namespace inputs;
 using namespace outputs;
 
-void yay()
-{
-  Brain.Screen.print("yay!");
-  task::sleep(100);
-  Brain.Screen.clearScreen();
-}
-
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  PathScript::addCommand(0, 0.5, 1000); //move forward at half speed for 1 second
-  PathScript::addCommand(-0.5, 0, 1000); //move left at half speed for 1 second
-  PathScript::addCommand(0, -0.5, 1000); //move backward at half speed for 1 second
-  PathScript::addCommand(0.5, 0, 1000); //move right at half speed for 1 second
+  double v = 0.4;
+  int t = 2000;
+  // Warning! do not attempt to go slower than about 0.4, otherwise drivetrain may not respond as expected!!!
+  PathScript::addCommand(0, v, t); //move forward at half speed for 1 second
+  PathScript::addCommand(-v, 0, t); //move left at half speed for 1 second
+  PathScript::addCommand(0, -v, t); //move backward at half speed for 1 second
+  PathScript::addCommand(v, 0, t); //move right at half speed for 1 second
+  PathScript::addCommand(0, 0, t); //move right at half speed for 1 second
   OmniDrive3Wheel::xVelocity.connect(PathScript::xDirection);
   OmniDrive3Wheel::yVelocity.connect(PathScript::yDirection);
+  OmniDrive3Wheel::angularVelocity.connect(RemoteController::xRightStick);
   PathScript::startTrigger.connect(RemoteController::aButton);
   PathScript::abortTrigger.connect(RemoteController::bButton);
 }

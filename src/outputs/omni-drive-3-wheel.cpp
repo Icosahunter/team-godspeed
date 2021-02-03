@@ -13,7 +13,7 @@ namespace godspeed
       // Describes the direction and magnitude the robot needs to turn
       double angVel = 0.333 * angularVelocity.value();
       // Describes the velocity of the robot in the x direction (+x is to the right)
-      double x = xVelocity.value(); 
+      double x = xVelocity.value();
       // Describes the velocity of the robot in the y direction (+y is to the front)
       double y = yVelocity.value();
       // Calculate the angle between the x and y directional vectors to determine the direction the robot is to move
@@ -28,6 +28,7 @@ namespace godspeed
       double m3spd = mag*(2.0/3)*cos(ang + M_PI) + angVel; 
 
       // Print the X and Y coordinates of the controller's left joystick on the first line of the VEX Brain's screen
+      Brain.Screen.clearScreen();
       Brain.Screen.setCursor(1, 1);
       Brain.Screen.print(x);
       Brain.Screen.newLine();
@@ -35,8 +36,6 @@ namespace godspeed
       Brain.Screen.newLine();
       Brain.Screen.print(angVel);
       Brain.Screen.newLine();
-      task::sleep(100);
-      Brain.Screen.clearScreen();
 
       // Set the speed and direction of the motors so that when we turn them on, the robot moves in the desired direction (the direction the joystick is pointing)
 

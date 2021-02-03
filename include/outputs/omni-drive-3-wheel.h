@@ -41,7 +41,7 @@ namespace godspeed
         */
         static DataSinkD yVelocity;
 
-      private:
+      //private:
         /// The function to be called when a connected data source changes value
         static void update();
 
