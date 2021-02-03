@@ -5,6 +5,7 @@ namespace godspeed
   namespace inputs
   {
     DataSource BallStorage::ballsStored = DataSource(0,4, ballNumVal, ballNumSubscribe);
+    int BallStorage::ballCount = 0;
 
     double BallStorage::ballNumVal(){
         return ballCount;
@@ -12,14 +13,14 @@ namespace godspeed
     void BallStorage::ballNumSubscribe(void (*callback)(void)){
         BumperA.pressed(callback);
         BumperB.pressed(callback);
-     }
-     void BallStorageUpdate::bumperBUpdate(void (*callback)(void)){
+    }
+    void BallStorageUpdate::bumperBUpdate(void (*callback)(void)){
       BumperB.released(callback);
       BallStorage::ballCount--;
-     }
-     void BallStorageUpdate::bumperAUpdate(void (*callback)(void)){
+    }
+    void BallStorageUpdate::bumperAUpdate(void (*callback)(void)){
       BumperA.released(callback);
       BallStorage::ballCount--;
-     }
+    }
   }
 }

@@ -34,6 +34,7 @@ namespace godspeed
         static std::list<std::tuple<double, double, double>> path; //list of commands of form xdir, ydir, duration
         static bool loop;
         static std::list<std::tuple<double, double, double>>::iterator pathIndex;
+        static void init();
     };
   }
 }

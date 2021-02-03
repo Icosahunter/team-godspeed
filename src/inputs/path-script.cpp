@@ -5,6 +5,17 @@ namespace godspeed
   namespace inputs
   {
 
+    DataSource PathScript::xDirection = DataSource(-1, 1, xDirVal, xSubscribe);
+    DataSource PathScript::yDirection = DataSource(-1, 1, yDirVal, ySubscribe);
+    DataSinkB PathScript::startTrigger = DataSinkB(start);
+    DataSinkB PathScript::abortTrigger = DataSinkB(abort);
+    std::list<std::tuple<double, double, double>> PathScript::path = std::list<std::tuple<double, double, double>>();
+    bool PathScript::loop = false;
+    std::list<std::tuple<double, double, double>>::iterator PathScript::pathIndex = path.begin();
+    void (*PathScript::xCallback)(void);
+    void (*PathScript::yCallback)(void);
+    bool PathScript::abortPath = false;
+
     double PathScript::xDirVal()
     {
       return std::get<0>(*pathIndex);
@@ -76,13 +87,5 @@ namespace godspeed
     {
       path.push_back(std::tuple<double, double, double>(x, y, duration));
     }
-
-    DataSource PathScript::xDirection = DataSource(-1, 1, xDirVal, xSubscribe);
-    DataSource PathScript::yDirection = DataSource(-1, 1, yDirVal, ySubscribe);
-    DataSinkB PathScript::startTrigger = DataSinkB(start);
-    DataSinkB PathScript::abortTrigger = DataSinkB(abort);
-    std::list<std::tuple<double, double, double>> PathScript::path;
-    bool PathScript::loop;
-    std::list<std::tuple<double, double, double>>::iterator PathScript::pathIndex = path.begin();
   }
 }
