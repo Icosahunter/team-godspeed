@@ -1,12 +1,13 @@
 #pragma once
 #include "vex.h"
+#include <cmath>
 
 namespace godspeed
 {
   namespace outputs
   {
     /// \brief A namespace for utility functions used by output classes
-    namespace outputUtilities
+    namespace OutputUtilities
     {
         /** 
         * \brief Sets the speed of a motor
@@ -15,8 +16,25 @@ namespace godspeed
         * appropriately. Has a "dead zone" of -0.1 to 0.1
         * which it treats as equal to zero (no movement)
         */
-        void setMotorSpeed(double motorSpeed, motor &m);
+      void setMotorSpeed(double motorSpeed, motor &m)
+      {
+        // if motor speed is out of bounds, set to nearest boundary value
+        if (std::abs(motorSpeed) > 1)
+        {
+          m.setVelocity(100, percentUnits::pct);
+          m.spin(forward);
+        }
+        // if motor speed is out of bounds, set to nearest boundary value
+        else if (std::abs(motorSpeed) > 0.1)
+        {
+          m.setVelocity(100*motorSpeed, percentUnits::pct);
+          m.spin(forward);
+        }
+        else
+        {
+          m.stop();
+        }
+      }
     }
-
-  }// end namespace outputs
-}// end namespace godspeed
+  }
+}

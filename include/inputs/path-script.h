@@ -1,4 +1,4 @@
-#pragma once
+/* #pragma once
 #include "framework/data-source.h"
 #include "framework/data-sink-b.h"
 #include <list>
@@ -37,4 +37,4 @@ namespace godspeed
         static void init();
     };
   }
-}
+} */

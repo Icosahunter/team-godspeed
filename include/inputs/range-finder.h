@@ -1,24 +1,13 @@
 #pragma once
-#include "framework/data-source.h"
+#include "vex.h"
 
 namespace godspeed
 {
   namespace inputs
   {
-    using namespace framework;
-
-    /**
-    * \brief A class containing data source objects corresponding to range finder inputs
-    */
-    class RangeFinder
+    namespace rangefinders
     {
-      public:
-        /// \brief A data source corresponding to the distance measured
-        static DataSource distance;
-
-      private:
-        static double distVal();
-        static void distValSubscribe(void (*callback)(void));
-    };
+      double RangeFinder() { return (double)RangeFinder1.distance(mm); }
+    }
   }
 }
