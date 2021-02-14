@@ -1,6 +1,0 @@
-<map id="godspeed::outputs::OmniDrive3Wheel" name="godspeed::outputs::OmniDrive3Wheel">
-<area shape="rect" id="node1" title="A class containing data sink objects corresponding to the drivetrain." alt="" coords="9,647,147,739"/>
-<area shape="rect" id="node2" href="$classgodspeed_1_1framework_1_1_data_sink_d.html" title="An class representing a data sink of an output device or internal object." alt="" coords="5,419,151,555"/>
-<area shape="rect" id="node3" href="$classgodspeed_1_1framework_1_1_data_sink.html" title="An class representing a data sink of an output device or internal object." alt="" coords="5,248,151,369"/>
-<area shape="rect" id="node4" href="$classgodspeed_1_1framework_1_1_data_source.html" title="An class representing a data source of an input device or internal object." alt="" coords="5,5,151,185"/>
-</map>

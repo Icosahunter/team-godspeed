@@ -7,14 +7,21 @@ namespace godspeed
 {
   namespace outputs
   {
+    /// \brief A namespace with functions for controlling the drive train
     namespace OmniDrive3Wheel
     {
       using namespace OutputUtilities;
       
+      /// \brief A variable to track the current desired x-speed
       double XSpeedVar;
+
+      /// \brief A variable to track the current desired y-speed
       double YSpeedVar;
+
+      /// \brief A variable to track the current desired angular speed
       double AngleSpeedVar;
 
+      /// \brief Set the X, Y, and angular velocities of the drivetrain
       void SetVelocity(double x, double y, double a)
       {
         XSpeedVar = x;
@@ -50,16 +57,19 @@ namespace godspeed
         setMotorSpeed(m3spd, BackMotor);
       }
 
+      /// \brief Sets the x-speed of the drivetrain
       void XSpeed(double x)
       {
         SetVelocity(x, YSpeedVar, AngleSpeedVar);
       }
 
+      /// \brief Sets the y-speed of the drivetrain
       void YSpeed(double y)
       {
         SetVelocity(XSpeedVar, y, AngleSpeedVar);
       }
 
+      /// \brief Sets the angular speed of the drivetrain
       void AngleSpeed(double a)
       {
         SetVelocity(XSpeedVar, YSpeedVar, a);

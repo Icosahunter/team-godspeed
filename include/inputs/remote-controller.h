@@ -5,6 +5,7 @@ namespace godspeed
 {
   namespace inputs
   {
+    /// \brief A namespace containing functions for accessing all remote controller inputs.
     namespace RemoteController
     {
       double UpButton() { return (double)Controller1.ButtonUp.pressing(); }

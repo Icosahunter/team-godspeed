@@ -15,11 +15,13 @@ namespace godspeed
     */
     namespace BallScorer
     {
+      /// \brief Sets the speed of the center tread
       void TreadSpeed(double speed)
       {
         setMotorSpeed(speed, ScorerMotor);
       }
 
+      /// \brief Sets the angular position of the motor that extends the ball guide
       void ExpanderPosition(double angleDeg)
       {
         ballGuideMotor.resetPosition();

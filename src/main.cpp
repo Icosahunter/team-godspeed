@@ -35,6 +35,8 @@
 */
 
 #include "vex.h"
+#include "inputs/path-script.h"
+#include "inputs/ball-storage-suite.h"
 #include "inputs/remote-controller.h"
 #include "outputs/omni-drive-3-wheel.h"
 #include "outputs/ball-collector.h"
@@ -48,9 +50,13 @@ using namespace inputs;
 using namespace outputs;
 
 int main() {
-  // Initializing Robot Configuration. DO NOT REMOVE!
-  vexcodeInit();
-  Binder::Init();
-  Binder::Bind(RemoteController::LeftStickX, OmniDrive3Wheel::XSpeed);
-  Binder::Bind(RemoteController::LeftStickY, OmniDrive3Wheel::YSpeed);
+  // Initializations
+  vexcodeInit();        //Vex initialization
+  Binder::Init();       //Binder initialization
+  BallStorage::Init();  //Ball storage suite initialization
+
+  //Bindings
+  Binder::Bind(RemoteController::LeftStickX, OmniDrive3Wheel::XSpeed); //Bind the left sticks X position to the drivetrains x-speed
+  Binder::Bind(RemoteController::LeftStickY, OmniDrive3Wheel::YSpeed); //Bind the left sticks Y position to the drivetrains y-speed
+  OmniDrive3Wheel::AngleSpeedVar = 0;                                  //Set angular speed to 0
 }

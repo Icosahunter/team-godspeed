@@ -15,6 +15,7 @@ namespace godspeed
     */
     namespace BallCollector
     {
+      /// \brief Sets the speed of the two collector treads
       void TreadSpeed(double speed)
       {
         setMotorSpeed(speed, LeftCollectorMotor);
