@@ -11,8 +11,15 @@ namespace godspeed
     {
       using namespace OutputUtilities;
       
+      double XSpeedVar;
+      double YSpeedVar;
+      double AngleSpeedVar;
+
       void SetVelocity(double x, double y, double a)
       {
+        XSpeedVar = x;
+        YSpeedVar = y;
+        AngleSpeedVar = a;
         // Describes the direction and magnitude the robot needs to turn
         double angVel = 0.333 * a;
         // Calculate the angle between the x and y directional vectors to determine the direction the robot is to move
@@ -41,6 +48,21 @@ namespace godspeed
         setMotorSpeed(m1spd, FrontRightMotor);
         setMotorSpeed(m2spd, FrontLeftMotor);
         setMotorSpeed(m3spd, BackMotor);
+      }
+
+      void XSpeed(double x)
+      {
+        SetVelocity(x, YSpeedVar, AngleSpeedVar);
+      }
+
+      void YSpeed(double y)
+      {
+        SetVelocity(XSpeedVar, y, AngleSpeedVar);
+      }
+
+      void AngleSpeed(double a)
+      {
+        SetVelocity(XSpeedVar, YSpeedVar, a);
       }
     }
   }

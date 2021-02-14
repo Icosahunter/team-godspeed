@@ -40,6 +40,7 @@
 #include "outputs/ball-collector.h"
 #include "outputs/ball-scorer.h"
 #include "inputs/path-script.h"
+#include "framework/binder.h"
 
 using namespace vex;
 using namespace godspeed;
@@ -49,4 +50,7 @@ using namespace outputs;
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
+  Binder::Init();
+  Binder::Bind(RemoteController::LeftStickX, OmniDrive3Wheel::XSpeed);
+  Binder::Bind(RemoteController::LeftStickY, OmniDrive3Wheel::YSpeed);
 }

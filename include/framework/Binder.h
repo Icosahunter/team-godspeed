@@ -10,6 +10,11 @@ namespace godspeed
   {
     std::list<BINDING_TUPLE> bindings = std::list<BINDING_TUPLE>();
 
+    void Init()
+    {
+      thread(Update);
+    }
+
     int Bind(double(*source)(void), void(*sink)(double))
     {
       int id = bindings.size();

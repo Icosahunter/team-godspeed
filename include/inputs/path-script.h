@@ -1,40 +1,84 @@
-/* #pragma once
-#include "framework/data-source.h"
-#include "framework/data-sink-b.h"
+#pragma once
+#include "vex.h"
 #include <list>
 #include <tuple>
+#define COMMAND_TUPLE std::tuple<double, double, double, double>
 
 namespace godspeed
 {
   namespace inputs
   {
-    using namespace framework;
-
     class PathScript
     {
-      private:
-        static double xDirVal();
-        static double yDirVal();
-        static double durVal();
-        static void (*xCallback)(void);
-        static void (*yCallback)(void);
-        static void xSubscribe(void (*callback)(void));
-        static void ySubscribe(void (*callback)(void));
-        static void update();
-        static bool abortPath;
-        static void start();
-        static void abort();
-
       public:
-        static DataSource xDirection;
-        static DataSource yDirection;
-        static DataSinkB startTrigger;
-        static DataSinkB abortTrigger;
-        static void addCommand(double x, double y, double duration);
-        static std::list<std::tuple<double, double, double>> path; //list of commands of form xdir, ydir, duration
-        static bool loop;
-        static std::list<std::tuple<double, double, double>>::iterator pathIndex;
-        static void init();
+        double static X() { return xVar; }
+        double static Y() { return yVar; }
+        double static Angle() { return angleVar; }
+
+        std::list<COMMAND_TUPLE> path; //list of commands of form x-speed, y-speed, angle-speed, duration
+        bool loop;
+
+        void static ExecutePath(PathScript &path)
+        {
+          abortPath = false;
+          currentPath = &path;
+          pathIndex = path.path.begin();
+          update();
+        }
+
+        void static Abort()
+        {
+          abortPath = true;
+        }
+
+        void AddCommand(double x, double y, double a, double duration)
+        {
+          path.push_back(COMMAND_TUPLE(x, y, a, duration));
+        }
+
+      private:
+
+        double static xVar;
+        double static yVar;
+        double static angleVar;
+
+        bool static abortPath;
+        PathScript static *currentPath;
+        std::list<COMMAND_TUPLE>::iterator static pathIndex;
+
+        static void update()
+        {
+          if (!abortPath)
+          {
+            if (pathIndex != currentPath->path.end())
+            {
+              updateVars();
+              pathIndex++;
+              timer::event(update, durVal());
+            }
+            else
+            {
+              updateVars();
+              if (currentPath->loop)
+              {
+                pathIndex = currentPath->path.begin();
+                timer::event(update, durVal());
+              }
+            }
+          }
+        }
+
+        double static durVal()
+        {
+          return std::get<3>(*pathIndex);
+        }
+
+        void static updateVars()
+        {
+          xVar = std::get<0>(*pathIndex);
+          yVar = std::get<1>(*pathIndex);
+          angleVar = std::get<2>(*pathIndex);
+        }
     };
   }
-} */
+}
