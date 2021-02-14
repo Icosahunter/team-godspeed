@@ -1,0 +1,23 @@
+\begin{theindex}
+
+  \item {godspeed}, \hyperpage{5}
+  \item {godspeed::Binder}, \hyperpage{5}
+  \item {godspeed::framework}, \hyperpage{6}
+  \item {godspeed::inputs}, \hyperpage{6}
+  \item {godspeed::inputs::BallStorage}, \hyperpage{7}
+  \item {godspeed::inputs::PathScript}, \hyperpage{11}
+  \item {godspeed::inputs::RangeFinderSuite}, \hyperpage{7}
+  \item {godspeed::inputs::RemoteController}, \hyperpage{8}
+  \item {godspeed::outputs}, \hyperpage{8}
+  \item {godspeed::outputs::BallCollector}, \hyperpage{9}
+  \item {godspeed::outputs::BallScorer}, \hyperpage{9}
+  \item {godspeed::outputs::OmniDrive3Wheel}, \hyperpage{9}
+  \item {godspeed::outputs::OutputUtilities}, \hyperpage{10}
+    \subitem {setMotorSpeed}, \hyperpage{10}
+
+  \indexspace
+
+  \item {setMotorSpeed}
+    \subitem {godspeed::outputs::OutputUtilities}, \hyperpage{10}
+
+\end{theindex}

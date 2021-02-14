@@ -1,0 +1,43 @@
+\hypertarget{namespacegodspeed_1_1_binder}{}\doxysection{godspeed\+::Binder Namespace Reference}
+\label{namespacegodspeed_1_1_binder}\index{godspeed::Binder@{godspeed::Binder}}
+
+
+A namespace containing functions for binding value producing functions to value consuming functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_binder_a0671b5d3b95e93336d65f6a5f1f8eb24}\label{namespacegodspeed_1_1_binder_a0671b5d3b95e93336d65f6a5f1f8eb24}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_binder_a0671b5d3b95e93336d65f6a5f1f8eb24}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Runs the binder update function on it\textquotesingle{}s own thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_binder_a8825303e055e32f433d9c6a4bbedad3d}\label{namespacegodspeed_1_1_binder_a8825303e055e32f433d9c6a4bbedad3d}} 
+int \mbox{\hyperlink{namespacegodspeed_1_1_binder_a8825303e055e32f433d9c6a4bbedad3d}{Bind}} (double($\ast$source)(void), void($\ast$sink)(double))
+\begin{DoxyCompactList}\small\item\em Bind a source function to a sink function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_binder_a9822b28b429e5c491f2b507cd01f79f0}\label{namespacegodspeed_1_1_binder_a9822b28b429e5c491f2b507cd01f79f0}} 
+int \mbox{\hyperlink{namespacegodspeed_1_1_binder_a9822b28b429e5c491f2b507cd01f79f0}{Bind}} (double($\ast$source)(void), double($\ast$pipe)(double), void($\ast$sink)(double))
+\begin{DoxyCompactList}\small\item\em Bind a source function to a sink function through a pipe function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_binder_afc7b6e9156efbd0a10daacdfe5baf24a}\label{namespacegodspeed_1_1_binder_afc7b6e9156efbd0a10daacdfe5baf24a}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_binder_afc7b6e9156efbd0a10daacdfe5baf24a}{Disable\+Binding}} (int id)
+\begin{DoxyCompactList}\small\item\em Disable a binding using the bindings ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_binder_a8f2209da8a87022bceb83bb866ea2f0f}\label{namespacegodspeed_1_1_binder_a8f2209da8a87022bceb83bb866ea2f0f}} 
+bool \mbox{\hyperlink{namespacegodspeed_1_1_binder_a8f2209da8a87022bceb83bb866ea2f0f}{Is\+Disabled}} (int id)
+\begin{DoxyCompactList}\small\item\em Check if a binding is disabled using the bindings ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_binder_a79f5a8343cf616de56f4e43fd8b462b1}\label{namespacegodspeed_1_1_binder_a79f5a8343cf616de56f4e43fd8b462b1}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_binder_a79f5a8343cf616de56f4e43fd8b462b1}{Update}} ()
+\begin{DoxyCompactList}\small\item\em calls all bindings that are not disabled. This does N\+OT need to be called manually. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_binder_a73f2e477ce2f5866f5c43ee07511b9f2}\label{namespacegodspeed_1_1_binder_a73f2e477ce2f5866f5c43ee07511b9f2}} 
+std\+::list$<$ B\+I\+N\+D\+I\+N\+G\+\_\+\+T\+U\+P\+LE $>$ \mbox{\hyperlink{namespacegodspeed_1_1_binder_a73f2e477ce2f5866f5c43ee07511b9f2}{bindings}} = std\+::list$<$B\+I\+N\+D\+I\+N\+G\+\_\+\+T\+U\+P\+LE$>$()
+\begin{DoxyCompactList}\small\item\em A list of tuples. Each tuple represents a binding. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_binder_a96b60b0d992582ddbae6be06fa7c3044}\label{namespacegodspeed_1_1_binder_a96b60b0d992582ddbae6be06fa7c3044}} 
+std\+::list$<$ int $>$ \mbox{\hyperlink{namespacegodspeed_1_1_binder_a96b60b0d992582ddbae6be06fa7c3044}{disabled}} = std\+::list$<$int$>$()
+\begin{DoxyCompactList}\small\item\em A list of disabled binding I\+Ds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A namespace containing functions for binding value producing functions to value consuming functions. 
+
+There are 3 types of functions considered here, source functions which take no values and return a double, pipe functions which take a double and return a double, and sink functions which take a double and return nothing. The Bind function allows you to bind the output of a source function to a sink function (optionally through a pipe function). Then, once the \mbox{\hyperlink{namespacegodspeed_1_1_binder}{Binder}} is initialized, it will go through and repeatedly call the sink functions with the value produced by the source functions as the input. 

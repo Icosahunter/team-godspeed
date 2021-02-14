@@ -1,0 +1,64 @@
+\hypertarget{classgodspeed_1_1inputs_1_1_path_script}{}\doxysection{godspeed\+::inputs\+::Path\+Script Class Reference}
+\label{classgodspeed_1_1inputs_1_1_path_script}\index{godspeed::inputs::PathScript@{godspeed::inputs::PathScript}}
+
+
+A class for creating scripted paths for the robot to take.  
+
+
+
+
+{\ttfamily \#include $<$path-\/script.\+h$>$}
+
+
+
+Collaboration diagram for godspeed\+::inputs\+::Path\+Script\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classgodspeed_1_1inputs_1_1_path_script__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1inputs_1_1_path_script_a12c255f38221eeec6977de5306eed5fa}\label{classgodspeed_1_1inputs_1_1_path_script_a12c255f38221eeec6977de5306eed5fa}} 
+void \mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script_a12c255f38221eeec6977de5306eed5fa}{Add\+Command}} (double x, double y, double a, double duration)
+\begin{DoxyCompactList}\small\item\em Adds a command to the path script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1inputs_1_1_path_script_a47ecda621204f39f7f36c4c5c369977b}\label{classgodspeed_1_1inputs_1_1_path_script_a47ecda621204f39f7f36c4c5c369977b}} 
+static double {\bfseries X} ()
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1inputs_1_1_path_script_abf265a2f34a290ac5e6a0e8d38211b60}\label{classgodspeed_1_1inputs_1_1_path_script_abf265a2f34a290ac5e6a0e8d38211b60}} 
+static double {\bfseries Y} ()
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1inputs_1_1_path_script_a571e6284a78c54ce6d6e4b89a38d78d7}\label{classgodspeed_1_1inputs_1_1_path_script_a571e6284a78c54ce6d6e4b89a38d78d7}} 
+static double {\bfseries Angle} ()
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1inputs_1_1_path_script_a36654438dc378f3d4da91520808c69f4}\label{classgodspeed_1_1inputs_1_1_path_script_a36654438dc378f3d4da91520808c69f4}} 
+static void \mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script_a36654438dc378f3d4da91520808c69f4}{Execute\+Path}} (\mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script}{Path\+Script}} \&\mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script_ab533f2943af44f760c846796a7fb1a26}{path}})
+\begin{DoxyCompactList}\small\item\em Starts execution of the given path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgodspeed_1_1inputs_1_1_path_script_a04c090587579b2f1e16a392e91286ce2}\label{classgodspeed_1_1inputs_1_1_path_script_a04c090587579b2f1e16a392e91286ce2}} 
+static void \mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script_a04c090587579b2f1e16a392e91286ce2}{Abort}} ()
+\begin{DoxyCompactList}\small\item\em Flags the current path to stop execution once the current update cycle is finished. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1inputs_1_1_path_script_ab533f2943af44f760c846796a7fb1a26}\label{classgodspeed_1_1inputs_1_1_path_script_ab533f2943af44f760c846796a7fb1a26}} 
+std\+::list$<$ C\+O\+M\+M\+A\+N\+D\+\_\+\+T\+U\+P\+LE $>$ \mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script_ab533f2943af44f760c846796a7fb1a26}{path}}
+\begin{DoxyCompactList}\small\item\em List of commands of form x-\/speed, y-\/speed, angle-\/speed, duration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgodspeed_1_1inputs_1_1_path_script_a46db8209ee98a455a8fd21d6acbbfe1c}\label{classgodspeed_1_1inputs_1_1_path_script_a46db8209ee98a455a8fd21d6acbbfe1c}} 
+bool \mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script_a46db8209ee98a455a8fd21d6acbbfe1c}{loop}}
+\begin{DoxyCompactList}\small\item\em Set this to true if you wish the path script to repeat after finishing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for creating scripted paths for the robot to take. 
+
+The paths are scripted using \char`\"{}commands\char`\"{} which are tuples consisting of an x-\/speed, a y-\/speed, an angular speed, and a duration. First create an instance of \mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script}{Path\+Script}}, then add all commands you want, then call \mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script_a36654438dc378f3d4da91520808c69f4}{Path\+Script\+::\+Execute\+Path()}} passing in the \mbox{\hyperlink{classgodspeed_1_1inputs_1_1_path_script}{Path\+Script}} you just created as the argument. This will immediately begin execution of the path. Path execution proceeds by recursive time-\/delayed updates which update variables, then whatever is bound the X(), Y(), and Angle() will have access to the updated variables. So the udpates are asyncronous from the actual movement changes and may not be deterministic. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/anzel/source/repos/team-\/godspeed/include/inputs/path-\/script.\+h\end{DoxyCompactItemize}

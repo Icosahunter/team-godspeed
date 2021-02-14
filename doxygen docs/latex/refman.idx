@@ -1,0 +1,15 @@
+\indexentry{godspeed@{godspeed}|hyperpage}{5}
+\indexentry{godspeed::Binder@{godspeed::Binder}|hyperpage}{5}
+\indexentry{godspeed::framework@{godspeed::framework}|hyperpage}{6}
+\indexentry{godspeed::inputs@{godspeed::inputs}|hyperpage}{6}
+\indexentry{godspeed::inputs::BallStorage@{godspeed::inputs::BallStorage}|hyperpage}{7}
+\indexentry{godspeed::inputs::RangeFinderSuite@{godspeed::inputs::RangeFinderSuite}|hyperpage}{7}
+\indexentry{godspeed::inputs::RemoteController@{godspeed::inputs::RemoteController}|hyperpage}{8}
+\indexentry{godspeed::outputs@{godspeed::outputs}|hyperpage}{8}
+\indexentry{godspeed::outputs::BallCollector@{godspeed::outputs::BallCollector}|hyperpage}{9}
+\indexentry{godspeed::outputs::BallScorer@{godspeed::outputs::BallScorer}|hyperpage}{9}
+\indexentry{godspeed::outputs::OmniDrive3Wheel@{godspeed::outputs::OmniDrive3Wheel}|hyperpage}{9}
+\indexentry{godspeed::outputs::OutputUtilities@{godspeed::outputs::OutputUtilities}|hyperpage}{10}
+\indexentry{godspeed::outputs::OutputUtilities@{godspeed::outputs::OutputUtilities}!setMotorSpeed@{setMotorSpeed}|hyperpage}{10}
+\indexentry{setMotorSpeed@{setMotorSpeed}!godspeed::outputs::OutputUtilities@{godspeed::outputs::OutputUtilities}|hyperpage}{10}
+\indexentry{godspeed::inputs::PathScript@{godspeed::inputs::PathScript}|hyperpage}{11}
