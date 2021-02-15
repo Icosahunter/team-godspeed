@@ -1,7 +1,5 @@
 #pragma once
 #include "vex.h"
-#include <list>
-#include <tuple>
 #define COMMAND_TUPLE std::tuple<double, double, double, double>
 
 namespace godspeed

@@ -1,7 +1,6 @@
 #pragma once
 #include "outputs/output-utilities.h"
 #include "vex.h"
-#include <cmath>
 
 namespace godspeed
 {

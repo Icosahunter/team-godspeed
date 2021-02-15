@@ -11,6 +11,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <list>
+#include <string>
+#include <cmath>
+#include <algorithm>
+#include <tuple>
 
 #include "v5.h"
 #include "v5_vcs.h"
@@ -24,3 +29,7 @@
 
 #define repeat(iterations)                                                     \
   for (int iterator = 0; iterator < iterations; iterator++)
+
+#define contains(l, i) std::find(l.begin(), l.end(), i) != l.end()
+
+#define elementAt(l, i) (*std::next(l.begin(), i))

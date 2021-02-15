@@ -55,7 +55,7 @@ int main() {
   Binder::Init();       //Binder initialization
   BallStorage::Init();  //Ball storage suite initialization
 
-  //Bindings
+  // Bindings
   Binder::Bind(RemoteController::LeftStickX, OmniDrive3Wheel::XSpeed); //Bind the left sticks X position to the drivetrains x-speed
   Binder::Bind(RemoteController::LeftStickY, OmniDrive3Wheel::YSpeed); //Bind the left sticks Y position to the drivetrains y-speed
   OmniDrive3Wheel::AngleSpeedVar = 0;                                  //Set angular speed to 0

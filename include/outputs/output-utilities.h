@@ -1,6 +1,5 @@
 #pragma once
 #include "vex.h"
-#include <cmath>
 
 namespace godspeed
 {
