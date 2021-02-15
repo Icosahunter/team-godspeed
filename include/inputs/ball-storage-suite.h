@@ -5,7 +5,6 @@ namespace godspeed
 {
   namespace inputs
   {
-
     /**
     * \brief A namespace with a function for accessing the current number of balls stored in the robot
     *

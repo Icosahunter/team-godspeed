@@ -20,10 +20,10 @@ namespace godspeed
       double RightBumper() { return (double)Controller1.ButtonR1.pressing(); }
       double LeftTrigger() { return (double)Controller1.ButtonL2.pressing(); }
       double LeftBumper() { return (double)Controller1.ButtonL1.pressing(); }
-      double LeftStickX() { return (double)Controller1.Axis4.position(); }
-      double LeftStickY() { return (double)Controller1.Axis3.position(); }
-      double RightStickX() { return (double)Controller1.Axis1.position(); }
-      double RightStickY() { return (double)Controller1.Axis2.position(); }
+      double LeftStickX() { return (1/100.0)*(double)Controller1.Axis4.position(); }
+      double LeftStickY() { return (1/100.0)*(double)Controller1.Axis3.position(); }
+      double RightStickX() { return (1/100.0)*(double)Controller1.Axis1.position(); }
+      double RightStickY() { return (1/100.0)*(double)Controller1.Axis2.position(); }
     }
   }
 }
