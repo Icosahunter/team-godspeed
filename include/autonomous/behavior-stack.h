@@ -12,61 +12,61 @@ namespace godspeed
     // Tier 0
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(0, conditions::NearObstacle);
-    BehaviorManager::AddBehavior(0, behaviors::AvoidObstacleBehavior());
+    BehaviorManager::AddBehavior(0, behaviors::AvoidObstacle());
 
     // Tier 1
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(1, conditions::BallLoaded);
     BehaviorManager::AddCondition(1, conditions::NearGoal);
     BehaviorManager::AddCondition(1, conditions::AlignedWithGoal);
-    BehaviorManager::AddBehavior(1, behaviors::ScoreBallBehavior());
+    BehaviorManager::AddBehavior(1, behaviors::ScoreBall());
 
     // Tier 2
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(2, conditions::BallLoaded);
     BehaviorManager::AddCondition(2, conditions::NearGoal);
-    BehaviorManager::AddBehavior(2, behaviors::AlignWithGoalBehavior());
+    BehaviorManager::AddBehavior(2, behaviors::AlignWithGoal());
 
     // Tier 3
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(3, conditions::BallLoaded);
     BehaviorManager::AddCondition(3, conditions::GoalTargeted);
-    BehaviorManager::AddBehavior(3, behaviors::MoveForwardBehavior());
-    BehaviorManager::AddBehavior(3, behaviors::AlignWithGoalBehavior());
+    BehaviorManager::AddBehavior(3, behaviors::MoveForward());
+    BehaviorManager::AddBehavior(3, behaviors::AlignWithGoal());
 
     // Tier 4
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(4, conditions::BallLoaded);
-    BehaviorManager::AddBehavior(4, behaviors::LocateObjectBehavior());
+    BehaviorManager::AddBehavior(4, behaviors::LocateObject());
 
     // Tier 5
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(5, conditions::BallNotLoaded);
     BehaviorManager::AddCondition(5, conditions::NearBall);
     BehaviorManager::AddCondition(5, conditions::AlignedWithBall);
-    BehaviorManager::AddBehavior(5, behaviors::PickUpBallBehavior());
+    BehaviorManager::AddBehavior(5, behaviors::PickUpBall());
 
     // Tier 6
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(6, conditions::BallNotLoaded);
     BehaviorManager::AddCondition(6, conditions::NearBall);
-    BehaviorManager::AddBehavior(6, behaviors::AlignWithBallBehavior());
+    BehaviorManager::AddBehavior(6, behaviors::AlignWithBall());
 
     // Tier 7
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(7, conditions::BallNotLoaded);
     BehaviorManager::AddCondition(7, conditions::BallTargeted);
-    BehaviorManager::AddBehavior(7, behaviors::MoveForwardBehavior());
-    BehaviorManager::AddBehavior(7, behaviors::AlignWithBallBehavior());
+    BehaviorManager::AddBehavior(7, behaviors::MoveForward());
+    BehaviorManager::AddBehavior(7, behaviors::AlignWithBall());
 
     // Tier 8
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(8, conditions::BallNotLoaded);
-    BehaviorManager::AddBehavior(8, behaviors::LocateObjectBehavior());
+    BehaviorManager::AddBehavior(8, behaviors::LocateObject());
 
     // Tier 9
     BehaviorManager::AddTier();
     BehaviorManager::AddCondition(9, conditions::True);
-    BehaviorManager::AddBehavior(9, behaviors::WanderBehavior());
+    BehaviorManager::AddBehavior(9, behaviors::Wander());
   }
 }

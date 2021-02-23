@@ -23,42 +23,42 @@ namespace godspeed
 
     double ForwardSpeed()  { return 0.5; }
 
-    int AlignWithBallBehavior()
+    int AlignWithBall()
     {
       return Binder::Bind(inputs::VisionSensor::BallXOffset,AlignPipe,outputs::OmniDrive3Wheel::AngleSpeed);
     }
 
-    int AlignWithGoalBehavior()
+    int AlignWithGoal()
     {
       return Binder::Bind(inputs::VisionSensor::GoalXOffset, AlignPipe, outputs::OmniDrive3Wheel::AngleSpeed);
     }
 
-    int MoveForwardBehavior()
+    int MoveForward()
     {
       return Binder::Bind(ForwardSpeed, outputs::OmniDrive3Wheel::YSpeed);
     }
 
-    int LocateObjectBehavior()
+    int LocateObject()
     {
       return Binder::Bind(LocateSpeed, outputs::OmniDrive3Wheel::AngleSpeed);
     }
 
-    int ScoreBallBehavior()
+    int ScoreBall()
     {
       return Binder::Bind(BallScorerSpeed, outputs::BallScorer::TreadSpeed);
     }
 
-    int PickUpBallBehavior()
+    int PickUpBall()
     {
       return Binder::Bind(BallPickupSpeed, outputs::BallCollector::TreadSpeed);
     }
 
-    int AvoidObstacleBehavior()
+    int AvoidObstacle()
     {
       return 0;
     }
 
-    int WanderBehavior()
+    int Wander()
     {
       return 0;
     }
