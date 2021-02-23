@@ -8,15 +8,30 @@ namespace godspeed
     namespace VisionSensor
     {
       signature BallSig = Vision20__RED_BALL;
+      signature GoalSig = Vision20__BACKBOARD;
+      int ScreenWidth = 600;
+      int ScreenHeight = 400;
 
-      double BallDistance()
+      double Offset()
+      {
+        return (ScreenWidth/2) - Vision20.largestObject.centerX;
+      }
+
+      double Distance()
       {
         return 0;
       }
 
-      double BallOffset()
+      double BallDistance()
       {
-        return 0;
+        Vision20.takeSnapshot(BallSig);
+        return Distance();
+      }
+
+      double BallXOffset()
+      {
+        Vision20.takeSnapshot(BallSig);
+        return Offset();
       }
 
       double BallCount()
@@ -26,17 +41,19 @@ namespace godspeed
 
       double GoalCount()
       {
-        return Vision20.takeSnapshot(Vision20__BACKBOARD);
+        return Vision20.takeSnapshot(GoalSig);
       }
 
       double GoalDistance()
       {
-        return 0;
+        Vision20.takeSnapshot(GoalSig);
+        return Distance();
       }
 
-      double GoalOffset()
+      double GoalXOffset()
       {
-        return 0;
+        Vision20.takeSnapshot(GoalSig);
+        return Offset();
       }
     }
   }

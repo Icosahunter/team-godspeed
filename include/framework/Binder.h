@@ -29,12 +29,6 @@ namespace godspeed
     /// \brief A list of disabled binding IDs
     std::list<int> disabled = std::list<int>();
 
-    /// \brief Runs the binder update function on it's own thread
-    void Init()
-    {
-      thread(Update);
-    }
-
     /// \brief Bind a source function to a sink function
     int Bind(double(*source)(void), void(*sink)(double))
     {
@@ -89,6 +83,12 @@ namespace godspeed
           }
         }
       }
+    }
+
+    /// \brief Runs the binder update function on it's own thread
+    void Init()
+    {
+      thread t(Update);
     }
   }
 }

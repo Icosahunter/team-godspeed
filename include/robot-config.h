@@ -22,7 +22,8 @@ extern motor BackMotor;
 extern motor LeftCollectorMotor;
 extern motor RightCollectorMotor;
 extern motor ScorerMotor;
-extern motor ballGuideMotor;
+extern motor RightBallGuideMotor;
+extern motor LeftBallGuideMotor;
 extern sonar RangeFinder1;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

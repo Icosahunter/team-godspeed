@@ -15,17 +15,33 @@ namespace godspeed
     */
     namespace BallScorer
     {
+      double expanderVar;
+
       /// \brief Sets the speed of the center tread
       void TreadSpeed(double speed)
       {
         setMotorSpeed(speed, ScorerMotor);
       }
 
+      void SpinLeftExpander()
+      {
+        LeftBallGuideMotor.resetPosition();
+        LeftBallGuideMotor.spinToPosition(expanderVar, degrees, false);
+      }
+
+      void SpinRightExpander()
+      {
+        RightBallGuideMotor.resetPosition();
+        RightBallGuideMotor.spinToPosition(expanderVar, degrees);
+      }
+
       /// \brief Sets the angular position of the motor that extends the ball guide
       void ExpanderPosition(double angleDeg)
       {
-        ballGuideMotor.resetPosition();
-        ballGuideMotor.spinToPosition(angleDeg, degrees);
+        expanderVar = angleDeg;
+        thread t1(SpinLeftExpander);
+        thread t2(SpinRightExpander);
+        this_thread::yield();
       }
     }
   }
