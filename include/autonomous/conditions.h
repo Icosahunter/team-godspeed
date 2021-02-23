@@ -11,6 +11,9 @@ namespace godspeed
     double goalNearbyThreshold;
     double alignmentThreshold;
 
+    bool True() { return true; }
+    bool False() { return false; }
+
     bool BallLoaded()
     {
       return inputs::BallStorage::BallCount() > 0;
@@ -33,13 +36,13 @@ namespace godspeed
 
     bool AlignedWithGoal()
     {
-      double o = inputs::VisionSensor::GoalOffset();
+      double o = inputs::VisionSensor::GoalXOffset();
       return -alignmentThreshold < o && o < alignmentThreshold;
     }
 
     bool AlignedWithBall()
     {
-      double o = inputs::VisionSensor::BallOffset();
+      double o = inputs::VisionSensor::BallXOffset();
       return -alignmentThreshold < o && o < alignmentThreshold;
     }
 
@@ -51,6 +54,11 @@ namespace godspeed
     bool NearGoal()
     {
       return inputs::VisionSensor::GoalDistance() < goalNearbyThreshold;
+    }
+
+    bool NearObstacle()
+    {
+      return false;
     }
   }
 }

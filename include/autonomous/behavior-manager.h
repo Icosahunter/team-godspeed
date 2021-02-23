@@ -12,7 +12,7 @@ namespace godspeed
 {
   namespace BehaviorManager
   {
-    std::list<std::list<double(*)(void)>> conditions = std::list<std::list<double(*)(void)>>();   
+    std::list<std::list<bool(*)(void)>> conditions = std::list<std::list<bool(*)(void)>>();   
     std::list<BEHAVIOR_TUPLE> behaviors = std::list<BEHAVIOR_TUPLE>();    
 
     void Init()
@@ -20,12 +20,25 @@ namespace godspeed
       thread(Update);
     }
 
+    void AddTier()
+    {
+      conditions.push_back(std::list<bool(*)(void)>());
+    }
+
+    void AddTiers(int num)
+    {
+      for (int i=0; i<num; i++)
+      {
+        conditions.push_back(std::list<bool(*)(void)>());
+      }
+    }
+
     void AddBehavior(int tier, int binding_id)
     {
       behaviors.push_back(BEHAVIOR_TUPLE(tier, binding_id));
     }
 
-    void AddCondition(int tier, double(*condition)(void))
+    void AddCondition(int tier, bool(*condition)(void))
     {
       if (conditions.size() > tier)
       {

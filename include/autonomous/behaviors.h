@@ -21,7 +21,7 @@ namespace godspeed
 
     double BallPickupSpeed() { return 0.5; }
 
-    double BallTrackSpeed()  { return 0.5; }
+    double ForwardSpeed()  { return 0.5; }
 
     int AlignWithBallBehavior()
     {
@@ -33,9 +33,9 @@ namespace godspeed
       return Binder::Bind(inputs::VisionSensor::GoalXOffset, AlignPipe, outputs::OmniDrive3Wheel::AngleSpeed);
     }
 
-    int TrackBallBehavior()
+    int MoveForwardBehavior()
     {
-      return Binder::Bind(BallTrackSpeed, outputs::OmniDrive3Wheel::YSpeed);
+      return Binder::Bind(ForwardSpeed, outputs::OmniDrive3Wheel::YSpeed);
     }
 
     int LocateObjectBehavior()
@@ -51,6 +51,16 @@ namespace godspeed
     int PickUpBallBehavior()
     {
       return Binder::Bind(BallPickupSpeed, outputs::BallCollector::TreadSpeed);
+    }
+
+    int AvoidObstacleBehavior()
+    {
+      return 0;
+    }
+
+    int WanderBehavior()
+    {
+      return 0;
     }
   }
 }
