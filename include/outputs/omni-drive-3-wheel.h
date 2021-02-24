@@ -47,8 +47,8 @@ namespace godspeed
         //Brain.Screen.newLine();
         //Brain.Screen.print(y);
         //Brain.Screen.newLine();
-        //Brain.Screen.print(angVel);
-        //Brain.Screen.newLine();
+        //Brain.Screen.setCursor(2, 1);
+        //Brain.Screen.print(a);
 
         // Set the speed and direction of the motors so that when we turn them on, the robot moves in the desired direction (the direction the joystick is pointing)
 
@@ -100,6 +100,12 @@ namespace godspeed
         SetVelocity(XSpeedVar, y, AngleSpeedVar);
       }
 
+      /// \brief Sets the angular speed of the drivetrain
+      void AngleSpeed(double a)
+      {
+        SetVelocity(XSpeedVar, YSpeedVar, a);
+      }
+
       void Forward(double d)
       {
         if (d>0) { SetOrthogonalDirection(1); }
@@ -118,12 +124,6 @@ namespace godspeed
       void Left(double d)
       {
         if (d>0) { SetOrthogonalDirection(4); }
-      }
-
-      /// \brief Sets the angular speed of the drivetrain
-      void AngleSpeed(double a)
-      {
-        SetVelocity(XSpeedVar, YSpeedVar, a);
       }
     }
   }

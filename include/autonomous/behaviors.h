@@ -12,8 +12,10 @@ namespace godspeed
   {
     double AlignPipe(double d)
     {
-      return d/((double)inputs::VisionSensor::ScreenWidth);
+      return -d/(inputs::VisionSensor::ScreenWidth/2.0);
     }
+
+    double Stop()            { return 0; }
 
     double LocateSpeed()     { return 0.5; }
 
@@ -21,11 +23,11 @@ namespace godspeed
 
     double BallPickupSpeed() { return 0.5; }
 
-    double ForwardSpeed()  { return 0.5; }
+    double ForwardSpeed()    { return 0.5; }
 
     int AlignWithBall()
     {
-      return Binder::Bind(inputs::VisionSensor::BallXOffset,AlignPipe,outputs::OmniDrive3Wheel::AngleSpeed);
+      return Binder::Bind(inputs::VisionSensor::BallXOffset, AlignPipe,outputs::OmniDrive3Wheel::AngleSpeed);
     }
 
     int AlignWithGoal()
@@ -61,6 +63,21 @@ namespace godspeed
     int Wander()
     {
       return 0;
+    }
+
+    int StopX()
+    {
+      return Binder::Bind(Stop, outputs::OmniDrive3Wheel::XSpeed);
+    }
+
+    int StopY()
+    {
+      return Binder::Bind(Stop, outputs::OmniDrive3Wheel::YSpeed);
+    }
+
+    int StopTurn()
+    {
+      return Binder::Bind(Stop, outputs::OmniDrive3Wheel::AngleSpeed);
     }
   }
 }

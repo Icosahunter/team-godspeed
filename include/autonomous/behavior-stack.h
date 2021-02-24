@@ -6,6 +6,22 @@
 
 namespace godspeed
 {
+  void LoadBehaviorTest()
+  {
+    // Tier 0
+    BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(0, conditions::BallTargeted);
+    BehaviorManager::AddBehavior(0, behaviors::AlignWithBall());
+    BehaviorManager::AddBehavior(0, behaviors::MoveForward());
+
+    // Tier 1
+    BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(1, conditions::True);
+    BehaviorManager::AddBehavior(1, behaviors::StopX());
+    BehaviorManager::AddBehavior(1, behaviors::StopY());
+    BehaviorManager::AddBehavior(1, behaviors::StopTurn());
+  }
+
   void LoadBehaviorStack()
   {
     

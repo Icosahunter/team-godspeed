@@ -32,6 +32,8 @@
 #include "outputs/ball-scorer.h"
 #include "inputs/path-script.h"
 #include "framework/binder.h"
+#include "autonomous/behavior-manager.h"
+#include "autonomous/behavior-stack.h"
 
 using namespace vex;
 using namespace godspeed;
@@ -43,11 +45,12 @@ void BindPathScript();
 
 int main() {
   // Initializations
-  vexcodeInit();        //Vex initialization
-  Binder::Init();       //Binder initialization
-  BallStorage::Init();  //Ball storage suite initialization
+  vexcodeInit();           //Vex initialization
+  Binder::Init();          //Binder initialization
+  BallStorage::Init();     //Ball storage suite initialization
 
-  BindPathScript();  //Setup bindings
+  LoadBehaviorTest();      //Loads behavior stack
+  BehaviorManager::Init(); //Behavior manager initialization
 
   this_thread::yield();
 }

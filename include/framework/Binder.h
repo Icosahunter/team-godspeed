@@ -89,6 +89,7 @@ namespace godspeed
     void Init()
     {
       thread t(Update);
+      t.detach();
     }
   }
 }

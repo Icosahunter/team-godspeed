@@ -7,14 +7,26 @@ namespace godspeed
   {
     namespace VisionSensor
     {
-      signature BallSig = Vision20__RED_BALL;
-      signature GoalSig = Vision20__BACKBOARD;
-      int ScreenWidth = 600;
-      int ScreenHeight = 400;
+      double ScreenWidth = 315;
+      double ScreenHeight = 210;
+
+      double ballCount = 0;
+      double goalCount = 0;
+
+      double CountSmoothing = 0.125;
 
       double Offset()
       {
-        return (ScreenWidth/2) - Vision20.largestObject.centerX;
+        double d;
+        if (Vision20.largestObject.centerX != 0.0)
+        {
+          d = (ScreenWidth/2) - Vision20.largestObject.centerX;
+        }
+        else
+        {
+          d = 0;
+        }
+        return d;
       }
 
       double Distance()
@@ -24,35 +36,39 @@ namespace godspeed
 
       double BallDistance()
       {
-        Vision20.takeSnapshot(BallSig);
+        Vision20.takeSnapshot(Vision20__RED_BALL);
         return Distance();
       }
 
       double BallXOffset()
       {
-        Vision20.takeSnapshot(BallSig);
+        Vision20.takeSnapshot(Vision20__RED_BALL);
         return Offset();
       }
 
       double BallCount()
       {
-        return Vision20.takeSnapshot(BallSig);
+        int n = Vision20.takeSnapshot(Vision20__RED_BALL);
+        ballCount = CountSmoothing*ballCount + (1-CountSmoothing)*n;
+        return ballCount;
       }
 
       double GoalCount()
       {
-        return Vision20.takeSnapshot(GoalSig);
+        int n = Vision20.takeSnapshot(Vision20__BACKBOARD);
+        goalCount = CountSmoothing*goalCount + (1-CountSmoothing)*n;
+        return goalCount;
       }
 
       double GoalDistance()
       {
-        Vision20.takeSnapshot(GoalSig);
+        Vision20.takeSnapshot(Vision20__BACKBOARD);
         return Distance();
       }
 
       double GoalXOffset()
       {
-        Vision20.takeSnapshot(GoalSig);
+        Vision20.takeSnapshot(Vision20__BACKBOARD);
         return Offset();
       }
     }

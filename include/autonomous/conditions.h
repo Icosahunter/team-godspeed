@@ -26,12 +26,15 @@ namespace godspeed
 
     bool GoalTargeted()
     {
-      return inputs::VisionSensor::GoalCount() > 0;
+      return inputs::VisionSensor::GoalCount() >= 1;
     }
 
     bool BallTargeted()
     {
-      return inputs::VisionSensor::BallCount() > 0;
+      double b = inputs::VisionSensor::BallCount();
+      //Brain.Screen.setCursor(1, 1);
+     // Brain.Screen.print(b);
+      return b >= 1;
     }
 
     bool AlignedWithGoal()

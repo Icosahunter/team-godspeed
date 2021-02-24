@@ -15,11 +15,6 @@ namespace godspeed
     std::list<std::list<bool(*)(void)>> conditions = std::list<std::list<bool(*)(void)>>();   
     std::list<BEHAVIOR_TUPLE> behaviors = std::list<BEHAVIOR_TUPLE>();    
 
-    void Init()
-    {
-      thread(Update);
-    }
-
     void AddTier()
     {
       conditions.push_back(std::list<bool(*)(void)>());
@@ -59,7 +54,10 @@ namespace godspeed
           {
             v = v && y();
           }
-          t++;
+
+          if (v) { break; }
+          
+          t++; 
         }
 
         for(auto& x: behaviors) //Activate all behaviors in the active tier, and disable all those that are not
@@ -74,6 +72,12 @@ namespace godspeed
           }
         }
       }
+    }
+
+    void Init()
+    {
+      thread t(Update);
+      t.detach();
     }
   }
 }
