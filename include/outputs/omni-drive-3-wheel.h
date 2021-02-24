@@ -34,11 +34,11 @@ namespace godspeed
         // Calculate the magnitude that the robot movement needs to be from the x and y directional vectors
         double mag = sqrt(pow(y, 2) + pow(x, 2)); 
         // Set Front Right Wheel (motor 1) speed using wheel equation
-        double m1spd = mag*(2.0/3)*cos(ang + M_PI/3) + angVel; 
+        double m1spd = mag*0.666*cos(ang + M_PI/3) + angVel; 
         // Set Front Left Wheel (motor 2) speed using wheel equation
-        double m2spd = mag*(2.0/3)*cos(ang + 5*M_PI/3) + angVel; 
+        double m2spd = mag*0.666*cos(ang + 5*M_PI/3) + angVel; 
         // Set Back Wheel (motor 3) speed using wheel equation
-        double m3spd = mag*(2.0/3)*cos(ang + M_PI) + angVel; 
+        double m3spd = mag*0.666*cos(ang + M_PI) + angVel; 
 
         // Print the X and Y coordinates of the controller's left joystick on the first line of the VEX Brain's screen
         //Brain.Screen.clearScreen();
@@ -57,6 +57,37 @@ namespace godspeed
         setMotorSpeed(m3spd, BackMotor);
       }
 
+      /// \brief Set the orthogonal direction of the robot
+      void SetOrthogonalDirection(int direction)
+      {
+        double x;
+        double y;
+
+        switch(direction)
+        {
+          case 0: x=0;  y=0;  break;
+          case 1: x=0;  y=1;  break;
+          case 2: x=0;  y=-1; break; 
+          case 3: x=1;  y=0;  break;
+          case 4: x=-1; y=0;  break;
+        }
+
+        // Calculate the angle between the x and y directional vectors to determine the direction the robot is to move
+        double ang = atan2(y, x);
+        // Calculate the magnitude that the robot movement needs to be from the x and y directional vectors
+        double mag = sqrt(pow(y, 2) + pow(x, 2)); 
+        // Set Front Right Wheel (motor 1) speed using wheel equation
+        double m1spd = mag*cos(ang + M_PI/3); 
+        // Set Front Left Wheel (motor 2) speed using wheel equation
+        double m2spd = mag*cos(ang + 5*M_PI/3); 
+        // Set Back Wheel (motor 3) speed using wheel equation
+        double m3spd = mag*cos(ang + M_PI);
+
+        setMotorSpeed(m1spd, FrontRightMotor);
+        setMotorSpeed(m2spd, FrontLeftMotor);
+        setMotorSpeed(m3spd, BackMotor);
+      }
+
       /// \brief Sets the x-speed of the drivetrain
       void XSpeed(double x)
       {
@@ -67,6 +98,26 @@ namespace godspeed
       void YSpeed(double y)
       {
         SetVelocity(XSpeedVar, y, AngleSpeedVar);
+      }
+
+      void Forward(double d)
+      {
+        if (d>0) { SetOrthogonalDirection(1); }
+      }
+
+      void Backward(double d)
+      {
+        if (d>0) { SetOrthogonalDirection(2); }
+      }
+
+      void Right(double d)
+      {
+        if (d>0) { SetOrthogonalDirection(3); }
+      }
+
+      void Left(double d)
+      {
+        if (d>0) { SetOrthogonalDirection(4); }
       }
 
       /// \brief Sets the angular speed of the drivetrain
