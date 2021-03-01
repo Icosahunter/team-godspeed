@@ -12,7 +12,7 @@ namespace godspeed
   {
     double AlignPipe(double d)
     {
-      return -d/(inputs::VisionSensor::ScreenWidth/2.0);
+      return -d;
     }
 
     double Stop()            { return 0; }
@@ -55,12 +55,12 @@ namespace godspeed
       return Binder::Bind(BallPickupSpeed, outputs::BallCollector::TreadSpeed);
     }
 
-    int AvoidObstacle()
+    int AvoidObstacle() //stub
     {
       return 0;
     }
 
-    int Wander()
+    int Wander() //stub
     {
       return 0;
     }

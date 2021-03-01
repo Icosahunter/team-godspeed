@@ -8,18 +8,23 @@ namespace godspeed
 {
   void LoadBehaviorTest()
   {
-    // Tier 0
-    BehaviorManager::AddTier();
-    BehaviorManager::AddCondition(0, conditions::BallTargeted);
-    BehaviorManager::AddBehavior(0, behaviors::AlignWithBall());
-    BehaviorManager::AddBehavior(0, behaviors::MoveForward());
+    int t;
 
-    // Tier 1
-    BehaviorManager::AddTier();
-    BehaviorManager::AddCondition(1, conditions::True);
-    BehaviorManager::AddBehavior(1, behaviors::StopX());
-    BehaviorManager::AddBehavior(1, behaviors::StopY());
-    BehaviorManager::AddBehavior(1, behaviors::StopTurn());
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::NearBall);
+    BehaviorManager::AddBehavior(t, behaviors::PickUpBall());
+    BehaviorManager::AddBehavior(t, behaviors::MoveForward());
+
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::BallTargeted);
+    BehaviorManager::AddBehavior(t, behaviors::AlignWithBall());
+    BehaviorManager::AddBehavior(t, behaviors::MoveForward());
+
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::True);
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopY());
+    BehaviorManager::AddBehavior(t, behaviors::StopTurn());
   }
 
   void LoadBehaviorStack()

@@ -7,9 +7,14 @@ namespace godspeed
 {
   namespace conditions
   {
-    double ballNearbyThreshold;
-    double goalNearbyThreshold;
-    double alignmentThreshold;
+    double alignmentThreshold = 0;
+    double nearBallThreshold = 0.5;
+    double nearGoalThreshold = -0.5;
+    double nearBallTimeout = 500;
+    double nearGoalTimeout = 500;
+
+    double nearBall = false;
+    double nearGoal = false;
 
     bool True() { return true; }
     bool False() { return false; }
@@ -32,8 +37,6 @@ namespace godspeed
     bool BallTargeted()
     {
       double b = inputs::VisionSensor::BallCount();
-      //Brain.Screen.setCursor(1, 1);
-     // Brain.Screen.print(b);
       return b >= 1;
     }
 
@@ -49,17 +52,31 @@ namespace godspeed
       return -alignmentThreshold < o && o < alignmentThreshold;
     }
 
+    void nearBallFalse() { nearBall = false; }
+
     bool NearBall()
     {
-      return inputs::VisionSensor::BallDistance() < ballNearbyThreshold;
+      if (inputs::VisionSensor::BallYOffset() > nearBallThreshold)
+      {
+        nearBall = true;
+        timer::event(nearBallFalse, nearBallTimeout);
+      }
+      return nearBall;
     }
+
+    void nearGoalFalse() { nearGoal = false; }
 
     bool NearGoal()
     {
-      return inputs::VisionSensor::GoalDistance() < goalNearbyThreshold;
+      if (inputs::VisionSensor::GoalYOffset() < nearGoalThreshold)
+      {
+        nearGoal = true;
+        timer::event(nearGoalFalse, nearGoalTimeout);
+      }
+      return nearGoal;
     }
 
-    bool NearObstacle()
+    bool NearObstacle() //stub
     {
       return false;
     }

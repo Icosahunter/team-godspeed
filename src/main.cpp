@@ -52,6 +52,8 @@ int main() {
   LoadBehaviorTest();      //Loads behavior stack
   BehaviorManager::Init(); //Behavior manager initialization
 
+  //BindDriverControl();
+
   this_thread::yield();
 }
 
@@ -87,5 +89,5 @@ void BindDriverControl()
   Binder::Bind(RemoteController::DownButton, OmniDrive3Wheel::Backward);    //Bind the down button to moving backward
   Binder::Bind(RemoteController::RightButton, OmniDrive3Wheel::Right);      //Bind the right button to moving right
   Binder::Bind(RemoteController::LeftButton, OmniDrive3Wheel::Left);        //Bind the left button to moving left
-  //BallScorer::ExpanderPosition(360);
+  BallScorer::ExpanderPosition(360);
 }

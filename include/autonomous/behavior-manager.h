@@ -13,11 +13,12 @@ namespace godspeed
   namespace BehaviorManager
   {
     std::list<std::list<bool(*)(void)>> conditions = std::list<std::list<bool(*)(void)>>();   
-    std::list<BEHAVIOR_TUPLE> behaviors = std::list<BEHAVIOR_TUPLE>();    
+    std::list<BEHAVIOR_TUPLE> behaviors = std::list<BEHAVIOR_TUPLE>();
 
-    void AddTier()
+    int AddTier()
     {
       conditions.push_back(std::list<bool(*)(void)>());
+      return conditions.size();
     }
 
     void AddTiers(int num)
