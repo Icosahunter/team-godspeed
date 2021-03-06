@@ -12,15 +12,15 @@
 */
 
 /** \namespace godspeed::outputs
-* \brief Contains all classes for output devices
+* \brief Contains all functions for output devices
 */
 
 /** \namespace godspeed::inputs
-* \brief Contains all classes for input devices
+* \brief Contains all functions for input devices
 */
 
 /** \namespace godspeed::framework
-* \brief Contains core classes used as building blocks for the rest of the project
+* \brief Contains core classes and functions used as building blocks for the rest of the project
 */
 
 #include "vex.h"
@@ -49,14 +49,15 @@ int main() {
   Binder::Init();          //Binder initialization
   BallStorage::Init();     //Ball storage suite initialization
 
-  LoadBehaviorTest();      //Loads behavior stack
-  BehaviorManager::Init(); //Behavior manager initialization
+  //LoadBehaviorTest();      //Loads behavior stack
+  //BehaviorManager::Init(); //Behavior manager initialization
 
-  //BindDriverControl();
+  BindDriverControl();
 
   this_thread::yield();
 }
 
+/// \brief Starts a simple path script in which the robot moves in a small square and then stops [FOR TESTING AND DEBUGGING]
 void StartPath()
 {
   PathScript script = PathScript();
@@ -68,6 +69,7 @@ void StartPath()
   PathScript::ExecutePath(script);
 }
 
+/// \brief Sets up bindings to run a path script
 void BindPathScript()
 {
   Binder::Bind(PathScript::X, OmniDrive3Wheel::XSpeed);         //Bind the path script x-speed to drivetrains x-speed
@@ -76,6 +78,7 @@ void BindPathScript()
   Controller1.ButtonA.pressed(StartPath);                       //Subscribe start path to the controller's A button being pressed
 }
 
+/// \brief Sets up bindings for driver control mode
 void BindDriverControl()
 {
   // Driver Control Bindings
@@ -89,5 +92,5 @@ void BindDriverControl()
   Binder::Bind(RemoteController::DownButton, OmniDrive3Wheel::Backward);    //Bind the down button to moving backward
   Binder::Bind(RemoteController::RightButton, OmniDrive3Wheel::Right);      //Bind the right button to moving right
   Binder::Bind(RemoteController::LeftButton, OmniDrive3Wheel::Left);        //Bind the left button to moving left
-  BallScorer::ExpanderPosition(360);
+  BallScorer::ExpanderPosition(355);
 }

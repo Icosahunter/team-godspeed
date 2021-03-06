@@ -106,21 +106,25 @@ namespace godspeed
         SetVelocity(XSpeedVar, YSpeedVar, a);
       }
 
+      /// \brief Set the forward speed of the drivetrain
       void Forward(double d)
       {
         if (d>0) { SetOrthogonalDirection(1); }
       }
 
+      /// \brief Set the backward speed of the drivetrain
       void Backward(double d)
       {
         if (d>0) { SetOrthogonalDirection(2); }
       }
 
+      /// \brief Set the right speed of the drivetrain
       void Right(double d)
       {
         if (d>0) { SetOrthogonalDirection(3); }
       }
 
+      /// \brief Set the left speed of the drivetrain
       void Left(double d)
       {
         if (d>0) { SetOrthogonalDirection(4); }
