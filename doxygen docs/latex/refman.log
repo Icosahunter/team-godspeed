@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.6)  13 FEB 2021 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.6)  5 MAR 2021 23:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -854,9 +854,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 169.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 169.
- [1] [2
-
-]
+ [1] [2]
 Package hyperref Info: Option `pageanchor' set `true' on input line 171.
 
 Chapter 1.
@@ -876,6 +874,7 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 ) [1
+
 
 ] [2
 
@@ -901,38 +900,41 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 12.
-) (./namespacegodspeed_1_1_binder.tex
-LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
-(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 13.
-LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 13.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 28.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 6.29996pt on input line 28.
- [5])
-(./namespacegodspeed_1_1framework.tex) (./namespacegodspeed_1_1inputs.tex)
-(./namespacegodspeed_1_1inputs_1_1_ball_storage.tex [6])
+) (./namespacegodspeed_1_1_behavior_manager.tex [5]
+LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 28.
+LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 28.
+)
+(./namespacegodspeed_1_1behaviors.tex [6]) (./namespacegodspeed_1_1_binder.tex
+[7]) (./namespacegodspeed_1_1framework.tex) (./namespacegodspeed_1_1inputs.tex)
+(./namespacegodspeed_1_1inputs_1_1_ball_storage.tex [8])
 (./namespacegodspeed_1_1inputs_1_1_range_finder_suite.tex)
-(./namespacegodspeed_1_1inputs_1_1_remote_controller.tex [7])
-(./namespacegodspeed_1_1outputs.tex)
-(./namespacegodspeed_1_1outputs_1_1_ball_collector.tex [8])
-(./namespacegodspeed_1_1outputs_1_1_ball_scorer.tex)
-(./namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.tex [9])
-(./namespacegodspeed_1_1outputs_1_1_output_utilities.tex
+(./namespacegodspeed_1_1inputs_1_1_remote_controller.tex [9])
+(./namespacegodspeed_1_1inputs_1_1_vision_sensor.tex [10] [11]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 23.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 23
+(Font)              scaled to size 7.19995pt on input line 82.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 82
 .
 
 (d:/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+) [12]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 23.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 182.
+)
+(./namespacegodspeed_1_1outputs.tex [13])
+(./namespacegodspeed_1_1outputs_1_1_ball_collector.tex)
+(./namespacegodspeed_1_1outputs_1_1_ball_scorer.tex [14])
+(./namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.tex)
+(./namespacegodspeed_1_1outputs_1_1_output_utilities.tex [15]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 23.
-) [10]
+) [16]
 Chapter 4.
 (./classgodspeed_1_1inputs_1_1_path_script.tex <./classgodspeed_1_1inputs_1_1_p
 ath_script__coll__graph.pdf
@@ -941,7 +943,7 @@ pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1inputs_1_1_path_script__c
 oll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a sin
 gle page
 >
-<classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf, id=380, 223.83624pt 
+<classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf, id=640, 223.83624pt 
 x 204.765pt>
 File: classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf Graphic file (ty
 pe pdf)
@@ -949,25 +951,24 @@ pe pdf)
 Package pdftex.def Info: classgodspeed_1_1inputs_1_1_path_script__coll__graph.p
 df  used on input line 19.
 (pdftex.def)             Requested size: 223.0pt x 204.00523pt.
- [11
+ [17
 
-]) [12] (./refman.ind [13
-
+]) [18] (./refman.ind [19
 
 
 
 ]) (./refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 10E3AA3C51FB28E9A456E4DAEC6434C6;7977.
+(rerunfilecheck)             Checksum: 9C95684666B3F805FA586DC237AB80FD;11827.
  ) 
 Here is how much of TeX's memory you used:
- 16836 strings out of 479485
- 254679 string characters out of 5875916
- 573151 words of memory out of 5000000
- 33380 multiletter control sequences out of 15000+600000
+ 17022 strings out of 479485
+ 265119 string characters out of 5875916
+ 585774 words of memory out of 5000000
+ 33465 multiletter control sequences out of 15000+600000
  583467 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,15n,115p,940b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 107i,15n,115p,940b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/texlive/2020/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2020/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2020/texmf-dist/fonts/type1
@@ -976,10 +977,10 @@ ro8a.pfb><d:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/te
 xlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><d:/texlive/2020/tex
 mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/texlive/2020/texmf-dist/fonts/t
 ype1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (17 pages, 116185 bytes).
+Output written on refman.pdf (23 pages, 137498 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
- 460 compressed objects within 5 object streams
- 131 named destinations out of 1000 (max. 500000)
- 286 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 803 PDF objects out of 1000 (max. 8388607)
+ 758 compressed objects within 8 object streams
+ 226 named destinations out of 1000 (max. 500000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 

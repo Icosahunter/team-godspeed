@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['yspeed_38',['YSpeed',['../namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7bdedafbb9ecac80b8a730f8863b1751',1,'godspeed::outputs::OmniDrive3Wheel']]],
-  ['yspeedvar_39',['YSpeedVar',['../namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a57a849e782a58d8c10acd8bb4f901896',1,'godspeed::outputs::OmniDrive3Wheel']]]
+  ['treadspeed_85',['TreadSpeed',['../namespacegodspeed_1_1outputs_1_1_ball_collector.html#abaf456341851ea86b0e4618208726486',1,'godspeed::outputs::BallCollector::TreadSpeed()'],['../namespacegodspeed_1_1outputs_1_1_ball_scorer.html#a77cc2cc0aad8f81aff13b62b8612065b',1,'godspeed::outputs::BallScorer::TreadSpeed()']]]
 ];

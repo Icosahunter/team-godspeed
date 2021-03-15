@@ -131,8 +131,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class for creating scripted paths for the robot to take. </p>
 <p>The paths are scripted using "commands" which are tuples consisting of an x-speed, a y-speed, an angular speed, and a duration. First create an instance of <a class="el" href="classgodspeed_1_1inputs_1_1_path_script.html" title="A class for creating scripted paths for the robot to take.">PathScript</a>, then add all commands you want, then call <a class="el" href="classgodspeed_1_1inputs_1_1_path_script.html#a36654438dc378f3d4da91520808c69f4" title="Starts execution of the given path.">PathScript::ExecutePath()</a> passing in the <a class="el" href="classgodspeed_1_1inputs_1_1_path_script.html" title="A class for creating scripted paths for the robot to take.">PathScript</a> you just created as the argument. This will immediately begin execution of the path. Path execution proceeds by recursive time-delayed updates which update variables, then whatever is bound the X(), Y(), and Angle() will have access to the updated variables. So the udpates are asyncronous from the actual movement changes and may not be deterministic. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/anzel/source/repos/team-godspeed/include/inputs/<a class="el" href="path-script_8h_source.html">path-script.h</a></li>
+<li>C:/Users/anzel/source/repos/team-godspeed/src/inputs/path-script.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

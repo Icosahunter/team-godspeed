@@ -12,11 +12,11 @@
 */
 
 /** \namespace godspeed::outputs
-* \brief Contains all functions for output devices
+* \brief Contains all classes and namespaces for output devices
 */
 
 /** \namespace godspeed::inputs
-* \brief Contains all functions for input devices
+* \brief Contains all classes and namespaces for input devices
 */
 
 /** \namespace godspeed::framework
@@ -78,6 +78,8 @@ void BindPathScript()
   Controller1.ButtonA.pressed(StartPath);                       //Subscribe start path to the controller's A button being pressed
 }
 
+double expander_pos() { return 335; }
+
 /// \brief Sets up bindings for driver control mode
 void BindDriverControl()
 {
@@ -92,5 +94,6 @@ void BindDriverControl()
   Binder::Bind(RemoteController::DownButton, OmniDrive3Wheel::Backward);    //Bind the down button to moving backward
   Binder::Bind(RemoteController::RightButton, OmniDrive3Wheel::Right);      //Bind the right button to moving right
   Binder::Bind(RemoteController::LeftButton, OmniDrive3Wheel::Left);        //Bind the left button to moving left
-  BallScorer::ExpanderPosition(355);
+  
+  Binder::Bind(expander_pos, BallScorer::ExpanderPosition);                 //Bind a constant value (335) to the expander position
 }

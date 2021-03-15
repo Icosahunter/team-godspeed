@@ -1,0 +1,188 @@
+\hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor}{}\doxysection{godspeed\+::inputs\+::Vision\+Sensor Namespace Reference}
+\label{namespacegodspeed_1_1inputs_1_1_vision_sensor}\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+
+
+A namespace containing functions for accessing data from the Vision Sensor.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a9bfcaace6b51c91c694df649233e3498}{Snapshot}} (signature sig)
+\begin{DoxyCompactList}\small\item\em Take a snapshot, looking for the given signature. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a0db6cd4cf98ad5a92d50b6ff06057420}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a0db6cd4cf98ad5a92d50b6ff06057420}} 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a0db6cd4cf98ad5a92d50b6ff06057420}{X\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em Get the X offset of the largest object from the center of the screen, normalize to between -\/1 and 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_acd84e09aec88b19f42c6f38e6bad7fde}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_acd84e09aec88b19f42c6f38e6bad7fde}} 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_acd84e09aec88b19f42c6f38e6bad7fde}{Y\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em Get the Y offset of the largest object from the center of the screen, normalize to between -\/1 and 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_ac13ef9813790bea8a819f6e3d265e755}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_ac13ef9813790bea8a819f6e3d265e755}} 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_ac13ef9813790bea8a819f6e3d265e755}{Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns the width, in pixels, of the largest object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a09a6d4e31bac55f52916d26ced1ac004}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a09a6d4e31bac55f52916d26ced1ac004}} 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a09a6d4e31bac55f52916d26ced1ac004}{Distance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the distance, in inches, to the largest object \mbox{[}N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_ac378742b36527787364f1fb83547a270}{Ball\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the distance, in inches, to the largest ball found \mbox{[}N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_acad2a2f915307c0749ef8f8ff216a127}{Ball\+X\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em Returns the X offset of the largest ball from the center of the screen, normalize to between -\/1 and 1. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a8d423c11a418dbcef2053a42fd29f6d0}{Ball\+Y\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Y offset of the largest ball from the center of the screen, normalize to between -\/1 and 1. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a8bd0032ff711eb87ccb3f949a16ca776}{Ball\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns the width, in pixels, of the largest ball found. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a440ba6596ffe67d2e748ae0ec856d600}{Goal\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns width, in pixels, of the largest goal backboard icon found. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_ad9edecf50f5a87d7d44cf34f6c1d92e9}{Ball\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of balls found. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_af3f5e88e632b670c34dafc232cc47d4c}{Goal\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of goals found. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a56e93a0836531f8af852a3c82349d787}{Goal\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the distance, in inches, to the largest goal backboard icon found \mbox{[}N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_afc52bc157fdaf0c5733045daf34e2cb4}{Goal\+X\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em Returns the X offset of the largest goal backboard icon from the center of the screen, normalize to between -\/1 and 1. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a372362cfe14154d3ef8c4fd154211f94}{Goal\+Y\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Y offset of the largest goal backboard icon from the center of the screen, normalize to between -\/1 and 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_af0cf817940ac27e32087df247bf91477}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_af0cf817940ac27e32087df247bf91477}} 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_af0cf817940ac27e32087df247bf91477}{Screen\+Width}} = 315
+\begin{DoxyCompactList}\small\item\em Width of the screen in pixels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_aaca16b2da58e763a6dc607d4a4b7505c}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_aaca16b2da58e763a6dc607d4a4b7505c}} 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_aaca16b2da58e763a6dc607d4a4b7505c}{Screen\+Height}} = 210
+\begin{DoxyCompactList}\small\item\em Height of the screen in pixels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a0e6118289e8a64ef84e58232b1372724}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a0e6118289e8a64ef84e58232b1372724}} 
+double {\bfseries ball\+Count} = 0
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_ad24044fce2b43f24cee2e0b2cf1f599e}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_ad24044fce2b43f24cee2e0b2cf1f599e}} 
+double {\bfseries goal\+Count} = 0
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a276bbf4451a031681ff769b48d0f7cc6}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a276bbf4451a031681ff769b48d0f7cc6}} 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a276bbf4451a031681ff769b48d0f7cc6}{Count\+Smoothing}} = 0.\+125
+\begin{DoxyCompactList}\small\item\em Smoothing applied to ball counting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a6c64538f7796facc77f9686025ebe230}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a6c64538f7796facc77f9686025ebe230}} 
+double {\bfseries ball\+Size} = 0
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a1d9a889aa191dd2181f24942f79ab152}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a1d9a889aa191dd2181f24942f79ab152}} 
+double {\bfseries goal\+Size} = 0
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a829cc39899669fe14524966b361d283b}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a829cc39899669fe14524966b361d283b}} 
+double \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a829cc39899669fe14524966b361d283b}{Size\+Smoothing}} = 0.\+5
+\begin{DoxyCompactList}\small\item\em Smoothing applied to size of largest object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A namespace containing functions for accessing data from the Vision Sensor. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_ad9edecf50f5a87d7d44cf34f6c1d92e9}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_ad9edecf50f5a87d7d44cf34f6c1d92e9}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!BallCount@{BallCount}}
+\index{BallCount@{BallCount}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{BallCount()}{BallCount()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Ball\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the number of balls found. 
+
+Take a snapshot looking for the ball, take the number of objects found and apply smoothing based on the last count \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_ac378742b36527787364f1fb83547a270}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_ac378742b36527787364f1fb83547a270}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!BallDistance@{BallDistance}}
+\index{BallDistance@{BallDistance}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{BallDistance()}{BallDistance()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Ball\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the distance, in inches, to the largest ball found \mbox{[}N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED\mbox{]}. 
+
+Take a snapshot looking for the ball, and then return \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a09a6d4e31bac55f52916d26ced1ac004}{Distance()}} \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a8bd0032ff711eb87ccb3f949a16ca776}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a8bd0032ff711eb87ccb3f949a16ca776}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!BallSize@{BallSize}}
+\index{BallSize@{BallSize}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{BallSize()}{BallSize()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Ball\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the width, in pixels, of the largest ball found. 
+
+Take a snapshot looking for the ball, then call \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_ac13ef9813790bea8a819f6e3d265e755}{Size()}} and apply smoothing based on the last value found \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_acad2a2f915307c0749ef8f8ff216a127}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_acad2a2f915307c0749ef8f8ff216a127}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!BallXOffset@{BallXOffset}}
+\index{BallXOffset@{BallXOffset}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{BallXOffset()}{BallXOffset()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Ball\+X\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the X offset of the largest ball from the center of the screen, normalize to between -\/1 and 1. 
+
+Take a snapshot looking for the ball, and then return \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a0db6cd4cf98ad5a92d50b6ff06057420}{X\+Offset()}} \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a8d423c11a418dbcef2053a42fd29f6d0}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a8d423c11a418dbcef2053a42fd29f6d0}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!BallYOffset@{BallYOffset}}
+\index{BallYOffset@{BallYOffset}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{BallYOffset()}{BallYOffset()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Ball\+Y\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the Y offset of the largest ball from the center of the screen, normalize to between -\/1 and 1. 
+
+Take a snapshot looking for the ball, and then return \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_acd84e09aec88b19f42c6f38e6bad7fde}{Y\+Offset()}} \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_af3f5e88e632b670c34dafc232cc47d4c}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_af3f5e88e632b670c34dafc232cc47d4c}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!GoalCount@{GoalCount}}
+\index{GoalCount@{GoalCount}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{GoalCount()}{GoalCount()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Goal\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the number of goals found. 
+
+Take a snapshot looking for the goal, take the number of objects found and apply smoothing based on the last count \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a56e93a0836531f8af852a3c82349d787}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a56e93a0836531f8af852a3c82349d787}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!GoalDistance@{GoalDistance}}
+\index{GoalDistance@{GoalDistance}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{GoalDistance()}{GoalDistance()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Goal\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the distance, in inches, to the largest goal backboard icon found \mbox{[}N\+OT I\+M\+P\+L\+E\+M\+E\+N\+T\+ED\mbox{]}. 
+
+Take a snapshot looking for the goal, and then return \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a09a6d4e31bac55f52916d26ced1ac004}{Distance()}} \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a440ba6596ffe67d2e748ae0ec856d600}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a440ba6596ffe67d2e748ae0ec856d600}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!GoalSize@{GoalSize}}
+\index{GoalSize@{GoalSize}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{GoalSize()}{GoalSize()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Goal\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns width, in pixels, of the largest goal backboard icon found. 
+
+Take a snapshot looking for the goal, then call \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_ac13ef9813790bea8a819f6e3d265e755}{Size()}} and apply smoothing based on the last value found \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_afc52bc157fdaf0c5733045daf34e2cb4}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_afc52bc157fdaf0c5733045daf34e2cb4}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!GoalXOffset@{GoalXOffset}}
+\index{GoalXOffset@{GoalXOffset}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{GoalXOffset()}{GoalXOffset()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Goal\+X\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the X offset of the largest goal backboard icon from the center of the screen, normalize to between -\/1 and 1. 
+
+Take a snapshot looking for the goal, and then return \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_a0db6cd4cf98ad5a92d50b6ff06057420}{X\+Offset()}} \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a372362cfe14154d3ef8c4fd154211f94}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a372362cfe14154d3ef8c4fd154211f94}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!GoalYOffset@{GoalYOffset}}
+\index{GoalYOffset@{GoalYOffset}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{GoalYOffset()}{GoalYOffset()}}
+{\footnotesize\ttfamily double godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Goal\+Y\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the Y offset of the largest goal backboard icon from the center of the screen, normalize to between -\/1 and 1. 
+
+Take a snapshot looking for the goal, and then return \mbox{\hyperlink{namespacegodspeed_1_1inputs_1_1_vision_sensor_acd84e09aec88b19f42c6f38e6bad7fde}{Y\+Offset()}} \mbox{\Hypertarget{namespacegodspeed_1_1inputs_1_1_vision_sensor_a9bfcaace6b51c91c694df649233e3498}\label{namespacegodspeed_1_1inputs_1_1_vision_sensor_a9bfcaace6b51c91c694df649233e3498}} 
+\index{godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}!Snapshot@{Snapshot}}
+\index{Snapshot@{Snapshot}!godspeed::inputs::VisionSensor@{godspeed::inputs::VisionSensor}}
+\doxysubsubsection{\texorpdfstring{Snapshot()}{Snapshot()}}
+{\footnotesize\ttfamily int godspeed\+::inputs\+::\+Vision\+Sensor\+::\+Snapshot (\begin{DoxyParamCaption}\item[{signature}]{sig }\end{DoxyParamCaption})}
+
+
+
+Take a snapshot, looking for the given signature. 
+
+This function also prints an \textquotesingle{}x\textquotesingle{} on the controller screen at the location of the center of the largest object recognized in the snapshot. 

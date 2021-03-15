@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['setmotorspeed_66',['setMotorSpeed',['../namespacegodspeed_1_1outputs_1_1_output_utilities.html#aac3d05e780417cf57d4e3ea45c55f4e5',1,'godspeed::outputs::OutputUtilities']]],
-  ['setvelocity_67',['SetVelocity',['../namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a85eb0fa2742eebb8f04b1958d7938ae9',1,'godspeed::outputs::OmniDrive3Wheel']]]
+  ['inc_143',['inc',['../namespacegodspeed_1_1inputs_1_1_ball_storage.html#ae71c7353fb3fbfb67c22a9a8a28e42f8',1,'godspeed::inputs::BallStorage']]],
+  ['init_144',['Init',['../namespacegodspeed_1_1_behavior_manager.html#a9b83138b9e0ddcc787cbc21e21fd973e',1,'godspeed::BehaviorManager::Init()'],['../namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24',1,'godspeed::Binder::Init()'],['../namespacegodspeed_1_1inputs_1_1_ball_storage.html#a87c0ff594d45745536c26c8d44edd3a8',1,'godspeed::inputs::BallStorage::Init()']]],
+  ['isdisabled_145',['IsDisabled',['../namespacegodspeed_1_1_binder.html#a8f2209da8a87022bceb83bb866ea2f0f',1,'godspeed::Binder']]]
 ];

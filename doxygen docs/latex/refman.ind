@@ -1,23 +1,62 @@
 \begin{theindex}
 
+  \item {BallCount}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{12}
+  \item {BallDistance}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{12}
+  \item {BallSize}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{12}
+  \item {BallXOffset}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{12}
+  \item {BallYOffset}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{12}
+
+  \indexspace
+
+  \item {GoalCount}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{12}
+  \item {GoalDistance}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{13}
+  \item {GoalSize}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{13}
+  \item {GoalXOffset}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{13}
+  \item {GoalYOffset}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{13}
   \item {godspeed}, \hyperpage{5}
-  \item {godspeed::Binder}, \hyperpage{5}
-  \item {godspeed::framework}, \hyperpage{6}
-  \item {godspeed::inputs}, \hyperpage{6}
-  \item {godspeed::inputs::BallStorage}, \hyperpage{7}
-  \item {godspeed::inputs::PathScript}, \hyperpage{11}
-  \item {godspeed::inputs::RangeFinderSuite}, \hyperpage{7}
-  \item {godspeed::inputs::RemoteController}, \hyperpage{8}
-  \item {godspeed::outputs}, \hyperpage{8}
-  \item {godspeed::outputs::BallCollector}, \hyperpage{9}
-  \item {godspeed::outputs::BallScorer}, \hyperpage{9}
-  \item {godspeed::outputs::OmniDrive3Wheel}, \hyperpage{9}
-  \item {godspeed::outputs::OutputUtilities}, \hyperpage{10}
-    \subitem {setMotorSpeed}, \hyperpage{10}
+  \item {godspeed::BehaviorManager}, \hyperpage{6}
+  \item {godspeed::behaviors}, \hyperpage{6}
+  \item {godspeed::Binder}, \hyperpage{7}
+  \item {godspeed::framework}, \hyperpage{8}
+  \item {godspeed::inputs}, \hyperpage{8}
+  \item {godspeed::inputs::BallStorage}, \hyperpage{9}
+  \item {godspeed::inputs::PathScript}, \hyperpage{17}
+  \item {godspeed::inputs::RangeFinderSuite}, \hyperpage{9}
+  \item {godspeed::inputs::RemoteController}, \hyperpage{10}
+  \item {godspeed::inputs::VisionSensor}, \hyperpage{10}
+    \subitem {BallCount}, \hyperpage{12}
+    \subitem {BallDistance}, \hyperpage{12}
+    \subitem {BallSize}, \hyperpage{12}
+    \subitem {BallXOffset}, \hyperpage{12}
+    \subitem {BallYOffset}, \hyperpage{12}
+    \subitem {GoalCount}, \hyperpage{12}
+    \subitem {GoalDistance}, \hyperpage{13}
+    \subitem {GoalSize}, \hyperpage{13}
+    \subitem {GoalXOffset}, \hyperpage{13}
+    \subitem {GoalYOffset}, \hyperpage{13}
+    \subitem {Snapshot}, \hyperpage{13}
+  \item {godspeed::outputs}, \hyperpage{14}
+  \item {godspeed::outputs::BallCollector}, \hyperpage{14}
+  \item {godspeed::outputs::BallScorer}, \hyperpage{14}
+  \item {godspeed::outputs::OmniDrive3Wheel}, \hyperpage{15}
+  \item {godspeed::outputs::OutputUtilities}, \hyperpage{16}
+    \subitem {setMotorSpeed}, \hyperpage{16}
 
   \indexspace
 
   \item {setMotorSpeed}
-    \subitem {godspeed::outputs::OutputUtilities}, \hyperpage{10}
+    \subitem {godspeed::outputs::OutputUtilities}, \hyperpage{16}
+  \item {Snapshot}
+    \subitem {godspeed::inputs::VisionSensor}, \hyperpage{13}
 
 \end{theindex}

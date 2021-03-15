@@ -29,6 +29,9 @@ namespace godspeed
     /// \brief A list of disabled binding IDs
     std::list<int> disabled = std::list<int>();
 
+    /// \brief Delay (in milliseconds) applied to the binder update loop
+    int loop_delay = 5;
+
     /// \brief Bind a source function to a sink function
     int Bind(double(*source)(void), void(*sink)(double))
     {
@@ -82,6 +85,7 @@ namespace godspeed
             }
           }
         }
+        task::sleep(loop_delay);
       }
     }
 
