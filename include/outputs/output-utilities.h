@@ -16,7 +16,7 @@ namespace godspeed
         * which it treats as equal to zero (no movement)
         */
       void setMotorSpeed(double motorSpeed, motor &m)
-      {
+      {        
         // if motor speed is out of bounds, set to nearest boundary value
         if (std::abs(motorSpeed) > 1)
         {

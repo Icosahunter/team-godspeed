@@ -20,6 +20,18 @@ namespace godspeed
       /// \brief A variable to track the current desired angular speed
       double AngleSpeedVar;
 
+      void PrintToScreen(){
+        // Print the X and Y coordinates of the controller's left joystick on the first line of the VEX Brain's screen
+        Controller1.Screen.clearScreen();
+        Controller1.Screen.setCursor(1, 1);
+        Controller1.Screen.print(XSpeedVar);
+        Controller1.Screen.newLine();
+        Controller1.Screen.print(YSpeedVar);
+        Controller1.Screen.newLine();
+        Controller1.Screen.print(AngleSpeedVar);
+        Controller1.Screen.newLine();
+
+      }
       /// \brief Set the X, Y, and angular velocities of the drivetrain
       void SetVelocity(double x, double y, double a)
       {
@@ -41,14 +53,14 @@ namespace godspeed
         double m3spd = mag*0.666*cos(ang + M_PI) + angVel; 
 
         // Print the X and Y coordinates of the controller's left joystick on the first line of the VEX Brain's screen
-        //Brain.Screen.clearScreen();
-        //Brain.Screen.setCursor(1, 1);
-        //Brain.Screen.print(x);
-        //Brain.Screen.newLine();
-        //Brain.Screen.print(y);
-        //Brain.Screen.newLine();
-        //Brain.Screen.print(angVel);
-        //Brain.Screen.newLine();
+//        Controller1.Screen.clearScreen();
+//        Controller1.Screen.setCursor(1, 1);
+//        Controller1.Screen.print(x);
+//        Controller1.Screen.newLine();
+//        Controller1.Screen.print(y);
+//        Controller1.Screen.newLine();
+//        Controller1.Screen.print(angVel);
+//        Controller1.Screen.newLine();
 
         // Set the speed and direction of the motors so that when we turn them on, the robot moves in the desired direction (the direction the joystick is pointing)
 

@@ -20,7 +20,7 @@ namespace godspeed
       /// \brief Sets the speed of the center tread
       void TreadSpeed(double speed)
       {
-        setMotorSpeed(speed, ScorerMotor);
+        setMotorSpeed(-speed, ScorerMotor);
       }
 
       void SpinLeftExpander()
