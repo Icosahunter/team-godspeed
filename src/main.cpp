@@ -136,16 +136,22 @@ void BindPathScript()
   Controller1.ButtonB.pressed(StartPath2);                       //Subscribe start path to the controller's A button being pressed
 }
 
-double expander_pos() { return 365; }
+double expander_pos() { return 335; }
 
 /// \brief Sets up bindings for driver control mode
 void BindDriverControl()
 {
+  // Driver Control Bindings
+  Binder::Bind(RemoteController::LeftStickX, OmniDrive3Wheel::XSpeed);      //Bind the left sticks X position to the drivetrains x-speed
+  Binder::Bind(RemoteController::LeftStickY, OmniDrive3Wheel::YSpeed);      //Bind the left sticks Y position to the drivetrains y-speed
+  Binder::Bind(RemoteController::RightStickX, OmniDrive3Wheel::AngleSpeed); //Bind the right sticks X position to the drivetrains angular speed
+  Binder::Bind(RemoteController::LeftTrigger, BallScorer::TreadSpeed);      //Bind the left trigger to the center tread
+  Binder::Bind(RemoteController::RightTrigger, BallCollector::TreadSpeed);  //Bind the right trigger to collector treads
 
   Binder::Bind(RemoteController::UpButton, OmniDrive3Wheel::Forward);       //Bind the up button to moving forward
   Binder::Bind(RemoteController::DownButton, OmniDrive3Wheel::Backward);    //Bind the down button to moving backward
   Binder::Bind(RemoteController::RightButton, OmniDrive3Wheel::Right);      //Bind the right button to moving right
   Binder::Bind(RemoteController::LeftButton, OmniDrive3Wheel::Left);        //Bind the left button to moving left
   
-  Binder::Bind(expander_pos, BallScorer::ExpanderPosition);                 //Bind a constant value (365) to the expander position
+  Binder::Bind(expander_pos, BallScorer::ExpanderPosition);                 //Bind a constant value (335) to the expander position
 }
