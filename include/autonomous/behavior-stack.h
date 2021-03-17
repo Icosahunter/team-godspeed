@@ -6,6 +6,31 @@
 
 namespace godspeed
 {
+  /// \brief Loads the tiers, behaviors, and conditions for an autonomous test [FOR TESTING AND DEBUGGING]
+  void LoadBehaviorTest()
+  {
+    int t;
+
+    //t = BehaviorManager::AddTier();
+    //BehaviorManager::AddCondition(t, conditions::NearBall);
+    //BehaviorManager::AddBehavior(t, behaviors::PickUpBall());
+    //BehaviorManager::AddBehavior(t, behaviors::MoveForward());
+
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::BallTargeted);
+    BehaviorManager::AddBehavior(t, behaviors::AlignWithBall());
+    BehaviorManager::AddBehavior(t, behaviors::MoveForward());
+    BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::True);
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopY());
+    BehaviorManager::AddBehavior(t, behaviors::StopTurn());
+    BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+  }
+
+  /// \brief Loads the tiers, behaviors, and conditions for autonomous mode [UNFINISHED]
   void LoadBehaviorStack()
   {
     

@@ -73,39 +73,38 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;vex.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">namespace </span>outputs</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1outputs_1_1_output_utilities.html">   10</a></span>&#160;    <span class="keyword">namespace </span>OutputUtilities</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1outputs_1_1_output_utilities.html#aac3d05e780417cf57d4e3ea45c55f4e5">   19</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1outputs_1_1_output_utilities.html#aac3d05e780417cf57d4e3ea45c55f4e5">setMotorSpeed</a>(<span class="keywordtype">double</span> motorSpeed, motor &amp;m)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">// if motor speed is out of bounds, set to nearest boundary value</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (std::abs(motorSpeed) &gt; 1)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          m.setVelocity(100, percentUnits::pct);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;          m.spin(forward);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// if motor speed is out of bounds, set to nearest boundary value</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::abs(motorSpeed) &gt; 0.1)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;          m.setVelocity(100*motorSpeed, percentUnits::pct);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;          m.spin(forward);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;          m.stop();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keyword">namespace </span>outputs</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1outputs_1_1_output_utilities.html">    9</a></span>&#160;    <span class="keyword">namespace </span>OutputUtilities</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1outputs_1_1_output_utilities.html#aac3d05e780417cf57d4e3ea45c55f4e5">   18</a></span>&#160;      <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1outputs_1_1_output_utilities.html#aac3d05e780417cf57d4e3ea45c55f4e5">setMotorSpeed</a>(<span class="keywordtype">double</span> motorSpeed, motor &amp;m)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">// if motor speed is out of bounds, set to nearest boundary value</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">if</span> (std::abs(motorSpeed) &gt; 1)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;          m.setVelocity(100, percentUnits::pct);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          m.spin(forward);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// if motor speed is out of bounds, set to nearest boundary value</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::abs(motorSpeed) &gt; 0.1)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;          m.setVelocity(100*motorSpeed, percentUnits::pct);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;          m.spin(forward);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          m.stop();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> binder.h:9</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1outputs_1_1_output_utilities_html_aac3d05e780417cf57d4e3ea45c55f4e5"><div class="ttname"><a href="namespacegodspeed_1_1outputs_1_1_output_utilities.html#aac3d05e780417cf57d4e3ea45c55f4e5">godspeed::outputs::OutputUtilities::setMotorSpeed</a></div><div class="ttdeci">void setMotorSpeed(double motorSpeed, motor &amp;m)</div><div class="ttdoc">Sets the speed of a motor.</div><div class="ttdef"><b>Definition:</b> output-utilities.h:19</div></div>
+<div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> behavior-manager.h:12</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1outputs_1_1_output_utilities_html_aac3d05e780417cf57d4e3ea45c55f4e5"><div class="ttname"><a href="namespacegodspeed_1_1outputs_1_1_output_utilities.html#aac3d05e780417cf57d4e3ea45c55f4e5">godspeed::outputs::OutputUtilities::setMotorSpeed</a></div><div class="ttdeci">void setMotorSpeed(double motorSpeed, motor &amp;m)</div><div class="ttdoc">Sets the speed of a motor.</div><div class="ttdef"><b>Definition:</b> output-utilities.h:18</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setmotorspeed_32',['setMotorSpeed',['../namespacegodspeed_1_1outputs_1_1_output_utilities.html#aac3d05e780417cf57d4e3ea45c55f4e5',1,'godspeed::outputs::OutputUtilities']]],
-  ['setvelocity_33',['SetVelocity',['../namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a85eb0fa2742eebb8f04b1958d7938ae9',1,'godspeed::outputs::OmniDrive3Wheel']]]
+  ['moveforward_62',['MoveForward',['../namespacegodspeed_1_1behaviors.html#a82efbda1bc05760acb399ebc4b5729a8',1,'godspeed::behaviors']]]
 ];

@@ -17,21 +17,27 @@ namespace godspeed
     {
       double expanderVar;
 
+      void Init()
+      {
+        LeftBallGuideMotor.resetPosition();
+        RightBallGuideMotor.resetPosition();
+      }
+
       /// \brief Sets the speed of the center tread
       void TreadSpeed(double speed)
       {
         setMotorSpeed(-speed, ScorerMotor);
       }
 
+      /// \brief Spins the left expander motor to the value stored in expanderVar
       void SpinLeftExpander()
       {
-        LeftBallGuideMotor.resetPosition();
         LeftBallGuideMotor.spinToPosition(expanderVar, degrees, false);
       }
 
+      /// \brief Spins the right expander motor to the value stored in expanderVar
       void SpinRightExpander()
       {
-        RightBallGuideMotor.resetPosition();
         RightBallGuideMotor.spinToPosition(expanderVar, degrees);
       }
 

@@ -10,21 +10,20 @@
 
 namespace godspeed
 {
+  /// \brief A namespace containing functions and logic for managing autonomous behaviors
   namespace BehaviorManager
   {
     std::list<std::list<bool(*)(void)>> conditions = std::list<std::list<bool(*)(void)>>();   
-    std::list<BEHAVIOR_TUPLE> behaviors = std::list<BEHAVIOR_TUPLE>();    
+    std::list<BEHAVIOR_TUPLE> behaviors = std::list<BEHAVIOR_TUPLE>();
 
-    void Init()
-    {
-      thread(Update);
-    }
-
-    void AddTier()
+    /// \brief Add a tier and return the ID of the tier created
+    int AddTier()
     {
       conditions.push_back(std::list<bool(*)(void)>());
+      return conditions.size() - 1;
     }
 
+    /// \brief Add a number of tiers
     void AddTiers(int num)
     {
       for (int i=0; i<num; i++)
@@ -33,11 +32,13 @@ namespace godspeed
       }
     }
 
+    /// \brief Add a behavior
     void AddBehavior(int tier, int binding_id)
     {
       behaviors.push_back(BEHAVIOR_TUPLE(tier, binding_id));
     }
 
+    /// \brief Add a condition
     void AddCondition(int tier, bool(*condition)(void))
     {
       if (conditions.size() > tier)
@@ -46,6 +47,7 @@ namespace godspeed
       }
     }
 
+    /// \brief Update function called by the Behavior Manager thread
     void Update()
     {
       while (true)
@@ -59,7 +61,10 @@ namespace godspeed
           {
             v = v && y();
           }
-          t++;
+
+          if (v) { break; }
+          
+          t++; 
         }
 
         for(auto& x: behaviors) //Activate all behaviors in the active tier, and disable all those that are not
@@ -74,6 +79,13 @@ namespace godspeed
           }
         }
       }
+    }
+
+    /// \brief Run the Behavior Manager on it's own thread
+    void Init()
+    {
+      thread t(Update);
+      t.detach();
     }
   }
 }

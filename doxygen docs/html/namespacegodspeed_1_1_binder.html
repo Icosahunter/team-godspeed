@@ -80,10 +80,6 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0671b5d3b95e93336d65f6a5f1f8eb24"><td class="memItemLeft" align="right" valign="top"><a id="a0671b5d3b95e93336d65f6a5f1f8eb24"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24">Init</a> ()</td></tr>
-<tr class="memdesc:a0671b5d3b95e93336d65f6a5f1f8eb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the binder update function on it's own thread. <br /></td></tr>
-<tr class="separator:a0671b5d3b95e93336d65f6a5f1f8eb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8825303e055e32f433d9c6a4bbedad3d"><td class="memItemLeft" align="right" valign="top"><a id="a8825303e055e32f433d9c6a4bbedad3d"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#a8825303e055e32f433d9c6a4bbedad3d">Bind</a> (double(*source)(void), void(*sink)(double))</td></tr>
 <tr class="memdesc:a8825303e055e32f433d9c6a4bbedad3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a source function to a sink function. <br /></td></tr>
@@ -92,10 +88,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="names
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#a9822b28b429e5c491f2b507cd01f79f0">Bind</a> (double(*source)(void), double(*pipe)(double), void(*sink)(double))</td></tr>
 <tr class="memdesc:a9822b28b429e5c491f2b507cd01f79f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a source function to a sink function through a pipe function. <br /></td></tr>
 <tr class="separator:a9822b28b429e5c491f2b507cd01f79f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc7b6e9156efbd0a10daacdfe5baf24a"><td class="memItemLeft" align="right" valign="top"><a id="afc7b6e9156efbd0a10daacdfe5baf24a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#afc7b6e9156efbd0a10daacdfe5baf24a">DisableBinding</a> (int id)</td></tr>
-<tr class="memdesc:afc7b6e9156efbd0a10daacdfe5baf24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable a binding using the bindings ID. <br /></td></tr>
-<tr class="separator:afc7b6e9156efbd0a10daacdfe5baf24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ef592e2e010e680da387e1fb0db57f"><td class="memItemLeft" align="right" valign="top"><a id="af3ef592e2e010e680da387e1fb0db57f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#af3ef592e2e010e680da387e1fb0db57f">Disable</a> (int id)</td></tr>
+<tr class="memdesc:af3ef592e2e010e680da387e1fb0db57f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable a binding using the bindings ID. <br /></td></tr>
+<tr class="separator:af3ef592e2e010e680da387e1fb0db57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2be09d9fe343693ae8bff8f37c6b139"><td class="memItemLeft" align="right" valign="top"><a id="aa2be09d9fe343693ae8bff8f37c6b139"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#aa2be09d9fe343693ae8bff8f37c6b139">Enable</a> (int id)</td></tr>
+<tr class="memdesc:aa2be09d9fe343693ae8bff8f37c6b139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-enable a disabled binding using the bindings ID. <br /></td></tr>
+<tr class="separator:aa2be09d9fe343693ae8bff8f37c6b139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f2209da8a87022bceb83bb866ea2f0f"><td class="memItemLeft" align="right" valign="top"><a id="a8f2209da8a87022bceb83bb866ea2f0f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#a8f2209da8a87022bceb83bb866ea2f0f">IsDisabled</a> (int id)</td></tr>
 <tr class="memdesc:a8f2209da8a87022bceb83bb866ea2f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a binding is disabled using the bindings ID. <br /></td></tr>
@@ -104,6 +104,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">Update</a> ()</td></tr>
 <tr class="memdesc:a79f5a8343cf616de56f4e43fd8b462b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls all bindings that are not disabled. This does NOT need to be called manually. <br /></td></tr>
 <tr class="separator:a79f5a8343cf616de56f4e43fd8b462b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0671b5d3b95e93336d65f6a5f1f8eb24"><td class="memItemLeft" align="right" valign="top"><a id="a0671b5d3b95e93336d65f6a5f1f8eb24"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24">Init</a> ()</td></tr>
+<tr class="memdesc:a0671b5d3b95e93336d65f6a5f1f8eb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the binder update function on it's own thread. <br /></td></tr>
+<tr class="separator:a0671b5d3b95e93336d65f6a5f1f8eb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>

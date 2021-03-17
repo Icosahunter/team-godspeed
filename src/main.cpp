@@ -12,15 +12,15 @@
 */
 
 /** \namespace godspeed::outputs
-* \brief Contains all classes for output devices
+* \brief Contains all classes and namespaces for output devices
 */
 
 /** \namespace godspeed::inputs
-* \brief Contains all classes for input devices
+* \brief Contains all classes and namespaces for input devices
 */
 
 /** \namespace godspeed::framework
-* \brief Contains core classes used as building blocks for the rest of the project
+* \brief Contains core classes and functions used as building blocks for the rest of the project
 */
 
 #include "vex.h"
@@ -32,6 +32,8 @@
 #include "outputs/ball-scorer.h"
 #include "inputs/path-script.h"
 #include "framework/binder.h"
+#include "autonomous/behavior-manager.h"
+#include "autonomous/behavior-stack.h"
 
 using namespace vex;
 using namespace godspeed;
@@ -43,12 +45,14 @@ void BindPathScript();
 
 int main() {
   // Initializations
-  vexcodeInit();        //Vex initialization
-  Binder::Init();       //Binder initialization
-  BallStorage::Init();  //Ball storage suite initialization
+  vexcodeInit();           //Vex initialization
+  Binder::Init();          //Binder initialization
+  BallStorage::Init();     //Ball storage suite initialization
 
-  BindPathScript();  //Setup Path Script bindings
-//  BindDriverControl(); //Setup Driver Control bindings
+  //BindPathScript();        //Setup Path Script bindings
+  BindDriverControl();     //Setup Driver Control bindings
+  //LoadBehaviorTest();      //Loads behavior stack
+  //BehaviorManager::Init(); //Behavior manager initialization
 
   this_thread::yield();
 }
@@ -121,6 +125,8 @@ void StartPath2()
   script.AddCommand(0, 0, 0, t); // stop moving
   PathScript::ExecutePath(script);
 }
+
+/// \brief Sets up bindings to run a path script
 void BindPathScript()
 {
   Binder::Bind(PathScript::X, OmniDrive3Wheel::XSpeed);         //Bind the path script x-speed to drivetrains x-speed
@@ -130,19 +136,16 @@ void BindPathScript()
   Controller1.ButtonB.pressed(StartPath2);                       //Subscribe start path to the controller's A button being pressed
 }
 
+double expander_pos() { return 365; }
+
+/// \brief Sets up bindings for driver control mode
 void BindDriverControl()
 {
-  // Driver Control Bindings
-  Binder::Bind(RemoteController::LeftStickX, OmniDrive3Wheel::XSpeed);      //Bind the left sticks X position to the drivetrains x-speed
-  Binder::Bind(RemoteController::LeftStickY, OmniDrive3Wheel::YSpeed);      //Bind the left sticks Y position to the drivetrains y-speed
-  Binder::Bind(RemoteController::RightStickX, OmniDrive3Wheel::AngleSpeed); //Bind the right sticks X position to the drivetrains angular speed
-  Binder::Bind(RemoteController::LeftTrigger, BallScorer::TreadSpeed);      //Bind the left trigger to the center tread
-  Binder::Bind(RemoteController::RightTrigger, BallCollector::TreadSpeed);  //Bind the right trigger to collector treads
 
-
-//  Binder::Bind(RemoteController::UpButton, OmniDrive3Wheel::Forward);       //Bind the up button to moving forward
-//  Binder::Bind(RemoteController::DownButton, OmniDrive3Wheel::Backward);    //Bind the down button to moving backward
-//  Binder::Bind(RemoteController::RightButton, OmniDrive3Wheel::Right);      //Bind the right button to moving right
-//  Binder::Bind(RemoteController::LeftButton, OmniDrive3Wheel::Left);        //Bind the left button to moving left
-  BallScorer::ExpanderPosition(0);//365);
+  Binder::Bind(RemoteController::UpButton, OmniDrive3Wheel::Forward);       //Bind the up button to moving forward
+  Binder::Bind(RemoteController::DownButton, OmniDrive3Wheel::Backward);    //Bind the down button to moving backward
+  Binder::Bind(RemoteController::RightButton, OmniDrive3Wheel::Right);      //Bind the right button to moving right
+  Binder::Bind(RemoteController::LeftButton, OmniDrive3Wheel::Left);        //Bind the left button to moving left
+  
+  Binder::Bind(expander_pos, BallScorer::ExpanderPosition);                 //Bind a constant value (365) to the expander position
 }
