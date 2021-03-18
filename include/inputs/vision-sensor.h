@@ -36,11 +36,11 @@ namespace godspeed
       int Snapshot(signature sig)
       {
         int c = Vision20.takeSnapshot(sig);
-        int x = Vision20.largestObject.centerX/5;
-        int y = Vision20.largestObject.centerY/5;
-        Controller1.Screen.clearScreen();
-        Controller1.Screen.setCursor(y, x);
-        Controller1.Screen.print("x");
+        //int x = Vision20.largestObject.centerX/5;
+        //int y = Vision20.largestObject.centerY/5;
+        //Controller1.Screen.clearScreen();
+        //Controller1.Screen.setCursor(y, x);
+        //Controller1.Screen.print("x");
         return c;
       }
 

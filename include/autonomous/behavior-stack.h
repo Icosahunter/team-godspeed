@@ -17,6 +17,11 @@ namespace godspeed
     //BehaviorManager::AddBehavior(t, behaviors::MoveForward());
 
     t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::NearObstacle);
+    BehaviorManager::AddBehavior(t, behaviors::AvoidObstacle());
+    BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+
+    t = BehaviorManager::AddTier();
     BehaviorManager::AddCondition(t, conditions::BallTargeted);
     BehaviorManager::AddBehavior(t, behaviors::AlignWithBall());
     BehaviorManager::AddBehavior(t, behaviors::MoveForward());

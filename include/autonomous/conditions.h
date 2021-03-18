@@ -1,7 +1,8 @@
 #pragma once
 #include "vex.h"
-#include "inputs/ball-storage-suite.h"
+#include "inputs/ball-storage.h"
 #include "inputs/vision-sensor.h"
+#include "inputs/range-finders.h"
 
 namespace godspeed
 {
@@ -15,6 +16,8 @@ namespace godspeed
 
     double nearBall = false;
     double nearGoal = false;
+
+    double nearObstacleThreshold = 500;
 
     bool True() { return true; } /// \brief A simple condition which is always True
     bool False() { return false; } /// \brief A simple condition which is always False
@@ -86,10 +89,25 @@ namespace godspeed
       return nearGoal;
     }
 
-    /// \brief Returns true if the robot is near an obstacle [NOT IMPLEMENTED]
-    bool NearObstacle() //stub
+    /// \brief Returns true if the robot is near an obstacle
+    bool NearObstacle()
     {
-      return false;
+      Controller1.Screen.setCursor(1, 1);
+      Controller1.Screen.print("Left: %4.0f", inputs::RangeFinders::leftDistVar);
+      Controller1.Screen.newLine();
+      Controller1.Screen.print("Right: %4.0f", inputs::RangeFinders::rightDistVar);
+      Controller1.Screen.newLine();
+      Controller1.Screen.print("Nearness: %4.0f", inputs::RangeFinders::Nearness());
+
+      if (inputs::RangeFinders::LeftDistance() < nearObstacleThreshold || inputs::RangeFinders::RightDistance() < nearObstacleThreshold)
+      {
+        return true;
+      }
+      else
+      {
+        Controller1.Screen.clearScreen();
+        return false;
+      }
     }
   }
 }
