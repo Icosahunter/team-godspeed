@@ -21,10 +21,10 @@ motor FrontRightMotor = motor(PORT1, ratio36_1, false);
 motor FrontLeftMotor = motor(PORT2, ratio36_1, false);
 motor BackMotor = motor(PORT3, ratio36_1, false);
 motor LeftCollectorMotor = motor(PORT4, ratio18_1, false);
-motor RightCollectorMotor = motor(PORT5, ratio18_1, false);
+motor RightCollectorMotor = motor(PORT5, ratio18_1, true);
 motor ScorerMotor = motor(PORT7, ratio18_1, false);
 motor LeftBallGuideMotor = motor(PORT8, ratio18_1, false);
-motor RightBallGuideMotor = motor(PORT9, ratio18_1, false);
+motor RightBallGuideMotor = motor(PORT9, ratio18_1, true);
 sonar LeftRangeFinder = sonar(Brain.ThreeWirePort.E);
 sonar RightRangeFinder = sonar(Brain.ThreeWirePort.C);
 
