@@ -16,6 +16,9 @@ namespace godspeed
     std::list<std::list<bool(*)(void)>> conditions = std::list<std::list<bool(*)(void)>>();   
     std::list<BEHAVIOR_TUPLE> behaviors = std::list<BEHAVIOR_TUPLE>();
 
+    /// \brief Delay (in milliseconds) applied to the binder update loop
+    int loop_delay = 5;
+
     /// \brief Add a tier and return the ID of the tier created
     int AddTier()
     {
@@ -78,6 +81,7 @@ namespace godspeed
             Binder::Disable(beh(x));
           }
         }
+        task::sleep(loop_delay);
       }
     }
 

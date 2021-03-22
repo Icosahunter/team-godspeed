@@ -1,3 +1,57 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// BumperB              bumper        B               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// LeftBallGuideMotor   motor         8               
+// RightBallGuideMotor  motor         9               
+// LeftRangeFinder      sonar         E, F            
+// RightRangeFinder     sonar         C, D            
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// BumperB              bumper        B               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// LeftBallGuideMotor   motor         8               
+// RightBallGuideMotor  motor         9               
+// LeftRangeFinder      sonar         E, F            
+// RightRangeFinder     sonar         C, D            
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Vision20             vision        20              
+// BumperA              bumper        A               
+// BumperB              bumper        B               
+// Controller1          controller                    
+// FrontRightMotor      motor         1               
+// FrontLeftMotor       motor         2               
+// BackMotor            motor         3               
+// LeftCollectorMotor   motor         4               
+// RightCollectorMotor  motor         5               
+// ScorerMotor          motor         7               
+// LeftBallGuideMotor   motor         8               
+// RightBallGuideMotor  motor         9               
+// LeftRangeFinder      sonar         E, F            
+// RightRangeFinder     sonar         C, D            
+// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -25,7 +79,8 @@
 
 #include "vex.h"
 #include "inputs/path-script.h"
-#include "inputs/ball-storage-suite.h"
+#include "inputs/ball-storage.h"
+#include "inputs/range-finders.h"
 #include "inputs/remote-controller.h"
 #include "outputs/omni-drive-3-wheel.h"
 #include "outputs/ball-collector.h"

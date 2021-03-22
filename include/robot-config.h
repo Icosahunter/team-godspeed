@@ -5,8 +5,8 @@ extern brain Brain;
 using signature = vision::signature;
 
 // VEXcode devices
-extern signature Vision20__BLUE_BALL;
 extern signature Vision20__RED_BALL;
+extern signature Vision20__BLUE_BALL;
 extern signature Vision20__BACKBOARD;
 extern signature Vision20__SIG_4;
 extern signature Vision20__SIG_5;
@@ -22,9 +22,11 @@ extern motor BackMotor;
 extern motor LeftCollectorMotor;
 extern motor RightCollectorMotor;
 extern motor ScorerMotor;
-extern motor RightBallGuideMotor;
 extern motor LeftBallGuideMotor;
-extern sonar RangeFinder1;
+extern motor RightBallGuideMotor;
+extern sonar LeftRangeFinder;
+extern sonar RightRangeFinder;
+
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 

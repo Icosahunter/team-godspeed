@@ -1,6 +1,7 @@
 #pragma once
 #include "vex.h"
 #include "inputs/vision-sensor.h"
+#include "inputs/range-finders.h"
 #include "framework/binder.h"
 #include "outputs/omni-drive-3-wheel.h"
 #include "outputs/ball-scorer.h"
@@ -73,9 +74,9 @@ namespace godspeed
     }
 
     /// \brief A behavior to move the robot away from a detected obstacle [NOT IMPLEMENTED]
-    int AvoidObstacle() //stub
+    int AvoidObstacle()
     {
-      return 0;
+      return Binder::Bind(inputs::RangeFinders::Nearness, outputs::OmniDrive3Wheel::XSpeed);
     }
 
     /// \brief A behavior to move the robot around in a random path [NOT IMPLEMENTED]
