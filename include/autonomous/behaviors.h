@@ -26,16 +26,16 @@ namespace godspeed
     double Stop()            { return 0; }
 
     /// \brief A source function used in locate object behaviors
-    double LocateSpeed()     { return 0.5; }
+    double LocateSpeed()     { return 1.0; }
 
     /// \brief A source function used in the score ball behavior
-    double BallScorerSpeed() { return 0.5; }
+    double BallScorerSpeed() { return 1.0; }
 
     /// \brief A source function used in the ball pickup behavior
-    double BallPickupSpeed() { return 0.5; }
+    double BallPickupSpeed() { return 1.0; }
 
     /// \brief A source function used in the move forward behavior
-    double ForwardSpeed()    { return 0.5; }
+    double ForwardSpeed()    { return 1.0; }
 
     /// \brief A behavior that turns the robot to face the largest ball found
     int AlignWithBall()

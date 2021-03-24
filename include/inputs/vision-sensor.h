@@ -1,5 +1,6 @@
 #pragma once
 #include "vex.h"
+#include "framework/smoothing.h"
 
 namespace godspeed
 {
@@ -9,39 +10,61 @@ namespace godspeed
     namespace VisionSensor
     {
       /// \brief Width of the screen in pixels
-      double ScreenWidth = 315;
+      double ScreenWidth = 314;
 
       /// \brief Height of the screen in pixels
       double ScreenHeight = 210;
 
-      double ballCount = 0;
-      double goalCount = 0;
+      /// \brief Vertical field of view in radians
+      double VerticalFOV = 20.3341 * (3.14/180);
 
-      /// \brief Smoothing applied to ball counting
-      double CountSmoothing = 0.125;
+      /// \brief Horizontal field of view in radians
+      double HorizontalFOV = 30.2145 * (3.14/180);
 
-      double ballSize = 0;
-      double goalSize = 0;
+      double BallWidth = 6.3;
+      double BallHeight = 6.3;
 
-      /// \brief Smoothing applied to size of largest object
-      double SizeSmoothing = 0.5;
+      double BackboardWidth = 4.375;
+      double BackboardHeight = 6.1875;
 
-      /**
-      * \brief Take a snapshot, looking for the given signature
-      *
-      * This function also prints an 'x' on the controller screen
-      * at the location of the center of the largest object recognized
-      * in the snapshot.
-      */
-      int Snapshot(signature sig)
+      WinMin BallDistVar(50);
+      WinMin GoalDistVar(50);
+
+      WinAvg BallCountVar(10);
+      WinAvg GoalCountVar(10);
+
+      void Init()
       {
-        int c = Vision20.takeSnapshot(sig);
-        //int x = Vision20.largestObject.centerX/5;
-        //int y = Vision20.largestObject.centerY/5;
-        //Controller1.Screen.clearScreen();
-        //Controller1.Screen.setCursor(y, x);
-        //Controller1.Screen.print("x");
-        return c;
+        BallDistVar.Initialize(infinity());
+        GoalDistVar.Initialize(infinity());
+      }
+
+      /// \brief Calculated distance to an object, given it's dimensions etc.
+      double CalculateDistance(double obj_w, double obj_h, double obj_x, double obj_w_actual, double obj_h_actual)
+      {
+        double orth_dist_v = ((obj_h_actual/obj_h)*ScreenHeight/2)/std::tan(VerticalFOV);
+        double orth_dist_h = ((obj_w_actual/obj_w)*ScreenWidth/2)/std::tan(HorizontalFOV);
+        double orth_dist = std::min(orth_dist_v, orth_dist_h);
+        double ratio = std::min(obj_h_actual/obj_h, obj_w_actual/obj_w);
+        double leg1 = ratio*obj_x + ratio*obj_w/2 - ratio*ScreenWidth/2;
+        double leg2 = orth_dist;
+        return std::sqrt(std::pow(leg1, 2) + std::pow(leg2, 2));
+      }
+
+      /// \brief Calculated distance to the largest object given it's signature and actual width and height
+      double GetDistance(signature sig, double obj_w, double obj_h)
+      {
+        Vision20.takeSnapshot(sig, 1);
+        vision::object obj = Vision20.largestObject;
+
+        if (obj.originX != 0)
+        {
+          return CalculateDistance(obj.width, obj.height, obj.originX, obj_w, obj_h);
+        }
+        else
+        {
+          return infinity();
+        }
       }
 
       /// \brief Get the X offset of the largest object from the center of the screen, normalize to between -1 and 1
@@ -49,7 +72,7 @@ namespace godspeed
       {
         double d;
         if (Vision20.largestObject.centerX != 0.0)
-        { d = 1 - Vision20.largestObject.centerX/(ScreenWidth/2); }
+        { d = 1 - Vision20.largestObject.centerX/(ScreenWidth/2) + 0.2; }
         else
         {  d = 0; }
         return d;
@@ -72,12 +95,6 @@ namespace godspeed
         return Vision20.largestObject.width * Vision20.largestObject.height;
       }
 
-      /// \brief Returns the distance, in inches, to the largest object [NOT IMPLEMENTED]
-      double Distance()
-      {
-        return 0;
-      }
-
       /**
       * \brief Returns the distance, in inches, to the largest ball found [NOT IMPLEMENTED]
       *
@@ -85,8 +102,8 @@ namespace godspeed
       */
       double BallDistance()
       {
-        Snapshot(Vision20__RED_BALL);
-        return Distance();
+        BallDistVar.SetValue(GetDistance(Vision20__RED_BALL, BallWidth, BallHeight));
+        return BallDistVar.Value();
       }
 
       /** 
@@ -96,7 +113,7 @@ namespace godspeed
       */
       double BallXOffset()
       {
-        Snapshot(Vision20__RED_BALL);
+        Vision20.takeSnapshot(Vision20__RED_BALL);
         return XOffset();
       }
 
@@ -107,58 +124,30 @@ namespace godspeed
       */
       double BallYOffset()
       {
-        Snapshot(Vision20__RED_BALL);
+        Vision20.takeSnapshot(Vision20__RED_BALL);
         return YOffset();
-      }
-
-      /**
-      * \brief Returns the width, in pixels, of the largest ball found
-      *
-      * Take a snapshot looking for the ball, then call Size() and apply smoothing based on the last value found
-      */
-      double BallSize()
-      {
-        Snapshot(Vision20__RED_BALL);
-        double s = Size();
-        ballSize = SizeSmoothing*ballSize + (1-SizeSmoothing)*s;
-        return ballSize;
-      }
-
-      /**
-      * \brief Returns width, in pixels, of the largest goal backboard icon found
-      *
-      * Take a snapshot looking for the goal, then call Size() and apply smoothing based on the last value found
-      */
-      double GoalSize()
-      {
-        Snapshot(Vision20__BACKBOARD);
-        double s = Size();
-        goalSize = SizeSmoothing*goalSize + (1-SizeSmoothing)*s;
-        return goalSize;
       }
 
       /**
       * \brief Returns the number of balls found
       *
-      * Take a snapshot looking for the ball, take the number of objects found and apply smoothing based on the last count
+      * Take a snapshot looking for the ball
       */
       double BallCount()
       {
-        int n = Snapshot(Vision20__RED_BALL);
-        ballCount = CountSmoothing*ballCount + (1-CountSmoothing)*n;
-        return ballCount;
+        BallCountVar.SetValue(Vision20.takeSnapshot(Vision20__RED_BALL));
+        return std::ceil(BallCountVar.Value() - 0.5);
       }
 
       /**
       * \brief Returns the number of goals found
       *
-      * Take a snapshot looking for the goal, take the number of objects found and apply smoothing based on the last count
+      * Take a snapshot looking for the goal
       */
       double GoalCount()
       {
-        int n = Snapshot(Vision20__BACKBOARD);
-        goalCount = CountSmoothing*goalCount + (1-CountSmoothing)*n;
-        return goalCount;
+        GoalCountVar.SetValue(Vision20.takeSnapshot(Vision20__BACKBOARD));
+        return std::ceil(GoalCountVar.Value() - 0.5);
       }
 
       /**
@@ -168,8 +157,8 @@ namespace godspeed
       */
       double GoalDistance()
       {
-        Snapshot(Vision20__BACKBOARD);
-        return Distance();
+        GoalDistVar.SetValue(GetDistance(Vision20__BACKBOARD, BackboardWidth, BackboardHeight));
+        return GoalDistVar.Value();
       }
 
       /** 
@@ -179,7 +168,7 @@ namespace godspeed
       */
       double GoalXOffset()
       {
-        Snapshot(Vision20__BACKBOARD);
+        Vision20.takeSnapshot(Vision20__BACKBOARD);
         return XOffset();
       }
 
@@ -190,7 +179,7 @@ namespace godspeed
       */
       double GoalYOffset()
       {
-        Snapshot(Vision20__BACKBOARD);
+        Vision20.takeSnapshot(Vision20__BACKBOARD);
         return YOffset();
       }
     }

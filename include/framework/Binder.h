@@ -1,5 +1,6 @@
 #pragma once
 #include "vex.h"
+#include "autonomous/conditions.h"
 //                                         id     source     pipe     sink
 //                                .--------'  .-----'         '-.      '---------.
 #define BINDING_TUPLE std::tuple<int, double(*)(void), double(*)(double), void(*)(double)>

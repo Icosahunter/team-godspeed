@@ -16,42 +16,6 @@
 // LeftRangeFinder      sonar         E, F            
 // RightRangeFinder     sonar         C, D            
 // ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Vision20             vision        20              
-// BumperA              bumper        A               
-// BumperB              bumper        B               
-// Controller1          controller                    
-// FrontRightMotor      motor         1               
-// FrontLeftMotor       motor         2               
-// BackMotor            motor         3               
-// LeftCollectorMotor   motor         4               
-// RightCollectorMotor  motor         5               
-// ScorerMotor          motor         7               
-// LeftBallGuideMotor   motor         8               
-// RightBallGuideMotor  motor         9               
-// LeftRangeFinder      sonar         E, F            
-// RightRangeFinder     sonar         C, D            
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Vision20             vision        20              
-// BumperA              bumper        A               
-// BumperB              bumper        B               
-// Controller1          controller                    
-// FrontRightMotor      motor         1               
-// FrontLeftMotor       motor         2               
-// BackMotor            motor         3               
-// LeftCollectorMotor   motor         4               
-// RightCollectorMotor  motor         5               
-// ScorerMotor          motor         7               
-// LeftBallGuideMotor   motor         8               
-// RightBallGuideMotor  motor         9               
-// LeftRangeFinder      sonar         E, F            
-// RightRangeFinder     sonar         C, D            
-// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -98,16 +62,22 @@ using namespace outputs;
 void BindDriverControl();
 void BindPathScript();
 
+double expander_pos() { return 335; }
+
 int main() {
   // Initializations
   vexcodeInit();           //Vex initialization
   Binder::Init();          //Binder initialization
   BallStorage::Init();     //Ball storage suite initialization
+  VisionSensor::Init();    //Vision sensor initialization
+  Brain.resetTimer();
 
-  //LoadBehaviorTest();      //Loads behavior stack
-  //BehaviorManager::Init(); //Behavior manager initialization
+  Binder::Bind(expander_pos, BallScorer::ExpanderPosition);   //Bind a constant value (335) to the expander position
 
-  BindDriverControl();
+  LoadBehaviorTest();      //Loads behavior stack
+  BehaviorManager::Init(); //Behavior manager initialization
+
+  //BindDriverControl();
 
   this_thread::yield();
 }
@@ -132,8 +102,6 @@ void BindPathScript()
   Binder::Bind(PathScript::Angle, OmniDrive3Wheel::AngleSpeed); //Bind the path script angle speed to drivetrains angle speed
   Controller1.ButtonA.pressed(StartPath);                       //Subscribe start path to the controller's A button being pressed
 }
-
-double expander_pos() { return 335; }
 
 /// \brief Sets up bindings for driver control mode
 void BindDriverControl()

@@ -1,5 +1,6 @@
 #pragma once
 #include "vex.h"
+#include "framework/utilities.h"
 #include "inputs/ball-storage.h"
 #include "inputs/vision-sensor.h"
 #include "inputs/range-finders.h"
@@ -9,13 +10,13 @@ namespace godspeed
   namespace conditions
   {
     double alignmentThreshold = 0; /// \brief XOffset threshold at which the robot is considered aligned with an object
-    double nearBallThreshold = -0.8; /// \brief YOffset threshold at which a ball is considered near the robot
-    double nearGoalThreshold = 0.8; /// \brief YOffset threshold at which a goal is considered near the robot
-    double nearBallTimeout = 500; /// \brief time in milliseconds for which a ball is considered near the robot after the threshold was reached
-    double nearGoalTimeout = 500; /// \brief time in milliseconds for which a goal is considered near the robot after the threshold was reached
+    double nearBallThreshold = 28; /// \brief Distance threshold in inches at which a ball is considered near the robot
+    double nearGoalThreshold = 24; /// \brief Distance threshold in inches at which a goal is considered near the robot
+    double nearBallTimeout = 1500; /// \brief time in milliseconds for which a ball is considered near the robot after the threshold was reached
+    double nearGoalTimeout = 1500; /// \brief time in milliseconds for which a goal is considered near the robot after the threshold was reached
 
-    double nearBall = false;
-    double nearGoal = false;
+    TimedToggle NearBallVar(nearBallTimeout);
+    TimedToggle NearGoalVar(nearGoalTimeout);
 
     double nearObstacleThreshold = 500;
 
@@ -61,32 +62,24 @@ namespace godspeed
       return -alignmentThreshold < o && o < alignmentThreshold;
     }
 
-    /// \brief A function used to set the nearBall variable to false after the near ball timeout occurs
-    void nearBallFalse() { nearBall = false; }
-
     /// \brief Returns true if the Y-offset of the largest ball is greater than the threshold, and remains true for a time after that [EXPERIMENTAL]
     bool NearBall()
     {
-      if (inputs::VisionSensor::BallYOffset() > nearBallThreshold)
+      if (inputs::VisionSensor::BallDistance() <= nearBallThreshold)
       {
-        nearBall = true;
-        timer::event(nearBallFalse, nearBallTimeout);
+        NearBallVar.SetValue(true);
       }
-      return nearBall;
+      return NearBallVar.Value();
     }
 
-    /// \brief A function used to set the nearGoal variable to false after the near goal timeout occurs
-    void nearGoalFalse() { nearGoal = false; }
-
-    /// \brief Returns true if the Y-offset of the largest goal backboard icon is greater than the threshold, and remains true for a time after that [EXPERIMENTAL]
+    /// \brief 
     bool NearGoal()
     {
-      if (inputs::VisionSensor::GoalYOffset() < nearGoalThreshold)
+      if (inputs::VisionSensor::GoalDistance() <= nearGoalThreshold)
       {
-        nearGoal = true;
-        timer::event(nearGoalFalse, nearGoalTimeout);
+        NearGoalVar.SetValue(true);
       }
-      return nearGoal;
+      return NearGoalVar.Value();
     }
 
     /// \brief Returns true if the robot is near an obstacle
