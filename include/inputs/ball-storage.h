@@ -1,5 +1,7 @@
 #pragma once
 #include "vex.h"
+#include "framework/debouncer.h"
+#include "framework/lag-value.h"
 
 namespace godspeed
 {
@@ -14,25 +16,34 @@ namespace godspeed
     */
     namespace BallStorage
     {
+      Debouncer inc_debounce(1000);
+      Debouncer dec_debounce(1000);
+
       /// \brief A variable for tracking the ball count
-      int BallCounter = 0;
+      LagValue BallCounter(1000);
 
       /// \brief Increment the ball count. This does NOT need to be called manually
       void inc()
       {
-        BallCounter++;
+        if (inc_debounce.Debounce())
+        {
+          BallCounter.SetValue(BallCounter.Value() + 1);
+        }
       }
 
       /// \brief Decrement the ball count. This does NOT need to be called manually
       void dec()
       {
-        BallCounter--;
+        if (dec_debounce.Debounce())
+        {
+          BallCounter.SetValue(BallCounter.Value() - 1);
+        }
       }
 
       /// \brief Returns the current ball count
       double BallCount()
       {
-        return BallCounter;
+        return BallCounter.Value();
       }
 
       /// \brief Setup the ball storage counter to track balls

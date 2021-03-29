@@ -21,6 +21,8 @@ namespace godspeed
       /// \brief Horizontal field of view in radians
       double HorizontalFOV = 30.2145 * (3.14/180);
 
+      double XOffsetFudge = 0;
+
       double BallWidth = 6.3;
       double BallHeight = 6.3;
 
@@ -72,7 +74,7 @@ namespace godspeed
       {
         double d;
         if (Vision20.largestObject.centerX != 0.0)
-        { d = 1 - Vision20.largestObject.centerX/(ScreenWidth/2) + 0.2; }
+        { d = 1 - Vision20.largestObject.centerX/(ScreenWidth/2) + XOffsetFudge; }
         else
         {  d = 0; }
         return d;

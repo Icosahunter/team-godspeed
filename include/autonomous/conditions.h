@@ -1,6 +1,7 @@
 #pragma once
 #include "vex.h"
-#include "framework/utilities.h"
+#include "framework/timed-toggle.h"
+#include "framework/lag-value.h"
 #include "inputs/ball-storage.h"
 #include "inputs/vision-sensor.h"
 #include "inputs/range-finders.h"
@@ -12,11 +13,14 @@ namespace godspeed
     double alignmentThreshold = 0; /// \brief XOffset threshold at which the robot is considered aligned with an object
     double nearBallThreshold = 28; /// \brief Distance threshold in inches at which a ball is considered near the robot
     double nearGoalThreshold = 24; /// \brief Distance threshold in inches at which a goal is considered near the robot
-    double nearBallTimeout = 1500; /// \brief time in milliseconds for which a ball is considered near the robot after the threshold was reached
-    double nearGoalTimeout = 1500; /// \brief time in milliseconds for which a goal is considered near the robot after the threshold was reached
 
-    TimedToggle NearBallVar(nearBallTimeout);
-    TimedToggle NearGoalVar(nearGoalTimeout);
+    TimedToggle BallCaughtVar(3000);
+    TimedToggle GoalCaughtVar(3000);
+    void ballcatch() { BallCaughtVar.SetValue(true); }
+    void goalcatch() { GoalCaughtVar.SetValue(true); }
+
+    TimedToggle NearBallVar(1500, false, ballcatch);
+    TimedToggle NearGoalVar(1500, false, goalcatch);
 
     double nearObstacleThreshold = 500;
 
@@ -80,6 +84,16 @@ namespace godspeed
         NearGoalVar.SetValue(true);
       }
       return NearGoalVar.Value();
+    }
+
+    bool BallCaught()
+    {
+      return BallCaughtVar.Value();
+    }
+
+    bool GoalCaught()
+    {
+      return GoalCaughtVar.Value();
     }
 
     /// \brief Returns true if the robot is near an obstacle

@@ -53,6 +53,8 @@
 #include "framework/binder.h"
 #include "autonomous/behavior-manager.h"
 #include "autonomous/behavior-stack.h"
+#include "autonomous/state-machine.h"
+#include "autonomous/states.h"
 
 using namespace vex;
 using namespace godspeed;
@@ -62,7 +64,33 @@ using namespace outputs;
 void BindDriverControl();
 void BindPathScript();
 
-double expander_pos() { return 335; }
+double ExpanderPosition;
+
+double expander_pos() { return ExpanderPosition; }
+
+void SetupTchotchke()
+{
+  ExpanderPosition = 365;
+  conditions::nearGoalThreshold = 30;
+  conditions::nearBallThreshold = 28;
+  conditions::NearBallVar.Timeout = 1500;
+  conditions::NearGoalVar.Timeout = 250;
+  conditions::BallCaughtVar = 4000;
+  conditions::GoalCaughtVar.Timeout = 10000;
+  inputs::VisionSensor::XOffsetFudge = 0.2;
+}
+
+void SetupBauble()
+{
+  ExpanderPosition = 355;
+  conditions::nearGoalThreshold = 26;
+  conditions::nearBallThreshold = 26;
+  conditions::NearBallVar.Timeout = 1500;
+  conditions::NearGoalVar.Timeout = 350;
+  conditions::BallCaughtVar = 4000;
+  conditions::GoalCaughtVar.Timeout = 10000;
+  inputs::VisionSensor::XOffsetFudge = 0;
+}
 
 int main() {
   // Initializations
@@ -74,8 +102,13 @@ int main() {
 
   Binder::Bind(expander_pos, BallScorer::ExpanderPosition);   //Bind a constant value (335) to the expander position
 
-  LoadBehaviorTest();      //Loads behavior stack
-  BehaviorManager::Init(); //Behavior manager initialization
+  SetupBauble();
+
+  LoadStatesTest();
+  StateMachine::Init();
+
+  //LoadBehaviorTest();      //Loads behavior stack
+  //BehaviorManager::Init(); //Behavior manager initialization
 
   //BindDriverControl();
 

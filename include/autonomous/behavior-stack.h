@@ -11,29 +11,96 @@ namespace godspeed
   {
     int t;
 
-    //t = BehaviorManager::AddTier();
-    //BehaviorManager::AddCondition(t, conditions::NearObstacle);
-    //BehaviorManager::AddBehavior(t, behaviors::AvoidObstacle());
-    //BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+    // t = BehaviorManager::AddTier();
+    // BehaviorManager::AddCondition(t, conditions::NearObstacle);
+    // BehaviorManager::AddBehavior(t, behaviors::AvoidObstacle());
+    // BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
 
+    //Score goal
     t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::GoalCaught);
+    BehaviorManager::AddCondition(t, conditions::BallLoaded);
+    BehaviorManager::AddBehavior(t, behaviors::ScoreBall());
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopY());
+    BehaviorManager::AddBehavior(t, behaviors::StopTurn());
+    BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+
+    //Catch goal
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::NearGoal);
+    BehaviorManager::AddCondition(t, conditions::BallLoaded);
+    BehaviorManager::AddBehavior(t, behaviors::MoveForward());
+    BehaviorManager::AddBehavior(t, behaviors::ScoreBall());
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopTurn());
+    BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+
+    //Move toward goal
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::BallLoaded);
+    BehaviorManager::AddCondition(t, conditions::GoalTargeted);
+    BehaviorManager::AddBehavior(t, behaviors::AlignWithGoal());
+    BehaviorManager::AddBehavior(t, behaviors::MoveForward());
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopScorer());
+    BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+
+    //Locate goal
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::BallLoaded);
+    BehaviorManager::AddBehavior(t, behaviors::LocateObject());
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopY());
+    BehaviorManager::AddBehavior(t, behaviors::StopScorer());
+    BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+
+    //Load ball
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::BallNotLoaded);
+    BehaviorManager::AddCondition(t, conditions::BallCaught);
+    BehaviorManager::AddBehavior(t, behaviors::PickUpBall());
+    BehaviorManager::AddBehavior(t, behaviors::ScoreBall());
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopY());
+    BehaviorManager::AddBehavior(t, behaviors::StopTurn());
+
+    //Catch ball
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::BallNotLoaded);
     BehaviorManager::AddCondition(t, conditions::NearBall);
     BehaviorManager::AddBehavior(t, behaviors::PickUpBall());
-    BehaviorManager::AddBehavior(t, behaviors::StopTurn());
-    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::ScoreBall());
     BehaviorManager::AddBehavior(t, behaviors::MoveForward());
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopTurn());
 
+    //Move toward ball
     t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::BallNotLoaded);
     BehaviorManager::AddCondition(t, conditions::BallTargeted);
     BehaviorManager::AddBehavior(t, behaviors::AlignWithBall());
     BehaviorManager::AddBehavior(t, behaviors::MoveForward());
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopScorer());
     BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
 
+    //Locate ball
+    t = BehaviorManager::AddTier();
+    BehaviorManager::AddCondition(t, conditions::BallNotLoaded);
+    BehaviorManager::AddBehavior(t, behaviors::LocateObject());
+    BehaviorManager::AddBehavior(t, behaviors::StopX());
+    BehaviorManager::AddBehavior(t, behaviors::StopY());
+    BehaviorManager::AddBehavior(t, behaviors::StopScorer());
+    BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
+
+    //Stop
     t = BehaviorManager::AddTier();
     BehaviorManager::AddCondition(t, conditions::True);
     BehaviorManager::AddBehavior(t, behaviors::StopX());
     BehaviorManager::AddBehavior(t, behaviors::StopY());
     BehaviorManager::AddBehavior(t, behaviors::StopTurn());
+    BehaviorManager::AddBehavior(t, behaviors::StopScorer());
     BehaviorManager::AddBehavior(t, behaviors::StopCollectors());
   }
 

@@ -26,7 +26,7 @@ namespace godspeed
     double Stop()            { return 0; }
 
     /// \brief A source function used in locate object behaviors
-    double LocateSpeed()     { return 1.0; }
+    double LocateSpeed()     { return 0.6; }
 
     /// \brief A source function used in the score ball behavior
     double BallScorerSpeed() { return 1.0; }

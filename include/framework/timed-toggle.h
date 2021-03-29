@@ -8,13 +8,15 @@ namespace godspeed
 
       bool DefaultValue = false;
       int Timeout = 1000;
+      void(*callback)(void);
 
-      TimedToggle(int timeout = 1000, bool defaultVal = false )
+      TimedToggle(int timeout = 1000, bool defaultVal = false, void(*timeout_callback)(void) = nullptr)
       {
         DefaultValue = defaultVal;
         Timeout = timeout;
         value = DefaultValue;
         timing = false;
+        callback = timeout_callback;
       }
 
       bool Value()
@@ -57,6 +59,10 @@ namespace godspeed
           }
         }
         obj->timing = false;
+        if (obj->callback != nullptr)
+        {
+          obj->callback();
+        }
       }
   };
 }
