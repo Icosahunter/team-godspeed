@@ -58,37 +58,6 @@ namespace godspeed
         setMotorSpeed(m3spd, BackMotor);
       }
 
-      /// \brief Set the orthogonal direction of the robot
-      void SetOrthogonalDirection(int direction)
-      {
-        double x;
-        double y;
-
-        switch(direction)
-        {
-          case 0: x=0;  y=0;  break;
-          case 1: x=0;  y=1;  break;
-          case 2: x=0;  y=-1; break; 
-          case 3: x=1;  y=0;  break;
-          case 4: x=-1; y=0;  break;
-        }
-
-        // Calculate the angle between the x and y directional vectors to determine the direction the robot is to move
-        double ang = atan2(y, x);
-        // Calculate the magnitude that the robot movement needs to be from the x and y directional vectors
-        double mag = sqrt(pow(y, 2) + pow(x, 2)); 
-        // Set Front Right Wheel (motor 1) speed using wheel equation
-        double m1spd = mag*cos(ang + M_PI/3); 
-        // Set Front Left Wheel (motor 2) speed using wheel equation
-        double m2spd = mag*cos(ang + 5*M_PI/3); 
-        // Set Back Wheel (motor 3) speed using wheel equation
-        double m3spd = mag*cos(ang + M_PI);
-
-        setMotorSpeed(m1spd, FrontRightMotor);
-        setMotorSpeed(m2spd, FrontLeftMotor);
-        setMotorSpeed(m3spd, BackMotor);
-      }
-
       /// \brief Sets the x-speed of the drivetrain
       void XSpeed(double x)
       {
@@ -105,30 +74,6 @@ namespace godspeed
       void AngleSpeed(double a)
       {
         SetVelocity(XSpeedVar.Value(), YSpeedVar.Value(), a);
-      }
-
-      /// \brief Set the forward speed of the drivetrain
-      void Forward(double d)
-      {
-        if (d>0) { SetOrthogonalDirection(1); }
-      }
-
-      /// \brief Set the backward speed of the drivetrain
-      void Backward(double d)
-      {
-        if (d>0) { SetOrthogonalDirection(2); }
-      }
-
-      /// \brief Set the right speed of the drivetrain
-      void Right(double d)
-      {
-        if (d>0) { SetOrthogonalDirection(3); }
-      }
-
-      /// \brief Set the left speed of the drivetrain
-      void Left(double d)
-      {
-        if (d>0) { SetOrthogonalDirection(4); }
       }
     }
   }

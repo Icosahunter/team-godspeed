@@ -1,6 +1,5 @@
 #pragma once
 #include "vex.h"
-#include "autonomous/conditions.h"
 #define elem(l, i) *std::next(l.begin(), i)
 
 namespace godspeed
@@ -30,13 +29,18 @@ namespace godspeed
 
     void Update()
     {
+      Brain.Screen.print("g");
       if (pipe != nullptr)
       {
+        Brain.Screen.print("h");
         sink(pipe(source()));
+        Brain.Screen.print("i");
       }
       else
       {
+        Brain.Screen.print("j");
         sink(source());
+        Brain.Screen.print("k");
       }
     }
   };
@@ -56,38 +60,17 @@ namespace godspeed
     /// \brief A list of bindings
     std::list<Binding*> bindings = std::list<Binding*>();
 
-    /// \brief A list of disabled binding IDs
-    std::list<Binding*> disabled = std::list<Binding*>();
-
     /// \brief Delay (in milliseconds) applied to the binder update loop
     int loop_delay = 5;
 
-    /// \brief Bind a source function to a sink function
-    int Bind(double(*source)(void), void(*sink)(double))
+    void AddBinding(Binding b)
     {
-      int id = bindings.size();
-      Binding b = Binding(source, sink);
+      Brain.Screen.print("d");
       bindings.push_back(&b);
-      return id;
+      Brain.Screen.print("e");
     }
 
-    /// \brief Bind a source function to a sink function through a pipe function
-    int Bind(double(*source)(void), double(*pipe)(double), void(*sink)(double))
-    {
-      int id = bindings.size();
-      Binding b = Binding(source, pipe, sink);
-      bindings.push_back(&b);
-      return id;
-    }
-
-    int AddBinding(Binding b)
-    {
-      int id = bindings.size();
-      bindings.push_back(&b);
-      return id;
-    }
-
-    void SetBindings(std::list<Binding> &l)
+    void SetBindings(std::list<Binding*> &l)
     {
       bindings.assign(l.begin(), l.end());
     }
@@ -97,34 +80,9 @@ namespace godspeed
       bindings.clear();
     }
 
-    /// \brief Disable a binding using the bindings ID
-    void Disable(int id)
+    void RemoveBinding(Binding b)
     {
-      disabled.push_back(elem(bindings, id));
-    }
-
-    /// \brief Re-enable a disabled binding using the bindings ID
-    void Enable(int id)
-    {
-      disabled.remove(elem(bindings, id));
-    }
-
-    /// \brief Disable a binding using the binding
-    void Disable(Binding &binding)
-    {
-      disabled.push_back(&binding);
-    }
-
-    /// \brief Re-enable a disabled binding using the binding
-    void Enable(Binding &binding)
-    {
-      disabled.remove(&binding);
-    }
-
-    /// \brief Check if a binding is disabled using the binding
-    bool IsDisabled(Binding &binding)
-    {
-      return contains(disabled, binding);
+      bindings.remove(&b);
     }
 
     /// \brief calls all bindings that are not disabled. This does NOT need to be called manually.
@@ -134,10 +92,9 @@ namespace godspeed
       {
         for(auto& x : bindings)
         {
-          if (!IsDisabled(*x))
-          {
-            x->Update();
-          }
+          Brain.Screen.print("f");
+          x->Update();
+          Brain.Screen.print("g");
         }
         task::sleep(loop_delay);
       }

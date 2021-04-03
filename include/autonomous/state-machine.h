@@ -3,10 +3,10 @@
 #include <list>
 #include <tuple>
 #include "vex.h"
+
 #define CONDITION bool(*)(void)
 #define ACTION void(*)(void)
 #define TRANSITION std::tuple<CONDITION, State*>
-#define ACTIVITY Binding
 
 namespace godspeed
 {
@@ -16,7 +16,7 @@ namespace godspeed
 
     std::list<ACTION> entryActions;
     std::list<TRANSITION> transitions;
-    std::list<ACTIVITY> activities;
+    std::list<Binding*> activities;
 
     void AddTransition(bool(*condition)(void), State &state)
     {
@@ -28,9 +28,9 @@ namespace godspeed
       entryActions.push_back(action);
     }
 
-    void AddActivity(ACTIVITY activity)
+    void AddActivity(Binding activity)
     {
-      activities.push_back(activity);
+      activities.push_back(&activity);
     }
   };
 
@@ -38,32 +38,33 @@ namespace godspeed
   {
     State* currentState;
 
-    std::list<State> states;
-
-    void AddState(State &state)
-    {
-      states.push_back(state);
-    }
-
     void ChangeState(State &state)
     {
-      Binder::ClearBindings();
+      for(auto& b : currentState->activities)
+      {
+        Binder::RemoveBinding(*b);
+      }
       currentState = &state;
-      for(auto& a : state.entryActions)
+      for(auto& a : currentState->entryActions)
       {
         a();
       }
-      Binder::SetBindings(state.activities);
+      for(auto& b : currentState->activities)
+      {
+        Binder::AddBinding(*b);
+      }
     }
 
-    /// \brief Update function called by the Behavior Manager thread
+    /// \brief Update function called by the State Machine thread
     void Update()
     {
       bool stateChanged = false;
+      State* cur;
+
       while (true)
       {
-        State* cur = currentState;
-        for(auto& t : cur->transitions)
+        cur = currentState;
+        for(auto const &t : cur->transitions)
         {
           if (std::get<0>(t)())
           {
@@ -74,7 +75,20 @@ namespace godspeed
       }
     }
 
-    /// \brief Runs the binder update function on it's own thread
+    void Start(State &starting_state)
+    {
+      currentState = &starting_state;
+      for(auto& a : currentState->entryActions)
+      {
+        a();
+      }
+      for(auto& b : currentState->activities)
+      {
+        Binder::AddBinding(*b);
+      }
+    }
+
+    /// \brief Runs the state machine update function on it's own thread
     void Init()
     {
       thread t(Update);
