@@ -28,7 +28,7 @@ namespace godspeed
       entryActions.push_back(action);
     }
 
-    void AddActivity(Binding activity)
+    void AddActivity(Binding &activity)
     {
       activities.push_back(&activity);
     }
@@ -86,6 +86,7 @@ namespace godspeed
       {
         Binder::AddBinding(*b);
       }
+      Brain.Screen.print("a");
     }
 
     /// \brief Runs the state machine update function on it's own thread

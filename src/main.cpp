@@ -51,6 +51,8 @@
 #include "outputs/ball-scorer.h"
 #include "inputs/path-script.h"
 #include "framework/binder.h"
+#include "autonomous/conditions.h"
+#include "autonomous/behaviors.h"
 #include "autonomous/state-machine.h"
 #include "autonomous/states.h"
 
@@ -77,7 +79,7 @@ int main() {
   //Binder::AddBinding(ExpanderBinding);
 
   LoadStatesTest();
-  //StateMachine::Init();
+  StateMachine::Init();
 
   this_thread::yield();
 }

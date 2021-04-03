@@ -66,7 +66,17 @@ namespace godspeed
     /// \brief A behavior that turns the ball collector treads in order to pickup a ball
     Binding PickUpBall(BallPickupSpeed, outputs::BallCollector::TreadSpeed);
 
-    /// \brief A behavior to move the robot away from a detected obstacle [NOT IMPLEMENTED]
+    /// \brief A behavior to move the robot away from a detected obstacle
     Binding AvoidObstacle(inputs::RangeFinders::Nearness, outputs::OmniDrive3Wheel::XSpeed);
+
+    Binding StopX(Stop, outputs::OmniDrive3Wheel::XSpeed);
+
+    Binding StopY(Stop, outputs::OmniDrive3Wheel::YSpeed);
+
+    Binding StopAngle(Stop, outputs::OmniDrive3Wheel::AngleSpeed);
+
+    Binding StopCollectors(Stop, outputs::BallCollector::TreadSpeed);
+
+    Binding StopScorer(Stop, outputs::BallScorer::TreadSpeed);
   }
 }

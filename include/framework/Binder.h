@@ -29,18 +29,13 @@ namespace godspeed
 
     void Update()
     {
-      Brain.Screen.print("g");
       if (pipe != nullptr)
       {
-        Brain.Screen.print("h");
         sink(pipe(source()));
-        Brain.Screen.print("i");
       }
       else
       {
-        Brain.Screen.print("j");
         sink(source());
-        Brain.Screen.print("k");
       }
     }
   };
@@ -63,11 +58,9 @@ namespace godspeed
     /// \brief Delay (in milliseconds) applied to the binder update loop
     int loop_delay = 5;
 
-    void AddBinding(Binding b)
+    void AddBinding(Binding &b)
     {
-      Brain.Screen.print("d");
       bindings.push_back(&b);
-      Brain.Screen.print("e");
     }
 
     void SetBindings(std::list<Binding*> &l)
@@ -80,7 +73,7 @@ namespace godspeed
       bindings.clear();
     }
 
-    void RemoveBinding(Binding b)
+    void RemoveBinding(Binding &b)
     {
       bindings.remove(&b);
     }
@@ -92,9 +85,7 @@ namespace godspeed
       {
         for(auto& x : bindings)
         {
-          Brain.Screen.print("f");
           x->Update();
-          Brain.Screen.print("g");
         }
         task::sleep(loop_delay);
       }
