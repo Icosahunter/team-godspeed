@@ -18,8 +18,12 @@ namespace godspeed
     Binding DCtrl_CenterTread(RemoteController::LeftTrigger, BallScorer::TreadSpeed);          //Bind the left trigger to the center tread
     Binding DCtrl_CollectorTreads(RemoteController::RightTrigger, BallCollector::TreadSpeed);  //Bind the right trigger to collector treads
 
+    double expander_pos() { return 355; }
+    Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
+
     void BindDriverControl()
     {
+      Binder::AddBinding(ExpanderBinding);
       Binder::AddBinding(DCtrl_XSpeed);
       Binder::AddBinding(DCtrl_YSpeed);
       Binder::AddBinding(DCtrl_AngleSpeed);

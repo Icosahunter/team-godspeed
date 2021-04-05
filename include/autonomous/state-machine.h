@@ -72,6 +72,7 @@ namespace godspeed
             break;
           }
         }
+        this_thread::yield();
       }
     }
 
@@ -86,7 +87,6 @@ namespace godspeed
       {
         Binder::AddBinding(*b);
       }
-      Brain.Screen.print("a");
     }
 
     /// \brief Runs the state machine update function on it's own thread

@@ -9,94 +9,67 @@
 
 namespace godspeed
 {
-  void A()
+  void ea1()
   {
-    DO_FOR(behaviors::MoveForward, 1000);
+    DO_FOR(behaviors::MoveForward, 2700);
     DO_FOR(behaviors::StopY, 500);
-  }
-
-  void B()
-  {
-    DO_FOR(behaviors::TurnRight, 1000);
+    DO_FOR(behaviors::TurnRight, 2150);
     DO_FOR(behaviors::StopAngle, 500);
   }
 
-  void C()
+  void ea2()
   {
-    outputs::OmniDrive3Wheel::AngleSpeed(0);
-    outputs::BallCollector::TreadSpeed(0);
-    outputs::BallScorer::TreadSpeed(0);
+    Binder::AddBinding(behaviors::PickUpBall);
+    Binder::AddBinding(behaviors::ScoreBall);
+    WAIT(600);
+    Binder::AddBinding(behaviors::StopY);
   }
+
+  void ea3()
+  {
+    DO_FOR(behaviors::MoveBackward, 1000);
+  }
+
+  void ea4()
+  {
+    DO_FOR(behaviors::MoveBackward, 3000);
+    DO_FOR(behaviors::TurnLeft, 2000);
+  }
+
+  double expander_pos() { return 355; }
+  Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
 
   void LoadStatesTest()
   {
     inputs::BallStorage::BallCounter = 1;
+    Binder::AddBinding(ExpanderBinding);
 
     static State s1;
     static State s2;
+    static State s3;
+    static State s4;
+    static State sStop;
 
-    s1.AddEntryAction(C);
-    s1.AddEntryAction(A);
-    s1.AddTransition(conditions::True, s2);
+    s1.AddEntryAction(ea1);
+    s1.AddActivity(behaviors::AlignWithGoal);
+    s1.AddActivity(behaviors::MoveForward);
+    s1.AddTransition(conditions::NearGoal, s2);
 
-    s2.AddEntryAction(C);
-    s2.AddEntryAction(B);
+    s2.AddEntryAction(ea2);
+    s2.AddTransition(conditions::BallNotLoaded, sStop);
+
+    s3.AddEntryAction(ea3);
+    s3.AddTransition(conditions::BallLoaded, s4);
+
+    s4.AddEntryAction(ea4);
+    s4.AddTransition(conditions::True, sStop);
+
+    sStop.AddActivity(behaviors::StopX);
+    sStop.AddActivity(behaviors::StopY);
+    sStop.AddActivity(behaviors::StopAngle);
+    sStop.AddActivity(behaviors::StopCollectors);
+    sStop.AddActivity(behaviors::StopScorer);
 
     StateMachine::Start(s1);
   }
-
-  // void A()
-  // {
-  //   WAIT(500);
-  //   DO_FOR(behaviors::MoveForward, 500);
-  //   WAIT(100);
-  //   DO_FOR(behaviors::TurnLeft, 500);
-  // }
-
-  // void B()
-  // {
-  //   outputs::BallCollector::TreadSpeed(1);
-  //   outputs::BallScorer::TreadSpeed(1);
-  //   Binder::AddBinding(behaviors::MoveForward);
-  //   wait(350, msec);
-  //   Binder::RemoveBinding(behaviors::MoveForward);
-  // }
-
-  // void C()
-  // {
-  //   outputs::OmniDrive3Wheel::AngleSpeed(0);
-  //   outputs::BallCollector::TreadSpeed(0);
-  //   outputs::BallScorer::TreadSpeed(0);
-  // }
-
-  // void D()
-  // {
-  //   Binder::AddBinding(behaviors::MoveBackward);
-  //   wait(350, msec);
-  //   Binder::RemoveBinding(behaviors::MoveBackward);
-  // }
-
-  // void LoadStatesTest()
-  // {
-  //   inputs::BallStorage::BallCounter = 1;
-
-  //   static State s1;
-  //   static State s2;
-  //   static State s3;
-
-  //   s1.AddEntryAction(C);
-  //   s1.AddEntryAction(A);
-  //   s1.AddActivity(behaviors::AlignWithGoal);
-  //   s1.AddActivity(behaviors::MoveForward);
-  //   s1.AddTransition(conditions::NearGoal, s2);
-
-  //   s2.AddEntryAction(C);
-  //   s2.AddEntryAction(B);
-  //   s2.AddTransition(conditions::BallNotLoaded, s3);
-
-  //   s3.AddEntryAction(C);
-  //   s3.AddEntryAction(D);
-
-  //   StateMachine::Start(s1);
-  // }
 }

@@ -22,10 +22,10 @@ namespace godspeed
     double LocateSpeed()     { return 0.6; }
 
     /// \brief A source function used in turn left behavior
-    double TurnLeftSpeed()   { return -0.6; }
+    double TurnLeftSpeed()   { return -0.8; }
 
     /// \brief A source function used in turn right behavior
-    double TurnRightSpeed()  { return 0.6; }
+    double TurnRightSpeed()  { return 0.8; }
 
     /// \brief A source function used in the score ball behavior
     double BallScorerSpeed() { return 1.0; }
@@ -40,7 +40,7 @@ namespace godspeed
     double BackwardSpeed()   { return -1.0; }
 
     /// \brief A behavior that turns the robot to face the largest ball found
-    Binding AlignWithBall(inputs::VisionSensor::BallXOffset, AlignPipe,outputs::OmniDrive3Wheel::AngleSpeed);
+    Binding AlignWithBall(inputs::VisionSensor::BallXOffset, AlignPipe, outputs::OmniDrive3Wheel::AngleSpeed);
 
     /// \brief A behavior that turns the robot to face the largest goal backboard icon found
     Binding AlignWithGoal(inputs::VisionSensor::GoalXOffset, AlignPipe, outputs::OmniDrive3Wheel::AngleSpeed);

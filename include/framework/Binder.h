@@ -4,7 +4,6 @@
 
 namespace godspeed
 {
-
   class Binding
   {
     public:
@@ -45,18 +44,13 @@ namespace godspeed
   *
   * There are 3 types of functions considered here, source functions which take no values
   * and return a double, pipe functions which take a double and return a double, and sink functions
-  * which take a double and return nothing. The Bind function allows you to bind the output of a 
-  * source function to a sink function (optionally through a pipe function). Then, once the Binder
-  * is initialized, it will go through and repeatedly call the sink functions with the value produced 
-  * by the source functions as the input. 
+  * which take a double and return nothing. Once the Binder is initialized, it will go through and 
+  * repeatedly call the sink functions with the value produced by the source functions as the input. 
   */
   namespace Binder
   {
     /// \brief A list of bindings
     std::list<Binding*> bindings = std::list<Binding*>();
-
-    /// \brief Delay (in milliseconds) applied to the binder update loop
-    int loop_delay = 5;
 
     void AddBinding(Binding &b)
     {
@@ -87,7 +81,7 @@ namespace godspeed
         {
           x->Update();
         }
-        task::sleep(loop_delay);
+        this_thread::yield();
       }
     }
 

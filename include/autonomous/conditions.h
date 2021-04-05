@@ -10,7 +10,7 @@ namespace godspeed
   {
     double alignmentThreshold = 0; /// \brief XOffset threshold at which the robot is considered aligned with an object
     double nearBallThreshold = 28; /// \brief Distance threshold in inches at which a ball is considered near the robot
-    double nearGoalThreshold = 24; /// \brief Distance threshold in inches at which a goal is considered near the robot
+    double nearGoalThreshold = 28; /// \brief Distance threshold in inches at which a goal is considered near the robot
 
     double nearObstacleThreshold = 500;
 

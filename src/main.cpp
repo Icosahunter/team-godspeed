@@ -55,20 +55,15 @@
 #include "autonomous/behaviors.h"
 #include "autonomous/state-machine.h"
 #include "autonomous/states.h"
+#include "driver-control.h"
 
 using namespace vex;
 using namespace godspeed;
 using namespace inputs;
 using namespace outputs;
 
-void BindDriverControl();
-void BindPathScript();
-
-double ExpanderPosition;
-double expander_pos() { return ExpanderPosition; }
-Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
-
 int main() {
+
   // Initializations
   vexcodeInit();           //Vex initialization
   Binder::Init();          //Binder initialization
@@ -76,10 +71,10 @@ int main() {
   VisionSensor::Init();    //Vision sensor initialization
   Brain.resetTimer();
 
-  //Binder::AddBinding(ExpanderBinding);
-
   LoadStatesTest();
   StateMachine::Init();
+
+  //DriverControl::BindDriverControl();
 
   this_thread::yield();
 }
