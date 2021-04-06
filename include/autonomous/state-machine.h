@@ -15,6 +15,7 @@ namespace godspeed
     public:
 
     std::list<ACTION> entryActions;
+    std::list<ACTION> exitActions;
     std::list<TRANSITION> transitions;
     std::list<Binding*> activities;
 
@@ -26,6 +27,11 @@ namespace godspeed
     void AddEntryAction(void(*action)(void))
     {
       entryActions.push_back(action);
+    }
+
+    void AddExitAction(void(*action)(void))
+    {
+      exitActions.push_back(action);
     }
 
     void AddActivity(Binding &activity)
@@ -44,7 +50,13 @@ namespace godspeed
       {
         Binder::RemoveBinding(*b);
       }
+      for(auto&a : currentState->exitActions)
+      {
+        a();
+      }
+      
       currentState = &state;
+
       for(auto& a : currentState->entryActions)
       {
         a();
