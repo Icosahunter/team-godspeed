@@ -30,29 +30,37 @@ namespace godspeed
 
         // Describes the direction and magnitude the robot needs to turn
         double angVel = 0.333 * AngleSpeedVar;
+
         // Calculate the angle between the x and y directional vectors to determine the direction the robot is to move
         double ang = atan2(YSpeedVar.Value(), XSpeedVar.Value());
+
         // Calculate the magnitude that the robot movement needs to be from the x and y directional vectors
         double mag = sqrt(pow(YSpeedVar.Value(), 2) + pow(XSpeedVar.Value(), 2));
+
         // Set Front Right Wheel (motor 1) speed using wheel equation
         double m1spd = mag*0.666*cos(ang + M_PI/3) + angVel; 
+
         // Set Front Left Wheel (motor 2) speed using wheel equation
         double m2spd = mag*0.666*cos(ang + 5*M_PI/3) + angVel; 
+
         // Set Back Wheel (motor 3) speed using wheel equation
         double m3spd = mag*0.666*cos(ang + M_PI) + angVel; 
 
-        // Print the X and Y coordinates of the controller's left joystick on the first line of the VEX Brain's screen
-        //Brain.Screen.clearScreen();
-        //Brain.Screen.setCursor(1, 1);
-        //Brain.Screen.print(x);
-        //Brain.Screen.newLine();
-        //Brain.Screen.print(y);
-        //Brain.Screen.newLine();
-        //Brain.Screen.setCursor(2, 1);
-        //Brain.Screen.print(a);
+        // For debugging
+          // Print the X and Y coordinates of the controller's left joystick
+          // on the first line of the VEX Brain's screen
+          //Brain.Screen.clearScreen();
+          //Brain.Screen.setCursor(1, 1);
+          //Brain.Screen.print(x);
+          //Brain.Screen.newLine();
+          //Brain.Screen.print(y);
+          //Brain.Screen.newLine();
+          //Brain.Screen.setCursor(2, 1);
+          //Brain.Screen.print(a);
 
-        // Set the speed and direction of the motors so that when we turn them on, the robot moves in the desired direction (the direction the joystick is pointing)
-
+        // Set the speed and direction of the motors so that when we turn
+        // them on, the robot moves in the desired direction (the direction
+        // the joystick is pointing)
         setMotorSpeed(m1spd, FrontRightMotor);
         setMotorSpeed(m2spd, FrontLeftMotor);
         setMotorSpeed(m3spd, BackMotor);

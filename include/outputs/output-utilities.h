@@ -23,12 +23,15 @@ namespace godspeed
           m.setVelocity(100, percentUnits::pct);
           m.spin(forward);
         }
+
         // if motor speed is out of bounds, set to nearest boundary value
         else if (std::abs(motorSpeed) > 0.1)
         {
           m.setVelocity(100*motorSpeed, percentUnits::pct);
           m.spin(forward);
         }
+
+        // otherwise, stop the motor
         else
         {
           m.stop();
