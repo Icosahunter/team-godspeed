@@ -14,7 +14,7 @@ namespace godspeed
   {
     /// \brief A pipe function used in the aligning behaviors
     // Determine if the robot is aligned with an object
-    double AlignPipe(double d) { return -d; }
+    double AlignPipe(double d) { return -1.5*d; }
 
     /// \brief A source function used in some behaviors
     // Stop a function on the robot
