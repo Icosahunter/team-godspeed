@@ -13,10 +13,10 @@ namespace godspeed
       using namespace OutputUtilities;
       
       /// \brief An object to track the current desired x-speed and apply smoothing to prevent jerky movement
-      WinAvg XSpeedVar;
+      WinAvg XSpeedVar(150);
 
       /// \brief An object to track the current desired y-speed and apply smoothing to prevent jerky movement
-      WinAvg YSpeedVar;
+      WinAvg YSpeedVar(150);
 
       /// \brief A variable to track the current desired angular speed
       double AngleSpeedVar;
