@@ -8,14 +8,20 @@ namespace godspeed
 {
   namespace conditions
   {
-    double alignmentThreshold = 0; /// \brief XOffset threshold at which the robot is considered aligned with an object
-    double nearBallThreshold = 28; /// \brief Distance threshold in inches at which a ball is considered near the robot
-    double nearGoalThreshold = 28; /// \brief Distance threshold in inches at which a goal is considered near the robot
+    /// \brief XOffset threshold at which the robot is considered aligned with an object
+    double alignmentThreshold = 0; 
+    /// \brief Distance threshold in inches at which a ball is considered near the robot
+    double nearBallThreshold = 28; 
+    /// \brief Distance threshold in inches at which a goal is considered near the robot
+    double nearGoalThreshold = 28; 
 
+    // For ultrasonic rangefinders (not yet implemented)
     double nearObstacleThreshold = 500;
 
-    bool True() { return true; } /// \brief A simple condition which is always True
-    bool False() { return false; } /// \brief A simple condition which is always False
+    /// \brief A simple condition which is always True
+    bool True() { return true; } 
+    /// \brief A simple condition which is always False
+    bool False() { return false; } 
 
     /// \brief Returns true if the number of balls stored in the robot is greater than zero
     bool BallLoaded()
