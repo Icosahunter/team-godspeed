@@ -90,7 +90,8 @@
 #include "autonomous/conditions.h"
 #include "autonomous/behaviors.h"
 #include "autonomous/state-machine.h"
-#include "autonomous/states.h"
+#include "autonomous/bauble-states.h"
+#include "autonomous/tchotchke-states.h"
 #include "driver-control.h"
 
 using namespace vex;
@@ -107,7 +108,7 @@ int main() {
   VisionSensor::Init();    //Vision sensor initialization
   Brain.resetTimer();
 
-  LoadStatesTest();
+  Tchotchke::StartAutonomous();
   StateMachine::Init();
 
   //DriverControl::BindDriverControl();
