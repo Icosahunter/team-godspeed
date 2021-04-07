@@ -12,15 +12,19 @@ namespace godspeed
   {
     using namespace inputs;
     using namespace outputs;
+    
+    // Define the bindings between the software and the VEX controller
     Binding DCtrl_XSpeed(RemoteController::LeftStickX, OmniDrive3Wheel::XSpeed);               //Bind the left sticks X position to the drivetrains x-speed
     Binding DCtrl_YSpeed(RemoteController::LeftStickY, OmniDrive3Wheel::YSpeed);               //Bind the left sticks Y position to the drivetrains y-speed
     Binding DCtrl_AngleSpeed(RemoteController::RightStickX, OmniDrive3Wheel::AngleSpeed);      //Bind the right sticks X position to the drivetrains angular speed
     Binding DCtrl_CenterTread(RemoteController::LeftTrigger, BallScorer::TreadSpeed);          //Bind the left trigger to the center tread
     Binding DCtrl_CollectorTreads(RemoteController::RightTrigger, BallCollector::TreadSpeed);  //Bind the right trigger to collector treads
 
+    // Define the ball scorer expander and how many degrees to rotate it
     double expander_pos() { return 355; }
     Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
 
+    // Turn on driver control (Add all driver control bindings to the binder)
     void BindDriverControl()
     {
       Binder::AddBinding(ExpanderBinding);
@@ -31,6 +35,7 @@ namespace godspeed
       Binder::AddBinding(DCtrl_CollectorTreads);
     }
 
+    // Turn off driver control (Remove all driver control bindings from the binder)
     void UnBindDriverControl()
     {
       Binder::RemoveBinding(DCtrl_XSpeed);
