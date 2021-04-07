@@ -13,7 +13,7 @@ namespace godspeed
   namespace behaviors
   {
     /// \brief A pipe function used in the aligning behaviors
-    double AlignPipe(double d) { return -d; }
+    double AlignPipe(double d) { return -1.5*d; }
 
     /// \brief A source function used in some behaviors
     double Stop()            { return 0; }
