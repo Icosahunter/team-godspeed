@@ -72,16 +72,13 @@ int main() {
   VisionSensor::Init();    //Vision sensor initialization
   Brain.resetTimer();
 
-<<<<<<< HEAD
   // Uncomment these for Autonomous Control of Bauble (Smaller robot)
   //Bauble::StartAutonomous();
   //StateMachine::Init();
 
   // Uncomment these for Autonomous Control of Tchotchke (Larger robot)
   Tchotchke::StartAutonomous();
-=======
   Bauble::StartAutonomous();
->>>>>>> nathaniel
   StateMachine::Init();
 
   // Uncomment this for Driver Control
