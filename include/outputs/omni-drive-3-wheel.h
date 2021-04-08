@@ -21,6 +21,18 @@ namespace godspeed
       /// \brief A variable to track the current desired angular speed
       double AngleSpeedVar;
 
+      void PrintToScreen(){
+        // Print the X and Y coordinates of the controller's left joystick on the first line of the VEX Brain's screen
+        Controller1.Screen.clearScreen();
+        Controller1.Screen.setCursor(1, 1);
+        Controller1.Screen.print(XSpeedVar);
+        Controller1.Screen.newLine();
+        Controller1.Screen.print(YSpeedVar);
+        Controller1.Screen.newLine();
+        Controller1.Screen.print(AngleSpeedVar);
+        Controller1.Screen.newLine();
+
+      }
       /// \brief Set the X, Y, and angular velocities of the drivetrain
       void SetVelocity(double x, double y, double a)
       {

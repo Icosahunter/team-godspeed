@@ -79,12 +79,11 @@ namespace godspeed
             if (pathIndex != currentPath->path.end())
             {
               updateVars();
-              pathIndex++;
               timer::event(update, durVal());
+              pathIndex++;
             }
             else
             {
-              updateVars();
               if (currentPath->loop)
               {
                 pathIndex = currentPath->path.begin();
