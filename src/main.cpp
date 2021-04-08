@@ -16,60 +16,6 @@
 // LeftRangeFinder      sonar         E, F            
 // RightRangeFinder     sonar         C, D            
 // ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Vision20             vision        20              
-// BumperA              bumper        A               
-// BumperB              bumper        B               
-// Controller1          controller                    
-// FrontRightMotor      motor         1               
-// FrontLeftMotor       motor         2               
-// BackMotor            motor         3               
-// LeftCollectorMotor   motor         4               
-// RightCollectorMotor  motor         5               
-// ScorerMotor          motor         7               
-// LeftBallGuideMotor   motor         8               
-// RightBallGuideMotor  motor         9               
-// LeftRangeFinder      sonar         E, F            
-// RightRangeFinder     sonar         C, D            
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Vision20             vision        20              
-// BumperA              bumper        A               
-// BumperB              bumper        B               
-// Controller1          controller                    
-// FrontRightMotor      motor         1               
-// FrontLeftMotor       motor         2               
-// BackMotor            motor         3               
-// LeftCollectorMotor   motor         4               
-// RightCollectorMotor  motor         5               
-// ScorerMotor          motor         7               
-// LeftBallGuideMotor   motor         8               
-// RightBallGuideMotor  motor         9               
-// LeftRangeFinder      sonar         E, F            
-// RightRangeFinder     sonar         C, D            
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Vision20             vision        20              
-// BumperA              bumper        A               
-// BumperB              bumper        B               
-// Controller1          controller                    
-// FrontRightMotor      motor         1               
-// FrontLeftMotor       motor         2               
-// BackMotor            motor         3               
-// LeftCollectorMotor   motor         4               
-// RightCollectorMotor  motor         5               
-// ScorerMotor          motor         7               
-// LeftBallGuideMotor   motor         8               
-// RightBallGuideMotor  motor         9               
-// LeftRangeFinder      sonar         E, F            
-// RightRangeFinder     sonar         C, D            
-// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -126,12 +72,16 @@ int main() {
   VisionSensor::Init();    //Vision sensor initialization
   Brain.resetTimer();
 
+<<<<<<< HEAD
   // Uncomment these for Autonomous Control of Bauble (Smaller robot)
   //Bauble::StartAutonomous();
   //StateMachine::Init();
 
   // Uncomment these for Autonomous Control of Tchotchke (Larger robot)
   Tchotchke::StartAutonomous();
+=======
+  Bauble::StartAutonomous();
+>>>>>>> nathaniel
   StateMachine::Init();
 
   // Uncomment this for Driver Control

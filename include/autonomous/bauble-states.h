@@ -34,13 +34,13 @@ namespace godspeed
       Binder::AddBinding(behaviors::PickUpBall);
       Binder::AddBinding(behaviors::ScoreBall);
       WAIT(1200);
-      
+
       // Stop the robot in front of the tower to finish scoring
-      DO_FOR(behaviors::StopY, 600);
+      DO_FOR(behaviors::StopY, 1000);
       
       // Finish picking up ball and back away from the tower
       Binder::AddBinding(behaviors::PickUpBall);
-      DO_FOR(behaviors::MoveBackward, 2500);
+      DO_FOR(behaviors::MoveBackward, 2900);
       
       // Stop the ball scorer and ball pickup
       Binder::RemoveBinding(behaviors::PickUpBall);
@@ -49,7 +49,7 @@ namespace godspeed
       outputs::BallScorer::TreadSpeed(0);
       
       // Stop backing up, turn to face the autonomous goal on the right edge
-      DO_FOR(behaviors::StopY, 500);
+      DO_FOR(behaviors::StopY, 450);
       DO_FOR(behaviors::TurnLeft, 2000);
     }
 
@@ -57,30 +57,15 @@ namespace godspeed
     // then remove the opponent's ball from the bottom of the tower
     void ent3()
     {
+      // Remove past behaviors
+      outputs::OmniDrive3Wheel::AngleSpeed(0);
+
       // In case of past distance data, initialize new goal distance to infinity
       inputs::VisionSensor::GoalDistVar.Initialize(infinity());
       
       // Approach goal
-      Binder::AddBinding(behaviors::ScoreBall);
-      WAIT(1500);
-      
-      // Stop the robot in front of the tower to finish scoring
-      DO_FOR(behaviors::StopY, 500);
-      WAIT(2000);
-      
-      // Stop the ball scorer
-      Binder::RemoveBinding(behaviors::ScoreBall);
-      outputs::BallScorer::TreadSpeed(0);
-      
-      // Remove the ball from the tower
-      // Start picking up
+      WAIT(550);
       Binder::AddBinding(behaviors::PickUpBall);
-      
-      // Back up slightly
-      DO_FOR(behaviors::MoveBackward, 500);
-      DO_FOR(behaviors::StopY, 500);
-      
-      // Move forward slightly and turn to dislodge the ball
       Binder::AddBinding(behaviors::MoveForward);
       Binder::AddBinding(behaviors::TurnLeft);
       WAIT(500);
@@ -98,10 +83,28 @@ namespace godspeed
       Binder::RemoveBinding(behaviors::PickUpBall);
       outputs::BallCollector::TreadSpeed(0);
       outputs::OmniDrive3Wheel::AngleSpeed(0);
+      DO_FOR(behaviors::MoveBackward, 800);
+      DO_FOR(behaviors::StopY, 500);
+      DO_FOR(behaviors::TurnRight, 1500);
+      outputs::OmniDrive3Wheel::AngleSpeed(0);
+      DO_FOR(behaviors::MoveBackward, 2000);
+    }
+    
+    void ent4()
+    {
+      // Finish scoring
+      outputs::OmniDrive3Wheel::AngleSpeed(0);
+      Binder::AddBinding(behaviors::ScoreBall);
+      WAIT(1000);
+      DO_FOR(behaviors::StopY, 500);
+      WAIT(2000);
+      Binder::RemoveBinding(behaviors::ScoreBall);
+      outputs::BallScorer::TreadSpeed(0);
+      DO_FOR(behaviors::MoveBackward, 1000);
     }
 
     // Define the ball scorer expander and how many degrees to rotate it
-    double expander_pos() { return 355; }
+    double expander_pos() { return 350; }
     Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
 
     void StartAutonomous()
@@ -112,6 +115,8 @@ namespace godspeed
       // Initialize the ball storage counter with the preloaded ball
       inputs::BallStorage::BallCounter = 1;
 
+      behaviors::AlignAgression = 1;
+
       // Add the binding for the ball scorer expander to the list
       Binder::AddBinding(ExpanderBinding);
 
@@ -119,6 +124,8 @@ namespace godspeed
       static State s1;
       static State s2;
       static State s3;
+      static State s4;
+      static State s5;
       static State sStop;
 
       // Define entry action, activities, exit conditions, and exit actions
@@ -135,7 +142,12 @@ namespace godspeed
 
       // Define entry action, activities, exit conditions, and exit actions
       s3.AddEntryAction(ent3);
-      s3.AddTransition(conditions::True, sStop);
+      s3.AddActivity(behaviors::AlignWithGoal);
+      s3.AddActivity(behaviors::MoveForward);
+      s3.AddTransition(conditions::NearGoal, s4);
+
+      s4.AddEntryAction(ent4);
+      s4.AddTransition(conditions::True, sStop);
 
       // Define entry action, activities, exit conditions, and exit actions
       sStop.AddActivity(behaviors::StopX);

@@ -12,9 +12,11 @@ namespace godspeed
   /// \brief A namespace containing autonomous mode behavior bindings
   namespace behaviors
   {
+    double AlignAgression = 1;
+
     /// \brief A pipe function used in the aligning behaviors
     // Determine if the robot is aligned with an object
-    double AlignPipe(double d) { return -1.5*d; }
+    double AlignPipe(double d) { return -AlignAgression*d; }
 
     /// \brief A source function used in some behaviors
     // Stop a function on the robot

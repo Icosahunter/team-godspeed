@@ -16,7 +16,7 @@ namespace godspeed
       // Get into position
       DO_FOR(behaviors::MoveForward, 2700);
       DO_FOR(behaviors::StopY, 500);
-      DO_FOR(behaviors::TurnRight, 2200);
+      DO_FOR(behaviors::TurnRight, 2350);
       DO_FOR(behaviors::StopAngle, 500);
     }
 
@@ -25,7 +25,7 @@ namespace godspeed
       inputs::VisionSensor::GoalDistVar.Initialize(infinity());
       // Approach goal
       Binder::AddBinding(behaviors::ScoreBall);
-      WAIT(1000);
+      WAIT(1100);
       // Finish scoring
       DO_FOR(behaviors::StopY, 600);
       Binder::RemoveBinding(behaviors::ScoreBall);
@@ -107,6 +107,7 @@ namespace godspeed
     {
       inputs::VisionSensor::XOffsetFudge = 0.30;
       inputs::BallStorage::BallCounter = 1;
+      behaviors::AlignAgression = 1.5;
       Binder::AddBinding(ExpanderBinding);
 
       static State s1;
