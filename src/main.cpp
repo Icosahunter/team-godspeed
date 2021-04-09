@@ -73,13 +73,12 @@ int main() {
   Brain.resetTimer();
 
   // Uncomment these for Autonomous Control of Bauble (Smaller robot)
-  //Bauble::StartAutonomous();
-  //StateMachine::Init();
-
-  // Uncomment these for Autonomous Control of Tchotchke (Larger robot)
-  Tchotchke::StartAutonomous();
   Bauble::StartAutonomous();
   StateMachine::Init();
+
+  // Uncomment these for Autonomous Control of Tchotchke (Larger robot)
+  //Tchotchke::StartAutonomous();
+  //StateMachine::Init();
 
   // Uncomment this for Driver Control
   //DriverControl::BindDriverControl();
