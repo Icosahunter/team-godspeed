@@ -25,9 +25,9 @@ namespace godspeed
       inputs::VisionSensor::GoalDistVar.Initialize(infinity());
       // Approach goal
       Binder::AddBinding(behaviors::ScoreBall);
-      WAIT(1100);
+      WAIT(1080);
       // Finish scoring
-      DO_FOR(behaviors::StopY, 600);
+      DO_FOR(behaviors::StopY, 1000);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallScorer::TreadSpeed(0);
       // Backup from current goal
@@ -44,26 +44,28 @@ namespace godspeed
       // Approach ball
       Binder::AddBinding(behaviors::PickUpBall);
       Binder::AddBinding(behaviors::ScoreBall);
-      WAIT(1500);
+      WAIT(1900);
       // Pickup ball
       DO_FOR(behaviors::StopY, 1000);
+      DO_FOR(behaviors::MoveBackward, 1200);
       Binder::RemoveBinding(behaviors::PickUpBall);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallCollector::TreadSpeed(0);
       outputs::BallScorer::TreadSpeed(0);
+      DO_FOR(behaviors::StopY, 500);
     }
     
-    void ent5()
+    void ent4()
     {
       outputs::OmniDrive3Wheel::AngleSpeed(0);
       // Score the ball
       Binder::AddBinding(behaviors::ScoreBall);
-      DO_FOR(behaviors::MoveForward, 1000);
+      DO_FOR(behaviors::MoveForward, 1080);
       DO_FOR(behaviors::StopY, 2500);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallScorer::TreadSpeed(0);
       // Back up to collect next ball
-      DO_FOR(behaviors::MoveBackward, 1000);
+      DO_FOR(behaviors::MoveBackward, 1100);
       DO_FOR(behaviors::StopY, 500);
       DO_FOR(behaviors::TurnRight, 2400);
     }
@@ -85,29 +87,34 @@ namespace godspeed
       outputs::BallScorer::TreadSpeed(0);
 
       DO_FOR(behaviors::StopY, 500);
-      DO_FOR(behaviors::TurnRight, 850);
+      DO_FOR(behaviors::TurnRight, 800);
       outputs::OmniDrive3Wheel::AngleSpeed(0);
 
       DO_FOR(behaviors::MoveForward, 1700);
       Binder::AddBinding(behaviors::ScoreBall);
       Binder::AddBinding(behaviors::PickUpBall);
-      DO_FOR(behaviors::MoveForward, 1100);
+      DO_FOR(behaviors::MoveForward, 1300);
 
-      DO_FOR(behaviors::StopY, 2000);
+      DO_FOR(behaviors::StopY, 3000);
       Binder::RemoveBinding(behaviors::PickUpBall);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallCollector::TreadSpeed(0);
       outputs::BallScorer::TreadSpeed(0);
+
+      DO_FOR(behaviors::MoveBackward, 300);
+      DO_FOR(behaviors::StopY, 500);
     }
 
-    double expander_pos() { return 365; }
+    double expander_pos() { return 355; }
     Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
 
     void StartAutonomous()
     {
-      inputs::VisionSensor::XOffsetFudge = 0.30;
+      conditions::nearGoalThreshold = 28;
+      conditions::nearBallThreshold = 28;
+      inputs::VisionSensor::XOffsetFudge = 0.25;
       inputs::BallStorage::BallCounter = 1;
-      behaviors::AlignAgression = 1.5;
+      behaviors::AlignAgression = 1.8;
       Binder::AddBinding(ExpanderBinding);
 
       static State s1;
@@ -130,12 +137,13 @@ namespace godspeed
 
       s3.AddEntryAction(ent3);
       s3.AddActivity(behaviors::AlignWithGoal);
-      s3.AddTransition(conditions::AlignedWithGoal, s4);
+      s3.AddActivity(behaviors::MoveForward);
+      s3.AddTransition(conditions::NearGoal, s4);
 
+      s4.AddEntryAction(ent4);
       s4.AddActivity(behaviors::AlignWithBall);
       s4.AddTransition(conditions::AlignedWithBall, s5);
 
-      s5.AddEntryAction(ent5);
       s5.AddActivity(behaviors::AlignWithBall);
       s5.AddActivity(behaviors::MoveForward);
       s5.AddTransition(conditions::NearBall, s6);

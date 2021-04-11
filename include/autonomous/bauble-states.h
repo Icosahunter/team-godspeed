@@ -84,6 +84,8 @@ namespace godspeed
 
     void StartAutonomous()
     {
+      conditions::nearGoalThreshold = 28;
+      conditions::nearBallThreshold = 30;
       inputs::VisionSensor::XOffsetFudge = 0.1;
       inputs::BallStorage::BallCounter = 1;
       behaviors::AlignAgression = 1;
