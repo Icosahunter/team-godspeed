@@ -74,6 +74,7 @@
 #include "autonomous/state-machine.h"
 #include "autonomous/bauble-states.h"
 #include "autonomous/tchotchke-states.h"
+#include "autonomous/test.h"
 #include "driver-control.h"
 
 using namespace vex;

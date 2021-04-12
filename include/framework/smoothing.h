@@ -10,6 +10,8 @@ namespace godspeed
   {
     public:
 
+      int WindowSize() { return values.size(); };
+
       double Value()
       {
         return std::accumulate(values.begin(), values.end(), 0.0)/values.size();
@@ -41,6 +43,8 @@ namespace godspeed
   class WinMin
   {
     public:
+
+      int WindowSize() { return values.size(); };
 
       double Value()
       {

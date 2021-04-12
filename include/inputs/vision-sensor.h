@@ -108,6 +108,14 @@ namespace godspeed
         return BallDistVar.Value();
       }
 
+      void BallDistanceScan()
+      {
+        for (int i=0; i<BallDistVar.WindowSize(); i++)
+        {
+          BallDistance();
+        }
+      }
+
       /** 
       * \brief Returns the X offset of the largest ball from the center of the screen, normalize to between -1 and 1
       *
@@ -161,6 +169,14 @@ namespace godspeed
       {
         GoalDistVar.SetValue(GetDistance(Vision20__BACKBOARD, BackboardWidth, BackboardHeight));
         return GoalDistVar.Value();
+      }
+
+      void GoalDistanceScan()
+      {
+        for (int i=0; i<GoalDistVar.WindowSize(); i++)
+        {
+          GoalDistance();
+        }
       }
 
       /** 

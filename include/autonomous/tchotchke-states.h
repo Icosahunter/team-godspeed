@@ -11,6 +11,18 @@ namespace godspeed
 {
   namespace Tchotchke
   {
+    bool CenterLineBallNotFound()
+    {
+      if (inputs::VisionSensor::BallDistance() > 60)
+      {
+        return true;
+      }
+      else 
+      {
+        return false;
+      }
+    }
+
     void ent1()
     {
       // Get into position
@@ -24,10 +36,12 @@ namespace godspeed
     {
       inputs::VisionSensor::GoalDistVar.Initialize(infinity());
       // Approach goal
+      DO_FOR(behaviors::TurnLeft, 35);
+      outputs::OmniDrive3Wheel::AngleSpeed(0);
       Binder::AddBinding(behaviors::ScoreBall);
-      WAIT(1080);
+      WAIT(1100);
       // Finish scoring
-      DO_FOR(behaviors::StopY, 1000);
+      DO_FOR(behaviors::StopY, 1500);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallScorer::TreadSpeed(0);
       // Backup from current goal
@@ -47,7 +61,7 @@ namespace godspeed
       WAIT(1900);
       // Pickup ball
       DO_FOR(behaviors::StopY, 1000);
-      DO_FOR(behaviors::MoveBackward, 1200);
+      DO_FOR(behaviors::MoveBackward, 1150);
       Binder::RemoveBinding(behaviors::PickUpBall);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallCollector::TreadSpeed(0);
@@ -60,7 +74,7 @@ namespace godspeed
       outputs::OmniDrive3Wheel::AngleSpeed(0);
       // Score the ball
       Binder::AddBinding(behaviors::ScoreBall);
-      DO_FOR(behaviors::MoveForward, 1080);
+      DO_FOR(behaviors::MoveForward, 1100);
       DO_FOR(behaviors::StopY, 2500);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallScorer::TreadSpeed(0);
@@ -68,6 +82,7 @@ namespace godspeed
       DO_FOR(behaviors::MoveBackward, 1100);
       DO_FOR(behaviors::StopY, 500);
       DO_FOR(behaviors::TurnRight, 2400);
+      inputs::VisionSensor::BallDistanceScan();
     }
 
     void ent6()
@@ -76,10 +91,10 @@ namespace godspeed
       Binder::AddBinding(behaviors::PickUpBall);
       Binder::AddBinding(behaviors::ScoreBall);
 
-      DO_FOR(behaviors::MoveForward, 3000);
+      DO_FOR(behaviors::MoveForward, 1500);
       DO_FOR(behaviors::StopY, 500);
 
-      DO_FOR(behaviors::MoveBackward, 1300);
+      DO_FOR(behaviors::MoveBackward, 1700);
 
       Binder::RemoveBinding(behaviors::PickUpBall);
       Binder::RemoveBinding(behaviors::ScoreBall);
@@ -87,13 +102,12 @@ namespace godspeed
       outputs::BallScorer::TreadSpeed(0);
 
       DO_FOR(behaviors::StopY, 500);
-      DO_FOR(behaviors::TurnRight, 800);
+      DO_FOR(behaviors::TurnRight, 900);
       outputs::OmniDrive3Wheel::AngleSpeed(0);
 
-      DO_FOR(behaviors::MoveForward, 1700);
       Binder::AddBinding(behaviors::ScoreBall);
       Binder::AddBinding(behaviors::PickUpBall);
-      DO_FOR(behaviors::MoveForward, 1300);
+      DO_FOR(behaviors::MoveForward, 3000);
 
       DO_FOR(behaviors::StopY, 3000);
       Binder::RemoveBinding(behaviors::PickUpBall);
@@ -138,11 +152,13 @@ namespace godspeed
       s3.AddEntryAction(ent3);
       s3.AddActivity(behaviors::AlignWithGoal);
       s3.AddActivity(behaviors::MoveForward);
+      s3.AddTransition(conditions::BallNotLoaded, sStop);
       s3.AddTransition(conditions::NearGoal, s4);
 
       s4.AddEntryAction(ent4);
       s4.AddActivity(behaviors::AlignWithBall);
       s4.AddTransition(conditions::AlignedWithBall, s5);
+      s4.AddTransition(CenterLineBallNotFound, sStop);
 
       s5.AddActivity(behaviors::AlignWithBall);
       s5.AddActivity(behaviors::MoveForward);
