@@ -1,14 +1,16 @@
 #pragma once
+#include "tchotchke.h"
 #include "inputs/remote-controller.h"
 #include "outputs/omni-drive-3-wheel.h"
 #include "outputs/ball-collector.h"
 #include "outputs/ball-scorer.h"
-#include "framework/binder.h"
+#include "/framework/binder.h"
+#include "framework/smoothing.h"
 #include "vex.h"
 
 namespace godspeed
 {
-  namespace DriverControl
+  namespace Tchotchke
   {
     using namespace inputs;
     using namespace outputs;
@@ -18,11 +20,10 @@ namespace godspeed
     Binding DCtrl_CenterTread(RemoteController::LeftTrigger, BallScorer::TreadSpeed);          //Bind the left trigger to the center tread
     Binding DCtrl_CollectorTreads(RemoteController::RightTrigger, BallCollector::TreadSpeed);  //Bind the right trigger to collector treads
 
-    double expander_pos() { return 355; }
-    Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
-
     void BindDriverControl()
     {
+      OmniDrive3Wheel::XSpeedVar = WinAvg(600);
+      OmniDrive3Wheel::YSpeedVar = WinAvg(600);
       Binder::AddBinding(ExpanderBinding);
       Binder::AddBinding(DCtrl_XSpeed);
       Binder::AddBinding(DCtrl_YSpeed);

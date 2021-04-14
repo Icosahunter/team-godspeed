@@ -16,24 +16,6 @@
 // LeftRangeFinder      sonar         E, F            
 // RightRangeFinder     sonar         C, D            
 // ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// Vision20             vision        20              
-// BumperA              bumper        A               
-// BumperB              bumper        B               
-// Controller1          controller                    
-// FrontRightMotor      motor         1               
-// FrontLeftMotor       motor         2               
-// BackMotor            motor         3               
-// LeftCollectorMotor   motor         4               
-// RightCollectorMotor  motor         5               
-// ScorerMotor          motor         7               
-// LeftBallGuideMotor   motor         8               
-// RightBallGuideMotor  motor         9               
-// LeftRangeFinder      sonar         E, F            
-// RightRangeFinder     sonar         C, D            
-// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -60,41 +42,24 @@
 */
 
 #include "vex.h"
-#include "inputs/path-script.h"
-#include "inputs/ball-storage.h"
-#include "inputs/range-finders.h"
-#include "inputs/remote-controller.h"
-#include "outputs/omni-drive-3-wheel.h"
-#include "outputs/ball-collector.h"
-#include "outputs/ball-scorer.h"
-#include "inputs/path-script.h"
-#include "framework/binder.h"
-#include "autonomous/conditions.h"
-#include "autonomous/behaviors.h"
-#include "autonomous/state-machine.h"
-#include "autonomous/bauble-states.h"
-#include "autonomous/tchotchke-states.h"
-#include "autonomous/test.h"
-#include "driver-control.h"
+#include "mode-control.h"
 
 using namespace vex;
 using namespace godspeed;
-using namespace inputs;
-using namespace outputs;
+using namespace ModeControl;
 
-int main() {
+int main()
+{
+  vexcodeInit(); //Vex initialization
 
-  // Initializations
-  vexcodeInit();           //Vex initialization
-  Binder::Init();          //Binder initialization
-  BallStorage::Init();     //Ball storage suite initialization
-  VisionSensor::Init();    //Vision sensor initialization
-  Brain.resetTimer();
+  //=========== Settings ============
+  
+  Team  = Team_Red;
+  Robot = Robot_Bauble;
+  Mode  = Autonomous_Mode;
+  
+  //=================================
 
-  Tchotchke::StartAutonomous();
-  StateMachine::Init();
-
-  //DriverControl::BindDriverControl();
-
+  Init();
   this_thread::yield();
 }

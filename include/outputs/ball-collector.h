@@ -21,6 +21,11 @@ namespace godspeed
         setMotorSpeed(speed, LeftCollectorMotor);
         setMotorSpeed(speed, RightCollectorMotor);
       }
+
+      void Stop()
+      {
+        TreadSpeed(0);
+      }
     }
   }
 }

@@ -75,6 +75,13 @@ namespace godspeed
       {
         SetVelocity(XSpeedVar.Value(), YSpeedVar.Value(), a);
       }
+
+      void Stop()
+      {
+        AngleSpeed(0);
+        XSpeedVar.Initialize(0);
+        YSpeedVar.Initialize(0);
+      }
     }
   }
 }

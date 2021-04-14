@@ -43,6 +43,7 @@ namespace godspeed
   namespace StateMachine
   {
     State* currentState;
+    bool kill = false;
 
     void ChangeState(State &state)
     {
@@ -73,7 +74,7 @@ namespace godspeed
       bool stateChanged = false;
       State* cur;
 
-      while (true)
+      while (!kill)
       {
         cur = currentState;
         for(auto const &t : cur->transitions)
@@ -101,9 +102,15 @@ namespace godspeed
       }
     }
 
+    void Kill()
+    {
+      kill = true;
+    }
+
     /// \brief Runs the state machine update function on it's own thread
     void Init()
     {
+      kill = false;
       thread t(Update);
       t.detach();
     }

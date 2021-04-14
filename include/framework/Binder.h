@@ -51,6 +51,8 @@ namespace godspeed
   {
     /// \brief A list of bindings
     std::list<Binding*> bindings = std::list<Binding*>();
+    
+    bool kill = false;
 
     void AddBinding(Binding &b)
     {
@@ -75,7 +77,7 @@ namespace godspeed
     /// \brief calls all bindings that are not disabled. This does NOT need to be called manually.
     void Update()
     {
-      while (true)
+      while (!kill)
       {
         for(auto& x : bindings)
         {
@@ -85,9 +87,15 @@ namespace godspeed
       }
     }
 
+    void Kill()
+    {
+      kill = true;
+    }
+
     /// \brief Runs the binder update function on it's own thread
     void Init()
     {
+      kill = false;
       thread t(Update);
       t.detach();
     }

@@ -35,6 +35,8 @@ namespace godspeed
       WinAvg BallCountVar(10);
       WinAvg GoalCountVar(10);
 
+      signature* BallSig = &Vision20__RED_BALL;
+
       void Init()
       {
         BallDistVar.Initialize(infinity());
@@ -104,7 +106,7 @@ namespace godspeed
       */
       double BallDistance()
       {
-        BallDistVar.SetValue(GetDistance(Vision20__RED_BALL, BallWidth, BallHeight));
+        BallDistVar.SetValue(GetDistance(*BallSig, BallWidth, BallHeight));
         return BallDistVar.Value();
       }
 
@@ -123,7 +125,7 @@ namespace godspeed
       */
       double BallXOffset()
       {
-        Vision20.takeSnapshot(Vision20__RED_BALL);
+        Vision20.takeSnapshot(*BallSig);
         return XOffset();
       }
 
@@ -134,7 +136,7 @@ namespace godspeed
       */
       double BallYOffset()
       {
-        Vision20.takeSnapshot(Vision20__RED_BALL);
+        Vision20.takeSnapshot(*BallSig);
         return YOffset();
       }
 
@@ -145,7 +147,7 @@ namespace godspeed
       */
       double BallCount()
       {
-        BallCountVar.SetValue(Vision20.takeSnapshot(Vision20__RED_BALL));
+        BallCountVar.SetValue(Vision20.takeSnapshot(*BallSig));
         return std::ceil(BallCountVar.Value() - 0.5);
       }
 

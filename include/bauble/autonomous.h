@@ -1,5 +1,6 @@
 #pragma once
 #include "vex.h"
+#include "bauble.h"
 #include "autonomous/state-machine.h"
 #include "autonomous/conditions.h"
 #include "autonomous/behaviors.h"
@@ -59,11 +60,11 @@ namespace godspeed
       Binder::RemoveBinding(behaviors::PickUpBall);
       outputs::BallCollector::TreadSpeed(0);
       outputs::OmniDrive3Wheel::AngleSpeed(0);
-      DO_FOR(behaviors::MoveBackward, 800);
-      DO_FOR(behaviors::StopY, 500);
-      DO_FOR(behaviors::TurnRight, 1500);
-      outputs::OmniDrive3Wheel::AngleSpeed(0);
-      DO_FOR(behaviors::MoveBackward, 2000);
+      // DO_FOR(behaviors::MoveBackward, 800);
+      // DO_FOR(behaviors::StopY, 500);
+      // DO_FOR(behaviors::TurnRight, 2000);
+      // outputs::OmniDrive3Wheel::AngleSpeed(0);
+      // DO_FOR(behaviors::MoveBackward, 2000);
     }
     
     void ent4()
@@ -79,14 +80,11 @@ namespace godspeed
       DO_FOR(behaviors::MoveBackward, 1000);
     }
 
-    double expander_pos() { return 350; }
-    Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
-
     void StartAutonomous()
     {
       conditions::nearGoalThreshold = 28;
       conditions::nearBallThreshold = 30;
-      inputs::VisionSensor::XOffsetFudge = 0.1;
+      inputs::VisionSensor::XOffsetFudge = 0;
       inputs::BallStorage::BallCounter = 1;
       behaviors::AlignAgression = 1;
       Binder::AddBinding(ExpanderBinding);
@@ -111,7 +109,8 @@ namespace godspeed
       s3.AddEntryAction(ent3);
       s3.AddActivity(behaviors::AlignWithGoal);
       s3.AddActivity(behaviors::MoveForward);
-      s3.AddTransition(conditions::NearGoal, s4);
+      s3.AddTransition(conditions::True, sStop);
+      //s3.AddTransition(conditions::NearGoal, s4);
 
       s4.AddEntryAction(ent4);
       s4.AddTransition(conditions::True, sStop);

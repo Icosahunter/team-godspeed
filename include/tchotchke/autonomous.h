@@ -1,5 +1,6 @@
 #pragma once
 #include "vex.h"
+#include "tchotchke.h"
 #include "autonomous/state-machine.h"
 #include "autonomous/conditions.h"
 #include "autonomous/behaviors.h"
@@ -68,7 +69,7 @@ namespace godspeed
       outputs::BallScorer::TreadSpeed(0);
       DO_FOR(behaviors::StopY, 500);
     }
-    
+
     void ent4()
     {
       outputs::OmniDrive3Wheel::AngleSpeed(0);
@@ -118,9 +119,6 @@ namespace godspeed
       DO_FOR(behaviors::MoveBackward, 300);
       DO_FOR(behaviors::StopY, 500);
     }
-
-    double expander_pos() { return 355; }
-    Binding ExpanderBinding(expander_pos, outputs::BallScorer::ExpanderPosition);
 
     void StartAutonomous()
     {

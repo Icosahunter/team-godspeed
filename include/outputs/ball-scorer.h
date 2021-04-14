@@ -49,6 +49,11 @@ namespace godspeed
         thread t2(SpinRightExpander);
         this_thread::yield();
       }
+
+      void Stop()
+      {
+        TreadSpeed(0);
+      }
     }
   }
 }
