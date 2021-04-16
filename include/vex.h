@@ -30,6 +30,6 @@
 #define repeat(iterations)                                                     \
   for (int iterator = 0; iterator < iterations; iterator++)
 
-#define contains(l, i) std::find(l.begin(), l.end(), i) != l.end()
+#define contains(l, i) (std::find(l.begin(), l.end(), i) != l.end())
 
 #define elementAt(l, i) (*std::next(l.begin(), i))

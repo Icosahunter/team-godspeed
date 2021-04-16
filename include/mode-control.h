@@ -16,9 +16,9 @@ namespace godspeed
 {
   namespace ModeControl
   {
-    enum robot {Robot_Bauble, Robot_Tchotchke};
-    enum team {Team_Red, Team_Blue};
-    enum mode {Autonomous_Mode, Driver_Control_Mode, Competition_Mode };
+    enum robot { Robot_Bauble, Robot_Tchotchke };
+    enum team { Team_Red, Team_Blue };
+    enum mode { Autonomous_Mode, Driver_Control_Mode, Competition_Mode };
 
     robot Robot;
     team Team;
@@ -26,12 +26,17 @@ namespace godspeed
     competition Competition;
     void StartAutonomous();
     void StartDriverControl();
+    void EndAutonomous();
+    void EndDriverControl();
     void StartCompetition();
+    void StartCompetitionTest();
+    void StopRobot();
 
     void Init()
     {
       // Initializations
       Binder::Init();
+      outputs::BallScorer::Init();
       inputs::BallStorage::Init();
       inputs::VisionSensor::Init();
       Brain.resetTimer();
@@ -47,17 +52,40 @@ namespace godspeed
       {
         StartAutonomous();
       }
-      else
+      else if (Mode == Driver_Control_Mode)
       {
         StartDriverControl();
+      }
+    }
+
+    void CompetitionWatcher()
+    {
+      while (true)
+      {
+        if (Competition.AUTONOMOUS)
+        {
+          EndDriverControl();
+          StartAutonomous();
+        }
+        else if (Competition.DRIVER_CONTROL)
+        {
+          EndAutonomous();
+          StartDriverControl();
+        }
+        else if (Competition.DISABLED)
+        {
+          EndAutonomous();
+          EndDriverControl();
+        }
+        this_thread::yield();
       }
     }
 
     void StartCompetition()
     {
       // Competition Setup
-      Competition.autonomous(StartAutonomous);
-      Competition.drivercontrol(StartDriverControl);
+      thread t(CompetitionWatcher);
+      t.detach();
     }
 
     void StartAutonomous()

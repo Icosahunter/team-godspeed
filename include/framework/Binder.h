@@ -1,6 +1,5 @@
 #pragma once
 #include "vex.h"
-#define elem(l, i) *std::next(l.begin(), i)
 
 namespace godspeed
 {
@@ -51,12 +50,14 @@ namespace godspeed
   {
     /// \brief A list of bindings
     std::list<Binding*> bindings = std::list<Binding*>();
-    
-    bool kill = false;
+    thread* tptr;
 
     void AddBinding(Binding &b)
     {
-      bindings.push_back(&b);
+      if (!contains(bindings, &b))
+      {
+        bindings.push_back(&b);
+      }
     }
 
     void SetBindings(std::list<Binding*> &l)
@@ -71,13 +72,16 @@ namespace godspeed
 
     void RemoveBinding(Binding &b)
     {
-      bindings.remove(&b);
+      if (contains(bindings, &b))
+      {
+        bindings.remove(&b);
+      }
     }
 
     /// \brief calls all bindings that are not disabled. This does NOT need to be called manually.
     void Update()
     {
-      while (!kill)
+      while (true)
       {
         for(auto& x : bindings)
         {
@@ -89,15 +93,19 @@ namespace godspeed
 
     void Kill()
     {
-      kill = true;
+      if (tptr != nullptr)
+      {
+        tptr->interrupt();
+        tptr = nullptr;
+      }
     }
 
     /// \brief Runs the binder update function on it's own thread
     void Init()
     {
-      kill = false;
       thread t(Update);
       t.detach();
+      tptr = &t;
     }
   }
 }

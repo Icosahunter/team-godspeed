@@ -14,7 +14,7 @@ namespace godspeed
   {
     bool CenterLineBallNotFound()
     {
-      if (inputs::VisionSensor::BallDistance() > 60)
+      if (inputs::VisionSensor::BallDistance() > 100)
       {
         return true;
       }
@@ -27,7 +27,10 @@ namespace godspeed
     void ent1()
     {
       // Get into position
-      DO_FOR(behaviors::MoveForward, 2700);
+      Binder::AddBinding(behaviors::PickUpBall);
+      DO_FOR(behaviors::MoveForward, 2800);
+      Binder::RemoveBinding(behaviors::PickUpBall);
+      outputs::BallCollector::TreadSpeed(0);
       DO_FOR(behaviors::StopY, 500);
       DO_FOR(behaviors::TurnRight, 2350);
       DO_FOR(behaviors::StopAngle, 500);
@@ -70,23 +73,23 @@ namespace godspeed
       DO_FOR(behaviors::StopY, 500);
     }
 
-    void ent4()
+    void ent5()
     {
       outputs::OmniDrive3Wheel::AngleSpeed(0);
       // Score the ball
       Binder::AddBinding(behaviors::ScoreBall);
-      DO_FOR(behaviors::MoveForward, 1100);
+      DO_FOR(behaviors::MoveForward, 1500);
       DO_FOR(behaviors::StopY, 2500);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallScorer::TreadSpeed(0);
       // Back up to collect next ball
-      DO_FOR(behaviors::MoveBackward, 1100);
+      DO_FOR(behaviors::MoveBackward, 1200);
       DO_FOR(behaviors::StopY, 500);
       DO_FOR(behaviors::TurnRight, 2400);
       inputs::VisionSensor::BallDistanceScan();
     }
 
-    void ent6()
+    void ent7()
     {
       outputs::OmniDrive3Wheel::AngleSpeed(0);
       Binder::AddBinding(behaviors::PickUpBall);
@@ -95,20 +98,25 @@ namespace godspeed
       DO_FOR(behaviors::MoveForward, 1500);
       DO_FOR(behaviors::StopY, 500);
 
-      DO_FOR(behaviors::MoveBackward, 1700);
-
+      DO_FOR(behaviors::MoveBackward, 1000);
       Binder::RemoveBinding(behaviors::PickUpBall);
       Binder::RemoveBinding(behaviors::ScoreBall);
       outputs::BallCollector::TreadSpeed(0);
       outputs::BallScorer::TreadSpeed(0);
+      DO_FOR(behaviors::MoveBackward, 700);
+    }
 
+    void ent8()
+    {
       DO_FOR(behaviors::StopY, 500);
-      DO_FOR(behaviors::TurnRight, 900);
+      DO_FOR(behaviors::TurnRight, 760);
       outputs::OmniDrive3Wheel::AngleSpeed(0);
+
+      DO_FOR(behaviors::MoveForward, 500);
 
       Binder::AddBinding(behaviors::ScoreBall);
       Binder::AddBinding(behaviors::PickUpBall);
-      DO_FOR(behaviors::MoveForward, 3000);
+      DO_FOR(behaviors::MoveForward, 2500);
 
       DO_FOR(behaviors::StopY, 3000);
       Binder::RemoveBinding(behaviors::PickUpBall);
@@ -116,14 +124,14 @@ namespace godspeed
       outputs::BallCollector::TreadSpeed(0);
       outputs::BallScorer::TreadSpeed(0);
 
-      DO_FOR(behaviors::MoveBackward, 300);
+      DO_FOR(behaviors::MoveBackward, 800);
       DO_FOR(behaviors::StopY, 500);
     }
 
     void StartAutonomous()
     {
-      conditions::nearGoalThreshold = 28;
-      conditions::nearBallThreshold = 28;
+      conditions::nearGoalThreshold = 30;
+      conditions::nearBallThreshold = 30; //28
       inputs::VisionSensor::XOffsetFudge = 0.25;
       inputs::BallStorage::BallCounter = 1;
       behaviors::AlignAgression = 1.8;
@@ -135,6 +143,8 @@ namespace godspeed
       static State s4;
       static State s5;
       static State s6;
+      static State s7;
+      static State s8;
       static State sStop;
 
       s1.AddEntryAction(ent1);
@@ -148,22 +158,28 @@ namespace godspeed
       s2.AddTransition(conditions::NearBall, s3);
 
       s3.AddEntryAction(ent3);
-      s3.AddActivity(behaviors::AlignWithGoal);
-      s3.AddActivity(behaviors::MoveForward);
+      s3.AddTransition(conditions::BallLoaded, s4);
       s3.AddTransition(conditions::BallNotLoaded, sStop);
-      s3.AddTransition(conditions::NearGoal, s4);
 
-      s4.AddEntryAction(ent4);
-      s4.AddActivity(behaviors::AlignWithBall);
-      s4.AddTransition(conditions::AlignedWithBall, s5);
-      s4.AddTransition(CenterLineBallNotFound, sStop);
+      s4.AddActivity(behaviors::AlignWithGoal);
+      s4.AddActivity(behaviors::MoveForward);
+      s4.AddTransition(conditions::NearGoal, s5);
 
+      s5.AddEntryAction(ent5);
       s5.AddActivity(behaviors::AlignWithBall);
-      s5.AddActivity(behaviors::MoveForward);
-      s5.AddTransition(conditions::NearBall, s6);
+      s5.AddTransition(CenterLineBallNotFound, sStop);
+      s5.AddTransition(conditions::AlignedWithBall, s6);
 
-      s6.AddEntryAction(ent6);
-      s6.AddTransition(conditions::True, sStop);
+      s6.AddActivity(behaviors::AlignWithBall);
+      s6.AddActivity(behaviors::MoveForward);
+      s6.AddTransition(conditions::NearBall, s7);
+
+      s7.AddEntryAction(ent7);
+      s7.AddTransition(conditions::BallNotLoaded, sStop);
+      s7.AddTransition(conditions::BallLoaded, s8);
+
+      s8.AddEntryAction(ent8);
+      s8.AddTransition(conditions::True, sStop);
 
       sStop.AddActivity(behaviors::StopX);
       sStop.AddActivity(behaviors::StopY);

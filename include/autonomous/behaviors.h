@@ -41,6 +41,12 @@ namespace godspeed
     /// \brief A source function used in the move backward behavior
     double BackwardSpeed()   { return -1.0; }
 
+    /// \brief A source function used in the move forward behavior
+    double RightSpeed()    { return 1.0; }
+
+    /// \brief A source function used in the move backward behavior
+    double LeftSpeed()   { return -1.0; }
+
     /// \brief A behavior that turns the robot to face the largest ball found
     Binding AlignWithBall(inputs::VisionSensor::BallXOffset, AlignPipe, outputs::OmniDrive3Wheel::AngleSpeed);
 
@@ -52,6 +58,12 @@ namespace godspeed
 
     /// \brief A behavior that moves the robot forward
     Binding MoveBackward(BackwardSpeed, outputs::OmniDrive3Wheel::YSpeed);
+
+        /// \brief A behavior that moves the robot forward
+    Binding MoveRight(RightSpeed, outputs::OmniDrive3Wheel::XSpeed);
+
+    /// \brief A behavior that moves the robot forward
+    Binding MoveLeft(LeftSpeed, outputs::OmniDrive3Wheel::XSpeed);
 
     /// \brief A behavior that turns the robot left
     Binding TurnLeft(TurnLeftSpeed, outputs::OmniDrive3Wheel::AngleSpeed);
