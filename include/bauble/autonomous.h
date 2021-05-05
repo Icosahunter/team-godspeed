@@ -12,6 +12,7 @@ namespace godspeed
 {
   namespace Bauble
   {
+    /// \brief Entry action for state 1
     void ent1()
     {
       // Get into position
@@ -20,15 +21,17 @@ namespace godspeed
       Binder::RemoveBinding(behaviors::PickUpBall);
       outputs::BallCollector::TreadSpeed(0);
       DO_FOR(behaviors::StopY, 500);
-      DO_FOR(behaviors::TurnRight, 2350);
+      DO_FOR(behaviors::TurnRight, 2450);
       DO_FOR(behaviors::StopAngle, 500);
     }
 
+    /// \brief Entry action for state 2
     void ent2()
     {
       inputs::VisionSensor::GoalDistVar.Initialize(infinity());
       // Approach goal
       Binder::AddBinding(behaviors::PickUpBall);
+      WAIT(500);
       Binder::AddBinding(behaviors::ScoreBall);
       WAIT(1200);
       // Finish scoring
@@ -43,22 +46,24 @@ namespace godspeed
       DO_FOR(behaviors::MoveBackward, 1200);
       // Move to other goal
       DO_FOR(behaviors::StopY, 450);
-      DO_FOR(behaviors::TurnLeft, 1800);
+      DO_FOR(behaviors::TurnLeft, 1650);
       outputs::OmniDrive3Wheel::AngleSpeed(0);
     }
 
+    /// \brief Entry action for state 3
     void ent3()
     {
       outputs::BallCollector::TreadSpeed(0);
       outputs::BallScorer::TreadSpeed(0);
     }
 
+    /// \brief Entry action for state 4
     void ent4()
     {
       outputs::OmniDrive3Wheel::AngleSpeed(0);
       inputs::VisionSensor::GoalDistVar.Initialize(infinity());
       // Approach goal
-      WAIT(550);
+      WAIT(1000);
       Binder::AddBinding(behaviors::PickUpBall);
       Binder::AddBinding(behaviors::MoveForward);
       Binder::AddBinding(behaviors::TurnLeft);
@@ -77,12 +82,13 @@ namespace godspeed
       outputs::OmniDrive3Wheel::AngleSpeed(0);
     }
     
+    /// \brief Entry action for state 5
     void ent5()
     {
       // Finish scoring
       outputs::OmniDrive3Wheel::AngleSpeed(0);
       Binder::AddBinding(behaviors::ScoreBall);
-      WAIT(900);
+      WAIT(1500);
       DO_FOR(behaviors::StopY, 500);
       WAIT(2250);
       Binder::RemoveBinding(behaviors::ScoreBall);
@@ -90,6 +96,7 @@ namespace godspeed
       DO_FOR(behaviors::MoveBackward, 1000);
     }
 
+    /// \brief Start Bauble autonomous routine
     void StartAutonomous()
     {
       conditions::nearGoalThreshold = 28;
@@ -98,9 +105,11 @@ namespace godspeed
       inputs::BallStorage::BallCounter = 1;
       behaviors::AlignAgression = 1;
       Binder::AddBinding(ExpanderBinding);
+      outputs::OmniDrive3Wheel::SaturationEnabled = false;
 
       static State s1;
       static State s2;
+      static State s6;
       static State s3;
       static State s4;
       static State s5;
@@ -114,8 +123,12 @@ namespace godspeed
       s2.AddEntryAction(ent2);
       s2.AddActivity(behaviors::PickUpBall);
       s2.AddActivity(behaviors::ScoreBall);
-      s2.AddTransition(conditions::BallLoaded, s3);
+      s2.AddTransition(conditions::BallLoaded, s6);
 
+      s6.AddTransition(conditions::GoalTargeted, s3);
+      s6.AddActivity(behaviors::StopCollectors);
+      s6.AddActivity(behaviors::StopScorer);
+      
       s3.AddEntryAction(ent3);
       s3.AddActivity(behaviors::AlignWithGoal);
       s3.AddActivity(behaviors::MoveForward);

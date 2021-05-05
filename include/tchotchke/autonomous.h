@@ -12,6 +12,7 @@ namespace godspeed
 {
   namespace Tchotchke
   {
+    /// \brief Condition for if the center line ball is close enough that it probably hasn't been moved by opponent robots or anything
     bool CenterLineBallNotFound()
     {
       if (inputs::VisionSensor::BallDistance() > 100)
@@ -24,6 +25,7 @@ namespace godspeed
       }
     }
 
+    /// \brief Entry action for state 1
     void ent1()
     {
       // Get into position
@@ -36,6 +38,7 @@ namespace godspeed
       DO_FOR(behaviors::StopAngle, 500);
     }
 
+    /// \brief Entry action for state 2
     void ent2()
     {
       inputs::VisionSensor::GoalDistVar.Initialize(infinity());
@@ -43,7 +46,7 @@ namespace godspeed
       DO_FOR(behaviors::TurnLeft, 35);
       outputs::OmniDrive3Wheel::AngleSpeed(0);
       Binder::AddBinding(behaviors::ScoreBall);
-      WAIT(1100);
+      WAIT(1350);
       // Finish scoring
       DO_FOR(behaviors::StopY, 1500);
       Binder::RemoveBinding(behaviors::ScoreBall);
@@ -53,8 +56,10 @@ namespace godspeed
       // Turn toward other goal
       DO_FOR(behaviors::StopY, 500);
       DO_FOR(behaviors::TurnRight, 1450);
+      inputs::VisionSensor::XOffsetFudge = 0.15;
     }
 
+    /// \brief Entry action for state 3
     void ent3()
     {
       outputs::OmniDrive3Wheel::AngleSpeed(0);
@@ -73,6 +78,7 @@ namespace godspeed
       DO_FOR(behaviors::StopY, 500);
     }
 
+    /// \brief Entry action for state 5
     void ent5()
     {
       outputs::OmniDrive3Wheel::AngleSpeed(0);
@@ -89,6 +95,7 @@ namespace godspeed
       inputs::VisionSensor::BallDistanceScan();
     }
 
+    /// \brief Entry action for state 7
     void ent7()
     {
       outputs::OmniDrive3Wheel::AngleSpeed(0);
@@ -106,6 +113,7 @@ namespace godspeed
       DO_FOR(behaviors::MoveBackward, 700);
     }
 
+    /// \brief Entry action for state 8
     void ent8()
     {
       DO_FOR(behaviors::StopY, 500);
@@ -128,14 +136,16 @@ namespace godspeed
       DO_FOR(behaviors::StopY, 500);
     }
 
+    /// \brief Start Tchotchke autonomous routine
     void StartAutonomous()
     {
       conditions::nearGoalThreshold = 30;
       conditions::nearBallThreshold = 30; //28
-      inputs::VisionSensor::XOffsetFudge = 0.25;
+      inputs::VisionSensor::XOffsetFudge = 0.35;
       inputs::BallStorage::BallCounter = 1;
       behaviors::AlignAgression = 1.8;
       Binder::AddBinding(ExpanderBinding);
+      outputs::OmniDrive3Wheel::SaturationEnabled = false;
 
       static State s1;
       static State s2;

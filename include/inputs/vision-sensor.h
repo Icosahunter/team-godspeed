@@ -21,12 +21,19 @@ namespace godspeed
       /// \brief Horizontal field of view in radians
       double HorizontalFOV = 30.2145 * (3.14/180);
 
+      /// \brief Number added to X-Offset for tuning
       double XOffsetFudge = 0;
 
+      /// \brief Ball width in inches
       double BallWidth = 6.3;
+
+      /// \brief Ball height in inches
       double BallHeight = 6.3;
 
+      /// \brief Goal backboard icon width in inches
       double BackboardWidth = 4.375;
+
+      /// \brief Goal backboard icon height in inches
       double BackboardHeight = 6.1875;
 
       WinMin BallDistVar(50);
@@ -35,8 +42,10 @@ namespace godspeed
       WinAvg BallCountVar(10);
       WinAvg GoalCountVar(10);
 
+      /// \brief Signature for ball (changes depending on team color)
       signature* BallSig = &Vision20__RED_BALL;
 
+      /// \brief Initialization for vision sensor, fills ball and goal distance variables with infinity
       void Init()
       {
         BallDistVar.Initialize(infinity());
@@ -110,6 +119,7 @@ namespace godspeed
         return BallDistVar.Value();
       }
 
+      /// \brief Fills ball distance variable window with data
       void BallDistanceScan()
       {
         for (int i=0; i<BallDistVar.WindowSize(); i++)
@@ -173,6 +183,7 @@ namespace godspeed
         return GoalDistVar.Value();
       }
 
+      /// \brief Fills goal distance variable window with data
       void GoalDistanceScan()
       {
         for (int i=0; i<GoalDistVar.WindowSize(); i++)

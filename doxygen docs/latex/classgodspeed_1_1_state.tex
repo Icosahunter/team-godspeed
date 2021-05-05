@@ -1,0 +1,59 @@
+\hypertarget{classgodspeed_1_1_state}{}\doxysection{godspeed\+::State Class Reference}
+\label{classgodspeed_1_1_state}\index{godspeed::State@{godspeed::State}}
+
+
+A state class used to create statemachines to execute using the \mbox{\hyperlink{namespacegodspeed_1_1_state_machine}{State\+Machine}} namespace.  
+
+
+
+
+{\ttfamily \#include $<$state-\/machine.\+h$>$}
+
+
+
+Collaboration diagram for godspeed\+::State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classgodspeed_1_1_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1_state_a9bc16498de548bf646c0939a3bef4ebf}\label{classgodspeed_1_1_state_a9bc16498de548bf646c0939a3bef4ebf}} 
+void \mbox{\hyperlink{classgodspeed_1_1_state_a9bc16498de548bf646c0939a3bef4ebf}{Add\+Transition}} (bool($\ast$condition)(void), \mbox{\hyperlink{classgodspeed_1_1_state}{State}} \&state)
+\begin{DoxyCompactList}\small\item\em Add a transition to the state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgodspeed_1_1_state_ac33649a57e24a95fde18d5ffdc19e305}\label{classgodspeed_1_1_state_ac33649a57e24a95fde18d5ffdc19e305}} 
+void \mbox{\hyperlink{classgodspeed_1_1_state_ac33649a57e24a95fde18d5ffdc19e305}{Add\+Entry\+Action}} (void($\ast$action)(void))
+\begin{DoxyCompactList}\small\item\em Add an entry action to the state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgodspeed_1_1_state_a59261e04c569c1ff16496361764c285c}\label{classgodspeed_1_1_state_a59261e04c569c1ff16496361764c285c}} 
+void \mbox{\hyperlink{classgodspeed_1_1_state_a59261e04c569c1ff16496361764c285c}{Add\+Exit\+Action}} (void($\ast$action)(void))
+\begin{DoxyCompactList}\small\item\em Add an exit action to the state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classgodspeed_1_1_state_a69687df9b0480dd4c4020b038b6cef4a}\label{classgodspeed_1_1_state_a69687df9b0480dd4c4020b038b6cef4a}} 
+void \mbox{\hyperlink{classgodspeed_1_1_state_a69687df9b0480dd4c4020b038b6cef4a}{Add\+Activity}} (\mbox{\hyperlink{classgodspeed_1_1_binding}{Binding}} \&activity)
+\begin{DoxyCompactList}\small\item\em Add an activity (binding) to the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1_state_a23c0a8341a9ec5b94db810270412c38b}\label{classgodspeed_1_1_state_a23c0a8341a9ec5b94db810270412c38b}} 
+std\+::list$<$ A\+C\+T\+I\+ON $>$ {\bfseries entry\+Actions}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1_state_a478b30a87674cb76887debc265e4e5c1}\label{classgodspeed_1_1_state_a478b30a87674cb76887debc265e4e5c1}} 
+std\+::list$<$ A\+C\+T\+I\+ON $>$ {\bfseries exit\+Actions}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1_state_a4a1005aa69775af557e00d64576b375b}\label{classgodspeed_1_1_state_a4a1005aa69775af557e00d64576b375b}} 
+std\+::list$<$ T\+R\+A\+N\+S\+I\+T\+I\+ON $>$ {\bfseries transitions}
+\item 
+\mbox{\Hypertarget{classgodspeed_1_1_state_a10bbee51c444280cd7c24bc911ae3e00}\label{classgodspeed_1_1_state_a10bbee51c444280cd7c24bc911ae3e00}} 
+std\+::list$<$ \mbox{\hyperlink{classgodspeed_1_1_binding}{Binding}} $\ast$ $>$ {\bfseries activities}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A state class used to create statemachines to execute using the \mbox{\hyperlink{namespacegodspeed_1_1_state_machine}{State\+Machine}} namespace. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/anzel/source/repos/team-\/godspeed/include/autonomous/state-\/machine.\+h\end{DoxyCompactItemize}

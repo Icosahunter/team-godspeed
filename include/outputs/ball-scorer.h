@@ -17,6 +17,7 @@ namespace godspeed
     {
       double expanderVar;
 
+      /// \brief Initialization for ball scorer, zeroes out position of left and right ball guide motors
       void Init()
       {
         LeftBallGuideMotor.resetPosition();
@@ -50,6 +51,7 @@ namespace godspeed
         this_thread::yield();
       }
 
+      /// \brief Stops ball scorer tread
       void Stop()
       {
         TreadSpeed(0);

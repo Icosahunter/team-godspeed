@@ -68,13 +68,14 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">godspeed::behaviors Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A namespace containing functions for creating autonomous mode behavior bindings.  
+<p>A namespace containing autonomous mode behavior bindings.  
 <a href="namespacegodspeed_1_1behaviors.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -89,8 +90,16 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 <tr class="separator:a02f9e0a0bea46eef593758163839559d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf6239bff1bae586c625d5e9924881bb"><td class="memItemLeft" align="right" valign="top"><a id="acf6239bff1bae586c625d5e9924881bb"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#acf6239bff1bae586c625d5e9924881bb">LocateSpeed</a> ()</td></tr>
-<tr class="memdesc:acf6239bff1bae586c625d5e9924881bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in locate object behaviors. <br /></td></tr>
+<tr class="memdesc:acf6239bff1bae586c625d5e9924881bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in locate object behavior. <br /></td></tr>
 <tr class="separator:acf6239bff1bae586c625d5e9924881bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c6045aefe6e39065afa668d5028457"><td class="memItemLeft" align="right" valign="top"><a id="a21c6045aefe6e39065afa668d5028457"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a21c6045aefe6e39065afa668d5028457">TurnLeftSpeed</a> ()</td></tr>
+<tr class="memdesc:a21c6045aefe6e39065afa668d5028457"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in turn left behavior. <br /></td></tr>
+<tr class="separator:a21c6045aefe6e39065afa668d5028457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a123b89c4f30b7ca2e06d508959648"><td class="memItemLeft" align="right" valign="top"><a id="a22a123b89c4f30b7ca2e06d508959648"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a22a123b89c4f30b7ca2e06d508959648">TurnRightSpeed</a> ()</td></tr>
+<tr class="memdesc:a22a123b89c4f30b7ca2e06d508959648"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in turn right behavior. <br /></td></tr>
+<tr class="separator:a22a123b89c4f30b7ca2e06d508959648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2234350527c904681de5599159cb8c36"><td class="memItemLeft" align="right" valign="top"><a id="a2234350527c904681de5599159cb8c36"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a2234350527c904681de5599159cb8c36">BallScorerSpeed</a> ()</td></tr>
 <tr class="memdesc:a2234350527c904681de5599159cb8c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in the score ball behavior. <br /></td></tr>
@@ -103,62 +112,95 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a5fe874a5ce38b7cf2f8f8b150bf6a2da">ForwardSpeed</a> ()</td></tr>
 <tr class="memdesc:a5fe874a5ce38b7cf2f8f8b150bf6a2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in the move forward behavior. <br /></td></tr>
 <tr class="separator:a5fe874a5ce38b7cf2f8f8b150bf6a2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7440d72bad6e837a4a6dd7fe76ccb4e8"><td class="memItemLeft" align="right" valign="top"><a id="a7440d72bad6e837a4a6dd7fe76ccb4e8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a7440d72bad6e837a4a6dd7fe76ccb4e8">AlignWithBall</a> ()</td></tr>
-<tr class="memdesc:a7440d72bad6e837a4a6dd7fe76ccb4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the robot to face the largest ball found. <br /></td></tr>
-<tr class="separator:a7440d72bad6e837a4a6dd7fe76ccb4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef2b7911c1ce8a74b0edf9877d1551df"><td class="memItemLeft" align="right" valign="top"><a id="aef2b7911c1ce8a74b0edf9877d1551df"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#aef2b7911c1ce8a74b0edf9877d1551df">AlignWithGoal</a> ()</td></tr>
-<tr class="memdesc:aef2b7911c1ce8a74b0edf9877d1551df"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the robot to face the largest goal backboard icon found. <br /></td></tr>
-<tr class="separator:aef2b7911c1ce8a74b0edf9877d1551df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82efbda1bc05760acb399ebc4b5729a8"><td class="memItemLeft" align="right" valign="top"><a id="a82efbda1bc05760acb399ebc4b5729a8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a82efbda1bc05760acb399ebc4b5729a8">MoveForward</a> ()</td></tr>
-<tr class="memdesc:a82efbda1bc05760acb399ebc4b5729a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that moves the robot forward. <br /></td></tr>
-<tr class="separator:a82efbda1bc05760acb399ebc4b5729a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8266d22353fe8b31d2ddc44346045bd5"><td class="memItemLeft" align="right" valign="top"><a id="a8266d22353fe8b31d2ddc44346045bd5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a8266d22353fe8b31d2ddc44346045bd5">LocateObject</a> ()</td></tr>
-<tr class="memdesc:a8266d22353fe8b31d2ddc44346045bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the robot in place in order to locate an object. <br /></td></tr>
-<tr class="separator:a8266d22353fe8b31d2ddc44346045bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54ec0a4657b2351b0a85602b4a21f21d"><td class="memItemLeft" align="right" valign="top"><a id="a54ec0a4657b2351b0a85602b4a21f21d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a54ec0a4657b2351b0a85602b4a21f21d">ScoreBall</a> ()</td></tr>
-<tr class="memdesc:a54ec0a4657b2351b0a85602b4a21f21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the center tread to move a ball into the goal. <br /></td></tr>
-<tr class="separator:a54ec0a4657b2351b0a85602b4a21f21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7252b30c705a5f56396e23c763f9f8e"><td class="memItemLeft" align="right" valign="top"><a id="ab7252b30c705a5f56396e23c763f9f8e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#ab7252b30c705a5f56396e23c763f9f8e">PickUpBall</a> ()</td></tr>
-<tr class="memdesc:ab7252b30c705a5f56396e23c763f9f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the ball collector treads in order to pickup a ball. <br /></td></tr>
-<tr class="separator:ab7252b30c705a5f56396e23c763f9f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52b736cac7a79186398df497ff82fe62"><td class="memItemLeft" align="right" valign="top"><a id="a52b736cac7a79186398df497ff82fe62"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a52b736cac7a79186398df497ff82fe62">AvoidObstacle</a> ()</td></tr>
-<tr class="memdesc:a52b736cac7a79186398df497ff82fe62"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior to move the robot away from a detected obstacle [NOT IMPLEMENTED]. <br /></td></tr>
-<tr class="separator:a52b736cac7a79186398df497ff82fe62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56c145de024cb47f1f73f24a18130bfa"><td class="memItemLeft" align="right" valign="top"><a id="a56c145de024cb47f1f73f24a18130bfa"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a56c145de024cb47f1f73f24a18130bfa">Wander</a> ()</td></tr>
-<tr class="memdesc:a56c145de024cb47f1f73f24a18130bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior to move the robot around in a random path [NOT IMPLEMENTED]. <br /></td></tr>
-<tr class="separator:a56c145de024cb47f1f73f24a18130bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18468465d683ff2e8b082c21a59d475"><td class="memItemLeft" align="right" valign="top"><a id="ae18468465d683ff2e8b082c21a59d475"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#ae18468465d683ff2e8b082c21a59d475">StopX</a> ()</td></tr>
-<tr class="memdesc:ae18468465d683ff2e8b082c21a59d475"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that sets the robots X-speed to zero. <br /></td></tr>
-<tr class="separator:ae18468465d683ff2e8b082c21a59d475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a456581cef21a281002f121550ea9d1"><td class="memItemLeft" align="right" valign="top"><a id="a9a456581cef21a281002f121550ea9d1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a9a456581cef21a281002f121550ea9d1">StopY</a> ()</td></tr>
-<tr class="memdesc:a9a456581cef21a281002f121550ea9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that sets the robots Y-speed to zero. <br /></td></tr>
-<tr class="separator:a9a456581cef21a281002f121550ea9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12b4dfd07b921d5279d4351f7b700a87"><td class="memItemLeft" align="right" valign="top"><a id="a12b4dfd07b921d5279d4351f7b700a87"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a12b4dfd07b921d5279d4351f7b700a87">StopTurn</a> ()</td></tr>
-<tr class="memdesc:a12b4dfd07b921d5279d4351f7b700a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that sets the robots angular speed to zero. <br /></td></tr>
-<tr class="separator:a12b4dfd07b921d5279d4351f7b700a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5985b56fec913f110dc92a704bb839bc"><td class="memItemLeft" align="right" valign="top"><a id="a5985b56fec913f110dc92a704bb839bc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a5985b56fec913f110dc92a704bb839bc">StopCollectors</a> ()</td></tr>
-<tr class="memdesc:a5985b56fec913f110dc92a704bb839bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that sets the ball collector treads speeds to zero. <br /></td></tr>
-<tr class="separator:a5985b56fec913f110dc92a704bb839bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87fd908b34c65a1d1c01fbc1db8ba0ad"><td class="memItemLeft" align="right" valign="top"><a id="a87fd908b34c65a1d1c01fbc1db8ba0ad"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a87fd908b34c65a1d1c01fbc1db8ba0ad">StopScorer</a> ()</td></tr>
-<tr class="memdesc:a87fd908b34c65a1d1c01fbc1db8ba0ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that sets the center tread speed to zero. <br /></td></tr>
-<tr class="separator:a87fd908b34c65a1d1c01fbc1db8ba0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7860da3c851cc878adb5c475b474964d"><td class="memItemLeft" align="right" valign="top"><a id="a7860da3c851cc878adb5c475b474964d"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a7860da3c851cc878adb5c475b474964d">BackwardSpeed</a> ()</td></tr>
+<tr class="memdesc:a7860da3c851cc878adb5c475b474964d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in the move backward behavior. <br /></td></tr>
+<tr class="separator:a7860da3c851cc878adb5c475b474964d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb08455f897e7cb4018855e03aba78a"><td class="memItemLeft" align="right" valign="top"><a id="aafb08455f897e7cb4018855e03aba78a"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#aafb08455f897e7cb4018855e03aba78a">RightSpeed</a> ()</td></tr>
+<tr class="memdesc:aafb08455f897e7cb4018855e03aba78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in the move forward behavior. <br /></td></tr>
+<tr class="separator:aafb08455f897e7cb4018855e03aba78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d44df1d1e89826627fdceb504f62e13"><td class="memItemLeft" align="right" valign="top"><a id="a0d44df1d1e89826627fdceb504f62e13"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a0d44df1d1e89826627fdceb504f62e13">LeftSpeed</a> ()</td></tr>
+<tr class="memdesc:a0d44df1d1e89826627fdceb504f62e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">A source function used in the move backward behavior. <br /></td></tr>
+<tr class="separator:a0d44df1d1e89826627fdceb504f62e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7d72ccb12c656e099fcea516849013"><td class="memItemLeft" align="right" valign="top"><a id="a3f7d72ccb12c656e099fcea516849013"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a3f7d72ccb12c656e099fcea516849013">AlignWithBall</a> (<a class="el" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#acad2a2f915307c0749ef8f8ff216a127">inputs::VisionSensor::BallXOffset</a>, <a class="el" href="namespacegodspeed_1_1behaviors.html#ac2907eebccfdbc9f130d8e8abd7b4321">AlignPipe</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a8d0f4d0d63df9798476a5d95c574e1e3">outputs::OmniDrive3Wheel::AngleSpeed</a>)</td></tr>
+<tr class="memdesc:a3f7d72ccb12c656e099fcea516849013"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the robot to face the largest ball found. <br /></td></tr>
+<tr class="separator:a3f7d72ccb12c656e099fcea516849013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0bc95d17c857d0f9b1bad20b537062"><td class="memItemLeft" align="right" valign="top"><a id="adf0bc95d17c857d0f9b1bad20b537062"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#adf0bc95d17c857d0f9b1bad20b537062">AlignWithGoal</a> (<a class="el" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#afc52bc157fdaf0c5733045daf34e2cb4">inputs::VisionSensor::GoalXOffset</a>, <a class="el" href="namespacegodspeed_1_1behaviors.html#ac2907eebccfdbc9f130d8e8abd7b4321">AlignPipe</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a8d0f4d0d63df9798476a5d95c574e1e3">outputs::OmniDrive3Wheel::AngleSpeed</a>)</td></tr>
+<tr class="memdesc:adf0bc95d17c857d0f9b1bad20b537062"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the robot to face the largest goal backboard icon found. <br /></td></tr>
+<tr class="separator:adf0bc95d17c857d0f9b1bad20b537062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e2fd8e5a803784a3716b748391587a1"><td class="memItemLeft" align="right" valign="top"><a id="a3e2fd8e5a803784a3716b748391587a1"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a3e2fd8e5a803784a3716b748391587a1">MoveForward</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a5fe874a5ce38b7cf2f8f8b150bf6a2da">ForwardSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7bdedafbb9ecac80b8a730f8863b1751">outputs::OmniDrive3Wheel::YSpeed</a>)</td></tr>
+<tr class="memdesc:a3e2fd8e5a803784a3716b748391587a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that moves the robot forward. <br /></td></tr>
+<tr class="separator:a3e2fd8e5a803784a3716b748391587a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecc38a36f915eaf3e1af4f7201b45c80"><td class="memItemLeft" align="right" valign="top"><a id="aecc38a36f915eaf3e1af4f7201b45c80"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#aecc38a36f915eaf3e1af4f7201b45c80">MoveBackward</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a7860da3c851cc878adb5c475b474964d">BackwardSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7bdedafbb9ecac80b8a730f8863b1751">outputs::OmniDrive3Wheel::YSpeed</a>)</td></tr>
+<tr class="memdesc:aecc38a36f915eaf3e1af4f7201b45c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that moves the robot forward. <br /></td></tr>
+<tr class="separator:aecc38a36f915eaf3e1af4f7201b45c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ceb7d78afec6d50debc64d395e2278b"><td class="memItemLeft" align="right" valign="top"><a id="a8ceb7d78afec6d50debc64d395e2278b"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a8ceb7d78afec6d50debc64d395e2278b">MoveRight</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#aafb08455f897e7cb4018855e03aba78a">RightSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a0fa0dabb36f1cce048df815d7b2eb911">outputs::OmniDrive3Wheel::XSpeed</a>)</td></tr>
+<tr class="memdesc:a8ceb7d78afec6d50debc64d395e2278b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that moves the robot forward. <br /></td></tr>
+<tr class="separator:a8ceb7d78afec6d50debc64d395e2278b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39d75c2fd8abf2024c21cd87b167406"><td class="memItemLeft" align="right" valign="top"><a id="aa39d75c2fd8abf2024c21cd87b167406"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#aa39d75c2fd8abf2024c21cd87b167406">MoveLeft</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a0d44df1d1e89826627fdceb504f62e13">LeftSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a0fa0dabb36f1cce048df815d7b2eb911">outputs::OmniDrive3Wheel::XSpeed</a>)</td></tr>
+<tr class="memdesc:aa39d75c2fd8abf2024c21cd87b167406"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that moves the robot forward. <br /></td></tr>
+<tr class="separator:aa39d75c2fd8abf2024c21cd87b167406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94ceddd90baf5b73c43a052aa731ff0e"><td class="memItemLeft" align="right" valign="top"><a id="a94ceddd90baf5b73c43a052aa731ff0e"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a94ceddd90baf5b73c43a052aa731ff0e">TurnLeft</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a21c6045aefe6e39065afa668d5028457">TurnLeftSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a8d0f4d0d63df9798476a5d95c574e1e3">outputs::OmniDrive3Wheel::AngleSpeed</a>)</td></tr>
+<tr class="memdesc:a94ceddd90baf5b73c43a052aa731ff0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the robot left. <br /></td></tr>
+<tr class="separator:a94ceddd90baf5b73c43a052aa731ff0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b3ab3ec5151579d037b212e6c0365f4"><td class="memItemLeft" align="right" valign="top"><a id="a1b3ab3ec5151579d037b212e6c0365f4"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a1b3ab3ec5151579d037b212e6c0365f4">TurnRight</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a22a123b89c4f30b7ca2e06d508959648">TurnRightSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a8d0f4d0d63df9798476a5d95c574e1e3">outputs::OmniDrive3Wheel::AngleSpeed</a>)</td></tr>
+<tr class="memdesc:a1b3ab3ec5151579d037b212e6c0365f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the robot right. <br /></td></tr>
+<tr class="separator:a1b3ab3ec5151579d037b212e6c0365f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed516450d5e07486b0913a7ee210b94a"><td class="memItemLeft" align="right" valign="top"><a id="aed516450d5e07486b0913a7ee210b94a"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#aed516450d5e07486b0913a7ee210b94a">LocateObject</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#acf6239bff1bae586c625d5e9924881bb">LocateSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a8d0f4d0d63df9798476a5d95c574e1e3">outputs::OmniDrive3Wheel::AngleSpeed</a>)</td></tr>
+<tr class="memdesc:aed516450d5e07486b0913a7ee210b94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the robot in place in order to locate an object. <br /></td></tr>
+<tr class="separator:aed516450d5e07486b0913a7ee210b94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560b758c6c0806dd54f56ff843b14157"><td class="memItemLeft" align="right" valign="top"><a id="a560b758c6c0806dd54f56ff843b14157"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a560b758c6c0806dd54f56ff843b14157">ScoreBall</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a2234350527c904681de5599159cb8c36">BallScorerSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_ball_scorer.html#a77cc2cc0aad8f81aff13b62b8612065b">outputs::BallScorer::TreadSpeed</a>)</td></tr>
+<tr class="memdesc:a560b758c6c0806dd54f56ff843b14157"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the center tread to move a ball into the goal. <br /></td></tr>
+<tr class="separator:a560b758c6c0806dd54f56ff843b14157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac711e24b6805f02a1f873723542a82ff"><td class="memItemLeft" align="right" valign="top"><a id="ac711e24b6805f02a1f873723542a82ff"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#ac711e24b6805f02a1f873723542a82ff">PickUpBall</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a954903c232aa5f8e8603953373510bbc">BallPickupSpeed</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_ball_collector.html#abaf456341851ea86b0e4618208726486">outputs::BallCollector::TreadSpeed</a>)</td></tr>
+<tr class="memdesc:ac711e24b6805f02a1f873723542a82ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior that turns the ball collector treads in order to pickup a ball. <br /></td></tr>
+<tr class="separator:ac711e24b6805f02a1f873723542a82ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa667b842d81943b92ea552e24479503c"><td class="memItemLeft" align="right" valign="top"><a id="aa667b842d81943b92ea552e24479503c"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#aa667b842d81943b92ea552e24479503c">AvoidObstacle</a> (<a class="el" href="namespacegodspeed_1_1inputs_1_1_range_finders.html#ab4daa2c0bba8e98a25e203dac87d6405">inputs::RangeFinders::Nearness</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a0fa0dabb36f1cce048df815d7b2eb911">outputs::OmniDrive3Wheel::XSpeed</a>)</td></tr>
+<tr class="memdesc:aa667b842d81943b92ea552e24479503c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior to move the robot away from a detected obstacle. <br /></td></tr>
+<tr class="separator:aa667b842d81943b92ea552e24479503c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2156f6b7ef1d211fdd797875e2c0843"><td class="memItemLeft" align="right" valign="top"><a id="ae2156f6b7ef1d211fdd797875e2c0843"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#ae2156f6b7ef1d211fdd797875e2c0843">StopX</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a02f9e0a0bea46eef593758163839559d">Stop</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a0fa0dabb36f1cce048df815d7b2eb911">outputs::OmniDrive3Wheel::XSpeed</a>)</td></tr>
+<tr class="memdesc:ae2156f6b7ef1d211fdd797875e2c0843"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior to stop the robot's x-direction velocity. <br /></td></tr>
+<tr class="separator:ae2156f6b7ef1d211fdd797875e2c0843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d17445a8e9201c463dfe2c578a76d54"><td class="memItemLeft" align="right" valign="top"><a id="a1d17445a8e9201c463dfe2c578a76d54"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a1d17445a8e9201c463dfe2c578a76d54">StopY</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a02f9e0a0bea46eef593758163839559d">Stop</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7bdedafbb9ecac80b8a730f8863b1751">outputs::OmniDrive3Wheel::YSpeed</a>)</td></tr>
+<tr class="memdesc:a1d17445a8e9201c463dfe2c578a76d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior to stop the robot's y-direction velocity. <br /></td></tr>
+<tr class="separator:a1d17445a8e9201c463dfe2c578a76d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20e43f975c8b36219c1ef35023f6415c"><td class="memItemLeft" align="right" valign="top"><a id="a20e43f975c8b36219c1ef35023f6415c"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a20e43f975c8b36219c1ef35023f6415c">StopAngle</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a02f9e0a0bea46eef593758163839559d">Stop</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a8d0f4d0d63df9798476a5d95c574e1e3">outputs::OmniDrive3Wheel::AngleSpeed</a>)</td></tr>
+<tr class="memdesc:a20e43f975c8b36219c1ef35023f6415c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior to stop the robot's angular velocity. <br /></td></tr>
+<tr class="separator:a20e43f975c8b36219c1ef35023f6415c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39017e46bfcf53c941886403ace15092"><td class="memItemLeft" align="right" valign="top"><a id="a39017e46bfcf53c941886403ace15092"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#a39017e46bfcf53c941886403ace15092">StopCollectors</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a02f9e0a0bea46eef593758163839559d">Stop</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_ball_collector.html#abaf456341851ea86b0e4618208726486">outputs::BallCollector::TreadSpeed</a>)</td></tr>
+<tr class="memdesc:a39017e46bfcf53c941886403ace15092"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior to stop the ball collector treads. <br /></td></tr>
+<tr class="separator:a39017e46bfcf53c941886403ace15092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf45efe9f2369a1c8ffc1e60afa4b11c"><td class="memItemLeft" align="right" valign="top"><a id="abf45efe9f2369a1c8ffc1e60afa4b11c"></a>
+<a class="el" href="classgodspeed_1_1_binding.html">Binding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegodspeed_1_1behaviors.html#abf45efe9f2369a1c8ffc1e60afa4b11c">StopScorer</a> (<a class="el" href="namespacegodspeed_1_1behaviors.html#a02f9e0a0bea46eef593758163839559d">Stop</a>, <a class="el" href="namespacegodspeed_1_1outputs_1_1_ball_scorer.html#a77cc2cc0aad8f81aff13b62b8612065b">outputs::BallScorer::TreadSpeed</a>)</td></tr>
+<tr class="memdesc:abf45efe9f2369a1c8ffc1e60afa4b11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A behavior to stop the ball scorer tread. <br /></td></tr>
+<tr class="separator:abf45efe9f2369a1c8ffc1e60afa4b11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a0021c9d76be515101957ecbb086faf00"><td class="memItemLeft" align="right" valign="top"><a id="a0021c9d76be515101957ecbb086faf00"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>AlignAgression</b> = 1</td></tr>
+<tr class="separator:a0021c9d76be515101957ecbb086faf00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A namespace containing functions for creating autonomous mode behavior bindings. </p>
-<p>When called, behavior functions create a binding with the <a class="el" href="namespacegodspeed_1_1_binder.html" title="A namespace containing functions for binding value producing functions to value consuming functions.">Binder</a> and then return the ID of the binding created. </p>
+<div class="textblock"><p>A namespace containing autonomous mode behavior bindings. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

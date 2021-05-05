@@ -19,7 +19,9 @@ namespace godspeed
     Binding DCtrl_AngleSpeed(RemoteController::RightStickX, OmniDrive3Wheel::AngleSpeed);      //Bind the right sticks X position to the drivetrains angular speed
     Binding DCtrl_CenterTread(RemoteController::LeftTrigger, BallScorer::TreadSpeed);          //Bind the left trigger to the center tread
     Binding DCtrl_CollectorTreads(RemoteController::RightTrigger, BallCollector::TreadSpeed);  //Bind the right trigger to collector treads
+    Binding DCtrl_EnableSaturation(RemoteController::AButton, OmniDrive3Wheel::EnableSaturation);
 
+    /// \brief Bind Bauble driver control
     void BindDriverControl()
     {
       Binder::AddBinding(ExpanderBinding);
@@ -28,8 +30,10 @@ namespace godspeed
       Binder::AddBinding(DCtrl_AngleSpeed);
       Binder::AddBinding(DCtrl_CenterTread);
       Binder::AddBinding(DCtrl_CollectorTreads);
+      Binder::AddBinding(DCtrl_EnableSaturation);
     }
 
+    /// \brief Un-bind Bauble driver control
     void UnBindDriverControl()
     {
       Binder::RemoveBinding(DCtrl_XSpeed);
@@ -37,6 +41,7 @@ namespace godspeed
       Binder::RemoveBinding(DCtrl_AngleSpeed);
       Binder::RemoveBinding(DCtrl_CenterTread);
       Binder::RemoveBinding(DCtrl_CollectorTreads);
+      Binder::RemoveBinding(DCtrl_EnableSaturation);
     }
   }
 }

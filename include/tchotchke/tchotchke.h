@@ -5,6 +5,7 @@
 
 namespace godspeed
 {
+  /// \brief A namespace containing the state machine and driver control code for the Tchotchke robot
   namespace Tchotchke
   {
     double expander_pos() { return 355; }

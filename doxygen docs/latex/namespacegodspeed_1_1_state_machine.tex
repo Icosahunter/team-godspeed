@@ -1,0 +1,41 @@
+\hypertarget{namespacegodspeed_1_1_state_machine}{}\doxysection{godspeed\+::State\+Machine Namespace Reference}
+\label{namespacegodspeed_1_1_state_machine}\index{godspeed::StateMachine@{godspeed::StateMachine}}
+
+
+A namespace for executing a state machine.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_state_machine_a79d9e93b27e054b016e72df9dabd1f81}\label{namespacegodspeed_1_1_state_machine_a79d9e93b27e054b016e72df9dabd1f81}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_state_machine_a79d9e93b27e054b016e72df9dabd1f81}{Change\+State}} (\mbox{\hyperlink{classgodspeed_1_1_state}{State}} \&state)
+\begin{DoxyCompactList}\small\item\em Changes the state of the state machine, performs entry and exit actions and handles activity enabling and disabling. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_state_machine_aedcc097e3d0d394548e7240835cde408}\label{namespacegodspeed_1_1_state_machine_aedcc097e3d0d394548e7240835cde408}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_state_machine_aedcc097e3d0d394548e7240835cde408}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Update function called by the \mbox{\hyperlink{classgodspeed_1_1_state}{State}} Machine thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_state_machine_acaf818075eba580e2a09ba8233487f22}\label{namespacegodspeed_1_1_state_machine_acaf818075eba580e2a09ba8233487f22}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_state_machine_acaf818075eba580e2a09ba8233487f22}{Start}} (\mbox{\hyperlink{classgodspeed_1_1_state}{State}} \&starting\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Starts executing a state machine given the initial state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_state_machine_a392d0434cc4f79ae818c3145ab84a39c}\label{namespacegodspeed_1_1_state_machine_a392d0434cc4f79ae818c3145ab84a39c}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_state_machine_a392d0434cc4f79ae818c3145ab84a39c}{Kill}} ()
+\begin{DoxyCompactList}\small\item\em A function to stop the state machine thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_state_machine_aaba8345aed289a1144dfd9b4f74976d0}\label{namespacegodspeed_1_1_state_machine_aaba8345aed289a1144dfd9b4f74976d0}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_state_machine_aaba8345aed289a1144dfd9b4f74976d0}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Runs the state machine update function on it\textquotesingle{}s own thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_state_machine_a749fc8ef143a0231717c628c5d01ac24}\label{namespacegodspeed_1_1_state_machine_a749fc8ef143a0231717c628c5d01ac24}} 
+\mbox{\hyperlink{classgodspeed_1_1_state}{State}} $\ast$ {\bfseries current\+State}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_state_machine_a583a5c6566404cf6c268d4981b4ba7b9}\label{namespacegodspeed_1_1_state_machine_a583a5c6566404cf6c268d4981b4ba7b9}} 
+thread $\ast$ {\bfseries tptr}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_state_machine_a6802ae9b1ba20343244370bb684e8081}\label{namespacegodspeed_1_1_state_machine_a6802ae9b1ba20343244370bb684e8081}} 
+bool {\bfseries kill} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A namespace for executing a state machine. 

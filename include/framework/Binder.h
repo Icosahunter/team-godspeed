@@ -3,6 +3,7 @@
 
 namespace godspeed
 {
+  /// \brief A class that represents a binding between two functions
   class Binding
   {
     public:
@@ -11,6 +12,7 @@ namespace godspeed
     double(*pipe)(double);
     void(*sink)(double);
 
+    /// \brief Constructor that accepts a source, pipe, and sink function
     Binding(double(*src)(void), double(*pip)(double), void(*snk)(double))
     {
       source = src;
@@ -18,6 +20,7 @@ namespace godspeed
       sink = snk;
     }
 
+    /// \brief Constructor that accepts a source and sink function
     Binding(double(*src)(void), void(*snk)(double))
     {
       source = src;
@@ -25,6 +28,7 @@ namespace godspeed
       sink = snk;
     }
 
+    /// \brief Update the binding
     void Update()
     {
       if (pipe != nullptr)
@@ -52,6 +56,7 @@ namespace godspeed
     std::list<Binding*> bindings = std::list<Binding*>();
     thread* tptr;
 
+    /// \brief Add a binding to the binder
     void AddBinding(Binding &b)
     {
       if (!contains(bindings, &b))
@@ -60,16 +65,19 @@ namespace godspeed
       }
     }
 
+    /// \brief Set the bindings list (overwrites current binding list)
     void SetBindings(std::list<Binding*> &l)
     {
       bindings.assign(l.begin(), l.end());
     }
 
+    /// \brief Remove all current bindings
     void ClearBindings()
     {
       bindings.clear();
     }
 
+    /// \brief Remove given binding from the update list
     void RemoveBinding(Binding &b)
     {
       if (contains(bindings, &b))
@@ -78,19 +86,20 @@ namespace godspeed
       }
     }
 
-    /// \brief calls all bindings that are not disabled. This does NOT need to be called manually.
+    /// \brief Iterates through and updates all bindings. This does NOT need to be called manually.
     void Update()
     {
       while (true)
       {
         for(auto& x : bindings)
         {
-          x->Update();
+            x->Update();
         }
         this_thread::yield();
       }
     }
 
+    /// \brief Stops binder thread
     void Kill()
     {
       if (tptr != nullptr)
@@ -104,8 +113,8 @@ namespace godspeed
     void Init()
     {
       thread t(Update);
-      t.detach();
       tptr = &t;
+      t.detach();
     }
   }
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.6)  5 MAR 2021 23:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.6)  30 APR 2021 23:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -873,14 +873,14 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (./namespaces.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
-) [1
+ [1
 
 
-] [2
-
-]
+]) [2]
 Chapter 2.
-(./annotated.tex) [3] [4
+(./annotated.tex) [3
+
+] [4
 
 ]
 Chapter 3.
@@ -901,86 +901,133 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 12.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 28.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 39.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 28.
-) (./namespacegodspeed_1_1_behavior_manager.tex [5]
+(Font)              scaled to size 6.29996pt on input line 39.
+) (./namespacegodspeed_1_1actions.tex [5]) (./namespacegodspeed_1_1_bauble.tex 
+[6]) (./namespacegodspeed_1_1behaviors.tex [7]
 LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
-(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 28.
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 82.
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 28.
+(Font)              scaled to size 8.09995pt on input line 82.
 )
-(./namespacegodspeed_1_1behaviors.tex [6]) (./namespacegodspeed_1_1_binder.tex
-[7]) (./namespacegodspeed_1_1framework.tex) (./namespacegodspeed_1_1inputs.tex)
-(./namespacegodspeed_1_1inputs_1_1_ball_storage.tex [8])
-(./namespacegodspeed_1_1inputs_1_1_range_finder_suite.tex)
-(./namespacegodspeed_1_1inputs_1_1_remote_controller.tex [9])
-(./namespacegodspeed_1_1inputs_1_1_vision_sensor.tex [10] [11]
+(./namespacegodspeed_1_1_binder.tex [8]) (./namespacegodspeed_1_1framework.tex)
+(./namespacegodspeed_1_1inputs.tex [9])
+(./namespacegodspeed_1_1inputs_1_1_ball_storage.tex [10])
+(./namespacegodspeed_1_1inputs_1_1_range_finders.tex)
+(./namespacegodspeed_1_1inputs_1_1_remote_controller.tex [11])
+(./namespacegodspeed_1_1inputs_1_1_vision_sensor.tex [12]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 82.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 82
-.
+(Font)              scaled to size 7.19995pt on input line 106.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 10
+6.
 
 (d:/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [12]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 182.
-)
-(./namespacegodspeed_1_1outputs.tex [13])
+) [13])
+(./namespacegodspeed_1_1_mode_control.tex [14])
+(./namespacegodspeed_1_1outputs.tex [15])
 (./namespacegodspeed_1_1outputs_1_1_ball_collector.tex)
-(./namespacegodspeed_1_1outputs_1_1_ball_scorer.tex [14])
-(./namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.tex)
-(./namespacegodspeed_1_1outputs_1_1_output_utilities.tex [15]
+(./namespacegodspeed_1_1outputs_1_1_ball_scorer.tex [16])
+(./namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.tex [17])
+(./namespacegodspeed_1_1outputs_1_1_output_utilities.tex
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 23.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 23.
-) [16]
+)
+(./namespacegodspeed_1_1_state_machine.tex [18])
+(./namespacegodspeed_1_1_tchotchke.tex [19]) [20]
 Chapter 4.
-(./classgodspeed_1_1inputs_1_1_path_script.tex <./classgodspeed_1_1inputs_1_1_p
-ath_script__coll__graph.pdf
+(./classgodspeed_1_1_binding.tex <./classgodspeed_1_1_binding__coll__graph.pdf
 
-pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1inputs_1_1_path_script__c
-oll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a sin
-gle page
+pdfTeX warning: pdflatex.exe (file ./classgodspeed_1_1_binding__coll__graph.pdf
+): PDF inclusion: multiple pdfs with page group included in a single page
 >
-<classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf, id=640, 223.83624pt 
-x 204.765pt>
+<classgodspeed_1_1_binding__coll__graph.pdf, id=1014, 177.66376pt x 182.6825pt>
+
+File: classgodspeed_1_1_binding__coll__graph.pdf Graphic file (type pdf)
+<use classgodspeed_1_1_binding__coll__graph.pdf>
+Package pdftex.def Info: classgodspeed_1_1_binding__coll__graph.pdf  used on in
+put line 19.
+(pdftex.def)             Requested size: 177.0pt x 182.00467pt.
+ [21
+
+]) (./classgodspeed_1_1_debouncer.tex <./classgodspeed_1_1_debouncer__coll__gra
+ph.pdf>
+<classgodspeed_1_1_debouncer__coll__graph.pdf, id=1036, 191.71625pt x 149.55875
+pt>
+File: classgodspeed_1_1_debouncer__coll__graph.pdf Graphic file (type pdf)
+<use classgodspeed_1_1_debouncer__coll__graph.pdf>
+Package pdftex.def Info: classgodspeed_1_1_debouncer__coll__graph.pdf  used on 
+input line 19.
+(pdftex.def)             Requested size: 191.0pt x 149.00839pt.
+) (./classgodspeed_1_1inputs_1_1_path_script.tex [22] <./classgodspeed_1_1input
+s_1_1_path_script__coll__graph.pdf>
+<classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf, id=1063, 223.83624pt
+ x 204.765pt>
 File: classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf Graphic file (ty
 pe pdf)
 <use classgodspeed_1_1inputs_1_1_path_script__coll__graph.pdf>
 Package pdftex.def Info: classgodspeed_1_1inputs_1_1_path_script__coll__graph.p
-df  used on input line 19.
+df  used on input line 18.
 (pdftex.def)             Requested size: 223.0pt x 204.00523pt.
- [17
+ [23])
+(./classgodspeed_1_1_state.tex <./classgodspeed_1_1_state__coll__graph.pdf>
+<classgodspeed_1_1_state__coll__graph.pdf, id=1097, 180.675pt x 204.765pt>
+File: classgodspeed_1_1_state__coll__graph.pdf Graphic file (type pdf)
+<use classgodspeed_1_1_state__coll__graph.pdf>
+Package pdftex.def Info: classgodspeed_1_1_state__coll__graph.pdf  used on inpu
+t line 19.
+(pdftex.def)             Requested size: 180.0pt x 204.0021pt.
 
-]) [18] (./refman.ind [19
+[24]) (./classgodspeed_1_1_win_avg.tex <./classgodspeed_1_1_win_avg__coll__grap
+h.pdf>
+<classgodspeed_1_1_win_avg__coll__graph.pdf, id=1121, 178.6675pt x 182.6825pt>
+File: classgodspeed_1_1_win_avg__coll__graph.pdf Graphic file (type pdf)
+<use classgodspeed_1_1_win_avg__coll__graph.pdf>
+Package pdftex.def Info: classgodspeed_1_1_win_avg__coll__graph.pdf  used on in
+put line 19.
+(pdftex.def)             Requested size: 178.0pt x 182.01024pt.
+ [25]) (./classgodspeed_1_1_win_min.tex <./classgodspeed_1_1_win_min__coll__gra
+ph.pdf>
+<classgodspeed_1_1_win_min__coll__graph.pdf, id=1151, 178.6675pt x 182.6825pt>
+File: classgodspeed_1_1_win_min__coll__graph.pdf Graphic file (type pdf)
+<use classgodspeed_1_1_win_min__coll__graph.pdf>
+Package pdftex.def Info: classgodspeed_1_1_win_min__coll__graph.pdf  used on in
+put line 19.
+(pdftex.def)             Requested size: 178.0pt x 182.01024pt.
+ [26]) [27] [28
 
+] (./refman.ind [29
 
 
 ]) (./refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 9C95684666B3F805FA586DC237AB80FD;11827.
+(rerunfilecheck)             Checksum: 649F5FF204D04B1DAAB906534A0E139C;15416.
  ) 
 Here is how much of TeX's memory you used:
- 17022 strings out of 479485
- 265119 string characters out of 5875916
- 585774 words of memory out of 5000000
- 33465 multiletter control sequences out of 15000+600000
+ 17373 strings out of 479485
+ 282778 string characters out of 5875916
+ 607142 words of memory out of 5000000
+ 33635 multiletter control sequences out of 15000+600000
  583467 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,15n,115p,940b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 107i,16n,115p,958b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/texlive/2020/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2020/texmf-dist/fonts/type1
-/urw/courier/ucrr8a.pfb><d:/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucr
-ro8a.pfb><d:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/te
-xlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><d:/texlive/2020/tex
-mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><d:/texlive/2020/texmf-dist/fonts/t
-ype1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (23 pages, 137498 bytes).
+nts/type1/public/amsfonts/cm/cmmi7.pfb><d:/texlive/2020/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb><d:/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.
+pfb><d:/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb><d:/texlive
+/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><d:/texlive/2020/texmf-dis
+t/fonts/type1/urw/helvetic/uhvb8ac.pfb><d:/texlive/2020/texmf-dist/fonts/type1/
+urw/helvetic/uhvr8a.pfb><d:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uh
+vro8a.pfb>
+Output written on refman.pdf (33 pages, 258293 bytes).
 PDF statistics:
- 803 PDF objects out of 1000 (max. 8388607)
- 758 compressed objects within 8 object streams
- 226 named destinations out of 1000 (max. 500000)
- 430 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1355 PDF objects out of 1440 (max. 8388607)
+ 1278 compressed objects within 13 object streams
+ 389 named destinations out of 1000 (max. 500000)
+ 575 words of extra memory for PDF output out of 10000 (max. 10000000)
 

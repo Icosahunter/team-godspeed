@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['dec_130',['dec',['../namespacegodspeed_1_1inputs_1_1_ball_storage.html#a59600e63b8beca1ccada93bc4cd964dc',1,'godspeed::inputs::BallStorage']]],
-  ['disable_131',['Disable',['../namespacegodspeed_1_1_binder.html#af3ef592e2e010e680da387e1fb0db57f',1,'godspeed::Binder']]],
-  ['distance_132',['Distance',['../namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a09a6d4e31bac55f52916d26ced1ac004',1,'godspeed::inputs::VisionSensor']]]
+  ['calculatedistance_195',['CalculateDistance',['../namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a979b771108a57536b62b9ada96fb18d9',1,'godspeed::inputs::VisionSensor']]],
+  ['centerlineballnotfound_196',['CenterLineBallNotFound',['../namespacegodspeed_1_1_tchotchke.html#a5aa720d4dbf50b75288e61f828e6a7ec',1,'godspeed::Tchotchke']]],
+  ['changestate_197',['ChangeState',['../namespacegodspeed_1_1_state_machine.html#a79d9e93b27e054b016e72df9dabd1f81',1,'godspeed::StateMachine']]],
+  ['clearbindings_198',['ClearBindings',['../namespacegodspeed_1_1_binder.html#a943092b44f53658fc54d4b6aa1136725',1,'godspeed::Binder']]],
+  ['competitionwatcher_199',['CompetitionWatcher',['../namespacegodspeed_1_1_mode_control.html#aba92d57d32798c918f9bc077470342e0',1,'godspeed::ModeControl']]]
 ];

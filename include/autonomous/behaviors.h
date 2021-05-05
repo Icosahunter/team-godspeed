@@ -83,14 +83,20 @@ namespace godspeed
     /// \brief A behavior to move the robot away from a detected obstacle
     Binding AvoidObstacle(inputs::RangeFinders::Nearness, outputs::OmniDrive3Wheel::XSpeed);
 
+    /// \brief A behavior to stop the robot's x-direction velocity
     Binding StopX(Stop, outputs::OmniDrive3Wheel::XSpeed);
 
+    /// \brief A behavior to stop the robot's y-direction velocity
     Binding StopY(Stop, outputs::OmniDrive3Wheel::YSpeed);
 
+    /// \brief A behavior to stop the robot's angular velocity
     Binding StopAngle(Stop, outputs::OmniDrive3Wheel::AngleSpeed);
 
+    /// \brief A behavior to stop the ball collector treads
     Binding StopCollectors(Stop, outputs::BallCollector::TreadSpeed);
 
+
+  /// \brief A behavior to stop the ball scorer tread
     Binding StopScorer(Stop, outputs::BallScorer::TreadSpeed);
   }
 }

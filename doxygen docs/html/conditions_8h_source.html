@@ -73,97 +73,91 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;vex.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;inputs/ball-storage-suite.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;inputs/ball-storage.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;inputs/vision-sensor.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">namespace </span>conditions</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">double</span> alignmentThreshold = 0; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">double</span> nearBallThreshold = -0.8; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">double</span> nearGoalThreshold = 0.8; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">double</span> nearBallTimeout = 500; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">double</span> nearGoalTimeout = 500; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">double</span> nearBall = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">double</span> nearGoal = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> True() { <span class="keywordflow">return</span> <span class="keyword">true</span>; } </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> False() { <span class="keywordflow">return</span> <span class="keyword">false</span>; } </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> BallLoaded()</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_ball_storage.html#ad02dbaf8fd01a8bd25d7d9227f9abe2c">inputs::BallStorage::BallCount</a>() &gt; 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span> BallNotLoaded()</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_ball_storage.html#ad02dbaf8fd01a8bd25d7d9227f9abe2c">inputs::BallStorage::BallCount</a>() == 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> GoalTargeted()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#af3f5e88e632b670c34dafc232cc47d4c">inputs::VisionSensor::GoalCount</a>() &gt;= 1;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> BallTargeted()</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordtype">double</span> b = <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#ad9edecf50f5a87d7d44cf34f6c1d92e9">inputs::VisionSensor::BallCount</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordflow">return</span> b &gt;= 1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> AlignedWithGoal()</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">double</span> o = <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#afc52bc157fdaf0c5733045daf34e2cb4">inputs::VisionSensor::GoalXOffset</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">return</span> -alignmentThreshold &lt; o &amp;&amp; o &lt; alignmentThreshold;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> AlignedWithBall()</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordtype">double</span> o = <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#acad2a2f915307c0749ef8f8ff216a127">inputs::VisionSensor::BallXOffset</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> -alignmentThreshold &lt; o &amp;&amp; o &lt; alignmentThreshold;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> nearBallFalse() { nearBall = <span class="keyword">false</span>; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">bool</span> NearBall()</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a8d423c11a418dbcef2053a42fd29f6d0">inputs::VisionSensor::BallYOffset</a>() &gt; nearBallThreshold)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        nearBall = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        timer::event(nearBallFalse, nearBallTimeout);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">return</span> nearBall;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> nearGoalFalse() { nearGoal = <span class="keyword">false</span>; }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> NearGoal()</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a372362cfe14154d3ef8c4fd154211f94">inputs::VisionSensor::GoalYOffset</a>() &lt; nearGoalThreshold)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        nearGoal = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        timer::event(nearGoalFalse, nearGoalTimeout);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordflow">return</span> nearGoal;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">bool</span> NearObstacle() <span class="comment">//stub</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;inputs/range-finders.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">namespace </span>conditions</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">double</span> alignmentThreshold = 0.1; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">double</span> nearBallThreshold = 28; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">double</span> nearGoalThreshold = 28; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">double</span> nearObstacleThreshold = 500;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> True() { <span class="keywordflow">return</span> <span class="keyword">true</span>; } </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> False() { <span class="keywordflow">return</span> <span class="keyword">false</span>; } </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> BallLoaded()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_ball_storage.html#ad02dbaf8fd01a8bd25d7d9227f9abe2c">inputs::BallStorage::BallCount</a>() &gt; 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> BallNotLoaded()</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_ball_storage.html#ad02dbaf8fd01a8bd25d7d9227f9abe2c">inputs::BallStorage::BallCount</a>() == 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> GoalTargeted()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#af3f5e88e632b670c34dafc232cc47d4c">inputs::VisionSensor::GoalCount</a>() &gt;= 1;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> BallTargeted()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordtype">double</span> b = <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#ad9edecf50f5a87d7d44cf34f6c1d92e9">inputs::VisionSensor::BallCount</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">return</span> b &gt;= 1;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> AlignedWithGoal()</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordtype">double</span> o = <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#afc52bc157fdaf0c5733045daf34e2cb4">inputs::VisionSensor::GoalXOffset</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">return</span> -alignmentThreshold &lt; o &amp;&amp; o &lt; alignmentThreshold;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> AlignedWithBall()</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordtype">double</span> o = <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#acad2a2f915307c0749ef8f8ff216a127">inputs::VisionSensor::BallXOffset</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">return</span> -alignmentThreshold &lt; o &amp;&amp; o &lt; alignmentThreshold;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> NearBall()</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#ac378742b36527787364f1fb83547a270">inputs::VisionSensor::BallDistance</a>() &lt;= nearBallThreshold;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> NearGoal()</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a56e93a0836531f8af852a3c82349d787">inputs::VisionSensor::GoalDistance</a>() &lt;= nearGoalThreshold;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> NearObstacle()</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="namespacegodspeed_1_1inputs_1_1_range_finders.html#abee65bab2ed78d1a12399f18a9f68aec">inputs::RangeFinders::LeftDistance</a>() &lt; nearObstacleThreshold || <a class="code" href="namespacegodspeed_1_1inputs_1_1_range_finders.html#a181310bc336a67978f04bf4a9e88fe0c">inputs::RangeFinders::RightDistance</a>() &lt; nearObstacleThreshold)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        Controller1.Screen.clearScreen();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_a372362cfe14154d3ef8c4fd154211f94"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a372362cfe14154d3ef8c4fd154211f94">godspeed::inputs::VisionSensor::GoalYOffset</a></div><div class="ttdeci">double GoalYOffset()</div><div class="ttdoc">Returns the Y offset of the largest goal backboard icon from the center of the screen,...</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:191</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_a8d423c11a418dbcef2053a42fd29f6d0"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a8d423c11a418dbcef2053a42fd29f6d0">godspeed::inputs::VisionSensor::BallYOffset</a></div><div class="ttdeci">double BallYOffset()</div><div class="ttdoc">Returns the Y offset of the largest ball from the center of the screen, normalize to between -1 and 1...</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:108</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_ball_storage_html_ad02dbaf8fd01a8bd25d7d9227f9abe2c"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_ball_storage.html#ad02dbaf8fd01a8bd25d7d9227f9abe2c">godspeed::inputs::BallStorage::BallCount</a></div><div class="ttdeci">double BallCount()</div><div class="ttdoc">Returns the current ball count.</div><div class="ttdef"><b>Definition:</b> ball-storage-suite.h:33</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_af3f5e88e632b670c34dafc232cc47d4c"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#af3f5e88e632b670c34dafc232cc47d4c">godspeed::inputs::VisionSensor::GoalCount</a></div><div class="ttdeci">double GoalCount()</div><div class="ttdoc">Returns the number of goals found.</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:157</div></div>
-<div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> behavior-manager.h:12</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_acad2a2f915307c0749ef8f8ff216a127"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#acad2a2f915307c0749ef8f8ff216a127">godspeed::inputs::VisionSensor::BallXOffset</a></div><div class="ttdeci">double BallXOffset()</div><div class="ttdoc">Returns the X offset of the largest ball from the center of the screen, normalize to between -1 and 1...</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:97</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_ad9edecf50f5a87d7d44cf34f6c1d92e9"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#ad9edecf50f5a87d7d44cf34f6c1d92e9">godspeed::inputs::VisionSensor::BallCount</a></div><div class="ttdeci">double BallCount()</div><div class="ttdoc">Returns the number of balls found.</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:145</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_afc52bc157fdaf0c5733045daf34e2cb4"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#afc52bc157fdaf0c5733045daf34e2cb4">godspeed::inputs::VisionSensor::GoalXOffset</a></div><div class="ttdeci">double GoalXOffset()</div><div class="ttdoc">Returns the X offset of the largest goal backboard icon from the center of the screen,...</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:180</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_ball_storage_html_ad02dbaf8fd01a8bd25d7d9227f9abe2c"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_ball_storage.html#ad02dbaf8fd01a8bd25d7d9227f9abe2c">godspeed::inputs::BallStorage::BallCount</a></div><div class="ttdeci">double BallCount()</div><div class="ttdoc">Returns the current ball count.</div><div class="ttdef"><b>Definition:</b> ball-storage.h:43</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_af3f5e88e632b670c34dafc232cc47d4c"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#af3f5e88e632b670c34dafc232cc47d4c">godspeed::inputs::VisionSensor::GoalCount</a></div><div class="ttdeci">double GoalCount()</div><div class="ttdoc">Returns the number of goals found.</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:169</div></div>
+<div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> actions.h:12</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_a56e93a0836531f8af852a3c82349d787"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a56e93a0836531f8af852a3c82349d787">godspeed::inputs::VisionSensor::GoalDistance</a></div><div class="ttdeci">double GoalDistance()</div><div class="ttdoc">Returns the distance, in inches, to the largest goal backboard icon found [NOT IMPLEMENTED].</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:180</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_range_finders_html_a181310bc336a67978f04bf4a9e88fe0c"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_range_finders.html#a181310bc336a67978f04bf4a9e88fe0c">godspeed::inputs::RangeFinders::RightDistance</a></div><div class="ttdeci">double RightDistance()</div><div class="ttdoc">returns the distance value of Right Range Finder</div><div class="ttdef"><b>Definition:</b> range-finders.h:31</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_acad2a2f915307c0749ef8f8ff216a127"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#acad2a2f915307c0749ef8f8ff216a127">godspeed::inputs::VisionSensor::BallXOffset</a></div><div class="ttdeci">double BallXOffset()</div><div class="ttdoc">Returns the X offset of the largest ball from the center of the screen, normalize to between -1 and 1...</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:136</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_range_finders_html_abee65bab2ed78d1a12399f18a9f68aec"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_range_finders.html#abee65bab2ed78d1a12399f18a9f68aec">godspeed::inputs::RangeFinders::LeftDistance</a></div><div class="ttdeci">double LeftDistance()</div><div class="ttdoc">returns the distance value of Left Range Finder</div><div class="ttdef"><b>Definition:</b> range-finders.h:16</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_ad9edecf50f5a87d7d44cf34f6c1d92e9"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#ad9edecf50f5a87d7d44cf34f6c1d92e9">godspeed::inputs::VisionSensor::BallCount</a></div><div class="ttdeci">double BallCount()</div><div class="ttdoc">Returns the number of balls found.</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:158</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_afc52bc157fdaf0c5733045daf34e2cb4"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#afc52bc157fdaf0c5733045daf34e2cb4">godspeed::inputs::VisionSensor::GoalXOffset</a></div><div class="ttdeci">double GoalXOffset()</div><div class="ttdoc">Returns the X offset of the largest goal backboard icon from the center of the screen,...</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:200</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_vision_sensor_html_ac378742b36527787364f1fb83547a270"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_vision_sensor.html#ac378742b36527787364f1fb83547a270">godspeed::inputs::VisionSensor::BallDistance</a></div><div class="ttdeci">double BallDistance()</div><div class="ttdoc">Returns the distance, in inches, to the largest ball found [NOT IMPLEMENTED].</div><div class="ttdef"><b>Definition:</b> vision-sensor.h:116</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

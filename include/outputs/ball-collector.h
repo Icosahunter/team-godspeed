@@ -22,6 +22,7 @@ namespace godspeed
         setMotorSpeed(speed, RightCollectorMotor);
       }
 
+      /// \brief Stops ball collector treads
       void Stop()
       {
         TreadSpeed(0);

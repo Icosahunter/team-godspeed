@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['xspeedvar_186',['XSpeedVar',['../namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#af18a0a59a3bccfee89b46f90f3eacfa8',1,'godspeed::outputs::OmniDrive3Wheel']]]
+  ['screenheight_290',['ScreenHeight',['../namespacegodspeed_1_1inputs_1_1_vision_sensor.html#aaca16b2da58e763a6dc607d4a4b7505c',1,'godspeed::inputs::VisionSensor']]],
+  ['screenwidth_291',['ScreenWidth',['../namespacegodspeed_1_1inputs_1_1_vision_sensor.html#af0cf817940ac27e32087df247bf91477',1,'godspeed::inputs::VisionSensor']]]
 ];

@@ -73,90 +73,118 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;vex.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//                                         id     source     pipe     sink</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//                                .--------&#39;  .-----&#39;         &#39;-.      &#39;---------.</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define BINDING_TUPLE std::tuple&lt;int, double(*)(void), double(*)(double), void(*)(double)&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define id(x) std::get&lt;0&gt;(x)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define src(x) std::get&lt;1&gt;(x)</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define pipe(x) std::get&lt;2&gt;(x)</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define sink(x) std::get&lt;3&gt;(x)</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html">   24</a></span>&#160;  <span class="keyword">namespace </span>Binder</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  {</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a73f2e477ce2f5866f5c43ee07511b9f2">   27</a></span>&#160;    std::list&lt;BINDING_TUPLE&gt; <a class="code" href="namespacegodspeed_1_1_binder.html#a73f2e477ce2f5866f5c43ee07511b9f2">bindings</a> = std::list&lt;BINDING_TUPLE&gt;();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a96b60b0d992582ddbae6be06fa7c3044">   30</a></span>&#160;    std::list&lt;int&gt; <a class="code" href="namespacegodspeed_1_1_binder.html#a96b60b0d992582ddbae6be06fa7c3044">disabled</a> = std::list&lt;int&gt;();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a8825303e055e32f433d9c6a4bbedad3d">   33</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a8825303e055e32f433d9c6a4bbedad3d">Bind</a>(<span class="keywordtype">double</span>(*source)(<span class="keywordtype">void</span>), <span class="keywordtype">void</span>(*sink)(<span class="keywordtype">double</span>))</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code" href="namespacegodspeed_1_1_binder.html#a73f2e477ce2f5866f5c43ee07511b9f2">bindings</a>.size();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <a class="code" href="namespacegodspeed_1_1_binder.html#a73f2e477ce2f5866f5c43ee07511b9f2">bindings</a>.push_back(BINDING_TUPLE(<span class="keywordtype">id</span>, source, <span class="keyword">nullptr</span>, sink));</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="keywordflow">return</span> id;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a9822b28b429e5c491f2b507cd01f79f0">   41</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a8825303e055e32f433d9c6a4bbedad3d">Bind</a>(<span class="keywordtype">double</span>(*source)(<span class="keywordtype">void</span>), <span class="keywordtype">double</span>(*pipe)(<span class="keywordtype">double</span>), <span class="keywordtype">void</span>(*sink)(<span class="keywordtype">double</span>))</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code" href="namespacegodspeed_1_1_binder.html#a73f2e477ce2f5866f5c43ee07511b9f2">bindings</a>.size();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="namespacegodspeed_1_1_binder.html#a73f2e477ce2f5866f5c43ee07511b9f2">bindings</a>.push_back(BINDING_TUPLE(<span class="keywordtype">id</span>, source, pipe, sink));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">return</span> id;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#af3ef592e2e010e680da387e1fb0db57f">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#af3ef592e2e010e680da387e1fb0db57f">Disable</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <a class="code" href="namespacegodspeed_1_1_binder.html#a96b60b0d992582ddbae6be06fa7c3044">disabled</a>.push_back(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#aa2be09d9fe343693ae8bff8f37c6b139">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#aa2be09d9fe343693ae8bff8f37c6b139">Enable</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <a class="code" href="namespacegodspeed_1_1_binder.html#a96b60b0d992582ddbae6be06fa7c3044">disabled</a>.remove(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a8f2209da8a87022bceb83bb866ea2f0f">   61</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a8f2209da8a87022bceb83bb866ea2f0f">IsDisabled</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">return</span> contains(<a class="code" href="namespacegodspeed_1_1_binder.html#a96b60b0d992582ddbae6be06fa7c3044">disabled</a>, <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">   67</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">Update</a>()</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; x : <a class="code" href="namespacegodspeed_1_1_binder.html#a73f2e477ce2f5866f5c43ee07511b9f2">bindings</a>)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;          <span class="keywordflow">if</span> (!<a class="code" href="namespacegodspeed_1_1_binder.html#a8f2209da8a87022bceb83bb866ea2f0f">IsDisabled</a>(<span class="keywordtype">id</span>(x)))</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (pipe(x) == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              sink(x)(src(x)());</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              sink(x)(pipe(x)(src(x)()));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;          }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24">   89</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24">Init</a>()</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      thread t(<a class="code" href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">Update</a>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      t.detach();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classgodspeed_1_1_binding.html">    7</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classgodspeed_1_1_binding.html">Binding</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    double(*source)(void);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    double(*pipe)(double);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    void(*sink)(double);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classgodspeed_1_1_binding.html#a8af787ab528269893aa621ee9fd4dbd3">   16</a></span>&#160;    <a class="code" href="classgodspeed_1_1_binding.html#a8af787ab528269893aa621ee9fd4dbd3">Binding</a>(<span class="keywordtype">double</span>(*src)(<span class="keywordtype">void</span>), <span class="keywordtype">double</span>(*pip)(<span class="keywordtype">double</span>), <span class="keywordtype">void</span>(*snk)(<span class="keywordtype">double</span>))</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      source = src;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      pipe = pip;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      sink = snk;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classgodspeed_1_1_binding.html#acdf7362510ff828609b8dae152819563">   24</a></span>&#160;    <a class="code" href="classgodspeed_1_1_binding.html#acdf7362510ff828609b8dae152819563">Binding</a>(<span class="keywordtype">double</span>(*src)(<span class="keywordtype">void</span>), <span class="keywordtype">void</span>(*snk)(<span class="keywordtype">double</span>))</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      source = src;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      pipe = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      sink = snk;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classgodspeed_1_1_binding.html#aaa9ef7118882a9f9e9f25e4305cc7dfb">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgodspeed_1_1_binding.html#aaa9ef7118882a9f9e9f25e4305cc7dfb">Update</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">if</span> (pipe != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        sink(pipe(source()));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        sink(source());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html">   53</a></span>&#160;  <span class="keyword">namespace </span>Binder</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">   56</a></span>&#160;    std::list&lt;Binding*&gt; <a class="code" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">bindings</a> = std::list&lt;Binding*&gt;();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    thread* tptr;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a1f91fcaf0aab5c2a7f544c3d03be6beb">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a1f91fcaf0aab5c2a7f544c3d03be6beb">AddBinding</a>(<a class="code" href="classgodspeed_1_1_binding.html">Binding</a> &amp;b)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">if</span> (!contains(<a class="code" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">bindings</a>, &amp;b))</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">bindings</a>.push_back(&amp;b);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a0045af41931900d710ebcd51bb7fa557">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a0045af41931900d710ebcd51bb7fa557">SetBindings</a>(std::list&lt;Binding*&gt; &amp;l)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <a class="code" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">bindings</a>.assign(l.begin(), l.end());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a943092b44f53658fc54d4b6aa1136725">   75</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a943092b44f53658fc54d4b6aa1136725">ClearBindings</a>()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">bindings</a>.clear();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a5b2e6b05abfbfa1a59929a0d3c2a09c3">   81</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a5b2e6b05abfbfa1a59929a0d3c2a09c3">RemoveBinding</a>(<a class="code" href="classgodspeed_1_1_binding.html">Binding</a> &amp;b)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">if</span> (contains(<a class="code" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">bindings</a>, &amp;b))</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">bindings</a>.remove(&amp;b);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">   90</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">Update</a>()</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; x : <a class="code" href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">bindings</a>)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            x-&gt;Update();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        this_thread::yield();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#abb41f49609e7e9fe876aee93ee15064d">  103</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#abb41f49609e7e9fe876aee93ee15064d">Kill</a>()</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keywordflow">if</span> (tptr != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        tptr-&gt;interrupt();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        tptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24">  113</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24">Init</a>()</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      thread t(<a class="code" href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">Update</a>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      tptr = &amp;t;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      t.detach();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacegodspeed_1_1_binder_html_aa2be09d9fe343693ae8bff8f37c6b139"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#aa2be09d9fe343693ae8bff8f37c6b139">godspeed::Binder::Enable</a></div><div class="ttdeci">void Enable(int id)</div><div class="ttdoc">Re-enable a disabled binding using the bindings ID.</div><div class="ttdef"><b>Definition:</b> binder.h:55</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a8825303e055e32f433d9c6a4bbedad3d"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a8825303e055e32f433d9c6a4bbedad3d">godspeed::Binder::Bind</a></div><div class="ttdeci">int Bind(double(*source)(void), void(*sink)(double))</div><div class="ttdoc">Bind a source function to a sink function.</div><div class="ttdef"><b>Definition:</b> binder.h:33</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a96b60b0d992582ddbae6be06fa7c3044"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a96b60b0d992582ddbae6be06fa7c3044">godspeed::Binder::disabled</a></div><div class="ttdeci">std::list&lt; int &gt; disabled</div><div class="ttdoc">A list of disabled binding IDs.</div><div class="ttdef"><b>Definition:</b> binder.h:30</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a0671b5d3b95e93336d65f6a5f1f8eb24"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24">godspeed::Binder::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">Runs the binder update function on it's own thread.</div><div class="ttdef"><b>Definition:</b> binder.h:89</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a73f2e477ce2f5866f5c43ee07511b9f2"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a73f2e477ce2f5866f5c43ee07511b9f2">godspeed::Binder::bindings</a></div><div class="ttdeci">std::list&lt; BINDING_TUPLE &gt; bindings</div><div class="ttdoc">A list of tuples. Each tuple represents a binding.</div><div class="ttdef"><b>Definition:</b> binder.h:27</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a79f5a8343cf616de56f4e43fd8b462b1"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">godspeed::Binder::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">calls all bindings that are not disabled. This does NOT need to be called manually.</div><div class="ttdef"><b>Definition:</b> binder.h:67</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a8f2209da8a87022bceb83bb866ea2f0f"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a8f2209da8a87022bceb83bb866ea2f0f">godspeed::Binder::IsDisabled</a></div><div class="ttdeci">bool IsDisabled(int id)</div><div class="ttdoc">Check if a binding is disabled using the bindings ID.</div><div class="ttdef"><b>Definition:</b> binder.h:61</div></div>
-<div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> behavior-manager.h:12</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1_binder_html_af3ef592e2e010e680da387e1fb0db57f"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#af3ef592e2e010e680da387e1fb0db57f">godspeed::Binder::Disable</a></div><div class="ttdeci">void Disable(int id)</div><div class="ttdoc">Disable a binding using the bindings ID.</div><div class="ttdef"><b>Definition:</b> binder.h:49</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a0671b5d3b95e93336d65f6a5f1f8eb24"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a0671b5d3b95e93336d65f6a5f1f8eb24">godspeed::Binder::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">Runs the binder update function on it's own thread.</div><div class="ttdef"><b>Definition:</b> binder.h:113</div></div>
+<div class="ttc" id="aclassgodspeed_1_1_binding_html_aaa9ef7118882a9f9e9f25e4305cc7dfb"><div class="ttname"><a href="classgodspeed_1_1_binding.html#aaa9ef7118882a9f9e9f25e4305cc7dfb">godspeed::Binding::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Update the binding.</div><div class="ttdef"><b>Definition:</b> binder.h:32</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1_binder_html_abb41f49609e7e9fe876aee93ee15064d"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#abb41f49609e7e9fe876aee93ee15064d">godspeed::Binder::Kill</a></div><div class="ttdeci">void Kill()</div><div class="ttdoc">Stops binder thread.</div><div class="ttdef"><b>Definition:</b> binder.h:103</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a79f5a8343cf616de56f4e43fd8b462b1"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1">godspeed::Binder::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Iterates through and updates all bindings. This does NOT need to be called manually.</div><div class="ttdef"><b>Definition:</b> binder.h:90</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a2c423d983dcc45545eb9791e7896061e"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a2c423d983dcc45545eb9791e7896061e">godspeed::Binder::bindings</a></div><div class="ttdeci">std::list&lt; Binding * &gt; bindings</div><div class="ttdoc">A list of bindings.</div><div class="ttdef"><b>Definition:</b> binder.h:56</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a1f91fcaf0aab5c2a7f544c3d03be6beb"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a1f91fcaf0aab5c2a7f544c3d03be6beb">godspeed::Binder::AddBinding</a></div><div class="ttdeci">void AddBinding(Binding &amp;b)</div><div class="ttdoc">Add a binding to the binder.</div><div class="ttdef"><b>Definition:</b> binder.h:60</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a0045af41931900d710ebcd51bb7fa557"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a0045af41931900d710ebcd51bb7fa557">godspeed::Binder::SetBindings</a></div><div class="ttdeci">void SetBindings(std::list&lt; Binding * &gt; &amp;l)</div><div class="ttdoc">Set the bindings list (overwrites current binding list)</div><div class="ttdef"><b>Definition:</b> binder.h:69</div></div>
+<div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> actions.h:12</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a943092b44f53658fc54d4b6aa1136725"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a943092b44f53658fc54d4b6aa1136725">godspeed::Binder::ClearBindings</a></div><div class="ttdeci">void ClearBindings()</div><div class="ttdoc">Remove all current bindings.</div><div class="ttdef"><b>Definition:</b> binder.h:75</div></div>
+<div class="ttc" id="aclassgodspeed_1_1_binding_html_acdf7362510ff828609b8dae152819563"><div class="ttname"><a href="classgodspeed_1_1_binding.html#acdf7362510ff828609b8dae152819563">godspeed::Binding::Binding</a></div><div class="ttdeci">Binding(double(*src)(void), void(*snk)(double))</div><div class="ttdoc">Constructor that accepts a source and sink function.</div><div class="ttdef"><b>Definition:</b> binder.h:24</div></div>
+<div class="ttc" id="aclassgodspeed_1_1_binding_html"><div class="ttname"><a href="classgodspeed_1_1_binding.html">godspeed::Binding</a></div><div class="ttdoc">A class that represents a binding between two functions.</div><div class="ttdef"><b>Definition:</b> binder.h:8</div></div>
+<div class="ttc" id="aclassgodspeed_1_1_binding_html_a8af787ab528269893aa621ee9fd4dbd3"><div class="ttname"><a href="classgodspeed_1_1_binding.html#a8af787ab528269893aa621ee9fd4dbd3">godspeed::Binding::Binding</a></div><div class="ttdeci">Binding(double(*src)(void), double(*pip)(double), void(*snk)(double))</div><div class="ttdoc">Constructor that accepts a source, pipe, and sink function.</div><div class="ttdef"><b>Definition:</b> binder.h:16</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1_binder_html_a5b2e6b05abfbfa1a59929a0d3c2a09c3"><div class="ttname"><a href="namespacegodspeed_1_1_binder.html#a5b2e6b05abfbfa1a59929a0d3c2a09c3">godspeed::Binder::RemoveBinding</a></div><div class="ttdeci">void RemoveBinding(Binding &amp;b)</div><div class="ttdoc">Remove given binding from the update list.</div><div class="ttdef"><b>Definition:</b> binder.h:81</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

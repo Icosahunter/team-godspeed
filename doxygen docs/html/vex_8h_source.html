@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define repeat(iterations)                                                     \</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">  for (int iterator = 0; iterator &lt; iterations; iterator++)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define contains(l, i) std::find(l.begin(), l.end(), i) != l.end()</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define contains(l, i) (std::find(l.begin(), l.end(), i) != l.end())</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define elementAt(l, i) (*std::next(l.begin(), i))</span></div>
 </div><!-- fragment --></div><!-- contents -->

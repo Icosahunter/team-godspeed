@@ -1,0 +1,75 @@
+\hypertarget{namespacegodspeed_1_1_mode_control}{}\doxysection{godspeed\+::Mode\+Control Namespace Reference}
+\label{namespacegodspeed_1_1_mode_control}\index{godspeed::ModeControl@{godspeed::ModeControl}}
+
+
+A namespace for controlling the operation of the robot.  
+
+
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_a55552cfa39c3ea8062e4cdc1ad844a8b}\label{namespacegodspeed_1_1_mode_control_a55552cfa39c3ea8062e4cdc1ad844a8b}} 
+enum {\bfseries robot} \{ {\bfseries Robot\+\_\+\+Bauble}, 
+{\bfseries Robot\+\_\+\+Tchotchke}
+ \}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_a730cfc0b20abfccb6d3d415d63c57e1f}\label{namespacegodspeed_1_1_mode_control_a730cfc0b20abfccb6d3d415d63c57e1f}} 
+enum {\bfseries team} \{ {\bfseries Team\+\_\+\+Red}, 
+{\bfseries Team\+\_\+\+Blue}
+ \}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_af8754ce2c70dbf172307f9c8b76c458b}\label{namespacegodspeed_1_1_mode_control_af8754ce2c70dbf172307f9c8b76c458b}} 
+enum {\bfseries mode} \{ {\bfseries Autonomous\+\_\+\+Mode}, 
+{\bfseries Driver\+\_\+\+Control\+\_\+\+Mode}, 
+{\bfseries Competition\+\_\+\+Mode}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_aa4935336770ddb57c0a60d4960f698d4}\label{namespacegodspeed_1_1_mode_control_aa4935336770ddb57c0a60d4960f698d4}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_aa4935336770ddb57c0a60d4960f698d4}{Start\+Autonomous}} ()
+\begin{DoxyCompactList}\small\item\em Starts autonomous mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_ab60d79cf123f0fc97285b7c1680e9751}\label{namespacegodspeed_1_1_mode_control_ab60d79cf123f0fc97285b7c1680e9751}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_ab60d79cf123f0fc97285b7c1680e9751}{Start\+Driver\+Control}} ()
+\begin{DoxyCompactList}\small\item\em Starts driver control mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_a595320090d00b9739151f1a0626fdc5c}\label{namespacegodspeed_1_1_mode_control_a595320090d00b9739151f1a0626fdc5c}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_a595320090d00b9739151f1a0626fdc5c}{End\+Autonomous}} ()
+\begin{DoxyCompactList}\small\item\em Disables autonomous mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_a79390588c68ab0a47d8b5c45b692ddcb}\label{namespacegodspeed_1_1_mode_control_a79390588c68ab0a47d8b5c45b692ddcb}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_a79390588c68ab0a47d8b5c45b692ddcb}{End\+Driver\+Control}} ()
+\begin{DoxyCompactList}\small\item\em Disables driver control mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_accc9cc96ce045d8c041c357f3989d063}\label{namespacegodspeed_1_1_mode_control_accc9cc96ce045d8c041c357f3989d063}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_accc9cc96ce045d8c041c357f3989d063}{Start\+Competition}} ()
+\begin{DoxyCompactList}\small\item\em Starts competition watcher to watch for field control events and change mode appropriately. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_a8d63d1d2ec2145433deb77b22ef0e2c0}\label{namespacegodspeed_1_1_mode_control_a8d63d1d2ec2145433deb77b22ef0e2c0}} 
+void {\bfseries Start\+Competition\+Test} ()
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_aa55a7674cc2ec31dc8db25e9289afb42}\label{namespacegodspeed_1_1_mode_control_aa55a7674cc2ec31dc8db25e9289afb42}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_aa55a7674cc2ec31dc8db25e9289afb42}{Stop\+Robot}} ()
+\begin{DoxyCompactList}\small\item\em Stops the robots movement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_a723d0a4d39bcf3ea85bcc864afbee3d3}\label{namespacegodspeed_1_1_mode_control_a723d0a4d39bcf3ea85bcc864afbee3d3}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_a723d0a4d39bcf3ea85bcc864afbee3d3}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Start the mode controller (set Robot, Team, and Mode before calling this) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_aba92d57d32798c918f9bc077470342e0}\label{namespacegodspeed_1_1_mode_control_aba92d57d32798c918f9bc077470342e0}} 
+void \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_aba92d57d32798c918f9bc077470342e0}{Competition\+Watcher}} ()
+\begin{DoxyCompactList}\small\item\em Thread function of competition watcher thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_a8823805c428184a9bd8bccd285fe76fa}\label{namespacegodspeed_1_1_mode_control_a8823805c428184a9bd8bccd285fe76fa}} 
+robot \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_a8823805c428184a9bd8bccd285fe76fa}{Robot}}
+\begin{DoxyCompactList}\small\item\em Set this depending on the robot being used (Robot\+\_\+\+Tchotchke or Robot\+\_\+\+Bauble) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_ac8d31f275e09bc5575df862bb1455886}\label{namespacegodspeed_1_1_mode_control_ac8d31f275e09bc5575df862bb1455886}} 
+team \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_ac8d31f275e09bc5575df862bb1455886}{Team}}
+\begin{DoxyCompactList}\small\item\em Set this depending on the team color (Team\+\_\+\+Red, Team\+\_\+\+Blue) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_a195bfa1e658a631d056e87e6b9e671e9}\label{namespacegodspeed_1_1_mode_control_a195bfa1e658a631d056e87e6b9e671e9}} 
+mode \mbox{\hyperlink{namespacegodspeed_1_1_mode_control_a195bfa1e658a631d056e87e6b9e671e9}{Mode}}
+\begin{DoxyCompactList}\small\item\em Set this depending on the desired operation mode (Autonomous\+\_\+\+Mode, Driver\+\_\+\+Control\+\_\+\+Mode, Competition\+\_\+\+Mode) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacegodspeed_1_1_mode_control_aed4f04d676cf28b7ac6a5c615d494350}\label{namespacegodspeed_1_1_mode_control_aed4f04d676cf28b7ac6a5c615d494350}} 
+competition {\bfseries Competition}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A namespace for controlling the operation of the robot. 

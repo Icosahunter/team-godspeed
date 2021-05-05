@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['countsmoothing_179',['CountSmoothing',['../namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a276bbf4451a031681ff769b48d0f7cc6',1,'godspeed::inputs::VisionSensor']]]
+  ['horizontalfov_285',['HorizontalFOV',['../namespacegodspeed_1_1inputs_1_1_vision_sensor.html#a68f52b05abb59d7b3e0cf46eef460956',1,'godspeed::inputs::VisionSensor']]]
 ];

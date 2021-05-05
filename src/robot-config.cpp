@@ -9,9 +9,9 @@ brain  Brain;
 
 // VEXcode device constructors
 /*vex-vision-config:begin*/
-signature Vision20__RED_BALL = signature (1, 6225, 8395, 7310, -559, 187, -186, 2.2, 0);
-signature Vision20__BLUE_BALL = signature (2, -3093, -2323, -2708, 11031, 13237, 12134, 2.5, 0);
-signature Vision20__BACKBOARD = signature (3, -4877, -4487, -4682, -5125, -4575, -4850, 2.5, 0);
+signature Vision20__RED_BALL = signature (1, 5097, 7215, 6156, -235, 493, 129, 2.6, 0);
+signature Vision20__BLUE_BALL = signature (2, -2115, -1413, -1764, 6175, 7889, 7032, 5, 0);
+signature Vision20__BACKBOARD = signature (3, -5881, -5085, -5483, -6089, -5461, -5775, 11, 0);
 vision Vision20 = vision (PORT19, 50, Vision20__RED_BALL, Vision20__BLUE_BALL, Vision20__BACKBOARD);
 /*vex-vision-config:end*/
 bumper BumperA = bumper(Brain.ThreeWirePort.A);

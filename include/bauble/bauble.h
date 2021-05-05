@@ -5,6 +5,7 @@
 
 namespace godspeed
 {
+  /// \brief A namespace containing the state machine and driver control code for the Bauble robot
   namespace Bauble
   {
     double expander_pos() { return 345; }

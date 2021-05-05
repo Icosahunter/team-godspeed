@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['enable_133',['Enable',['../namespacegodspeed_1_1_binder.html#aa2be09d9fe343693ae8bff8f37c6b139',1,'godspeed::Binder']]],
-  ['executepath_134',['ExecutePath',['../classgodspeed_1_1inputs_1_1_path_script.html#a36654438dc378f3d4da91520808c69f4',1,'godspeed::inputs::PathScript']]],
-  ['expanderposition_135',['ExpanderPosition',['../namespacegodspeed_1_1outputs_1_1_ball_scorer.html#a7c3e2f806493ed89dbd61dbc721538de',1,'godspeed::outputs::BallScorer']]]
+  ['debounce_200',['Debounce',['../classgodspeed_1_1_debouncer.html#a437c9ea619f8e19265d118f3458734ea',1,'godspeed::Debouncer']]],
+  ['debouncer_201',['Debouncer',['../classgodspeed_1_1_debouncer.html#adcd8e596cc696226cf76c2c366a363b8',1,'godspeed::Debouncer']]],
+  ['dec_202',['dec',['../namespacegodspeed_1_1inputs_1_1_ball_storage.html#a59600e63b8beca1ccada93bc4cd964dc',1,'godspeed::inputs::BallStorage']]],
+  ['drive_203',['Drive',['../namespacegodspeed_1_1actions.html#a1db9daa7474de3b26dfa06e497974bb8',1,'godspeed::actions::Drive(mode m)'],['../namespacegodspeed_1_1actions.html#ac57e56828ffa8defc268399a0da83ba4',1,'godspeed::actions::Drive(mode m, int dur)']]]
 ];

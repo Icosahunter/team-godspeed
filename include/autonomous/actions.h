@@ -15,8 +15,10 @@ namespace godspeed
   {
     using namespace inputs;
     using namespace outputs;
+    /// \brief Operation modes for output devices
     enum mode { ON, OFF, LEFT, RIGHT, FORWARD, REVERSE, BACKWARD };
 
+    /// \brief Sets ball collector mode
     void BallCollectors(mode m)
     {
       if (m == ON || m == FORWARD)
@@ -33,6 +35,7 @@ namespace godspeed
       }
     }
 
+    /// \brief Sets ball scorer mode
     void BallScorer(mode m)
     {
       if (m == ON || m == FORWARD)
@@ -49,6 +52,7 @@ namespace godspeed
       }
     }
 
+    /// \brief Sets drivetrain movement mode
     void Drive(mode m)
     {
       if (m == ON || m == FORWARD)
@@ -71,6 +75,7 @@ namespace godspeed
       }
     }
 
+    /// \brief Sets drivetrain movement mode for a time interval
     void Drive(mode m, int dur)
     {
       Drive(m);
@@ -78,6 +83,7 @@ namespace godspeed
       Drive(OFF);
     }
 
+    /// \brief Sets drivetrain turning mode
     void Turn(mode m)
     {
       if (m == RIGHT)
@@ -94,6 +100,7 @@ namespace godspeed
       }
     }
 
+    /// \brief Sets drivetrain turning mode for a time interval
     void Turn(mode m, int dur)
     {
       Turn(m);

@@ -8,27 +8,39 @@ The primary namespace for the project.
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{namespacegodspeed_1_1_behavior_manager}{Behavior\+Manager}}
-\begin{DoxyCompactList}\small\item\em A namespace containing functions and logic for managing autonomous behaviors. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespacegodspeed_1_1actions}{actions}}
+\begin{DoxyCompactList}\small\item\em A namespace containing actions for use in autonomous mode. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespacegodspeed_1_1_bauble}{Bauble}}
+\begin{DoxyCompactList}\small\item\em A namespace containing the state machine and driver control code for the \mbox{\hyperlink{namespacegodspeed_1_1_bauble}{Bauble}} robot. \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespacegodspeed_1_1behaviors}{behaviors}}
-\begin{DoxyCompactList}\small\item\em A namespace containing functions for creating autonomous mode behavior bindings. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A namespace containing autonomous mode behavior bindings. \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespacegodspeed_1_1_binder}{Binder}}
 \begin{DoxyCompactList}\small\item\em A namespace containing functions for binding value producing functions to value consuming functions. \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespacegodspeed_1_1framework}{framework}}
 \begin{DoxyCompactList}\small\item\em Contains core classes and functions used as building blocks for the rest of the project. \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespacegodspeed_1_1inputs}{inputs}}
 \begin{DoxyCompactList}\small\item\em Contains all classes and namespaces for input devices. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespacegodspeed_1_1_mode_control}{Mode\+Control}}
+\begin{DoxyCompactList}\small\item\em A namespace for controlling the operation of the robot. \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespacegodspeed_1_1outputs}{outputs}}
-\begin{DoxyCompactList}\small\item\em Contains all classes and namespaces for output devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\begin{DoxyCompactList}\small\item\em Contains all classes and namespaces for output devices. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespacegodspeed_1_1_state_machine}{State\+Machine}}
+\begin{DoxyCompactList}\small\item\em A namespace for executing a state machine. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespacegodspeed_1_1_tchotchke}{Tchotchke}}
+\begin{DoxyCompactList}\small\item\em A namespace containing the state machine and driver control code for the \mbox{\hyperlink{namespacegodspeed_1_1_tchotchke}{Tchotchke}} robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{namespacegodspeed_a02d97d2996e75dedf27bdc140caf3eca}\label{namespacegodspeed_a02d97d2996e75dedf27bdc140caf3eca}} 
-void \mbox{\hyperlink{namespacegodspeed_a02d97d2996e75dedf27bdc140caf3eca}{Load\+Behavior\+Test}} ()
-\begin{DoxyCompactList}\small\item\em Loads the tiers, behaviors, and conditions for an autonomous test \mbox{[}F\+OR T\+E\+S\+T\+I\+NG A\+ND D\+E\+B\+U\+G\+G\+I\+NG\mbox{]}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{namespacegodspeed_a9e727146ff275b68f6c4599df8dc2bfc}\label{namespacegodspeed_a9e727146ff275b68f6c4599df8dc2bfc}} 
-void \mbox{\hyperlink{namespacegodspeed_a9e727146ff275b68f6c4599df8dc2bfc}{Load\+Behavior\+Stack}} ()
-\begin{DoxyCompactList}\small\item\em Loads the tiers, behaviors, and conditions for autonomous mode \mbox{[}U\+N\+F\+I\+N\+I\+S\+H\+ED\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classgodspeed_1_1_binding}{Binding}}
+\begin{DoxyCompactList}\small\item\em A class that represents a binding between two functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classgodspeed_1_1_debouncer}{Debouncer}}
+\begin{DoxyCompactList}\small\item\em A class for debouncing boolean data using a delay. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classgodspeed_1_1_state}{State}}
+\begin{DoxyCompactList}\small\item\em A state class used to create statemachines to execute using the \mbox{\hyperlink{namespacegodspeed_1_1_state_machine}{State\+Machine}} namespace. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classgodspeed_1_1_win_avg}{Win\+Avg}}
+\begin{DoxyCompactList}\small\item\em A class to apply windowed averaging. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classgodspeed_1_1_win_min}{Win\+Min}}
+\begin{DoxyCompactList}\small\item\em A class to apply windowed minimum. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

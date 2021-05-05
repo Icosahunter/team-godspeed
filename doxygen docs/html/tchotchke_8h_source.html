@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team Godspeed: C:/Users/anzel/source/repos/team-godspeed/include/inputs/range-finder.h Source File</title>
+<title>Team Godspeed: C:/Users/anzel/source/repos/team-godspeed/include/tchotchke/tchotchke.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,30 +63,30 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_d06a1862285d809f2577f8625d05069f.html">inputs</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_d17badff98e9ead7d580a09a44ea0382.html">tchotchke</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">range-finder.h</div>  </div>
+<div class="title">tchotchke.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;vex.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keyword">namespace </span>inputs</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  {</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1inputs_1_1_range_finder_suite.html">    9</a></span>&#160;    <span class="keyword">namespace </span>RangeFinderSuite</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacegodspeed_1_1inputs_1_1_range_finder_suite.html#a8e2c2e7d0b16dbbe04216b4eaa9a0aed">   12</a></span>&#160;      <span class="keywordtype">double</span> <a class="code" href="namespacegodspeed_1_1inputs_1_1_range_finder_suite.html#a8e2c2e7d0b16dbbe04216b4eaa9a0aed">RangeFinder</a>() { <span class="keywordflow">return</span> (<span class="keywordtype">double</span>)RangeFinder1.distance(mm); }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;outputs/ball-scorer.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;framework/binder.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegodspeed.html">godspeed</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">namespace </span>Tchotchke</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">double</span> expander_pos() { <span class="keywordflow">return</span> 355; }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    Binding ExpanderBinding(expander_pos, <a class="code" href="namespacegodspeed_1_1outputs_1_1_ball_scorer.html#a7c3e2f806493ed89dbd61dbc721538de">outputs::BallScorer::ExpanderPosition</a>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> behavior-manager.h:12</div></div>
-<div class="ttc" id="anamespacegodspeed_1_1inputs_1_1_range_finder_suite_html_a8e2c2e7d0b16dbbe04216b4eaa9a0aed"><div class="ttname"><a href="namespacegodspeed_1_1inputs_1_1_range_finder_suite.html#a8e2c2e7d0b16dbbe04216b4eaa9a0aed">godspeed::inputs::RangeFinderSuite::RangeFinder</a></div><div class="ttdeci">double RangeFinder()</div><div class="ttdoc">returns the distance value of Range Finder 1</div><div class="ttdef"><b>Definition:</b> range-finder.h:12</div></div>
+<div class="ttc" id="anamespacegodspeed_1_1outputs_1_1_ball_scorer_html_a7c3e2f806493ed89dbd61dbc721538de"><div class="ttname"><a href="namespacegodspeed_1_1outputs_1_1_ball_scorer.html#a7c3e2f806493ed89dbd61dbc721538de">godspeed::outputs::BallScorer::ExpanderPosition</a></div><div class="ttdeci">void ExpanderPosition(double angleDeg)</div><div class="ttdoc">Sets the angular position of the motor that extends the ball guide.</div><div class="ttdef"><b>Definition:</b> ball-scorer.h:46</div></div>
+<div class="ttc" id="anamespacegodspeed_html"><div class="ttname"><a href="namespacegodspeed.html">godspeed</a></div><div class="ttdoc">The primary namespace for the project.</div><div class="ttdef"><b>Definition:</b> actions.h:12</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

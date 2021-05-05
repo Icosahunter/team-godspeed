@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['yoffset_91',['YOffset',['../namespacegodspeed_1_1inputs_1_1_vision_sensor.html#acd84e09aec88b19f42c6f38e6bad7fde',1,'godspeed::inputs::VisionSensor']]],
-  ['yspeed_92',['YSpeed',['../namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a7bdedafbb9ecac80b8a730f8863b1751',1,'godspeed::outputs::OmniDrive3Wheel']]],
-  ['yspeedvar_93',['YSpeedVar',['../namespacegodspeed_1_1outputs_1_1_omni_drive3_wheel.html#a57a849e782a58d8c10acd8bb4f901896',1,'godspeed::outputs::OmniDrive3Wheel']]]
+  ['unbinddrivercontrol_132',['UnBindDriverControl',['../namespacegodspeed_1_1_bauble.html#aab0de1e56fffde22eeb051614ac36f6f',1,'godspeed::Bauble::UnBindDriverControl()'],['../namespacegodspeed_1_1_tchotchke.html#a72a078bc38f7f61347bd3710d7f8e934',1,'godspeed::Tchotchke::UnBindDriverControl()']]],
+  ['update_133',['Update',['../classgodspeed_1_1_binding.html#aaa9ef7118882a9f9e9f25e4305cc7dfb',1,'godspeed::Binding::Update()'],['../namespacegodspeed_1_1_state_machine.html#aedcc097e3d0d394548e7240835cde408',1,'godspeed::StateMachine::Update()'],['../namespacegodspeed_1_1_binder.html#a79f5a8343cf616de56f4e43fd8b462b1',1,'godspeed::Binder::Update()']]]
 ];

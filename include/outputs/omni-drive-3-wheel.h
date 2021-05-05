@@ -21,25 +21,41 @@ namespace godspeed
       /// \brief A variable to track the current desired angular speed
       double AngleSpeedVar;
 
+      bool SaturationEnabled = false;
+
       /// \brief Set the X, Y, and angular velocities of the drivetrain
       void SetVelocity(double x, double y, double a)
       {
+        double lm;
+        double am;
+
+        if (SaturationEnabled)
+        {
+          lm = 1;
+          am = 0;
+        }
+        else
+        {
+          lm = 0.666;
+          am = 0.333;
+        }
+
         XSpeedVar.SetValue(x);
         YSpeedVar.SetValue(y);
         AngleSpeedVar = a;
 
         // Describes the direction and magnitude the robot needs to turn
-        double angVel = 0.333 * AngleSpeedVar;
+        double angVel = am * AngleSpeedVar;
         // Calculate the angle between the x and y directional vectors to determine the direction the robot is to move
         double ang = atan2(YSpeedVar.Value(), XSpeedVar.Value());
         // Calculate the magnitude that the robot movement needs to be from the x and y directional vectors
         double mag = sqrt(pow(YSpeedVar.Value(), 2) + pow(XSpeedVar.Value(), 2));
         // Set Front Right Wheel (motor 1) speed using wheel equation
-        double m1spd = mag*0.666*cos(ang + M_PI/3) + angVel; 
+        double m1spd = mag*lm*cos(ang + M_PI/3) + angVel; 
         // Set Front Left Wheel (motor 2) speed using wheel equation
-        double m2spd = mag*0.666*cos(ang + 5*M_PI/3) + angVel; 
+        double m2spd = mag*lm*cos(ang + 5*M_PI/3) + angVel; 
         // Set Back Wheel (motor 3) speed using wheel equation
-        double m3spd = mag*0.666*cos(ang + M_PI) + angVel; 
+        double m3spd = mag*lm*cos(ang + M_PI) + angVel; 
 
         // Print the X and Y coordinates of the controller's left joystick on the first line of the VEX Brain's screen
         //Brain.Screen.clearScreen();
@@ -75,12 +91,27 @@ namespace godspeed
       {
         SetVelocity(XSpeedVar.Value(), YSpeedVar.Value(), a);
       }
+      
+      /// \brief Allows inputs to motors to saturate, will cause strange diagonal movement but allows for maximum orthogonal speed
+      void EnableSaturation(double e)
+      {
+        if (e > 0.5)
+        {
+          SaturationEnabled = true;
+        }
+        else
+        {
+          SaturationEnabled = false;
+        }
+      }
 
+      /// \brief Stops all drivetrain motors
       void Stop()
       {
         AngleSpeed(0);
         XSpeedVar.Initialize(0);
         YSpeedVar.Initialize(0);
+        SetVelocity(0, 0, 0);
       }
     }
   }

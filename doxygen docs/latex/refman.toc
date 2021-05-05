@@ -5,50 +5,65 @@
 \contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
 \contentsline {chapter}{\numberline {3}Namespace Documentation}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}godspeed Namespace Reference}{5}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Behavior\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Namespace Reference}{6}{section.3.2}%
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{6}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::actions Namespace Reference}{6}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Detailed Description}{6}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::behaviors Namespace Reference}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.3}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Bauble Namespace Reference}{6}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Detailed Description}{7}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Binder Namespace Reference}{7}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{8}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::framework Namespace Reference}{8}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{8}{subsection.3.5.1}%
-\contentsline {section}{\numberline {3.6}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs Namespace Reference}{8}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{9}{subsection.3.6.1}%
-\contentsline {section}{\numberline {3.7}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Ball\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage Namespace Reference}{9}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{9}{subsection.3.7.1}%
-\contentsline {section}{\numberline {3.8}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Range\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Finder\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Suite Namespace Reference}{9}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{10}{subsection.3.8.1}%
-\contentsline {section}{\numberline {3.9}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Remote\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Namespace Reference}{10}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{10}{subsection.3.9.1}%
-\contentsline {section}{\numberline {3.10}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Vision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sensor Namespace Reference}{10}{section.3.10}%
-\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{11}{subsection.3.10.1}%
-\contentsline {subsection}{\numberline {3.10.2}Function Documentation}{12}{subsection.3.10.2}%
-\contentsline {subsubsection}{\numberline {3.10.2.1}BallCount()}{12}{subsubsection.3.10.2.1}%
-\contentsline {subsubsection}{\numberline {3.10.2.2}BallDistance()}{12}{subsubsection.3.10.2.2}%
-\contentsline {subsubsection}{\numberline {3.10.2.3}BallSize()}{12}{subsubsection.3.10.2.3}%
-\contentsline {subsubsection}{\numberline {3.10.2.4}BallXOffset()}{12}{subsubsection.3.10.2.4}%
-\contentsline {subsubsection}{\numberline {3.10.2.5}BallYOffset()}{12}{subsubsection.3.10.2.5}%
-\contentsline {subsubsection}{\numberline {3.10.2.6}GoalCount()}{13}{subsubsection.3.10.2.6}%
-\contentsline {subsubsection}{\numberline {3.10.2.7}GoalDistance()}{13}{subsubsection.3.10.2.7}%
-\contentsline {subsubsection}{\numberline {3.10.2.8}GoalSize()}{13}{subsubsection.3.10.2.8}%
-\contentsline {subsubsection}{\numberline {3.10.2.9}GoalXOffset()}{13}{subsubsection.3.10.2.9}%
-\contentsline {subsubsection}{\numberline {3.10.2.10}GoalYOffset()}{13}{subsubsection.3.10.2.10}%
-\contentsline {subsubsection}{\numberline {3.10.2.11}Snapshot()}{13}{subsubsection.3.10.2.11}%
-\contentsline {section}{\numberline {3.11}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs Namespace Reference}{14}{section.3.11}%
-\contentsline {subsection}{\numberline {3.11.1}Detailed Description}{14}{subsection.3.11.1}%
-\contentsline {section}{\numberline {3.12}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Ball\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collector Namespace Reference}{14}{section.3.12}%
-\contentsline {subsection}{\numberline {3.12.1}Detailed Description}{14}{subsection.3.12.1}%
-\contentsline {section}{\numberline {3.13}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Ball\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scorer Namespace Reference}{14}{section.3.13}%
-\contentsline {subsection}{\numberline {3.13.1}Detailed Description}{15}{subsection.3.13.1}%
-\contentsline {section}{\numberline {3.14}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Omni\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Drive3\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wheel Namespace Reference}{15}{section.3.14}%
-\contentsline {subsection}{\numberline {3.14.1}Detailed Description}{16}{subsection.3.14.1}%
-\contentsline {section}{\numberline {3.15}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Output\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utilities Namespace Reference}{16}{section.3.15}%
-\contentsline {subsection}{\numberline {3.15.1}Detailed Description}{16}{subsection.3.15.1}%
-\contentsline {subsection}{\numberline {3.15.2}Function Documentation}{16}{subsection.3.15.2}%
-\contentsline {subsubsection}{\numberline {3.15.2.1}setMotorSpeed()}{16}{subsubsection.3.15.2.1}%
-\contentsline {chapter}{\numberline {4}Class Documentation}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Path\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Script Class Reference}{17}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{18}{subsection.4.1.1}%
-\contentsline {chapter}{Index}{19}{section*.27}%
+\contentsline {section}{\numberline {3.4}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::behaviors Namespace Reference}{7}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{9}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Binder Namespace Reference}{9}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{9}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::framework Namespace Reference}{9}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{10}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs Namespace Reference}{10}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{10}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.8}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Ball\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Storage Namespace Reference}{10}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{11}{subsection.3.8.1}%
+\contentsline {section}{\numberline {3.9}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Range\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Finders Namespace Reference}{11}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{11}{subsection.3.9.1}%
+\contentsline {section}{\numberline {3.10}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Remote\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Namespace Reference}{11}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{12}{subsection.3.10.1}%
+\contentsline {section}{\numberline {3.11}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Vision\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sensor Namespace Reference}{12}{section.3.11}%
+\contentsline {subsection}{\numberline {3.11.1}Detailed Description}{13}{subsection.3.11.1}%
+\contentsline {subsection}{\numberline {3.11.2}Function Documentation}{13}{subsection.3.11.2}%
+\contentsline {subsubsection}{\numberline {3.11.2.1}BallCount()}{14}{subsubsection.3.11.2.1}%
+\contentsline {subsubsection}{\numberline {3.11.2.2}BallDistance()}{14}{subsubsection.3.11.2.2}%
+\contentsline {subsubsection}{\numberline {3.11.2.3}BallXOffset()}{14}{subsubsection.3.11.2.3}%
+\contentsline {subsubsection}{\numberline {3.11.2.4}BallYOffset()}{14}{subsubsection.3.11.2.4}%
+\contentsline {subsubsection}{\numberline {3.11.2.5}GoalCount()}{14}{subsubsection.3.11.2.5}%
+\contentsline {subsubsection}{\numberline {3.11.2.6}GoalDistance()}{14}{subsubsection.3.11.2.6}%
+\contentsline {subsubsection}{\numberline {3.11.2.7}GoalXOffset()}{15}{subsubsection.3.11.2.7}%
+\contentsline {subsubsection}{\numberline {3.11.2.8}GoalYOffset()}{15}{subsubsection.3.11.2.8}%
+\contentsline {section}{\numberline {3.12}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Mode\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control Namespace Reference}{15}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}Detailed Description}{16}{subsection.3.12.1}%
+\contentsline {section}{\numberline {3.13}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs Namespace Reference}{16}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}Detailed Description}{16}{subsection.3.13.1}%
+\contentsline {section}{\numberline {3.14}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Ball\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collector Namespace Reference}{16}{section.3.14}%
+\contentsline {subsection}{\numberline {3.14.1}Detailed Description}{17}{subsection.3.14.1}%
+\contentsline {section}{\numberline {3.15}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Ball\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scorer Namespace Reference}{17}{section.3.15}%
+\contentsline {subsection}{\numberline {3.15.1}Detailed Description}{17}{subsection.3.15.1}%
+\contentsline {section}{\numberline {3.16}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Omni\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Drive3\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wheel Namespace Reference}{17}{section.3.16}%
+\contentsline {subsection}{\numberline {3.16.1}Detailed Description}{18}{subsection.3.16.1}%
+\contentsline {section}{\numberline {3.17}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::outputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Output\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utilities Namespace Reference}{18}{section.3.17}%
+\contentsline {subsection}{\numberline {3.17.1}Detailed Description}{18}{subsection.3.17.1}%
+\contentsline {subsection}{\numberline {3.17.2}Function Documentation}{18}{subsection.3.17.2}%
+\contentsline {subsubsection}{\numberline {3.17.2.1}setMotorSpeed()}{19}{subsubsection.3.17.2.1}%
+\contentsline {section}{\numberline {3.18}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::State\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine Namespace Reference}{19}{section.3.18}%
+\contentsline {subsection}{\numberline {3.18.1}Detailed Description}{19}{subsection.3.18.1}%
+\contentsline {section}{\numberline {3.19}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Tchotchke Namespace Reference}{19}{section.3.19}%
+\contentsline {subsection}{\numberline {3.19.1}Detailed Description}{20}{subsection.3.19.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Binding Class Reference}{21}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{22}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Debouncer Class Reference}{22}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{23}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::inputs\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Path\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Script Class Reference}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{24}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::State Class Reference}{24}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{25}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Win\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Avg Class Reference}{25}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{26}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}godspeed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Win\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Min Class Reference}{26}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{27}{subsection.4.6.1}%
+\contentsline {chapter}{Index}{29}{section*.49}%
